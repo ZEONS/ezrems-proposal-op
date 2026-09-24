@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ezREMS 제안 인터랙티브 웹 플랫폼 | README</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Paperlogy Web Font -->
+  <style>
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-600 selection:text-white">
+
+  <!-- Header & GNB -->
+  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/30 group-hover:scale-105 transition">
+            EZ
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-white text-base tracking-tight">ezREMS™</span>
+              <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-400 font-bold text-[10px] border border-blue-800/40">README</span>
+            </div>
+            <p class="text-[11px] text-slate-400">스마트 자산관리 ERP 인터랙티브 플랫폼 가이드</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex items-center space-x-2">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition flex items-center gap-1.5">
+          <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
+          <span>제안서 열기 (KO)</span>
+        </a>
+        <a href="design_guide.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition flex items-center gap-1.5">
+          <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+          <span>디자인 가이드</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+
+    <!-- Hero Banner -->
+    <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-blue-950/40 border border-slate-800 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/70 border border-blue-800/50 text-cyan-300 text-xs font-bold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>스마트 자산관리 플랫폼 | 핀테크 X 프롭테크</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          수익형 부동산,<br>
+          <span class="gradient-text">이제는 운영이 핵심이다.</span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          클라우드 SaaS 기반 임대차·수납·시설·세무 올인원 운영 ERP 플랫폼 <strong class="text-blue-400 font-bold">이지램스 (ezREMS)™</strong>의 인터랙티브 웹 제안서 기술 명세서 및 프로젝트 안내 문서입니다.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-2 text-xs">
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
+            🌐 4개 국어 (KO, EN, JA, ZH)
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
+            🖥️ 슬라이드 PT & 스크롤 문서 듀얼 모드
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
+            🏢 10대 유·무형 자산 확장 ERP
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
+            📊 SAP FI & OpenAPI 연동
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Multilingual Editions -->
+    <section class="space-y-4">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="globe" class="w-5 h-5 text-emerald-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">1. 완벽한 4개 국어 다국어 버전 (Multilingual Editions)</h2>
+      </div>
+      <p class="text-sm text-slate-400">
+        전체 23개 슬라이드의 본문, 도표, 10대 유·무형 자산 카드, 모달 팝업, 컨트롤 바까지 각 언어권 전문 용어로 완벽히 현지화되어 제공됩니다.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- KO -->
+        <a href="index.html" class="p-5 rounded-2xl bg-slate-900/60 border border-blue-800/50 hover:border-blue-400 transition group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">KO · 한국어</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-blue-300 transition">한국어 공식 에디션</h3>
+            <p class="text-xs text-slate-400 mt-1">index.html (기본 에디션)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">
+            표준 한국어 원본 제안서 및 슬라이드 동기화 엔진 탑재
+          </div>
+        </a>
+
+        <!-- EN -->
+        <a href="index_en.html" class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-400 transition group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">EN · English</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition">Global English Edition</h3>
+            <p class="text-xs text-slate-400 mt-1">index_en.html</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">
+            글로벌 프롭테크 표준 영문 및 인터내셔널 용어 완벽 적용
+          </div>
+        </a>
+
+        <!-- JA -->
+        <a href="index_ja.html" class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-indigo-400 transition group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40">JA · 日本語</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-indigo-300 transition">日本語 公式エディション</h3>
+            <p class="text-xs text-slate-400 mt-1">index_ja.html</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">
+            日本の不動産・PM実務慣行に合致したビジネス日本語適用
+          </div>
+        </a>
+
+        <!-- ZH -->
+        <a href="index_zh.html" class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-400 transition group flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">ZH · 简体中文</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-amber-400 transition"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-amber-300 transition">简体中文 演示版本</h3>
+            <p class="text-xs text-slate-400 mt-1">index_zh.html</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">
+            中国市场标准化资产运营术语与长租公寓专业表达
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 2: Dual View Mode & Architecture -->
+    <section class="space-y-4">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">2. 듀얼 뷰 모드 및 핵심 아키텍처</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- PT Mode Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 text-blue-400 font-bold text-sm">
+            <i data-lucide="monitor" class="w-4 h-4"></i>
+            <span>슬라이드 PT 모드 (Presentation Mode)</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            16:9 비율의 캔버스 뷰포트 내에서 슬라이드 페이드 전환 효과와 함께 발표를 진행할 수 있습니다. 키보드 화살표, 스페이스바, 전체화면(F), 목차(M), 갤러리(G) 등 다양한 단축키와 실시간 진행률 게이지를 지원합니다.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] text-slate-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>슬라이드 상단 디바이더 구분선 보존으로 장표 명확화</span>
+          </div>
+        </div>
+
+        <!-- Scroll Mode Card -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div class="flex items-center gap-2 text-cyan-400 font-bold text-sm">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>스크롤 웹 문서 모드 (Scroll Document Mode)</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            23개 슬라이드를 단일 반응형 웹 문서 형태로 연속 스크롤하며 검토할 수 있습니다. 각 섹션이 독립된 박스 형태로 배치되어 인쇄 및 보고서 정독에 최적화되어 있습니다.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] text-slate-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>스크롤 모드 전용 CSS 격리로 불필요한 구분선 중복 제거</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 10 Assets Universe -->
+    <section class="space-y-4">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="boxes" class="w-5 h-5 text-amber-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">3. CHAPTER 6. 비즈니스 모델 확대 (10대 유·무형 자산)</h2>
+      </div>
+      <p class="text-sm text-slate-400">
+        이지램스는 전통적인 부동산(아파트, 오피스)에 머물지 않고, 단일 코어로 모든 유·무형 수익 자산을 즉시 수용합니다.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs">
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-emerald-800/40">
+          <div class="font-bold text-emerald-400 mb-1">01. 주거/레지던스</div>
+          <div class="text-[11px] text-slate-300">원룸 · 실버타운 · 코리빙 · 청년임대</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-amber-800/40">
+          <div class="font-bold text-amber-400 mb-1">02. 상업/리테일</div>
+          <div class="text-[11px] text-slate-300">쇼핑몰 · POS 매출 연동 수수료</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-blue-800/40">
+          <div class="font-bold text-blue-400 mb-1">03. 업무시설 (오피스)</div>
+          <div class="text-[11px] text-slate-300">프라임 오피스 · 일반 빌딩 자산운용</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-orange-800/40">
+          <div class="font-bold text-orange-400 mb-1">04. 물류/창고</div>
+          <div class="text-[11px] text-slate-300">상온·저온 풀필먼트 물류 거점</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-cyan-800/40">
+          <div class="font-bold text-cyan-400 mb-1">05. IT 인프라 (IDC)</div>
+          <div class="text-[11px] text-slate-300">서버 랙(Rack) 상면 · 전력 인프라</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-purple-800/40">
+          <div class="font-bold text-purple-400 mb-1">06. 추모/안치</div>
+          <div class="text-[11px] text-slate-300">봉안당 안치단 · 묘지 영구 분양</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-sky-800/40">
+          <div class="font-bold text-sky-400 mb-1">07. 모빌리티</div>
+          <div class="text-[11px] text-slate-300">렌터카 · 오토리스 · 정비 이력 통합</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-rose-800/40">
+          <div class="font-bold text-rose-400 mb-1">08. 구독/렌탈</div>
+          <div class="text-[11px] text-slate-300">패션 의류 · 고가 비품 정기 구독</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-indigo-800/40">
+          <div class="font-bold text-indigo-400 mb-1">09. 무형자산</div>
+          <div class="text-[11px] text-slate-300">소프트웨어 라이선스 · 유지보수 계약</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-gradient-to-br from-amber-950/60 to-slate-900 border border-amber-400/60">
+          <div class="font-bold text-amber-300 mb-1">10. 신규 비즈니스 발굴</div>
+          <div class="text-[11px] text-slate-200">모든 유·무형 신규 비즈니스 즉시 수용</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Keyboard Shortcuts -->
+    <section class="space-y-4">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="keyboard" class="w-5 h-5 text-indigo-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">4. 키보드 단축키 안내</h2>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 text-xs">
+        <table class="w-full text-left bg-slate-900/60">
+          <thead class="bg-slate-950 text-slate-400 border-b border-slate-800 font-bold">
+            <tr>
+              <th class="py-3 px-4">단축키</th>
+              <th class="py-3 px-4">기능 설명</th>
+              <th class="py-3 px-4">사용 가능 모드</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-slate-300">
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">→ / Space / PageDown</td>
+              <td class="py-2.5 px-4">다음 슬라이드로 이동</td>
+              <td class="py-2.5 px-4 text-slate-400">슬라이드 PT 모드</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">← / P / PageUp</td>
+              <td class="py-2.5 px-4">이전 슬라이드로 이동</td>
+              <td class="py-2.5 px-4 text-slate-400">슬라이드 PT 모드</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">Home / End</td>
+              <td class="py-2.5 px-4">첫 슬라이드 / 마지막 슬라이드 즉시 이동</td>
+              <td class="py-2.5 px-4 text-slate-400">슬라이드 PT 모드</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">F</td>
+              <td class="py-2.5 px-4">브라우저 전체화면 토글 (Fullscreen)</td>
+              <td class="py-2.5 px-4 text-slate-400">공통</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">M</td>
+              <td class="py-2.5 px-4">제안 발표 목차(Agenda) 팝업 모달 열기</td>
+              <td class="py-2.5 px-4 text-slate-400">공통</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">G</td>
+              <td class="py-2.5 px-4">원본 56P PDF 슬라이드 갤러리 모달 열기</td>
+              <td class="py-2.5 px-4 text-slate-400">공통</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-mono font-bold text-cyan-400">Esc</td>
+              <td class="py-2.5 px-4">열려있는 모든 모달 팝업 닫기</td>
+              <td class="py-2.5 px-4 text-slate-400">공통</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5: Company & Support -->
+    <section class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="space-y-1 text-center sm:text-left">
+        <div class="flex items-center gap-2 justify-center sm:justify-start">
+          <span class="font-bold text-white text-sm">(주)제온스 (ZEONS, Inc.)</span>
+          <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-bold border border-blue-800/40">프롭테크 20년</span>
+        </div>
+        <p class="text-slate-400">서울특별시 강남구 선릉로 93길 40, 2층 | 문의: 02-555-8945 | sales@zeons.co.kr</p>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <a href="https://www.ezrems.com" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+          공식 웹사이트
+        </a>
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition">
+          제안서 열기
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    &copy; 2026 ZEONS, Inc. All rights reserved. Powered by ezREMS™ Platform.
+  </footer>
+
+  <script>
+    if (window.lucide) { lucide.createIcons(); }
+  </script>
+</body>
+</html>
