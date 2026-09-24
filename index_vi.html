@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ezREMS 提案演示报告 | ZEONS 株式社</title>
+  <title>Thuyết trình Đề xuất ezREMS | Công ty Cổ phần ZEONS</title>
   <!-- Favicon Links -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -80,7 +80,7 @@
       stroke-width: 2.4;
     }
   
-    /* 滚动长文档模式专属：隐藏标题分割线以防与卡片外框重叠冲突 */
+    /* Chế độ tài liệu cuộn: Ẩn đường phân cách tiêu đề slide để tránh chồng chéo với viền hộp bên dưới */
     #scroll-content .slide-header {
       border-bottom: none !important;
       padding-bottom: 0.375rem !important; /* pb-1.5 */
@@ -205,7 +205,7 @@
             <span class="text-xs font-semibold tracking-wider text-blue-400 uppercase flex items-center gap-1.5">
               <i data-lucide="presentation" class="text-[11px]"></i> Proposal PT
             </span>
-            <span class="text-xs text-slate-300 block leading-tight font-medium">收益型不动产，运营已成为核心</span>
+            <span class="text-xs text-slate-300 block leading-tight font-medium">Bất động sản tạo doanh thu — Bây giờ vận hành là cốt lõi</span>
           </div>
         </a>
       </div>
@@ -214,11 +214,11 @@
       <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 shadow-inner">
         <button id="btn-mode-pt" onclick="switchMode('pt')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow">
           <i data-lucide="monitor" class="text-xs"></i>
-          <span>幻灯片演播模式</span>
+          <span>Chế độ Trình chiếu PT</span>
         </button>
         <button id="btn-mode-scroll" onclick="switchMode('scroll')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all">
           <i data-lucide="file-text" class="text-xs"></i>
-          <span>滚动长文档模式</span>
+          <span>Chế độ Cuộn Tài liệu</span>
         </button>
       </div>
 
@@ -231,26 +231,26 @@
             <option value="index.html" class="bg-slate-900 text-white">🇰🇷 KO (한국어)</option>
             <option value="index_en.html" class="bg-slate-900 text-white">🇺🇸 EN (English)</option>
             <option value="index_ja.html" class="bg-slate-900 text-white">🇯🇵 JA (日本語)</option>
-            <option value="index_zh.html" class="bg-slate-900 text-white" selected>🇨🇳 ZH (中文)</option>
-            <option value="index_vi.html" class="bg-slate-900 text-white">🇻🇳 VI (Tiếng Việt)</option>
+            <option value="index_zh.html" class="bg-slate-900 text-white">🇨🇳 ZH (中文)</option>
+            <option value="index_vi.html" class="bg-slate-900 text-white" selected>🇻🇳 VI (Tiếng Việt)</option>
             <option value="index_th.html" class="bg-slate-900 text-white">🇹🇭 TH (ภาษาไทย)</option>
           </select>
           <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
         </div>
-        <button onclick="toggleTocModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 flex items-center space-x-1.5 transition" title="演示目录 (M)">
+        <button onclick="toggleTocModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 flex items-center space-x-1.5 transition" title="Mục lục (M)">
           <i data-lucide="list" class="text-slate-400"></i>
-          <span class="hidden md:inline">演示目录</span>
+          <span class="hidden md:inline">Mục lục</span>
         </button>
-        <button onclick="openGalleryModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-medium border border-cyan-900/40 flex items-center space-x-1.5 transition" title="原版幻灯片">
+        <button onclick="openGalleryModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-medium border border-cyan-900/40 flex items-center space-x-1.5 transition" title="Slide Gốc">
           <i data-lucide="images" class="text-cyan-400"></i>
-          <span class="hidden md:inline">原版幻灯片</span>
+          <span class="hidden md:inline">Slide Gốc</span>
         </button>
-        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="全屏模式 (F)">
+        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="Toàn màn hình (F)">
           <i id="fs-icon" data-lucide="maximize" class="w-4 h-4 text-slate-300"></i>
         </button>
         <button onclick="openContactModal()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition flex items-center space-x-1.5">
           <i data-lucide="send" class="text-xs"></i>
-          <span>咨询合作</span>
+          <span>Tư vấn & Hợp tác</span>
         </button>
       </div>
     </div>
@@ -274,12 +274,12 @@
             <i data-lucide="bookmark" class="text-[10px]"></i>
             <span>Chapter 1</span>
           </span>
-          <span id="slide-topic" class="text-slate-300 font-medium hidden sm:inline">ezREMS 智能资管解决方案演示</span>
+          <span id="slide-topic" class="text-slate-300 font-medium hidden sm:inline">Đề xuất Giải pháp ezREMS</span>
         </div>
 
         <!-- Navigation Buttons & Page Number -->
         <div class="flex items-center space-x-3">
-          <button onclick="prevSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="上一页 (←)">
+          <button onclick="prevSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="Trước (←)">
             <i data-lucide="chevron-left" class="text-xs"></i>
           </button>
           
@@ -289,16 +289,16 @@
             <span id="slide-total-num">20</span>
           </div>
 
-          <button onclick="nextSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="下一页 (→ / Space)">
+          <button onclick="nextSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="Tiếp (→ / Space)">
             <i data-lucide="chevron-right" class="text-xs"></i>
           </button>
         </div>
 
         <!-- Quick Actions on Slide Footer -->
         <div class="flex items-center space-x-2">
-          <button id="btn-orig-slide" onclick="viewCurrentOriginalSlide()" class="text-xs text-slate-400 hover:text-cyan-400 transition flex items-center space-x-1.5" title="查看原版幻灯片">
+          <button id="btn-orig-slide" onclick="viewCurrentOriginalSlide()" class="text-xs text-slate-400 hover:text-cyan-400 transition flex items-center space-x-1.5" title="Xem Slide Gốc">
             <i data-lucide="zoom-in" class="text-xs"></i>
-            <span class="hidden md:inline">查看原版幻灯片</span>
+            <span class="hidden md:inline">Xem Slide Gốc</span>
           </button>
         </div>
       </div>
@@ -311,10 +311,10 @@
 
     <!-- Keyboard Navigation Helper Badge -->
     <div class="mt-2 text-slate-500 text-[11px] hidden sm:flex items-center space-x-4">
-      <span><i data-lucide="keyboard" class="mr-1"></i>快捷键: <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">→</kbd> 切换幻灯片</span>
-      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">Space</kbd> 下一页</span>
-      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">F</kbd> 全屏浏览</span>
-      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">M</kbd> 演示目录</span>
+      <span><i data-lucide="keyboard" class="mr-1"></i>Phím tắt: <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">→</kbd> Chuyển slide</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">Space</kbd> Tiếp</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">F</kbd> Toàn màn hình</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">M</kbd> Mục lục</span>
     </div>
   </main>
 
@@ -329,7 +329,7 @@
       <div class="p-4 border-b border-slate-800 flex items-center justify-between">
         <div class="flex items-center space-x-2">
           <i data-lucide="list-checks" class="text-blue-400"></i>
-          <h3 class="font-bold text-slate-200">方案演播演示全景目录</h3>
+          <h3 class="font-bold text-slate-200">Mục lục Thuyết trình Đề xuất</h3>
         </div>
         <button onclick="toggleTocModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
           <i data-lucide="x" class="text-lg"></i>
@@ -346,17 +346,17 @@
       <div class="p-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-sm">
         <div class="flex items-center space-x-2">
           <span class="px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800/50 rounded text-xs font-semibold flex items-center gap-1">
-            <i data-lucide="file-text" class=""></i> 原版 PDF 幻灯片
+            <i data-lucide="file-text" class=""></i> Slide PDF Gốc
           </span>
-          <span id="orig-modal-title" class="text-slate-300 font-medium">查阅原版提案对应页面</span>
+          <span id="orig-modal-title" class="text-slate-300 font-medium">Kiểm tra Trang Slide Gốc của Đề xuất</span>
         </div>
         <div class="flex items-center space-x-2">
           <button onclick="prevOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
-            <i data-lucide="chevron-left" class="text-[10px]"></i> 上一页
+            <i data-lucide="chevron-left" class="text-[10px]"></i> Trước
           </button>
           <span id="orig-page-indicator" class="font-mono text-xs text-blue-400">P.01 / 56</span>
           <button onclick="nextOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
-            下一页 <i data-lucide="chevron-right" class="text-[10px]"></i>
+            Tiếp <i data-lucide="chevron-right" class="text-[10px]"></i>
           </button>
           <button onclick="closeOriginalModal()" class="text-slate-400 hover:text-white ml-3 p-1">
             <i data-lucide="x" class="text-lg"></i>
@@ -369,7 +369,7 @@
       </div>
       <!-- Footer Note -->
       <div class="p-2 bg-slate-950 text-center text-xs text-slate-500 border-t border-slate-800">
-        提案书原版：[ZEONS] ezREMS - 收益型不动产 运营已成核心_v3.3.pdf
+        Bản gốc Đề xuất: [ZEONS] ezREMS - Bất động sản tạo doanh thu Bây giờ vận hành là cốt lõi_v3.3.pdf
       </div>
     </div>
   </div>
@@ -381,10 +381,10 @@
         <div>
           <h3 class="font-bold text-slate-100 flex items-center space-x-2">
             <i data-lucide="layers" class="text-cyan-400"></i>
-            <span>原版提案 56页全套幻灯片画廊</span>
-            <span class="text-xs font-normal text-cyan-400 bg-cyan-950/70 border border-cyan-800/40 px-2 py-0.5 rounded">高清矢量图解</span>
+            <span>Bộ sưu tập Slide PDF Gốc Toàn bộ 56 Trang</span>
+            <span class="text-xs font-normal text-cyan-400 bg-cyan-950/70 border border-cyan-800/40 px-2 py-0.5 rounded">Trích xuất Độ nét cao</span>
           </h3>
-          <p class="text-xs text-slate-400">点击任意缩略图即可在高清视窗中无损放大查阅原始报表。</p>
+          <p class="text-xs text-slate-400">Nhấp chuột để xem ngay slide tương ứng ở độ phân giải lớn.</p>
         </div>
         <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white p-2">
           <i data-lucide="x" class="text-xl"></i>
@@ -405,37 +405,37 @@
         <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30 shadow-lg shadow-blue-500/20">
           <i data-lucide="message-square" class="text-xl"></i>
         </div>
-        <h3 class="text-xl font-bold text-white">ezREMS 商务合作与方案演示咨询</h3>
-        <p class="text-xs text-slate-400 mt-1">我们将竭诚为贵司提供深度资产运营专项诊断咨询与系统真实环境全景实操演示。</p>
+        <h3 class="text-xl font-bold text-white">Yêu cầu Tư vấn Triển khai & Trình diễn Demo ezREMS</h3>
+        <p class="text-xs text-slate-400 mt-1">Chúng tôi cung cấp dịch vụ tư vấn quản lý tài sản chuyên biệt theo nhu cầu doanh nghiệp và buổi trình diễn hệ thống miễn phí.</p>
       </div>
 
       <div class="space-y-3 bg-slate-950/70 p-4 rounded-xl border border-slate-800 text-sm">
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="building" class="text-slate-500"></i> 运营管理机构</span>
-          <span class="font-medium text-white">ZEONS 株式社</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="building" class="text-slate-500"></i> Đơn vị Vận hành</span>
+          <span class="font-medium text-white">Công ty Cổ phần ZEONS (ZEONS, Inc.)</span>
         </div>
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="globe" class="text-slate-500"></i> 官方网站</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="globe" class="text-slate-500"></i> Trang web</span>
           <a href="https://www.ezrems.com" target="_blank" class="text-blue-400 hover:underline">www.ezrems.com</a>
         </div>
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="map-pin" class="text-slate-500"></i> 总部办公地址</span>
-          <span class="text-slate-300 text-right text-xs">首尔市江南区宣陵路93街40号 2层</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="map-pin" class="text-slate-500"></i> Địa chỉ Trụ sở</span>
+          <span class="text-slate-300 text-right text-xs">Tầng 2, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Hàn Quốc</span>
         </div>
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="graduation-cap" class="text-slate-500"></i> 资深专业团队</span>
-          <span class="text-emerald-400 text-xs font-semibold">KPM 国家认证不动产资管高级专家</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="graduation-cap" class="text-slate-500"></i> Đội ngũ Chuyên gia</span>
+          <span class="text-emerald-400 text-xs font-semibold">Chuyên gia Quản lý Tài sản Bất động sản Được Chứng nhận KPM</span>
         </div>
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="phone" class="text-slate-500"></i> 官方总机电话</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="phone" class="text-slate-500"></i> Điện thoại Đại diện</span>
           <span class="text-slate-200 font-semibold text-xs">TEL : 070-8811-8881</span>
         </div>
         <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="printer" class="text-slate-500"></i> 传真号码</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="printer" class="text-slate-500"></i> Số Fax</span>
           <span class="text-slate-300 text-xs">FAX : 070-4850-8848</span>
         </div>
         <div class="flex justify-between items-center py-1">
-          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="mail" class="text-slate-500"></i> 商务对接邮箱</span>
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="mail" class="text-slate-500"></i> Email Đại diện</span>
           <span class="text-blue-400 font-medium text-xs">EMAIL : support@zeons.co.kr</span>
         </div>
       </div>
@@ -443,11 +443,11 @@
       <div class="mt-6 flex space-x-3">
         <a href="https://pms.ezrems.com" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-center py-2.5 rounded-xl font-medium text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
           <i data-lucide="external-link" class=""></i>
-          <span>深入了解 PMS 核心系统</span>
+          <span>Tham quan Hệ thống PMS</span>
         </a>
         <a href="https://www.ezrems.com" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-center py-2.5 rounded-xl font-medium text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-1.5">
           <i data-lucide="home" class=""></i>
-          <span>访问官方网站了解更多</span>
+          <span>Truy cập Trang web Chính thức</span>
         </a>
       </div>
     </div>
@@ -459,29 +459,29 @@
     const slidesData = [
       {
         id: "slide-01",
-        chapter: "简介",
-        topic: "封面",
+        chapter: "Giới thiệu",
+        topic: "Trang bìa",
         origPage: 1,
         render: () => `
           <div class="h-full flex flex-col justify-between items-center text-center py-4">
             <div class="flex items-center space-x-2.5 bg-blue-950/70 border border-blue-800/50 px-4 py-1.5 rounded-full shadow-lg">
               <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
               <i data-lucide="zap" class="text-cyan-400 text-xs"></i>
-              <span class="text-xs font-semibold text-cyan-300 tracking-wide">智能资产管理平台 | 金融科技 X 房产科技</span>
+              <span class="text-xs font-semibold text-cyan-300 tracking-wide">Nền tảng Quản lý Tài sản Thông minh | FinTech X PropTech</span>
             </div>
 
             <div class="max-w-3xl space-y-4 my-auto">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs text-slate-300 mb-1">
                 <i data-lucide="sparkles" class="text-amber-400"></i>
-                <span>房地产资产运营管理的全新范式</span>
+                <span>Kỷ nguyên Mới trong Quản lý & Vận hành Tài sản Bất động sản</span>
               </div>
               <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-                收益型不动产，<br>
-                <span class="gradient-text">运营已成为制胜核心</span>
+                Bất động sản Sinh lời,<br>
+                <span class="gradient-text">Giờ đây, Vận hành là Cốt lõi</span>
               </h1>
               <p class="text-slate-300 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
-                覆盖全部有形与无形空间的租赁运营管理一体化平台<br>
-                <span class="text-blue-400 font-bold"><i data-lucide="cloud-upload" class="mr-1 text-cyan-400"></i>ezREMS</span>开启您的数字化转型 (DX) 之旅。
+                Nền tảng Tất-cả-trong-một Vận hành Cho thuê Mọi Không gian Hữu hình & Vô hình<br>
+                <span class="text-blue-400 font-bold"><i data-lucide="cloud-upload" class="mr-1 text-cyan-400"></i>ezREMS</span> — Khởi đầu Chuyển đổi Số (DX) ngay hôm nay.
               </p>
             </div>
 
@@ -491,7 +491,7 @@
                   <i data-lucide="brain" class=""></i>
                 </div>
                 <div class="text-cyan-400 font-extrabold text-xl sm:text-2xl">99.6%</div>
-                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">AI预测收缴率</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">Tỷ lệ Thu hồi Dự đoán bởi AI</div>
               </div>
 
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-blue-500/50 transition">
@@ -499,29 +499,29 @@
                   <i data-lucide="building-2" class=""></i>
                 </div>
                 <div class="text-blue-400 font-extrabold text-xl sm:text-2xl">55,000+</div>
-                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">累计管理房源空间</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">Không gian Quản lý Tích lũy</div>
               </div>
 
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-amber-500/50 transition">
                 <div class="icon-badge icon-badge-amber w-10 h-10 mx-auto mb-2 text-base">
                   <i data-lucide="award" class=""></i>
                 </div>
-                <div class="text-amber-400 font-extrabold text-xl sm:text-2xl">20年+</div>
-                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">房产科技专业沉淀</div>
+                <div class="text-amber-400 font-extrabold text-xl sm:text-2xl">20 năm+</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">Kinh nghiệm Chuyên sâu PropTech</div>
               </div>
             </div>
 
             <div class="text-slate-500 text-xs flex items-center gap-2">
               <i data-lucide="building" class="text-slate-600"></i>
-              <span>演讲企业：ZEONS 株式社 | www.ezrems.com</span>
+              <span>Doanh nghiệp Trình bày: ZEONS, Inc. | www.ezrems.com</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-02",
-        chapter: "议程",
-        topic: "方案演示目录",
+        chapter: "Mục lục chương trình",
+        topic: "Mục lục Thuyết trình Đề xuất",
         origPage: 2,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -530,10 +530,10 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="list" class=""></i> Table of Contents
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">提案发表 目录 (议程)</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Mục lục Thuyết trình Đề xuất (Mục lục chương trình)</h2>
               </div>
               <span class="text-xs text-slate-400 bg-slate-800/60 px-3 py-1 rounded-lg border border-slate-700/60">
-                <i data-lucide="clock" class="mr-1"></i> 共4个核心章节
+                <i data-lucide="clock" class="mr-1"></i> Tổng cộng 4 Phần cốt lõi
               </span>
             </div>
 
@@ -545,8 +545,8 @@
                   </div>
                   <div>
                     <div class="text-xs font-bold text-blue-400 uppercase">Part 01</div>
-                    <h3 class="font-bold text-slate-100 group-hover:text-blue-300 text-base">房地产市场的巨变与新趋势</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">全球72万亿韩元PMS市场、月租化激增(57.4%)、AI资产管理</p>
+                    <h3 class="font-bold text-slate-100 group-hover:text-blue-300 text-base">Sự chuyển dịch to lớn của thị trường bất động sản</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Thị trường PMS toàn cầu 72 nghìn tỷ KRW, thuê hàng tháng trong nước tăng vọt (57.4%), Quản lý tài sản AI</p>
                   </div>
                 </div>
               </div>
@@ -558,8 +558,8 @@
                   </div>
                   <div>
                     <div class="text-xs font-bold text-amber-400 uppercase">Part 02</div>
-                    <h3 class="font-bold text-slate-100 group-hover:text-amber-300 text-base">不动产资产运营的实务痛点与瓶颈</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">占据建筑全生命周期成本80%的运营管理及Excel人工管理的风险</p>
+                    <h3 class="font-bold text-slate-100 group-hover:text-amber-300 text-base">Hạn chế thực tế trong vận hành tài sản bất động sản</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quản lý vận hành chiếm 80% chi phí vòng đời tòa nhà & Nguy cơ từ công việc thủ công trên Excel</p>
                   </div>
                 </div>
               </div>
@@ -571,8 +571,8 @@
                   </div>
                   <div>
                     <div class="text-xs font-bold text-cyan-400 uppercase">Part 03</div>
-                    <h3 class="font-bold text-slate-100 group-hover:text-cyan-300 text-base">智能资产管理平台 ezREMS</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">SaaS一体化ERP、租户移动端、电子通知、线上刷卡快捷收缴</p>
+                    <h3 class="font-bold text-slate-100 group-hover:text-cyan-300 text-base">Nền tảng Quản lý Tài sản Thông minh ezREMS</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">ERP Tất cả-trong-một dạng SaaS, Ứng dụng Tenant Connect, Tài liệu điện tử, Đổi mới Cổng thanh toán thẻ PG</p>
                   </div>
                 </div>
               </div>
@@ -584,8 +584,8 @@
                   </div>
                   <div>
                     <div class="text-xs font-bold text-emerald-400 uppercase">Part 04</div>
-                    <h3 class="font-bold text-slate-100 group-hover:text-emerald-300 text-base">标杆客户运营案例与权威实证数据</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">K-REITs全国10栋写字楼、复合商业综合体、欠缴率骤降、能耗公摊自动化</p>
+                    <h3 class="font-bold text-slate-100 group-hover:text-emerald-300 text-base">Các trường hợp vận hành thực tế đã được kiểm chứng & Dữ liệu thực nghiệm của khách hàng</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">10 Tòa nhà K-REITs, Trung tâm mua sắm Alleyway, Tỷ lệ quá hạn Jeil Punggyeongchae giảm mạnh, Tự động hóa phân bổ chi phí điện nước</p>
                   </div>
                 </div>
               </div>
@@ -594,10 +594,10 @@
             <div class="p-3 rounded-xl bg-blue-950/30 flex items-center justify-between text-xs text-slate-300">
               <span class="flex items-center gap-2">
                 <i data-lucide="shield-check" class="text-amber-400"></i>
-                ZEONS 20年房产科技积淀 · 10大有形/无形资产拓展ERP · 重大灾害安全生产健康 (EASY SAFE)
+                20 năm Bí quyết PropTech của ZEONS · ERP Mở rộng 10 Tài sản Hữu/Vô hình · An toàn Lao động (EASY SAFE)
               </span>
               <button onclick="goToSlide(19)" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
-                查看公司概况与路线图 <i data-lucide="arrow-right" class="text-[10px]"></i>
+                Xem Giới thiệu Công ty & Lộ trình <i data-lucide="arrow-right" class="text-[10px]"></i>
               </button>
             </div>
           </div>
@@ -605,8 +605,8 @@
       },
       {
         id: "slide-03",
-        chapter: "第一章. 市场环境与趋势",
-        topic: "全球市场分析：房地产资产管理系统(PMS)市场规模与趋势",
+        chapter: "Chương 1. Thị trường",
+        topic: "Phân tích Thị trường Toàn cầu: Quy mô & Xu hướng Hệ thống Quản lý Bất động sản (PMS)",
         origPage: 4,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -615,15 +615,15 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="globe" class="text-cyan-400"></i> Market Trend 01 (Global)
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">全球不动产物业资产管理系统 (PMS) 市场规模与发展趋势</h2>
-                <p class="text-slate-400 text-xs mt-0.5">欧美发达国家普遍验证的必备数字基建，2032年全球市场规模将激增至72万亿韩元。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Quy mô & Xu hướng Thị trường Hệ thống Quản lý Bất động sản (PMS) Toàn cầu</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Hạ tầng thiết yếu đã được kiểm chứng tại các quốc gia phát triển như Mỹ và Châu Âu, tăng trưởng mạnh mẽ đạt thị trường 72 nghìn tỷ KRW toàn cầu vào năm 2032.</p>
               </div>
               <div class="flex items-center gap-2">
                 <span class="px-3 py-1 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-black text-xs shadow-lg shadow-rose-600/30 border border-rose-400/40 animate-pulse">
-                  <i data-lucide="flame" class="mr-1"></i> 全球市场规模 72万亿韩元
+                  <i data-lucide="flame" class="mr-1"></i> Quy mô thị trường toàn cầu 72 nghìn tỷ KRW
                 </span>
-                <button onclick="openCustomImageModal('images/case_global_market.png', '全球PMS市场分析报告 (Fortune Business Insights)')" class="hidden sm:flex whitespace-nowrap flex-shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
-                  <i data-lucide="pie-chart" class=""></i> 查看报告原文
+                <button onclick="openCustomImageModal('images/case_global_market.png', 'Báo cáo Thị trường PMS Toàn cầu (Fortune Business Insights)')" class="hidden sm:flex whitespace-nowrap flex-shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                  <i data-lucide="pie-chart" class=""></i> Xem Báo cáo Gốc
                 </button>
               </div>
             </div>
@@ -637,40 +637,40 @@
                   <div class="p-3 rounded-xl bg-slate-950/70 border border-blue-900/40 space-y-1">
                     <div class="flex items-center gap-1.5 text-blue-400 font-bold">
                       <i data-lucide="building" class=""></i>
-                      <span>发达国家标准化必备基础设施</span>
+                      <span>Thương mại hóa hạ tầng thiết yếu tại các nước phát triển</span>
                     </div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      PMS在欧美发达市场已成为高度标准化且不可或缺的核心运营基建。
+                      PMS đã hoàn toàn trở thành nền tảng vận hành thiết yếu được tiêu chuẩn hóa tại các thị trường toàn cầu như Mỹ và Châu Âu
                     </p>
                   </div>
 
                   <div class="p-3 rounded-xl bg-slate-950/70 border border-cyan-900/40 space-y-1">
                     <div class="flex items-center gap-1.5 text-cyan-400 font-bold">
                       <i data-lucide="cloud-upload" class=""></i>
-                      <span>SaaS与全面上云进程加速</span>
+                      <span>Tăng tốc SaaS & Đám mây</span>
                     </div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      从本地部署迅速转向100%云端SaaS，对一体化平台的依赖全面加深。
+                      Chuyển đổi nhanh chóng từ cài đặt nội bộ (On-Premises) sang 100% Cloud SaaS, phụ thuộc ngày càng sâu vào nền tảng tích hợp
                     </p>
                   </div>
 
                   <div class="p-3 rounded-xl bg-slate-950/70 border border-amber-900/40 space-y-1">
                     <div class="flex items-center gap-1.5 text-amber-400 font-bold">
                       <i data-lucide="trophy" class=""></i>
-                      <span>美国「AppFolio」市值达13万亿韩元</span>
+                      <span>AppFolio (Mỹ) vốn hóa thị trường 13 nghìn tỷ KRW</span>
                     </div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      美股上市公司AppFolio(市值13万亿韩元)、Yardi、RealPage等全球独角兽齐聚竞争。
+                      Các kỳ lân toàn cầu cạnh tranh như AppFolio niêm yết tại Mỹ (vốn hóa 13 nghìn tỷ KRW), Yardi, RealPage
                     </p>
                   </div>
 
                   <div class="p-3 rounded-xl bg-slate-950/70 border border-emerald-900/40 space-y-1">
                     <div class="flex items-center gap-1.5 text-emerald-400 font-bold">
                       <i data-lucide="zap" class=""></i>
-                      <span>亚太地区(APAC)增速领跑全球</span>
+                      <span>Khu vực APAC tăng trưởng với tốc độ cao nhất</span>
                     </div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      在全球10.1%年均复合增长率下，包含韩国在内的亚太地区增速位居第一。
+                      Trong tốc độ tăng trưởng bình quân hàng năm 10.1% toàn cầu, khu vực Châu Á - Thái Bình Dương bao gồm Hàn Quốc tăng trưởng nhanh nhất
                     </p>
                   </div>
                 </div>
@@ -680,26 +680,26 @@
                   <table class="w-full text-left">
                     <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
                       <tr>
-                        <th class="py-2 px-3 w-1/2">全球市场调研核心指标</th>
-                        <th class="py-2 px-3 w-1/2 text-cyan-400 font-bold">财富商业洞察 (Fortune Business Insights)</th>
+                        <th class="py-2 px-3 w-1/2">Chỉ số Nghiên cứu Thị trường Toàn cầu</th>
+                        <th class="py-2 px-3 w-1/2 text-cyan-400 font-bold">Fortune Business Insights (10/2025)</th>
                       </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300 text-[11px]">
                       <tr>
-                        <td class="py-1.5 px-3 font-medium text-white">2024年 全球市场规模</td>
-                        <td class="py-1.5 px-3 font-semibold text-slate-300">约241.8亿美元 <span class="text-blue-400">(约33万亿韩元)</span></td>
+                        <td class="py-1.5 px-3 font-medium text-white">Quy mô thị trường toàn cầu năm 2024</td>
+                        <td class="py-1.5 px-3 font-semibold text-slate-300">Khoảng 24.18 tỷ USD <span class="text-blue-400">(khoảng 33 nghìn tỷ KRW)</span></td>
                       </tr>
                       <tr>
-                        <td class="py-1.5 px-3 font-medium text-white">2032年 预计全球市场规模</td>
-                        <td class="py-1.5 px-3 font-extrabold text-amber-400">约522.1亿美元 <span class="text-rose-400 text-xs">(约72万亿韩元)</span></td>
+                        <td class="py-1.5 px-3 font-medium text-white">Dự báo quy mô thị trường toàn cầu năm 2032</td>
+                        <td class="py-1.5 px-3 font-extrabold text-amber-400">Khoảng 52.21 tỷ USD <span class="text-rose-400 text-xs">(khoảng 72 nghìn tỷ KRW)</span></td>
                       </tr>
                       <tr>
-                        <td class="py-1.5 px-3 font-medium text-white">年均复合增长率 (CAGR 2025~2032)</td>
-                        <td class="py-1.5 px-3 font-bold text-emerald-400">持续10.1%高复合增长</td>
+                        <td class="py-1.5 px-3 font-medium text-white">Tốc độ tăng trưởng kép hàng năm (CAGR 2025~2032)</td>
+                        <td class="py-1.5 px-3 font-bold text-emerald-400">Tăng trưởng Cao Bền vững 10.1%</td>
                       </tr>
                       <tr>
-                        <td class="py-1.5 px-3 font-medium text-white">2025年 各地区市场份额</td>
-                        <td class="py-1.5 px-3 text-slate-400">北美 37%，<strong class="text-cyan-400">亚太 30%</strong>，欧洲 20%，其他 13%</td>
+                        <td class="py-1.5 px-3 font-medium text-white">Thị phần theo khu vực năm 2025</td>
+                        <td class="py-1.5 px-3 text-slate-400">Bắc Mỹ 37%, <strong class="text-cyan-400">APAC 30%</strong>, Châu Âu 20%, Khác 13%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -714,9 +714,9 @@
                     <div>
                       <div class="flex items-center gap-1.5 text-xs font-bold text-cyan-400">
                         <i data-lucide="trending-up" class=""></i>
-                        <span>全球PMS市场规模预测走势</span>
+                        <span>Xu hướng & Dự báo Quy mô Thị trường PMS Toàn cầu</span>
                       </div>
-                      <h4 class="text-sm sm:text-base font-extrabold text-white mt-0.5">2024年 33万亿韩元 ➔ 2032年 72万亿韩元 (激增2.2倍)</h4>
+                      <h4 class="text-sm sm:text-base font-extrabold text-white mt-0.5">Năm 2024: 33 nghìn tỷ KRW ➔ Năm 2032: 72 nghìn tỷ KRW (Tăng trưởng bùng nổ gấp 2.2 lần)</h4>
                     </div>
                     <span class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-[11px] shadow-md shadow-emerald-900/40 whitespace-nowrap flex-shrink-0">
                       CAGR +10.1%
@@ -728,12 +728,12 @@
                     <div class="h-40 w-full flex items-end justify-between gap-2 sm:gap-3 pt-6 pb-2 border-b border-slate-800 relative">
                       <!-- Trend Tag overlay -->
                       <div class="absolute top-0 right-1 flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full shadow">
-                        <i data-lucide="arrow-up-right" class="text-xs"></i> 8年累计扩张超+116%
+                        <i data-lucide="arrow-up-right" class="text-xs"></i> Mở rộng lũy kế +116% trong 8 năm
                       </div>
 
                       <!-- 2024 Bar -->
                       <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-blue-400 transition">33万亿</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-blue-400 transition">24 tỷ USD</span>
                         <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-blue-600 relative overflow-hidden shadow" style="height: 46%;">
                           <div class="w-full h-full bg-blue-600/70"></div>
                         </div>
@@ -742,7 +742,7 @@
 
                       <!-- 2026 Bar -->
                       <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-cyan-400 transition">41万亿</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-cyan-400 transition">30 tỷ USD</span>
                         <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-cyan-600 relative overflow-hidden shadow" style="height: 57%;">
                           <div class="w-full h-full bg-blue-500/70"></div>
                         </div>
@@ -751,7 +751,7 @@
 
                       <!-- 2028 Bar -->
                       <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-indigo-400 transition">50万亿</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-indigo-400 transition">37 tỷ USD</span>
                         <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-indigo-600 relative overflow-hidden shadow" style="height: 69%;">
                           <div class="w-full h-full bg-indigo-500/70"></div>
                         </div>
@@ -760,7 +760,7 @@
 
                       <!-- 2030 Bar -->
                       <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-purple-400 transition">61万亿</span>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-purple-400 transition">45 tỷ USD</span>
                         <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-purple-600 relative overflow-hidden shadow" style="height: 84%;">
                           <div class="w-full h-full bg-purple-500/80"></div>
                         </div>
@@ -770,8 +770,8 @@
                       <!-- 2032 Target Bar (Highlighted!) -->
                       <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
                         <div class="flex flex-col items-center">
-                          <span class="text-[9px] text-amber-300 font-bold bg-amber-950/80 px-1 rounded border border-amber-500/40 animate-pulse">2.2倍</span>
-                          <span class="text-[11px] sm:text-xs font-extrabold text-amber-400">72万亿韩元</span>
+                          <span class="text-[9px] text-amber-300 font-bold bg-amber-950/80 px-1 rounded border border-amber-500/40 animate-pulse">2,2 lần</span>
+                          <span class="text-[11px] sm:text-xs font-extrabold text-amber-400">52,2 tỷ USD</span>
                         </div>
                         <div class="w-full rounded-t-lg transition-all duration-700 relative overflow-hidden shadow-lg shadow-amber-500/20 border-t-2 border-amber-400" style="height: 100%;">
                           <div class="w-full h-full bg-gradient-to-t from-blue-600 via-indigo-600 to-amber-500"></div>
@@ -785,24 +785,24 @@
                   <div class="grid grid-cols-2 gap-2 text-xs">
                     <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
                       <div class="text-slate-400 text-[10px] flex items-center gap-1">
-                        <i data-lucide="activity" class="text-cyan-400 text-xs"></i> 2032年 市场总值
+                        <i data-lucide="activity" class="text-cyan-400 text-xs"></i> Quy mô thị trường năm 2032
                       </div>
-                      <div class="text-xs sm:text-sm font-extrabold text-white">522.1亿美元 <span class="text-cyan-400 text-xs">(72万亿韩元)</span></div>
+                      <div class="text-xs sm:text-sm font-extrabold text-white">52.21 tỷ USD <span class="text-cyan-400 text-xs">(72 nghìn tỷ KRW)</span></div>
                     </div>
                     <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
                       <div class="text-slate-400 text-[10px] flex items-center gap-1">
-                        <i data-lucide="compass" class="text-emerald-400 text-xs"></i> 亚太地区 (APAC)
+                        <i data-lucide="compass" class="text-emerald-400 text-xs"></i> Châu Á - Thái Bình Dương (APAC)
                       </div>
-                      <div class="text-xs sm:text-sm font-extrabold text-emerald-400">市占率 30% <span class="text-slate-400 text-xs font-normal">(全球第二)</span></div>
+                      <div class="text-xs sm:text-sm font-extrabold text-emerald-400">Thị phần 30% <span class="text-slate-400 text-xs font-normal">(Thứ 2 toàn cầu)</span></div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Footer Source info -->
                 <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex justify-between items-center">
-                  <span>来源：Fortune Business Insights (2025.10 全球PMS行业分析报告)</span>
-                  <button onclick="openCustomImageModal('images/case_global_market.png', '全球PMS市场分析报告 (Fortune Business Insights)')" class="text-blue-400 hover:text-cyan-300 underline flex items-center gap-1">
-                    <i data-lucide="external-link" class="text-xs"></i> 打开原始行业报告
+                  <span>Nguồn: Fortune Business Insights (Phân tích PMS Toàn cầu 10/2025)</span>
+                  <button onclick="openCustomImageModal('images/case_global_market.png', 'Báo cáo Thị trường PMS Toàn cầu (Fortune Business Insights)')" class="text-blue-400 hover:text-cyan-300 underline flex items-center gap-1">
+                    <i data-lucide="external-link" class="text-xs"></i> Mở Báo cáo Gốc
                   </button>
                 </div>
               </div>
@@ -811,17 +811,17 @@
             <!-- Footer Message -->
             <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
               <span class="flex items-center gap-2">
-                <i data-lucide="globe" class="text-cyan-400"></i> 全球不动产物业管理市场已全面完成向云端PMS为核心的重组。
+                <i data-lucide="globe" class="text-cyan-400"></i> Thị trường bất động sản toàn cầu đã hoàn tất việc tái cấu trúc xoay quanh Cloud PMS
               </span>
-              <span class="text-white font-bold bg-blue-600/80 px-2.5 py-0.5 rounded">引领韩国房地产科技的领航者: ezREMS</span>
+              <span class="text-white font-bold bg-blue-600/80 px-2.5 py-0.5 rounded">Tiên phong PropTech tại Hàn Quốc: ezREMS</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-04",
-        chapter: "第一章. 市场环境与趋势",
-        topic: "房地产市场变革：月租化激增与房东运营负荷",
+        chapter: "Chương 1. Thị trường",
+        topic: "Biến động Thị trường: Bùng nổ Cho thuê Tháng & Khối lượng Công việc Chủ nhà",
         origPage: 4,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -829,8 +829,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="trending-up" class=""></i> Market Trend 02 (Domestic)
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">月租偏好激增导致房东日常运营负荷呈几何级暴增</h2>
-              <p class="text-slate-400 text-xs mt-0.5">受押金安全顾虑与利率波动双重影响，超过半数的租赁交易已全面转换为按月收租模式。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Xu hướng Thuê tháng Tăng mạnh khiến Khối lượng Công việc Chủ nhà Bùng nổ</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Do lo ngại gian lận đặt cọc và biến động lãi suất, đa số giao dịch thuê đã chuyển đổi sang thuê tháng.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
@@ -841,16 +841,16 @@
                     <div class="icon-badge icon-badge-blue w-11 h-11 text-lg">
                       <i data-lucide="pie-chart" class=""></i>
                     </div>
-                    <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">历史最高纪录</span>
+                    <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">Mức cao kỷ lục</span>
                   </div>
                   <div class="text-3xl sm:text-4xl font-black text-white mt-3">57.4%</div>
-                  <div class="text-xs font-semibold text-slate-300 mt-1">租赁交易中月租房占比</div>
+                  <div class="text-xs font-semibold text-slate-300 mt-1">Tỷ trọng Giao dịch Thuê tháng trong Tổng Giao dịch Thuê</div>
                   <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                    2024年1~11月统计显示，市场由全租房急速转向月租房，房东每月必须处理的财务与催收交易量呈爆发式增长。
+                    Giai đoạn 1-11/2024, thị trường chuyển đổi nhanh chóng sang thuê tháng, khiến giao dịch tài chính chủ nhà phải xử lý hàng tháng bùng nổ.
                   </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center gap-1">
-                  <i data-lucide="building-2" class="text-[10px]"></i> 数据来源：韩国国土交通部实际交易价格公开系统
+                  <i data-lucide="building-2" class="text-[10px]"></i> Nguồn: Hệ thống giá giao dịch thực tế Bộ Đất đai, Hạ tầng & Giao thông
                 </div>
               </div>
 
@@ -863,16 +863,16 @@
                     </div>
                     <span class="text-xs font-bold text-rose-400 bg-rose-950 px-2 py-0.5 rounded border border-rose-800">Pain Point</span>
                   </div>
-                  <div class="text-2xl font-black text-white mt-3">低效重复劳动陷阱</div>
+                  <div class="text-2xl font-black text-white mt-3">Vũng lầy Công việc Lặp lại</div>
                   <ul class="text-xs text-slate-300 mt-2 space-y-1.5">
-                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 人工翻看银行流水逐笔核对 (入账确认)</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 逐一排查欠费租户并人工打电话催缴</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 手动开具电子发票极易产生漏报与罚金风险</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 错失合同到期/续租法定通知时效</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> Đối soát sổ phụ ngân hàng thủ công (Xác nhận tiền vào)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> Xác định người nợ & gọi điện đòi tiền thủ công</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> Rủi ro bỏ sót xuất hóa đơn thuế thủ công</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> Bỏ lỡ thời hạn thông báo hết hạn/gia hạn hợp đồng</li>
                   </ul>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-rose-400 font-medium flex items-center gap-1">
-                  <i data-lucide="alert-triangle" class=""></i> 传统手工Excel管理已彻底触及天花板
+                  <i data-lucide="alert-triangle" class=""></i> Chạm Ngưỡng Giới hạn của Quản lý Excel Thủ công
                 </div>
               </div>
 
@@ -885,28 +885,28 @@
                     </div>
                     <span class="text-xs font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Solution</span>
                   </div>
-                  <div class="text-2xl font-black text-white mt-3">全面数字化自动化</div>
+                  <div class="text-2xl font-black text-white mt-3">Tự động hóa Kỹ thuật số</div>
                   <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                    跨越单纯的中介撮合， <span class="text-emerald-400 font-bold">虚拟账号自动对账·电子账单直达·欠费预警·国税发票自动开具</span>的全流程一站式自动化专业平台已成为不可或缺的刚需。
+                    Vượt xa trung gian đơn thuần, <span class="text-emerald-400 font-bold">Đối soát tài khoản ảo · Gửi hóa đơn điện tử · Ngăn ngừa nợ trễ · Hóa đơn thuế</span> — nền tảng chuyên nghiệp tự động hóa toàn diện từ đầu đến cuối nay là bắt buộc.
                   </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
-                  <i data-lucide="check-circle-2" class=""></i> 全面导入 ezREMS 平台已成必由之路
+                  <i data-lucide="check-circle-2" class=""></i> Bắt buộc Ứng dụng Nền tảng ezREMS
                 </div>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
               <i data-lucide="lightbulb" class="text-amber-400 text-sm"></i>
-              <span><strong class="text-slate-200">市场必然趋势：</strong> “从过去全租房模式的‘粗放式放任出租’，全面迈向每月产生高频金融与税务结算的‘专业精细化运营’大时代”</span>
+              <span><strong class="text-slate-200">Kết luận Thị trường:</strong> "Bước chuyển mình lớn từ 'cho thuê bị động' sang 'cho thuê vận hành chuyên nghiệp' phát sinh giao dịch tài chính & thuế hàng tháng"</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-05",
-        chapter: "第一章. 市场环境与趋势",
-        topic: "房地产市场变革：新型居住趋势与AI资产管理",
+        chapter: "Chương 1. Thị trường",
+        topic: "Biến động Thị trường: Xu hướng Nhà ở Mới & Quản lý Tài sản bằng AI",
         origPage: 7,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -914,8 +914,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="brain" class=""></i> Market Trend 03
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">新型居住业态变迁与99.6%回款率的AI新纪元</h2>
-              <p class="text-slate-400 text-xs mt-0.5">在康养公寓、共享社区与长租住宅多元化爆发格局下，AI智能化水平决定了资产运营的最终胜负。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Xu hướng Nhà ở Mới & Kỷ nguyên AI Thu hồi Đạt 99.6%</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Giữa sự đa dạng của viện dưỡng lão, co-living và nhà ở cho thuê, AI quyết định sự thành bại của quản lý tài sản.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
@@ -923,7 +923,7 @@
               <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
                 <div class="flex items-center justify-between">
                   <h3 class="font-bold text-white text-base flex items-center gap-2">
-                    <i data-lucide="building-2" class="text-cyan-400"></i> 空间产品形态的极速多元化演进
+                    <i data-lucide="building-2" class="text-cyan-400"></i> Sự Đa dạng hóa Nhanh chóng của các Loại hình Không gian
                   </h3>
                   <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800 font-medium">New Living</span>
                 </div>
@@ -933,8 +933,8 @@
                       <i data-lucide="heart-handshake" class=""></i>
                     </div>
                     <div>
-                      <span class="font-bold text-purple-300 text-sm">高端银发康养住宅蓬勃兴起</span>
-                      <p class="text-slate-400 mt-1">伴随老龄化社会加速，高端银发康养社区与医疗照护、营养餐饮一体化运营需求迎来井喷式爆发。</p>
+                      <span class="font-bold text-purple-300 text-sm">Tăng trưởng Mạnh Viện dưỡng lão Cao cấp</span>
+                      <p class="text-slate-400 mt-1">Bùng nổ nhu cầu vận hành không gian dưỡng lão cao cấp kết hợp y tế & ăn uống khi dân số già hóa.</p>
                     </div>
                   </div>
                   <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start gap-3">
@@ -942,8 +942,8 @@
                       <i data-lucide="home" class=""></i>
                     </div>
                     <div>
-                      <span class="font-bold text-cyan-300 text-sm">共享社区(Co-Living)与青年公寓</span>
-                      <p class="text-slate-400 mt-1">面向单身新青年的智能居住运营系统与租客移动端App服务（如MGRV Mangrove）已成标准配置。</p>
+                      <span class="font-bold text-cyan-300 text-sm">Co-Living & Nhà ở Cho thuê Giới trẻ</span>
+                      <p class="text-slate-400 mt-1">Hệ thống vận hành nhà ở thông minh và ứng dụng di động cho hộ độc thân như MGRV (Mangrove) trở thành thiết yếu.</p>
                     </div>
                   </div>
                 </div>
@@ -953,18 +953,18 @@
               <div class="p-5 rounded-2xl glass-card border border-indigo-900/50 space-y-3 bg-gradient-to-br from-slate-900/90 to-indigo-950/40">
                 <div class="flex items-center justify-between">
                   <h3 class="font-bold text-white text-base flex items-center gap-2">
-                    <i data-lucide="bot" class="text-indigo-400"></i> AI彻底重构房地产资产运营全链条
+                    <i data-lucide="bot" class="text-indigo-400"></i> Cách AI Định hình lại Quản lý Bất động sản
                   </h3>
                   <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 border border-indigo-800 font-medium">AI Core</span>
                 </div>
                 <div class="text-center py-2 bg-slate-950/60 rounded-xl border border-indigo-900/40">
-                  <div class="text-4xl sm:text-5xl font-black gradient-text">回款率 99.6%</div>
+                  <div class="text-4xl sm:text-5xl font-black gradient-text">Tỷ lệ Thu hồi 99.6%</div>
                   <div class="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1">
-                    <i data-lucide="trending-up" class="text-emerald-400"></i> 应用AI预测欠费风险并实施个性化催收策略
+                    <i data-lucide="trending-up" class="text-emerald-400"></i> Ứng dụng Hệ thống Dự báo Nợ xấu & Thu hồi Cá nhân hóa bằng AI
                   </div>
                 </div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  通过AI深度学习租户历史缴费习惯，前置筛选潜在欠费风险群体，智能匹配最优提醒时机与无息刷卡分期方案，从源头杜绝资金拖欠。
+                  AI học hành vi thanh toán trong quá khứ để sàng lọc trước nguy cơ trễ hạn, đề xuất kênh nhắc nợ tối ưu và trả góp thẻ không lãi suất để chặn đứng nợ xấu.
                 </p>
               </div>
             </div>
@@ -972,7 +972,7 @@
             <div class="p-3 rounded-xl bg-indigo-950/30 text-xs text-indigo-200 flex items-center justify-between">
               <span class="flex items-center gap-2">
                 <i data-lucide="cpu" class="text-cyan-400"></i>
-                “如今，人工智能(AI)与云原生架构已不再是锦上添花的选配件，而是资产管理不可或缺的底层基础设施”
+                "Giờ đây, Trí tuệ Nhân tạo (AI) và Điện toán Đám mây không còn là lựa chọn mà là công cụ bắt buộc trong quản lý tài sản."
               </span>
               <span class="text-cyan-400 font-bold">ezREMS AI Engine</span>
             </div>
@@ -981,8 +981,8 @@
       },
       {
         id: "slide-06",
-        chapter: "第二章. 行业痛点与挑战",
-        topic: "建筑生命周期成本：80%产生于后期运营维护",
+        chapter: "Chương 2. Thách thức",
+        topic: "Chi phí Vòng đời Tòa nhà: 80% Phát sinh trong Giai đoạn Vận hành",
         origPage: 9,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -990,46 +990,46 @@
               <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="git-commit" class=""></i> Life Cycle Cost Analysis
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">建筑全生命周期成本的80%由“后期运营”全面决定</h2>
-              <p class="text-slate-400 text-xs mt-0.5">规划设计与工程建造仅占全生命周期成本的不到20%，建筑的真正长期资产价值与投资回报由长达数十年的运营运维全面决定。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">80% Chi phí Vòng đời Tòa nhà do 'Vận hành' Quyết định</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Chi phí thiết kế và xây dựng chỉ chiếm khoảng 20%; giá trị và lợi nhuận thực sự của tòa nhà được quyết định trong hàng thập kỷ vận hành và bảo trì.</p>
             </div>
 
             <div class="my-auto space-y-5">
               <!-- Life Cycle Diagram Bar -->
               <div class="p-5 rounded-2xl glass-card border border-slate-800">
                 <div class="text-xs font-semibold text-slate-400 mb-2.5 flex justify-between items-center">
-                  <span class="flex items-center gap-1.5"><i data-lucide="git-branch" class="text-blue-400"></i> 建筑生命周期(LCC)各阶段成本支出占比</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="git-branch" class="text-blue-400"></i> Tỷ lệ Chi phí theo từng Giai đoạn Vòng đời Tòa nhà (LCC)</span>
                   <div class="flex items-center gap-2">
-                    <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">运营维护占比超80% (高达83.2%)</span>
-                    <span class="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/50">报废 0.4%</span>
+                    <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">Vận hành & Bảo trì trên 80% (83.2%)</span>
+                    <span class="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/50">Thanh lý 0.4%</span>
                   </div>
                 </div>
                 <div class="h-12 w-full rounded-xl overflow-hidden flex font-bold text-xs shadow-inner border border-slate-700/60">
-                  <div class="w-[6%] bg-slate-800 flex items-center justify-center text-slate-300 text-[11px]" title="规划与设计">
-                    <i data-lucide="compass" class="mr-1"></i> 规划设计
+                  <div class="w-[6%] bg-slate-800 flex items-center justify-center text-slate-300 text-[11px]" title="Quy hoạch / Thiết kế">
+                    <i data-lucide="compass" class="mr-1"></i> Thiết kế
                   </div>
-                  <div class="w-[14%] bg-slate-700 flex items-center justify-center text-slate-200 border-l border-slate-800 text-[11px]" title="施工与建筑：约 16%">
-                    <i data-lucide="hammer" class="mr-1"></i> 施工 16%
+                  <div class="w-[14%] bg-slate-700 flex items-center justify-center text-slate-200 border-l border-slate-800 text-[11px]" title="Thi công/Xây dựng: Khoảng 16%">
+                    <i data-lucide="hammer" class="mr-1"></i> Thi công 16%
                   </div>
                   <div class="flex-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg border-l border-slate-800">
-                    <i data-lucide="settings-2" class="mr-1.5"></i> 运营与后期综合维护 (Operating & Management) 83.2%
+                    <i data-lucide="settings-2" class="mr-1.5"></i> Vận hành & Bảo trì (Operating & Management) 83.2%
                   </div>
-                  <div class="w-[9%] sm:w-[8%] bg-amber-600/90 hover:bg-amber-500 flex flex-col items-center justify-center text-white border-l border-slate-800 transition" title="拆除报废阶段：0.4%">
+                  <div class="w-[9%] sm:w-[8%] bg-amber-600/90 hover:bg-amber-500 flex flex-col items-center justify-center text-white border-l border-slate-800 transition" title="Giai đoạn Thanh lý: 0.4%">
                     <i data-lucide="refresh-cw" class="text-[11px]"></i>
-                    <span class="text-[10px] font-black leading-none mt-0.5">报废 0.4%</span>
+                    <span class="text-[10px] font-black leading-none mt-0.5">Thanh lý 0.4%</span>
                   </div>
                 </div>
                 <div class="flex justify-between items-center text-[11px] text-slate-500 mt-2">
-                  <span>项目前期投资建造阶段 (设计 + 施工约 16.4%)</span>
+                  <span>Giai đoạn Đầu tư Ban đầu (Thiết kế + Thi công khoảng 16.4%)</span>
                   <span class="text-blue-400 font-semibold flex items-center gap-1">
-                    <i data-lucide="check-circle-2" class="text-cyan-400"></i> 长期持续收益变现与资产价值最大化阶段 (83.2%)
+                    <i data-lucide="check-circle-2" class="text-cyan-400"></i> Giai đoạn Tạo Doanh thu Dài hạn & Tối đa hóa Giá trị Tài sản (83.2%)
                   </span>
                   <span class="text-amber-400 font-semibold flex items-center gap-1">
-                    <i data-lucide="refresh-cw" class="text-amber-400"></i> 报废 (0.4%)
+                    <i data-lucide="refresh-cw" class="text-amber-400"></i> Thanh lý (0.4%)
                   </span>
                 </div>
                 <div class="text-[10px] text-slate-500 text-right mt-1">
-                  ※ 数据摘自：韩国建设产业研究院《建设工程LCC⁺生命周期全要素分析与应用》
+                  * Trích từ: Viện Nghiên cứu Ngành Xây dựng Hàn Quốc, Báo cáo Phân tích LCC
                 </div>
               </div>
 
@@ -1040,8 +1040,8 @@
                     <i data-lucide="log-out" class=""></i>
                   </div>
                   <div>
-                    <div class="text-rose-400 font-bold text-sm">01. 空置期管控失当</div>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">缺乏合同到期前置预警机制致使房屋空置周期拉长，物业净投资回报率断崖式下滑。</p>
+                    <div class="text-rose-400 font-bold text-sm">01. Thất bại trong Quản lý Phòng trống</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Thiếu dự báo hết hạn hợp đồng kéo dài thời gian phòng trống, khiến lợi suất cho thuê sụt giảm nghiêm trọng.</p>
                   </div>
                 </div>
                 <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
@@ -1049,8 +1049,8 @@
                     <i data-lucide="receipt" class=""></i>
                   </div>
                   <div>
-                    <div class="text-rose-400 font-bold text-sm">02. 账单漏发与租金拖欠</div>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">人工翻查漏看导致欠租旷日持久，最终形成坏账并引发高昂的清退诉讼法律风险。</p>
+                    <div class="text-rose-400 font-bold text-sm">02. Bỏ sót Đối soát & Nợ trễ</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Bỏ sót đối soát thủ công khiến nợ đọng kéo dài, dẫn đến mất khả năng thu hồi và rủi ro kiện tụng trục xuất.</p>
                   </div>
                 </div>
                 <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
@@ -1058,8 +1058,8 @@
                     <i data-lucide="wrench" class=""></i>
                   </div>
                   <div>
-                    <div class="text-rose-400 font-bold text-sm">03. 维保台账记录缺失</div>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">维保检修纸质记录遗失导致重复支出高昂维修费，加剧建筑物及核心机电设施加速老化。</p>
+                    <div class="text-rose-400 font-bold text-sm">03. Thiếu Hồ sơ Lịch sử Thiết bị</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Mất nhật ký sửa chữa/kiểm định gây phát sinh chi phí trùng lặp và đẩy nhanh quá trình xuống cấp của tòa nhà.</p>
                   </div>
                 </div>
               </div>
@@ -1067,15 +1067,15 @@
 
             <div class="p-3 rounded-xl bg-rose-950/20 text-xs text-rose-200 flex items-center gap-2">
               <i data-lucide="alert-triangle" class="text-rose-400"></i>
-              <span><strong>资产贬值与收益受损的主要成因：</strong> 专业运营系统的缺位将直接导致空置率攀升、净营业收入(NOI)大幅下滑以及资产估值与交易价格严重折损。</span>
+              <span><strong>Nguyên nhân Suy giảm Giá trị Tài sản:</strong> Thiếu hệ thống vận hành chuyên nghiệp sẽ trực tiếp dẫn đến tăng tỷ lệ trống, giảm thu nhập hoạt động thuần (NOI) và sụt giảm giá trị thanh lý tòa nhà.</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-07",
-        chapter: "第二章. 行业痛点与挑战",
-        topic: "房地产资产运营流程 (LM · PM · FM · AM)",
+        chapter: "Chương 2. Thách thức",
+        topic: "Quy trình Vận hành Tài sản Bất động sản (LM · PM · FM · AM)",
         origPage: 12,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1084,14 +1084,14 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="network" class=""></i> Process Complexity
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">千头万绪、繁琐复杂的不动产资产运营实务流程</h2>
-                <p class="text-slate-400 text-xs mt-0.5">从招商租赁到工程物业、财税核算、资产运营，各个环节必须实现高度协同。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Quy trình thực tế vận hành tài sản phức tạp, đa tầng</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Từ tiếp thị cho thuê đến cơ sở vật chất, tài chính kế toán và quản lý tài sản — tất cả các lĩnh vực đều phải được liên kết chặt chẽ.</p>
               </div>
               <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 border border-cyan-400/40 transition btn-press group">
                 <div class="w-5 h-5 rounded-lg bg-white/20 flex items-center justify-center text-[10px]">
                   <i data-lucide="layers" class="text-white"></i>
                 </div>
-                <span>查看不动产资产管理(PM)层级金字塔</span>
+                <span>Xem Cấu trúc Quản lý Tài sản Bất động sản (PM)</span>
                 <i data-lucide="external-link" class="text-[10px] text-cyan-200 group-hover:translate-x-0.5 transition"></i>
               </button>
             </div>
@@ -1103,12 +1103,12 @@
                   <i data-lucide="megaphone" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-blue-400 uppercase">LM (Leasing)</div>
-                <div class="text-sm font-black text-white mt-0.5">招商租赁与营销去化 (LM)</div>
+                <div class="text-sm font-black text-white mt-0.5">Marketing Cho thuê</div>
                 <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 招商洽谈与品牌租户定向引入</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 标准规范化租赁合同签署</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 押金托管结算与入驻交付管理</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 去化提速与空置率压降企划</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> Tư vấn Hợp đồng & Thu hút Khách thuê</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> Ký kết Hợp đồng Cho thuê Chuẩn mực</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> Thu Tiền cọc & Quản lý Nhận phòng</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> Marketing Giảm thiểu Tỷ lệ Phòng trống</li>
                 </ul>
               </div>
 
@@ -1118,12 +1118,12 @@
                   <i data-lucide="file-text" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-cyan-400 uppercase">PM (Property)</div>
-                <div class="text-sm font-black text-white mt-0.5">物业运营与租赁管治 (PM)</div>
+                <div class="text-sm font-black text-white mt-0.5">Vận hành & Quản lý Cho thuê</div>
                 <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> 月度租金及物业水电管理费出账</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> 实时对账入账与欠费智能催收</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> 租户客诉(VOC)流转与满意度管控</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> NOI净营业收入测算与月度资产研报</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> Lập Hóa đơn Tiền thuê / Phí Quản lý Tháng</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> Thu tiền Thời gian thực & Đôn đốc Nợ trễ</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> Quản lý Ý kiến Khiếu nại (VOC) Cư dân</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> Tính toán NOI & Báo cáo Tháng</li>
                 </ul>
               </div>
 
@@ -1133,12 +1133,12 @@
                   <i data-lucide="wrench" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-emerald-400 uppercase">FM (Facility)</div>
-                <div class="text-sm font-black text-white mt-0.5">工程设施与安全管控 (FM)</div>
+                <div class="text-sm font-black text-white mt-0.5">Cơ sở Vật chất & An toàn</div>
                 <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 法定特种机电设备定期检验</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 修缮工程派工下单与竣工验收</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 能耗优化与外包供应商协同</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 重大安全生产与职业健康合规落地</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> Kiểm định Cơ sở Vật chất Định kỳ theo Luật</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> Đặt hàng & Nghiệm thu Công trình Sửa chữa/Bảo trì</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> Tiết kiệm Năng lượng & Quản lý Nhà thầu</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> Thực thi An toàn Sức khỏe Lao động Nghiêm trọng</li>
                 </ul>
               </div>
 
@@ -1148,26 +1148,26 @@
                   <i data-lucide="landmark" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-indigo-400 uppercase">AM (Asset)</div>
-                <div class="text-sm font-black text-white mt-0.5">资产运作与综合核算 (AM)</div>
+                <div class="text-sm font-black text-white mt-0.5">Vận hành Tài sản & Quyết toán</div>
                 <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 财务ERP凭证联动月结</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 增值税国税电子申报文件一键生成</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 资产估值评估与改造升级规划</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> REITs与投资人分红回报核算</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> Khóa sổ Liên kết Chứng từ ERP Kế toán</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> Tạo Tệp Kê khai Thuế GTGT Điện tử</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> Định giá Tài sản & Cải tạo Nâng cấp</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> Quản lý Cổ tức Quỹ REITs / Nhà đầu tư</li>
                 </ul>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex items-center justify-between">
               <span class="flex items-center gap-2">
-                <i data-lucide="unlink" class="text-rose-400"></i> 四大领域 (AM·PM·FM·LM) 数据割裂将导致业务瘫痪与重大运营风险。
+                <i data-lucide="unlink" class="text-rose-400"></i> Dữ liệu phân mảnh giữa 4 lĩnh vực (AM·PM·FM·LM) gây đình trệ công việc và rủi ro lớn.
               </span>
               <div class="flex items-center gap-3">
                 <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1.5 bg-cyan-950/60 px-2.5 py-1 rounded-lg border border-cyan-800/40">
-                  <i data-lucide="image" class=""></i> 查看PM金字塔架构图
+                  <i data-lucide="image" class=""></i> Xem Popup Sơ đồ Cấu trúc PM
                 </button>
                 <span class="text-cyan-400 font-bold flex items-center gap-1">
-                  <i data-lucide="check-check" class="text-emerald-400"></i> ezREMS 以单一核心底座实现全链条无缝整合
+                  <i data-lucide="check-check" class="text-emerald-400"></i> ezREMS Tích hợp Hoàn hảo trong một Nền tảng Duy nhất
                 </span>
               </div>
             </div>
@@ -1176,8 +1176,8 @@
       },
       {
         id: "slide-08",
-        chapter: "第二章. 行业痛点与挑战",
-        topic: "解决方案对比：传统Excel vs ezREMS",
+        chapter: "Chương 2. Thách thức",
+        topic: "So sánh Giải pháp: Excel Thủ công vs ezREMS",
         origPage: 20,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1185,77 +1185,77 @@
               <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="arrow-left-right" class=""></i> Comparison Analysis
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">传统Excel手工台账 vs ezREMS 云平台</h2>
-              <p class="text-slate-400 text-xs mt-0.5">随着不动产管理体量攀升，Excel已沦为风险温床，全面导入专业ERP系统是企业生存发展的刚需。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Quản lý Excel Thủ công vs ezREMS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Quy mô tài sản càng lớn, Excel càng trở thành nguồn gốc rủi ro; áp dụng hệ thống là điều kiện sống còn.</p>
             </div>
 
             <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
               <table class="w-full text-xs text-left">
                 <thead class="bg-slate-950 text-slate-300 border-b border-slate-800 uppercase">
                   <tr>
-                    <th class="py-3 px-4 w-1/4">对比维度</th>
+                    <th class="py-3 px-4 w-1/4">Hạng mục so sánh</th>
                     <th class="py-3 px-4 w-3/8 text-rose-400 bg-rose-950/30 font-bold">
-                      <i data-lucide="file-spreadsheet" class="mr-1 text-rose-400"></i> 传统人工Excel方式
+                      <i data-lucide="file-spreadsheet" class="mr-1 text-rose-400"></i> Phương thức Excel Truyền thống
                     </th>
                     <th class="py-3 px-4 w-3/8 text-cyan-400 bg-blue-950/50 font-bold">
-                      <i data-lucide="cloud" class="mr-1 text-cyan-400"></i> ezREMS 智能云平台
+                      <i data-lucide="cloud" class="mr-1 text-cyan-400"></i> Nền tảng ezREMS
                     </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
                   <tr>
                     <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
-                      <i data-lucide="database" class="text-slate-400"></i> 数据真实性与完整性
+                      <i data-lucide="database" class="text-slate-400"></i> Tính Toàn vẹn Dữ liệu
                     </td>
                     <td class="py-2.5 px-4 text-slate-400">
-                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 公式错漏、误覆盖、文件损毁及资产数据丢失风险常态化
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> Luôn tiềm ẩn rủi ro lỗi công thức, ghi đè và mất tệp
                     </td>
                     <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
-                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 金融级云数据库持久化存储，操作日志全链路审计留痕
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> Lưu trữ cơ sở dữ liệu đám mây thời gian thực & bảo toàn toàn bộ lịch sử phiên bản
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
-                      <i data-lucide="receipt" class="text-slate-400"></i> 出账计费与销账对账
+                      <i data-lucide="receipt" class="text-slate-400"></i> Thu phí & Lập Hóa đơn
                     </td>
                     <td class="py-2.5 px-4 text-slate-400">
-                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 每月人工肉眼核对银行流水单，逐张打印纸质账单
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> Hàng tháng đối soát thủ công sao kê ngân hàng với Excel, in từng hóa đơn
                     </td>
                     <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
-                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 银企直联/虚拟账号秒级对账，电子送达账单
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> Tự động đối soát tài khoản ảo/Firm Banking, tự động gửi văn bản điện tử
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
-                      <i data-lucide="file-text" class="text-slate-400"></i> 税务开票与凭证
+                      <i data-lucide="file-text" class="text-slate-400"></i> Thuế & Hóa đơn
                     </td>
                     <td class="py-2.5 px-4 text-slate-400">
-                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 登录税局逐笔手动开票（频繁出现漏开错开与罚金）
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> Đăng nhập cổng thuế xuất thủ công (Dễ bỏ sót và nhập sai)
                     </td>
                     <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
-                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 国税发票批量全自动开具，一键导出增值税申报底稿
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> Tự động xuất hàng loạt hóa đơn điện tử & tệp kê khai thuế GTGT
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
-                      <i data-lucide="lock" class="text-slate-400"></i> 安全合规与权限隔离
+                      <i data-lucide="lock" class="text-slate-400"></i> Bảo mật & Phân quyền
                     </td>
                     <td class="py-2.5 px-4 text-slate-400">
-                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 散落保存在个人电脑，极易泄密与损坏，协同冲突频发
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> Lưu trên máy tính cá nhân dễ rò rỉ thông tin, xung đột khi làm việc đồng thời
                     </td>
                     <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
-                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 细粒度角色权限隔离，金融级数据传输与存储全加密
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> Phân quyền theo người dùng, mã hóa và bảo mật cấp ngân hàng
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
-                      <i data-lucide="message-square" class="text-slate-400"></i> 租户沟通触达体验
+                      <i data-lucide="message-square" class="text-slate-400"></i> Giao tiếp với Cư dân
                     </td>
                     <td class="py-2.5 px-4 text-slate-400">
-                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 依赖电话、短信与纸张催收（缺乏法律有效送达证据链）
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> Phụ thuộc vào gọi điện, tin nhắn, giấy báo (Không có bằng chứng gửi pháp lý)
                     </td>
                     <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
-                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 专属租客移动端App、具法律效力电子文书、信用卡分期
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> Ứng dụng di động cư dân, văn bản điện tử có hiệu lực pháp lý, hỗ trợ thanh toán thẻ
                     </td>
                   </tr>
                 </tbody>
@@ -1265,10 +1265,10 @@
             <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
               <span class="flex items-center gap-2">
                 <i data-lucide="quote" class="text-blue-400"></i>
-                “Excel仅仅是基础办公软件，绝不可能成为掌管数十亿级核心资产的运营级ERP”
+                "Excel chỉ là công cụ văn phòng, không thể là hệ thống ERP vận hành khối tài sản hàng triệu đô."
               </span>
               <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">
-                <i data-lucide="arrow-down" class="mr-1"></i> 日常人工作业工时削减70%以上
+                <i data-lucide="arrow-down" class="mr-1"></i> Giảm trên 70% Khối lượng Công việc
               </span>
             </div>
           </div>
@@ -1276,8 +1276,8 @@
       },
       {
         id: "slide-09",
-        chapter: "第三章. ezREMS 解决方案",
-        topic: "ezREMS 解决方案概览与权威认证",
+        chapter: "Chương 3. Giải pháp",
+        topic: "Tổng quan Giải pháp ezREMS & Chứng nhận",
         origPage: 21,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1285,8 +1285,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="award" class=""></i> ezREMS Overview
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">智能不动产资产运营SaaS平台「ezREMS」</h2>
-              <p class="text-slate-400 text-xs mt-0.5">以纯云原生架构，全面统合写字楼、长租公寓、商业零售及大型复合综合体等全形态资产。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">SaaS Quản lý Tài sản Thông minh 'ezREMS'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Vận hành tích hợp mọi loại hình bất động sản: văn phòng, nhà ở, bán lẻ, khu phức hợp trên nền tảng đám mây.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
@@ -1295,12 +1295,12 @@
                 <div class="icon-badge icon-badge-blue w-12 h-12 text-xl">
                   <i data-lucide="badge-check" class=""></i>
                 </div>
-                <h3 class="font-bold text-white text-base">GS 1级国家级权威认证</h3>
+                <h3 class="font-bold text-white text-base">Chứng nhận Quốc gia GS Cấp 1</h3>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  荣获国家软件产品质量最高等级评价 <span class="text-cyan-400 font-bold">GS (Good Software) 国家最高 1 级认证</span>——系统高可用性与数据安全性已获国家级权威认证机构严苛检验认可。
+                  Cấp cao nhất của chứng nhận chất lượng phần mềm quốc gia, <span class="text-cyan-400 font-bold">Chứng nhận GS (Good Software) Cấp 1</span> — đã đạt chứng nhận độ ổn định và tin cậy được kiểm chứng bởi cơ quan nhà nước.
                 </p>
                 <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
-                  <i data-lucide="check-circle-2" class="text-emerald-400"></i> 入选国家政府采购采购目录，具备公共机构合规准入资质
+                  <i data-lucide="check-circle-2" class="text-emerald-400"></i> Đã đăng ký Mua sắm Công & Đủ điều kiện triển khai cơ quan nhà nước
                 </div>
               </div>
 
@@ -1309,12 +1309,12 @@
                 <div class="icon-badge icon-badge-cyan w-12 h-12 text-xl">
                   <i data-lucide="stamp" class=""></i>
                 </div>
-                <h3 class="font-bold text-white text-base">不动产运营底层核心发明专利</h3>
+                <h3 class="font-bold text-white text-base">Bằng Sáng chế Gốc Quản lý Bất động sản</h3>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  在不动产租金自动收缴、对账与核算管理领域拥有 <span class="text-cyan-400 font-bold">自主知识产权核心发明专利技术</span>——支撑繁复结算分摊逻辑，保障财务数据零误差精准平账。
+                  Liên quan đến hệ thống quản lý thu và quyết toán tiền thuê bất động sản: <span class="text-cyan-400 font-bold">Công nghệ Bằng Sáng chế Độc quyền</span> — hỗ trợ quy trình quyết toán phức tạp với độ chính xác tuyệt đối.
                 </p>
                 <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
-                  <i data-lucide="shield-check" class="text-cyan-400"></i> 独创核心专利算法深度融合金融科技
+                  <i data-lucide="shield-check" class="text-cyan-400"></i> Thuật toán Độc quyền & Kết hợp FinTech
                 </div>
               </div>
 
@@ -1323,12 +1323,12 @@
                 <div class="icon-badge icon-badge-purple w-12 h-12 text-xl">
                   <i data-lucide="cloud-upload" class=""></i>
                 </div>
-                <h3 class="font-bold text-white text-base">100% 纯云原生 SaaS</h3>
+                <h3 class="font-bold text-white text-base">100% SaaS Đám mây</h3>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  无需安装任何独立软件，通过现代浏览器与移动设备随时随地即开即用的 <span class="text-purple-300 font-bold">100% 纯云原生 SaaS</span> 高可用生产级运行环境。
+                  Truy cập mọi lúc, mọi nơi từ trình duyệt web và thiết bị di động mà không cần cài đặt phần mềm: <span class="text-purple-300 font-bold">SaaS Thuần Đám mây 100%</span> cung cấp môi trường hoạt động với độ tin cậy vượt trội.
                 </p>
                 <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
-                  <i data-lucide="rotate-cw" class="text-purple-400"></i> 零宕机无感平滑升级与跨区域实时容灾备份
+                  <i data-lucide="rotate-cw" class="text-purple-400"></i> Tự động cập nhật không gián đoạn & sao lưu thời gian thực
                 </div>
               </div>
             </div>
@@ -1336,17 +1336,17 @@
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between items-center">
               <span class="flex items-center gap-2">
                 <i data-lucide="globe" class="text-blue-400"></i>
-                B2B 企业级专业 PMS 运营基座： <a href="https://pms.ezrems.com" target="_blank" class="text-blue-400 underline">pms.ezrems.com</a>
+                Dịch vụ PMS Doanh nghiệp B2B: <a href="https://pms.ezrems.com" target="_blank" class="text-blue-400 underline">pms.ezrems.com</a>
               </span>
-              <span class="text-slate-300 font-medium">自2014年首次获准国家认证以来，历经10余载持续迭代高可用运营</span>
+              <span class="text-slate-300 font-medium">Vận hành nâng cấp liên tục hơn 10 năm kể từ lần đầu được chứng nhận năm 2014</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-10",
-        chapter: "第三章. ezREMS 解决方案",
-        topic: "平台对接架构图与系统架构",
+        chapter: "Chương 3. Giải pháp",
+        topic: "Sơ đồ Kết nối Nền tảng & Kiến trúc Hệ thống",
         origPage: 23,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1355,11 +1355,11 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="network-wired" class=""></i> Architecture
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ezREMS 平台全景生态架构与系统拓扑</h2>
-                <p class="text-slate-400 text-xs mt-0.5">以云端微服务架构为核心，深度打通金融通道、国家税务总局、通讯运营商及租户移动端。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Sơ đồ Liên kết Nền tảng ezREMS</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Lấy máy chủ đám mây làm trung tâm, tài chính (PG/ngân hàng), thuế (Hometax), viễn thông (Kakao/SMS) và ứng dụng người thuê được kết nối liền mạch.</p>
               </div>
               <button onclick="openOriginalModal(23)" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition">
-                <i data-lucide="layout-grid" class=""></i> 查看原版架构图 (P.23)
+                <i data-lucide="layout-grid" class=""></i> Xem Biểu đồ Gốc (P.23)
               </button>
             </div>
 
@@ -1371,14 +1371,14 @@
                     <div class="icon-badge icon-badge-cyan w-10 h-10 mx-auto text-base">
                       <i data-lucide="smartphone" class=""></i>
                     </div>
-                    <div class="text-xs font-bold text-cyan-400 mt-1">全场景用户触达渠道 (Channel)</div>
-                    <div class="text-sm font-semibold text-white">资产管治端 / 租住客户</div>
+                    <div class="text-xs font-bold text-cyan-400 mt-1">Kênh Người dùng (Channel)</div>
+                    <div class="text-sm font-semibold text-white">Người quản lý / Khách thuê</div>
                   </div>
                   <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
-                    <li class="flex items-center gap-1.5"><i data-lucide="laptop" class="text-blue-400 text-[10px]"></i> 运营管理后台 WEB端 (PC / 平板)</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> 一线巡检运维移动端 WEB 门户</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> 租客专属移动端App (ezREMS Connect)</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-blue-400 text-[10px]"></i> 门禁智控通行与智慧停车一体化终端</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="laptop" class="text-blue-400 text-[10px]"></i> WEB Quản trị viên (PC / Tablet)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> WEB Di động Quản lý Hiện trường</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> Ứng dụng Khách thuê (ezREMS Connect)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-blue-400 text-[10px]"></i> Kiosk Kiểm soát Ra vào / Quản lý Bãi đỗ xe</li>
                   </ul>
                 </div>
 
@@ -1389,7 +1389,7 @@
                     <i data-lucide="arrow-right" class="text-xs sm:text-sm text-cyan-300"></i>
                   </div>
                   <span class="text-[10px] font-bold text-cyan-300 ml-2 md:ml-0 md:mt-1.5 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/50 whitespace-nowrap">
-                    Web后台与移动App实时双向同步
+                    Liên kết Thời gian thực Web/App
                   </span>
                 </div>
 
@@ -1400,14 +1400,14 @@
                       <i data-lucide="server" class=""></i>
                     </div>
                     <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-600 text-white text-[11px] font-bold mt-1">CORE ENGINE</div>
-                    <div class="text-base font-extrabold text-white">ezREMS 云原生资产管理平台</div>
+                    <div class="text-base font-extrabold text-white">Nền tảng Đám mây ezREMS</div>
                   </div>
                   <div class="text-xs text-blue-200 space-y-1 text-left pt-2 border-t border-blue-800/50">
-                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 租赁合同履约与房源资产全生命周期流转</div>
-                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Stacking Plan 楼层动态全景图</div>
-                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 资金秒级对账核销与虚拟子账号归集</div>
-                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 全电发票自动归集 / 纳税申报底表</div>
-                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> VOC租客工单与设备维保生命周期台账</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Hợp đồng Thuê / Quản lý Lịch sử Căn hộ</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Bản vẽ Mặt bằng Tầng Stacking Plan</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Thu tiền Tự động / Đối soát Tài khoản Ảo</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Hóa đơn Thuế Điện tử / Kê khai Thuế GTGT</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Khiếu nại VOC / Lịch sử Bảo trì Cơ sở</div>
                   </div>
                 </div>
 
@@ -1418,7 +1418,7 @@
                     <i data-lucide="arrow-right" class="text-xs sm:text-sm text-indigo-300"></i>
                   </div>
                   <span class="text-[10px] font-bold text-indigo-300 ml-2 md:ml-0 md:mt-1.5 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/50 whitespace-nowrap">
-                    开放API与核心系统标准化数据总线
+                    Open API / Liên kết Hệ thống Chuyên biệt
                   </span>
                 </div>
 
@@ -1428,31 +1428,31 @@
                     <div class="icon-badge icon-badge-purple w-10 h-10 mx-auto text-base">
                       <i data-lucide="zap" class=""></i>
                     </div>
-                    <div class="text-xs font-bold text-indigo-400 mt-1">外部系统数据交互通道 (Interface)</div>
-                    <div class="text-sm font-semibold text-white">金融支付 · 纳税开票 · 企业ERP贯通</div>
+                    <div class="text-xs font-bold text-indigo-400 mt-1">Giao diện Bên ngoài (Interface)</div>
+                    <div class="text-sm font-semibold text-white">Liên kết Tài chính · Thuế · ERP</div>
                   </div>
                   <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
-                    <li class="flex items-center gap-1.5"><i data-lucide="building-2" class="text-indigo-400 text-[10px]"></i> 银企直联 / 虚拟子账号自动清分 (各大商业银行)</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-indigo-400 text-[10px]"></i> 信用卡快捷通道 (D+1次日清算)</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="file-text" class="text-indigo-400 text-[10px]"></i> 电子税务发票（直通国家税务系统）</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="message-square" class="text-indigo-400 text-[10px]"></i> 电子证据链送达 / 微信与短信智能触达</li>
-                    <li class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-indigo-400 text-[10px]"></i> 企业核心财务ERP（SAP FI 模块深度集成）</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="building-2" class="text-indigo-400 text-[10px]"></i> Firm Banking / Tài khoản Ảo (Ngân hàng Thương mại)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-indigo-400 text-[10px]"></i> Cổng Thanh toán Thẻ Tín dụng PG (Quyết toán D+1)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="file-text" class="text-indigo-400 text-[10px]"></i> Hóa đơn Thuế Điện tử (Cơ quan Thuế)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="message-square" class="text-indigo-400 text-[10px]"></i> Văn bản Điện tử Xác thực / Tin nhắn Thông báo</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-indigo-400 text-[10px]"></i> ERP Kế toán Doanh nghiệp (Liên kết SAP FI)</li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between">
-              <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="text-emerald-400"></i> 高可用企业级云原生基础设施 (AWS / Naver Cloud)</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="text-blue-400"></i> 7×24小时全天候无中断监控与自动灾备</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="text-emerald-400"></i> Hạ tầng Đám mây Cấp Doanh nghiệp Ổn định (AWS / Naver Cloud)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="text-blue-400"></i> Hỗ trợ Giám sát Không Gián đoạn 24/7 & Sao lưu Tự động</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-11",
-        chapter: "第三章. ezREMS 解决方案",
-        topic: "核心功能：B2B专业PMS (房间·合同·收款·税务)",
+        chapter: "Chương 3. Giải pháp",
+        topic: "Tính năng Cốt lõi: PMS Chuyên nghiệp B2B (Căn hộ·Hợp đồng·Thu phí·Thuế)",
         origPage: 25,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1460,8 +1460,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="sliders" class=""></i> PMS Core Features
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">企业级 B2B 专业资产管理 (PMS) 核心业务功能</h2>
-              <p class="text-slate-400 text-xs mt-0.5">深度采纳一线资管专家实操建议精心架构，繁琐复杂的不动产管理业务只需轻点数次即可完美竣工。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Các Tính năng Cốt lõi của Quản lý Tài sản B2B Cấp Doanh nghiệp (PMS)</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Được thiết kế dựa trên ý kiến thực tế của nhân viên nghiệp vụ hiện trường, giúp hoàn thành công việc quản lý cho thuê phức tạp chỉ với vài cú nhấp chuột.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
@@ -1470,9 +1470,9 @@
                 <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
                   <i data-lucide="layers" class=""></i>
                 </div>
-                <div class="text-cyan-400 font-bold text-sm">01. 空间与楼层业态 (Stacking Plan)</div>
+                <div class="text-cyan-400 font-bold text-sm">01. Không gian & Stacking Plan</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  楼宇各楼层房间租赁现状以直观的 <span class="text-cyan-300 font-semibold">Stacking Plan</span>进行多维可视化呈现，一目了然监控空置与即将到期房源。
+                  Trực quan hóa hiện trạng các phòng theo từng tầng tòa nhà bằng <span class="text-cyan-300 font-semibold">Stacking Plan</span> để giám sát tình trạng phòng trống và hợp đồng sắp hết hạn trong nháy mắt.
                 </p>
               </div>
 
@@ -1481,9 +1481,9 @@
                 <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
                   <i data-lucide="circle-dollar-sign" class=""></i>
                 </div>
-                <div class="text-blue-400 font-bold text-sm">02. 自动化销账与欠款催缴</div>
+                <div class="text-blue-400 font-bold text-sm">02. Thu phí Tự động & Quản lý Nợ trễ</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  虚拟账号充值实时自动核销销账；逾期欠费时自动生成规范催收函/催告公函，并多渠道触发短信与邮件通知。
+                  Khi tiền được nạp vào tài khoản ảo, hệ thống tự động đối soát theo thời gian thực; khi phát sinh nợ chậm, hỗ trợ in mẫu thư nhắc nợ/đòi nợ và tự động gửi email/SMS.
                 </p>
               </div>
 
@@ -1492,9 +1492,9 @@
                 <div class="icon-badge icon-badge-emerald w-10 h-10 text-base">
                   <i data-lucide="file-text" class=""></i>
                 </div>
-                <div class="text-emerald-400 font-bold text-sm">03. 国税电子发票批量联动</div>
+                <div class="text-emerald-400 font-bold text-sm">03. Liên kết Hóa đơn Thuế Điện tử</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  基于租金及物管出账明细一键批量开具电子发票，并内置押金利息法定视同租金收入智能自动核算引擎。
+                  Phát hành đồng loạt hóa đơn thuế điện tử chỉ bằng 1 cú nhấp dựa trên dữ liệu thanh toán tiền thuê/phí quản lý, cung cấp tính năng tự động tính tiền thuê giả định trên tiền cọc.
                 </p>
               </div>
 
@@ -1503,17 +1503,17 @@
                 <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
                   <i data-lucide="file-text" class=""></i>
                 </div>
-                <div class="text-purple-400 font-bold text-sm">04. 增值税纳税申报底表自动生成</div>
+                <div class="text-purple-400 font-bold text-sm">04. Tạo Tệp Kê khai Thuế GTGT</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  一键导出直报税局的不动产租赁供给价税明细表及增值税纳税申报底册，极大降低企业外部财税代办成本。
+                  Tạo ngay tệp điện tử kê khai thuế GTGT và bảng kê giá trị cung cấp dịch vụ cho thuê BĐS để nộp Hometax Cục Thuế, giúp tiết kiệm chi phí đại lý thuế.
                 </p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex items-center justify-between">
-              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-cyan-400"></i> 标配标准租赁合同打印、合并/独立账单出账及租客VOC客诉流转管理</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-cyan-400"></i> Tích hợp sẵn in hợp đồng thuê tiêu chuẩn, hóa đơn tổng hợp/tách rời, tiếp nhận và quản lý khiếu nại (VOC)</span>
               <a href="https://pms.ezrems.com" target="_blank" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
-                即刻体验 PMS 系统演示 <i data-lucide="arrow-right" class="text-[10px]"></i>
+                Đi tới Màn hình Trải nghiệm PMS <i data-lucide="arrow-right" class="text-[10px]"></i>
               </a>
             </div>
           </div>
@@ -1521,8 +1521,8 @@
       },
       {
         id: "slide-12",
-        chapter: "第三章. ezREMS 解决方案",
-        topic: "租户专属App：ezREMS Connect (便捷生活服务)",
+        chapter: "Chương 3. Giải pháp",
+        topic: "Ứng dụng Cư dân: ezREMS Connect (Dịch vụ Tiện ích Đời sống)",
         origPage: 26,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1530,8 +1530,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="smartphone" class=""></i> Tenant Mobile App
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">租客专属移动端智慧生活App「ezREMS Connect」</h2>
-              <p class="text-slate-400 text-xs mt-0.5">为租住客户提供极致便捷的智慧生活体验，为运营机构开辟增值收益与工单无感自动化处理新航道。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Ứng dụng Di động Dành riêng cho Khách thuê 'ezREMS Connect'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Mang lại sự tiện nghi sinh hoạt cho khách thuê, đồng thời tạo doanh thu gia tăng và cơ hội tự động hóa khiếu nại cho đơn vị vận hành.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-auto">
@@ -1539,62 +1539,62 @@
                 <div class="icon-badge icon-badge-cyan w-9 h-9 text-sm">
                   <i data-lucide="bell" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">01. 智慧便捷生活服务</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">在线随心选购入户保洁、衣物洗护送达、共享健身房预约及访客车位登记等高频增值管家服务。</p>
+                <h4 class="font-bold text-white text-sm">01. Dịch vụ Tiện ích Đời sống</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Sử dụng các dịch vụ tiện ích như dọn phòng, giặt là giao tận nơi, đặt phòng gym, đăng ký đỗ xe như một chợ mua sắm trực tuyến</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-blue-500/50 transition">
                 <div class="icon-badge icon-badge-blue w-9 h-9 text-sm">
                   <i data-lucide="file-text" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">02. 租约合同履约全周期跟踪</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">租客在手机端随时调阅租期、履约保证金及月付明细，一键发起线上极速续租申请。</p>
+                <h4 class="font-bold text-white text-sm">02. Quản lý Hiện trạng Hợp đồng</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Xem thời hạn hợp đồng, tiền đặt cọc, điều kiện thuê hàng tháng bất cứ lúc nào trên ứng dụng và dễ dàng đăng ký gia hạn</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-purple-500/50 transition">
                 <div class="icon-badge icon-badge-purple w-9 h-9 text-sm">
                   <i data-lucide="vote" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">03. 具法律效力电子投票</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">线上组织公约修订、业主代表选举等全流程事务，足不出户完成具完备法律效力的移动端电子表决。</p>
+                <h4 class="font-bold text-white text-sm">03. Tính năng Bỏ phiếu Điện tử</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Thực hiện bỏ phiếu điện tử trên di động có hiệu lực pháp lý mà không cần họp đại hội trực tiếp như sửa đổi quy ước quản lý, bầu ban đại diện</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-emerald-500/50 transition">
                 <div class="icon-badge icon-badge-emerald w-9 h-9 text-sm">
                   <i data-lucide="receipt" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">04. 移动端电子账单直达</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">按月透明化查阅租金与水电能耗公摊账单底表，实时导出正规收讫证明文件。</p>
+                <h4 class="font-bold text-white text-sm">04. Hóa đơn Di động</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Kiểm tra chi tiết tiền thuê/phí quản lý hàng tháng và xuất ngay giấy xác nhận nộp tiền</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-slate-950/70 border border-blue-800/40 bg-blue-950/30 space-y-1.5 group hover:border-amber-500/50 transition">
                 <div class="icon-badge icon-badge-amber w-9 h-9 text-sm">
                   <i data-lucide="credit-card" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">05. 房租信用卡在线代扣</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">支持免息分期、信用卡积分累积及Token账单密钥自动扣缴，从机制上根治资金拖欠风险。</p>
+                <h4 class="font-bold text-white text-sm">05. Thanh toán Tiền thuê bằng Thẻ</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Trả góp không lãi suất, tích lũy điểm thưởng thẻ, thanh toán định kỳ bằng Billing Key giúp đưa nợ quá hạn về 0</p>
               </div>
 
               <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-rose-500/50 transition">
                 <div class="icon-badge icon-badge-rose w-9 h-9 text-sm">
                   <i data-lucide="message-square" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">06. 租客VOC工单全闭环管控</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">支持拍照录视频一键申报维修工单，系统推送维修师傅接单与施工验收全流程节点动态。</p>
+                <h4 class="font-bold text-white text-sm">06. Quản lý Khiếu nại VOC</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">Tiếp nhận báo cáo hỏng hóc kèm hình ảnh/video và theo dõi thông báo tiến độ xử lý theo thời gian thực</p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
-              <span class="flex items-center gap-1.5"><i data-lucide="coins" class="text-amber-400"></i> 运营机构赋能：通过引入周边高频品质生活服务商返佣，为物业资产开辟稳健增值现金流（嵌入式电商）</span>
-              <span class="text-cyan-400 font-bold flex items-center gap-1"><i data-lucide="trending-up" class=""></i> 租户居住满意度显著提升 · 物业日常人资成本骤降</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="coins" class="text-amber-400"></i> Lợi ích Đơn vị Vận hành: Tạo thêm nguồn doanh thu phụ mới thông qua phí hoa hồng đối tác dịch vụ tiện ích cư trú (Thương mại Nhúng)</span>
+              <span class="text-cyan-400 font-bold flex items-center gap-1"><i data-lucide="trending-up" class=""></i> Hài lòng Cư dân TĂNG & Chi phí Nhân công Quản lý GIẢM</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-13",
-        chapter: "第三章. ezREMS 解决方案",
-        topic: "电子合同与房租在线刷卡(PG)服务对比",
+        chapter: "Chương 3. Giải pháp",
+        topic: "Văn bản Điện tử & So sánh Dịch vụ Thanh toán Thẻ Tiền thuê (PG)",
         origPage: 30,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1602,71 +1602,71 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="credit-card" class=""></i> Fintech Innovation
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">房租信用卡快捷支付与权威电子公函创新应用</h2>
-              <p class="text-slate-400 text-xs mt-0.5">从合同底层杜绝虚假刷卡套现风险，支持行业最快 D+1 极速资金清算入账的专享支付系统。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Đổi mới Thanh toán Thẻ Tín dụng Tiền thuê & Văn bản Điện tử</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Hệ thống thanh toán chuyên biệt của ezREMS giúp ngăn ngừa triệt để nguy cơ rút tiền mặt thẻ tín dụng bất hợp pháp và hỗ trợ chu kỳ quyết toán ngắn nhất ngành (D+1).</p>
             </div>
 
             <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 text-xs shadow-xl">
               <table class="w-full text-left">
                 <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
                   <tr>
-                    <th class="py-2.5 px-3">对比维度</th>
-                    <th class="py-2.5 px-3 text-slate-400">普通商业银行信用卡</th>
-                    <th class="py-2.5 px-3 text-slate-400">第三方租金代收代付中介</th>
+                    <th class="py-2.5 px-3">Hạng mục so sánh</th>
+                    <th class="py-2.5 px-3 text-slate-400">Công ty Thẻ Tín dụng Thông thường</th>
+                    <th class="py-2.5 px-3 text-slate-400">Đơn vị Đại lý Tiền thuê Khác</th>
                     <th class="py-2.5 px-3 text-cyan-400 bg-blue-950/50 font-bold">
-                      <i data-lucide="star" class="text-amber-400 mr-1"></i> ezREMS Connect 租户App
+                      <i data-lucide="star" class="text-amber-400 mr-1"></i> ezREMS Connect (ezREMS)
                     </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
                   <tr>
                     <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
-                      <i data-lucide="pen-tool" class="text-slate-400 text-[11px]"></i> 业主审批权限要求
+                      <i data-lucide="pen-tool" class="text-slate-400 text-[11px]"></i> Sự đồng ý của Chủ nhà
                     </td>
-                    <td class="py-2 px-3 text-emerald-400 font-bold"><i data-lucide="check" class="text-emerald-400"></i> 必须逐笔取得书面同意</td>
-                    <td class="py-2 px-3 text-rose-400"><i data-lucide="x" class="text-rose-400"></i> 无需繁琐审批</td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold"><i data-lucide="check" class="text-emerald-400"></i> Bắt buộc Phải Đồng ý</td>
+                    <td class="py-2 px-3 text-rose-400"><i data-lucide="x" class="text-rose-400"></i> Không cần thiết</td>
                     <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
-                      <i data-lucide="check-check" class="text-emerald-400"></i> 业主零额外支出负担
+                      <i data-lucide="check-check" class="text-emerald-400"></i> Chủ nhà Không gánh nặng chi phí
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
-                      <i data-lucide="zap" class="text-slate-400 text-[11px]"></i> 资金清算周期
+                      <i data-lucide="zap" class="text-slate-400 text-[11px]"></i> Kỳ hạn Quyết toán
                     </td>
-                    <td class="py-2 px-3 text-slate-400">D+3工作日</td>
-                    <td class="py-2 px-3 text-slate-400">D+3 至 D+5工作日 (周期较长)</td>
+                    <td class="py-2 px-3 text-slate-400">D+3 ngày</td>
+                    <td class="py-2 px-3 text-slate-400">D+3 ~ D+5 ngày (Quyết toán chậm)</td>
                     <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
-                      <i data-lucide="zap" class="text-cyan-400 mr-1"></i> D+1日 (次日极速回款入账)
+                      <i data-lucide="zap" class="text-cyan-400 mr-1"></i> D+1 ngày (Quyết toán siêu tốc ngay ngày hôm sau)
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
-                      <i data-lucide="shield-check" class="text-slate-400 text-[11px]"></i> 信用卡违规套现风险
+                      <i data-lucide="shield-check" class="text-slate-400 text-[11px]"></i> Nguy cơ Trục lợi Thẻ Bất hợp pháp
                     </td>
-                    <td class="py-2 px-3 text-slate-400">无</td>
-                    <td class="py-2 px-3 text-rose-400 font-bold"><i data-lucide="alert-triangle" class="text-rose-400"></i> 存在虚假交易与恶意套现严重隐患</td>
+                    <td class="py-2 px-3 text-slate-400">Không có</td>
+                    <td class="py-2 px-3 text-rose-400 font-bold"><i data-lucide="alert-triangle" class="text-rose-400"></i> Có nguy cơ Lợi dụng Giao dịch Khống</td>
                     <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
-                      <i data-lucide="shield-check" class="text-emerald-400 mr-1"></i> 基于真实备案租约与出账底单从源头严格阻断
+                      <i data-lucide="shield-check" class="text-emerald-400 mr-1"></i> Ngăn chặn triệt để dựa trên Hợp đồng Thực tế & Hóa đơn
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
-                      <i data-lucide="rotate-cw" class="text-slate-400 text-[11px]"></i> 扣款结算方式
+                      <i data-lucide="rotate-cw" class="text-slate-400 text-[11px]"></i> Phương thức Thanh toán
                     </td>
-                    <td class="py-2 px-3 text-slate-400">每月必须手动输入验证码验证</td>
-                    <td class="py-2 px-3 text-slate-400">每月必须手动输入验证码验证</td>
+                    <td class="py-2 px-3 text-slate-400">Xác thực Thủ công Hàng tháng</td>
+                    <td class="py-2 px-3 text-slate-400">Xác thực Thủ công Hàng tháng</td>
                     <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
-                      <i data-lucide="repeat" class="text-cyan-400 mr-1"></i> Token安全账单密钥自动扣款 (计入消费累积)
+                      <i data-lucide="repeat" class="text-cyan-400 mr-1"></i> Tự động Thanh toán bằng Billing Key (Công nhận Doanh số Thẻ)
                     </td>
                   </tr>
                   <tr>
                     <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
-                      <i data-lucide="calculator" class="text-slate-400 text-[11px]"></i> 个人个税专项抵扣支持
+                      <i data-lucide="calculator" class="text-slate-400 text-[11px]"></i> Hỗ trợ Khấu trừ Thuế
                     </td>
-                    <td class="py-2 px-3 text-slate-400">暂不支持</td>
-                    <td class="py-2 px-3 text-slate-400">暂不支持</td>
+                    <td class="py-2 px-3 text-slate-400">Không hỗ trợ</td>
+                    <td class="py-2 px-3 text-slate-400">Không hỗ trợ</td>
                     <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
-                      <i data-lucide="file-check" class="text-cyan-400 mr-1"></i> 一键合规导出年度个税个税综合抵扣有效凭证
+                      <i data-lucide="file-check" class="text-cyan-400 mr-1"></i> Tự động Xuất Chứng từ Khấu trừ Quyết toán Thuế Cuối năm
                     </td>
                   </tr>
                 </tbody>
@@ -1676,17 +1676,17 @@
             <div class="p-3 rounded-xl bg-emerald-950/20 text-xs text-emerald-300 flex justify-between items-center">
               <span class="flex items-center gap-2">
                 <i data-lucide="mail-check" class="text-emerald-400"></i>
-                对接官方认证电子公函，压降传统邮政挂号信支出80%以上，建立不可推卸的法定送达凭据。
+                Giảm 80% chi phí bưu chính giấy nhờ liên kết Văn bản Điện tử Chứng thực Naver và hoàn thiện bằng chứng pháp lý đã nhận văn bản
               </span>
-              <span class="font-bold text-white bg-emerald-800/60 px-2 py-0.5 rounded">确定性保障 D+1 次日清算</span>
+              <span class="font-bold text-white bg-emerald-800/60 px-2 py-0.5 rounded">Đảm bảo Quyết toán Ngay ngày hôm sau D+1</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-14",
-        chapter: "第四章. 业绩规模与沉淀",
-        topic: "数据见证实力：ezREMS 金融交易与管理规模",
+        chapter: "Chương 4. Thành tích & Quy mô",
+        topic: "Quy mô Tài chính & Giao dịch của ezREMS được Chứng minh bằng Dữ liệu",
         origPage: 32,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1694,8 +1694,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="bar-chart-2" class=""></i> Proven Scale
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">权威数字见证实力: ezREMS 规模体量与行业信赖</h2>
-              <p class="text-slate-400 text-xs mt-0.5">从大型商业地标到保障性公租房、甲级写字楼，每月稳健处理数百亿韩元高频资金流。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Độ tin cậy và Quy mô của ezREMS được Chứng minh bằng Con số</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Từ các trung tâm mua sắm phức hợp lớn đến nhà ở công cộng và văn phòng hạng A, hàng chục tỷ won giao dịch tài chính được xử lý an toàn mỗi tháng.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-auto">
@@ -1703,48 +1703,48 @@
                 <div class="icon-badge icon-badge-cyan w-12 h-12 mx-auto mb-2 text-xl">
                   <i data-lucide="building-2" class=""></i>
                 </div>
-                <div class="text-xs text-slate-400">累计管理房源空间</div>
+                <div class="text-xs text-slate-400">Không gian Quản lý Tích lũy</div>
                 <div class="text-3xl sm:text-4xl font-black text-cyan-400 mt-1">55,000+</div>
-                <div class="text-[11px] text-slate-500 mt-1">房间与设施空间</div>
+                <div class="text-[11px] text-slate-500 mt-1">Căn hộ & Không gian Cơ sở</div>
               </div>
 
               <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-blue-500/50 transition">
                 <div class="icon-badge icon-badge-blue w-12 h-12 mx-auto mb-2 text-xl">
                   <i data-lucide="trending-up" class=""></i>
                 </div>
-                <div class="text-xs text-slate-400">每月处理租金及物业费</div>
-                <div class="text-3xl sm:text-4xl font-black text-blue-400 mt-1">超 650亿韩元</div>
-                <div class="text-[11px] text-slate-500 mt-1">每月实时清结算</div>
+                <div class="text-xs text-slate-400">Xử lý Tiền thuê/Phí quản lý hàng tháng</div>
+                <div class="text-3xl sm:text-4xl font-black text-blue-400 mt-1">65 tỷ+ KRW</div>
+                <div class="text-[11px] text-slate-500 mt-1">Thu tiền thời gian thực hàng tháng</div>
               </div>
 
               <div class="p-5 rounded-2xl glass-card border border-indigo-800/40 text-center group hover:border-indigo-500/50 transition">
                 <div class="icon-badge icon-badge-purple w-12 h-12 mx-auto mb-2 text-xl">
                   <i data-lucide="map-pin" class=""></i>
                 </div>
-                <div class="text-xs text-slate-400">管理资产总占地面积</div>
-                <div class="text-3xl sm:text-4xl font-black text-indigo-400 mt-1">超 6,113平方公里</div>
-                <div class="text-[11px] text-slate-500 mt-1">相当于济州岛面积约3.3倍</div>
+                <div class="text-xs text-slate-400">Quy mô Diện tích Quản lý</div>
+                <div class="text-3xl sm:text-4xl font-black text-indigo-400 mt-1">6,113㎢+</div>
+                <div class="text-[11px] text-slate-500 mt-1">Gấp khoảng 3.3 lần đảo Jeju</div>
               </div>
 
               <div class="p-5 rounded-2xl glass-card border border-purple-800/40 text-center group hover:border-purple-500/50 transition">
                 <div class="icon-badge icon-badge-emerald w-12 h-12 mx-auto mb-2 text-xl">
                   <i data-lucide="lock" class=""></i>
                 </div>
-                <div class="text-xs text-slate-400">托管租赁押金总资产规模</div>
-                <div class="text-3xl sm:text-4xl font-black text-emerald-400 mt-1">3,320亿+ 韩元</div>
-                <div class="text-[11px] text-slate-500 mt-1">安全托管与资金隔离清算</div>
+                <div class="text-xs text-slate-400">Quy mô Tiền đặt cọc Quản lý</div>
+                <div class="text-3xl sm:text-4xl font-black text-emerald-400 mt-1">332 tỷ+ KRW</div>
+                <div class="text-[11px] text-slate-500 mt-1">Ký quỹ An toàn & Quyết toán</div>
               </div>
             </div>
 
             <div class="p-3.5 rounded-xl bg-slate-900/50 space-y-1.5 text-xs">
               <div class="flex justify-between items-center text-slate-300">
                 <span class="font-semibold text-white flex items-center gap-2">
-                  <i data-lucide="building-2" class="text-cyan-400"></i> 虚拟子账号月度自动清算规模
+                  <i data-lucide="building-2" class="text-cyan-400"></i> Quy mô Xử lý Tự động Tiền gửi Tài khoản Ảo
                 </span>
-                <span class="text-cyan-400 font-bold bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">月均 120亿+ 韩元以上</span>
+                <span class="text-cyan-400 font-bold bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">Hơn 12 tỷ KRW+/tháng</span>
               </div>
               <p class="text-[11px] text-slate-500">
-                ※ 以上统计已剔除 KT集团 (2,100+空间)、乐天物产及江边电子城等部分特大型商业综合体数据。
+                ※ Đây là số liệu thống kê không bao gồm dữ liệu từ Tập đoàn KT (2.100+), Lotte C&T, Gangbyeon TechnoMart và các trung tâm mua sắm phức hợp khác.
               </p>
             </div>
           </div>
@@ -1752,8 +1752,8 @@
       },
       {
         id: "slide-15",
-        chapter: "第四章. 标杆客户案例",
-        topic: "客户案例 1：K 房地产信托公司 (全国10栋商厦统合管理)",
+        chapter: "Chương 4. Các Trường hợp Khách hàng",
+        topic: "Trường hợp Khách hàng 1: Công ty K-REITs (Quản lý tích hợp 10 tòa nhà toàn quốc)",
         origPage: 35,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1761,8 +1761,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="briefcase" class=""></i> Case Study 01
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">K 房地产投资信托基金 (REITs): 全国10栋甲级写字楼全量整合管控</h2>
-              <p class="text-slate-400 text-xs mt-0.5">集团总部实时集中大屏监控全国分布的重点写字楼物业资产，彻底杜绝应收租金跑冒滴漏。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Công ty K-REITs: Quản lý Tài sản Tích hợp cho 10 Tòa nhà Văn phòng Hạng A Toàn quốc</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Giám sát tích hợp theo thời gian thực tại trụ sở chính đối với các tài sản tòa nhà văn phòng lớn phân tán trên toàn quốc và ngăn ngừa thất thoát doanh thu.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
@@ -1770,22 +1770,22 @@
               <div class="space-y-3">
                 <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
                   <div class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
-                    <i data-lucide="x-circle" class=""></i> 系统上线前痛点
+                    <i data-lucide="x-circle" class=""></i> Vấn đề Trước khi Triển khai
                   </div>
                   <ul class="text-xs text-slate-300 mt-2 space-y-1">
-                    <li>• 各大楼运营主体各异，导致集团总部汇总财务报表耗时长达5天以上</li>
-                    <li>• 租约到期预警机制缺失导致退租后空置期异常拉长</li>
-                    <li>• 因人工漏报或错开税务发票面临高额滞纳金风险</li>
+                    <li>• Mỗi tòa nhà do một đơn vị quản lý khác nhau nên việc tổng hợp dữ liệu tại trụ sở chính mất hơn 5 ngày</li>
+                    <li>• Quản lý hợp đồng hết hạn bằng Gantt kém hiệu quả dẫn đến thời gian trống phòng kéo dài</li>
+                    <li>• Nguy cơ chịu phạt thuế do bỏ sót kê khai thuế luôn thường trực</li>
                   </ul>
                 </div>
                 <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-800/40">
                   <div class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
-                    <i data-lucide="check-circle-2" class=""></i> 导入 ezREMS 后的业务质跃
+                    <i data-lucide="check-circle-2" class=""></i> Giải quyết Triệt để Sau khi Triển khai ezREMS
                   </div>
                   <ul class="text-xs text-slate-300 mt-2 space-y-1">
-                    <li>• 在统一集成驾驶舱上一键实时汇总全国10栋商厦的租赁动态</li>
-                    <li>• 基于租约甘特图 (Gantt) 全景看板，前置90天启动续租谈判</li>
-                    <li>• 通过全自动批量开票实现国税申报“零漏报、零迟报、零罚金”</li>
+                    <li>• Tổng hợp hiện trạng cho thuê 10 tòa nhà chỉ với 1 cú nhấp trên bảng điều khiển tích hợp duy nhất</li>
+                    <li>• Kích hoạt quy trình tái ký hợp đồng sớm dựa trên biểu đồ Gantt hợp đồng</li>
+                    <li>• Đạt 0 trường hợp bỏ sót kê khai doanh thu nhờ tự động phát hành hóa đơn thuế điện tử</li>
                   </ul>
                 </div>
               </div>
@@ -1794,42 +1794,42 @@
               <div class="p-5 rounded-2xl glass-card border border-slate-800 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-white text-base flex items-center gap-2">
-                    <i data-lucide="pie-chart" class="text-cyan-400"></i> 核心交付功能与交互界面
+                    <i data-lucide="pie-chart" class="text-cyan-400"></i> Các Tính năng & Giao diện Cung cấp Chính
                   </h3>
                   <div class="space-y-2.5 mt-3 text-xs">
                     <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
                       <i data-lucide="table" class="text-cyan-400 text-sm mt-0.5"></i>
                       <div>
-                        <span class="text-cyan-400 font-semibold">分楼宇物业租赁与应收台账清单</span>
-                        <p class="text-slate-400 mt-0.5">楼宇间投资回报率(Cap Rate)多维对比，一键生成国际标准投资人月报(MR)</p>
+                        <span class="text-cyan-400 font-semibold">Bảng Hiện trạng Hợp đồng Thuê/Thanh toán theo Bất động sản</span>
+                        <p class="text-slate-400 mt-0.5">Phân tích so sánh tỷ suất sinh lời theo từng tòa nhà và xuất Báo cáo Nhà đầu tư (MR) chỉ với 1 cú nhấp chuột</p>
                       </div>
                     </div>
                     <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
                       <i data-lucide="star" class="text-amber-400 text-sm mt-0.5"></i>
                       <div>
-                        <span class="text-amber-300 font-semibold">高净值诚信租户智能画像筛选</span>
-                        <p class="text-slate-400 mt-0.5">为诚信按时付租客户设立专属权益，有效锁定长期续约率</p>
+                        <span class="text-amber-300 font-semibold">Trích xuất Danh sách Khách hàng (Người thuê) Xuất sắc</span>
+                        <p class="text-slate-400 mt-0.5">Cung cấp ưu đãi cho người thuê thanh toán đúng hạn và khuyến khích tái ký hợp đồng dài hạn</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-emerald-400 font-bold flex items-center gap-1.5">
-                  <i data-lucide="zap" class="text-emerald-400"></i> 财务月结全流程工时：由过去的5整天大幅缩减至2小时内
+                  <i data-lucide="zap" class="text-emerald-400"></i> Thời gian lập báo cáo quyết toán: Rút ngắn từ 5 ngày → còn 2 giờ
                 </div>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
               <i data-lucide="building" class="text-slate-500"></i>
-              <span>适用领域：超甲级写字楼、房地产信托投资基金 (REITs)、专业资产管理机构 (AMC)</span>
+              <span>Lĩnh vực áp dụng: Văn phòng Hạng A quy mô lớn, Quỹ tín thác Bất động sản (REITs), Công ty Quản lý Tài sản Chuyên nghiệp (AMC)</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-16",
-        chapter: "第四章. 标杆客户案例",
-        topic: "客户案例 2：Alleyway 购物中心 (对接POS系统及流水抽成管理)",
+        chapter: "Chương 4. Các Trường hợp Khách hàng",
+        topic: "Trường hợp Khách hàng 2: Trung tâm mua sắm Alleyway (Quản lý doanh thu liên kết POS)",
         origPage: 37,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1838,11 +1838,11 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="shopping-bag" class=""></i> Case Study 02
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">光教·仁川 巷弄(Alleyway)商业综合体全域数字化统管</h2>
-                <p class="text-slate-400 text-xs mt-0.5">实时采集数百家商户收银POS数据，实现基于多阶梯扣率的抽成租金精准自动清算。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Vận hành Tích hợp Trung tâm Mua sắm Alleyway Gwanggyo & Incheon</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Thu thập dữ liệu doanh thu POS của các cửa hàng theo thời gian thực và tự động tính tiền thuê dựa trên tỷ lệ hoa hồng.</p>
               </div>
               <button onclick="openOriginalModal(37)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
-                <i data-lucide="file-text" class=""></i> 查看原版PDF方案 (P.37)
+                <i data-lucide="file-text" class=""></i> Xem Trang PDF Gốc (P.37)
               </button>
             </div>
 
@@ -1852,9 +1852,9 @@
                   <i data-lucide="calculator" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-blue-400">Step 01</div>
-                <h4 class="font-bold text-white text-sm">商户POS销售流水实时采集</h4>
+                <h4 class="font-bold text-white text-sm">Thu thập Dữ liệu Doanh thu POS</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  通过标准API接口或数据流秒级获取数百家入驻商户营业流水并自动校验勾稽关系。
+                  Tự động thu thập dữ liệu doanh thu thanh toán POS của hàng trăm cửa hàng qua API và tệp tin, đồng thời xác thực tính chính xác.
                 </p>
               </div>
 
@@ -1863,9 +1863,9 @@
                   <i data-lucide="calculator" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-cyan-400">Step 02</div>
-                <h4 class="font-bold text-white text-sm">抽成佣金与保底租金智能核算</h4>
+                <h4 class="font-bold text-white text-sm">Tự động Tính phí Theo Tỷ lệ Hoa hồng</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  完全兼容纯固定租、多档营业额提成比例、保底取高(MG)等所有严苛公式自动化出账。
+                  Tự động tính tiền thuê dựa trên các điều kiện phức tạp như tiền thuê cố định, tỷ lệ hoa hồng biến đổi, mức bảo đảm tối thiểu (MG).
                 </p>
               </div>
 
@@ -1874,9 +1874,9 @@
                   <i data-lucide="map" class=""></i>
                 </div>
                 <div class="text-xs font-bold text-indigo-400">Step 03</div>
-                <h4 class="font-bold text-white text-sm">业态平面图空间坪效热力图</h4>
+                <h4 class="font-bold text-white text-sm">Trực quan hóa Doanh thu trên Mặt bằng Cửa hàng</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  在商业楼层平面图上直观呈现各区位平米坪效与客流转化率，为品牌汰换调优提供决策底牌。
+                  Trực quan hóa doanh thu theo diện tích và mức độ đóng góp luồng di chuyển trên sơ đồ mặt bằng trung tâm mua sắm để hỗ trợ ra quyết định tái cơ cấu ngành hàng (MD).
                 </p>
               </div>
             </div>
@@ -1884,19 +1884,19 @@
             <div class="p-3 rounded-xl bg-slate-900/50 flex items-center justify-between text-xs">
               <div class="space-y-1">
                 <span class="font-bold text-white text-sm flex items-center gap-1.5">
-                  <i data-lucide="shopping-bag" class="text-cyan-400"></i> 全面覆盖复合商业购物中心定制化特化 PMS 体系
+                  <i data-lucide="shopping-bag" class="text-cyan-400"></i> Trang bị Đầy đủ Tính năng PMS Chuyên biệt cho Trung tâm Thương mại Phức hợp
                 </span>
-                <p class="text-slate-400">光教 Alleyway、仁川 Alleyway、江边电子城等国内标杆大型商业综合体成熟落地标杆案例。</p>
+                <p class="text-slate-400">Thành tích vận hành tại các cơ sở thương mại mang tính biểu tượng trong nước như Alleyway Gwanggyo, Alleyway Incheon, Gangbyeon TechnoMart</p>
               </div>
-              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-3 py-1.5 rounded-lg border border-cyan-800/40">流水核算与抽成对账 0% 误差</span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-3 py-1.5 rounded-lg border border-cyan-800/40">Lỗi Chốt Doanh thu 0%</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-17",
-        chapter: "第四章. 标杆客户案例",
-        topic: "客户案例 3：Jeil Punggyeongchae 1,045户大型社区 (欠缴率 25% → 6%)",
+        chapter: "Chương 4. Các Trường hợp Khách hàng",
+        topic: "Trường hợp Khách hàng 3: Jeil Punggyeongchae 1.045 căn hộ (Tỷ lệ chậm nộp 25% → 6%)",
         origPage: 39,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -1905,11 +1905,11 @@
                 <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="trending-down" class=""></i> Dramatic Result
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">千户大型社区「第一风景郡」: 欠缴率自 25% 断崖式下降至 6%</h2>
-                <p class="text-slate-400 text-xs mt-0.5">在包含1,045户大型社区引入法律权威电子催告与线上信用卡缴纳，成功破解收缴死结。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Khu phức hợp quy mô lớn Jeil Punggyeongchae: Tỷ lệ nợ giảm mạnh từ 25% → 6%</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Áp dụng tài liệu điện tử Naver và thanh toán thẻ tín dụng cho khu chung cư lớn 1.045 căn hộ, cải thiện đáng kể tỷ lệ chậm thanh toán.</p>
               </div>
               <button onclick="openOriginalModal(39)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold border border-emerald-800/40 transition shadow-sm hover:border-emerald-500/50">
-                <i data-lucide="file-text" class=""></i> 查看原版PDF方案 (P.39)
+                <i data-lucide="file-text" class=""></i> Xem Trang PDF Gốc (P.39)
               </button>
             </div>
 
@@ -1918,16 +1918,16 @@
               <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
                 <div class="flex justify-between items-center">
                   <h3 class="font-bold text-white text-sm flex items-center gap-2">
-                    <i data-lucide="bar-chart-3" class="text-blue-400"></i> 系统导入前后未付欠缴率走势权威对比
+                    <i data-lucide="bar-chart-3" class="text-blue-400"></i> So sánh Xu hướng Tỷ lệ Chậm nộp Trước và Sau khi Triển khai
                   </h3>
-                  <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">净改善高达 19个百分点</span>
+                  <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">Cải thiện Đột phá 19%p</span>
                 </div>
 
                 <div class="space-y-4 py-2">
                   <div>
                     <div class="flex justify-between text-xs mb-1">
-                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="x-circle" class="text-rose-400"></i> 导入前 (2025年1月)</span>
-                      <span class="text-rose-400 font-bold text-sm">未缴率 25%</span>
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="x-circle" class="text-rose-400"></i> Trước khi triển khai (Tháng 1/2025)</span>
+                      <span class="text-rose-400 font-bold text-sm">Tỷ lệ nợ quá hạn 25%</span>
                     </div>
                     <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
                       <div class="h-full bg-rose-500 rounded-full" style="width: 25%;"></div>
@@ -1936,8 +1936,8 @@
 
                   <div>
                     <div class="flex justify-between text-xs mb-1">
-                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="text-emerald-400"></i> 全面导入后 (2025年8月)</span>
-                      <span class="text-emerald-400 font-bold text-sm">未缴率 6%</span>
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="text-emerald-400"></i> Sau khi triển khai ezREMS (Tháng 8/2025)</span>
+                      <span class="text-emerald-400 font-bold text-sm">Tỷ lệ nợ quá hạn 6%</span>
                     </div>
                     <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
                       <div class="h-full bg-emerald-500 rounded-full transition-all duration-1000" style="width: 6%;"></div>
@@ -1946,35 +1946,35 @@
                 </div>
 
                 <p class="text-[11px] text-slate-400">
-                  ※ 1,045户大型社区实测数据：官方电子账单签收查阅率突破89%，信用卡免息代缴大幅提升。
+                  * Dữ liệu thực chứng 1.045 căn: Tỷ lệ mở xem văn bản điện tử Naver vượt 89% và thanh toán trả góp thẻ tín dụng 0% lãi suất tăng mạnh
                 </p>
               </div>
 
               <!-- Right: Key Success Factors -->
               <div class="p-5 rounded-2xl glass-card border border-blue-900/40 space-y-3">
                 <h3 class="font-bold text-white text-base flex items-center gap-2">
-                  <i data-lucide="key" class="text-amber-400"></i> 项目成功的 3 大核心支柱
+                  <i data-lucide="key" class="text-amber-400"></i> 3 Yếu tố Thành công Cốt lõi
                 </h3>
                 <div class="space-y-2 text-xs">
                   <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
                     <i data-lucide="mail" class="text-rose-400 text-sm mt-0.5"></i>
                     <div>
-                      <span class="text-rose-300 font-bold">1. 彻底告别传统纸质单据</span>
-                      <p class="text-slate-400 mt-0.5">彻底终结传统纸质通知单被丢弃在信箱而导致的逾期失联痛点</p>
+                      <span class="text-rose-300 font-bold">1. Thoát khỏi Hóa đơn Giấy</span>
+                      <p class="text-slate-400 mt-0.5">Giải quyết dứt điểm vấn đề quên hạn thanh toán do giấy báo bị bỏ quên trong hộp thư</p>
                     </div>
                   </div>
                   <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
                     <i data-lucide="shield-check" class="text-emerald-400 text-sm mt-0.5"></i>
                     <div>
-                      <span class="text-emerald-300 font-bold">2. 权威公信力电子公函法定义务直达</span>
-                      <p class="text-slate-400 mt-0.5">手机端实名生物认证解锁查看，精准锁定送达证据并一键引导在线付款</p>
+                      <span class="text-emerald-300 font-bold">2. Gửi Văn bản Điện tử Chứng thực Naver</span>
+                      <p class="text-slate-400 mt-0.5">Xác nhận đúng người nhận thông qua xác thực điện thoại thông minh và điều hướng thanh toán ngay tức thì</p>
                     </div>
                   </div>
                   <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
                     <i data-lucide="credit-card" class="text-cyan-400 text-sm mt-0.5"></i>
                     <div>
-                      <span class="text-cyan-300 font-bold">3. 信用卡极速绑卡代扣与多元分期</span>
-                      <p class="text-slate-400 mt-0.5">短期流动资金短缺租客可通过信用卡分期平滑付清，有效阻断恶性欠租发生</p>
+                      <span class="text-cyan-300 font-bold">3. Thanh toán Thẻ Tiện lợi & Hỗ trợ Trả góp</span>
+                      <p class="text-slate-400 mt-0.5">Khách thuê tạm thời thiếu tiền mặt có thể thanh toán trả góp qua thẻ, ngăn ngừa nợ quá hạn</p>
                     </div>
                   </div>
                 </div>
@@ -1982,16 +1982,16 @@
             </div>
 
             <div class="p-3 rounded-xl bg-emerald-950/25 text-xs text-emerald-200 flex justify-between items-center">
-              <span class="flex items-center gap-1.5"><i data-lucide="phone-off" class="text-emerald-400"></i> 物业管理处口碑：人工催缴电话量骤降80%，租金纠纷降为零。</span>
-              <span class="text-white font-bold bg-emerald-800/60 px-2 py-0.5 rounded">每月实现超 1,400万+ 韩元资金提前极速回笼</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="phone-off" class="text-emerald-400"></i> Mức độ hài lòng của ban quản lý: Giảm 80% các cuộc gọi đòi nợ cư dân và loại bỏ hoàn toàn tranh chấp</span>
+              <span class="text-white font-bold bg-emerald-800/60 px-2 py-0.5 rounded">Thu hồi sớm bổ sung hơn 14 triệu KRW+/tháng</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-18",
-        chapter: "第四章. 标杆客户案例",
-        topic: "客户案例 4：复杂结构水电燃气能源费分摊与运营管理",
+        chapter: "Chương 4. Các Trường hợp Khách hàng",
+        topic: "Trường hợp Khách hàng 4: Tính và Quản lý vận hành Phí Tiện ích (Điện · Nước · Nhiệt) Cấu trúc Phức tạp",
         origPage: 46,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -2000,11 +2000,11 @@
                 <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="zap" class="text-amber-400"></i> Case Study 04
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">复杂结构综合能耗公摊(水暖电气)智能分摊与账单托管</h2>
-                <p class="text-slate-400 text-xs mt-0.5">从多路计量阶梯能耗计算到增值税发票自动出具全流程覆盖，彻底杜绝手工误差。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Trường hợp Áp dụng Tính Phí Tiện ích Cấu trúc Phức tạp (Quản lý Vận hành Chi phí Điện Nước)</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Triển khai trọn gói từ tính toán tiện ích phức tạp đến xuất hóa đơn thuế, ngăn ngừa triệt để lỗi do con người.</p>
               </div>
               <button onclick="openCustomImageModal('images/case_utility.png', '복잡한 구조 수광비 부과 프로세스 원본 도표')" class="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50 whitespace-nowrap flex-shrink-0">
-                <i data-lucide="image" class=""></i> 查看原版图表 (P.46)
+                <i data-lucide="image" class=""></i> Xem Biểu đồ Gốc (P.46)
               </button>
             </div>
 
@@ -2014,19 +2014,19 @@
               <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/40 via-blue-950/40 to-slate-900 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div class="flex items-center gap-2 text-amber-300 font-bold text-xs">
                   <i data-lucide="check-circle-2" class="text-amber-400"></i>
-                  <span>从多阶梯能耗分摊核算到税务发票下发全流程闭环自动化。</span>
+                  <span>Tự động hóa toàn bộ quy trình từ tính toán tiện ích phức tạp đến xuất hóa đơn thuế</span>
                 </div>
                 <div class="flex items-center gap-2 text-cyan-300 font-bold text-xs">
                   <i data-lucide="shield-check" class="text-cyan-400"></i>
-                  <span>从算法层面杜绝人工计算失误、漏报公摊及财务平账不符等灾难性人因差错 (Human Error)。</span>
+                  <span>Ngăn ngừa triệt để lỗi nghiêm trọng do con người (Human Error) như sai sót tính toán thủ công và bỏ sót tổng hợp</span>
                 </div>
               </div>
 
               <!-- 3-Step Pipeline Box (Full Width 3 Columns) -->
               <div class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-800 space-y-3.5">
                 <div class="text-xs font-bold text-white flex items-center justify-between">
-                  <span class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-cyan-400"></i> ezREMS 能耗与物业费精准核算 3 阶段自动化流水线</span>
-                  <span class="text-[11px] text-slate-400">从远传物联网抄表到财务凭证生成一网通办</span>
+                  <span class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-cyan-400"></i> Quy trình Tự động hóa 3 Giai đoạn Tính Phí Tiện ích của ezREMS</span>
+                  <span class="text-[11px] text-slate-400">Một cửa từ đọc chỉ số từ xa đến liên kết chứng từ kế toán</span>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
@@ -2035,9 +2035,9 @@
                       <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Step 01</span>
                       <i data-lucide="database" class="text-blue-400"></i>
                     </div>
-                    <div class="font-bold text-white text-sm">基础数据与物联网远传采集</div>
+                    <div class="font-bold text-white text-sm">Thu thập Dữ liệu Cơ sở & Đo đếm Từ xa</div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      智能远传水电表数据秒级采集，公共维保分摊、工程零星修缮及耗材物料原值实时归集统一运算。
+                      Tự động liên kết số liệu công tơ, tích hợp thu thập theo thời gian thực dữ liệu cơ sở như phí dịch vụ công cộng, phí sửa chữa/vật tư tiêu hao.
                     </p>
                   </div>
 
@@ -2046,9 +2046,9 @@
                       <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Step 02</span>
                       <i data-lucide="calculator" class="text-cyan-400"></i>
                     </div>
-                    <div class="font-bold text-white text-sm">一二次复合维度精细化分摊</div>
+                    <div class="font-bold text-white text-sm">Phân bổ Chuẩn xác 2 Giai đoạn</div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      综合运用“抄表读数+面积公摊+独立设备台数+楼层专属商务阶梯费率”多因子复杂计算引擎，零误差出账。
+                      Áp dụng kết hợp phân bổ cơ bản theo lượng sử dụng/diện tích, số lượng thiết bị theo khu vực và tỷ lệ thỏa thuận đặc biệt theo tầng để tính chính xác số tiền phải trả cho từng cửa hàng.
                     </p>
                   </div>
 
@@ -2057,9 +2057,9 @@
                       <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Step 03</span>
                       <i data-lucide="file-check-2" class="text-emerald-400"></i>
                     </div>
-                    <div class="font-bold text-white text-sm">账单出具、回款核销与自动凭证</div>
+                    <div class="font-bold text-white text-sm">Tự động hóa Thông báo · Thu tiền · Chứng từ</div>
                     <p class="text-[11px] text-slate-400 leading-relaxed">
-                      短信/邮件电子账单多路推送 ➔ 虚拟子账号极速销账 ➔ 会计凭证自动过账 ➔ 税控系统批量开发票全流程闭环。
+                      Thông báo điện tử qua Kakao/Email ➔ Thu tiền tự động qua tài khoản ảo ➔ Tạo chứng từ thanh toán/thu tiền và phát hành đồng loạt hóa đơn thuế điện tử cho Cục Thuế.
                     </p>
                   </div>
                 </div>
@@ -2069,30 +2069,30 @@
               <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
                   <div class="text-amber-400 font-bold text-xs flex items-center gap-1.5">
-                    <i data-lucide="calculator" class="text-sm"></i> 复杂算式多因子全覆盖
+                    <i data-lucide="calculator" class="text-sm"></i> Xử lý Hoàn hảo Công thức Phức tạp
                   </div>
-                  <p class="text-[11px] text-slate-400 leading-tight">固定费率/服务抽成/实际消耗阶梯用电超额累进制全智能解算。</p>
+                  <p class="text-[11px] text-slate-400 leading-tight">Tự động tính toán định mức, hoa hồng, phân bổ theo mức sử dụng thực tế và biểu thuế lũy tiến</p>
                 </div>
 
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
                   <div class="text-emerald-400 font-bold text-xs flex items-center gap-1.5">
-                    <i data-lucide="file-text" class="text-sm"></i> 全电发票自动归集开具
+                    <i data-lucide="file-text" class="text-sm"></i> Liên kết Hóa đơn Thuế
                   </div>
-                  <p class="text-[11px] text-slate-400 leading-tight">直连税控批量开具增值税普通/专用电子发票及资金凭证。</p>
+                  <p class="text-[11px] text-slate-400 leading-tight">Liên kết Hometax phát hành điện tử đồng loạt cho Cục Thuế và biên lai tiền mặt</p>
                 </div>
 
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
                   <div class="text-cyan-400 font-bold text-xs flex items-center gap-1.5">
-                    <i data-lucide="refresh-cw" class="text-sm"></i> 会计凭证全自动生成
+                    <i data-lucide="refresh-cw" class="text-sm"></i> Tự động hóa Chứng từ Kế toán
                   </div>
-                  <p class="text-[11px] text-slate-400 leading-tight">收缴流水、逾期滞纳金及增值税会计分录全流程秒级对接企业核心ERP。</p>
+                  <p class="text-[11px] text-slate-400 leading-tight">Chứng từ thu tiền, phí quá hạn, VAT được liên kết tự động theo thời gian thực với hệ thống ERP</p>
                 </div>
 
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
                   <div class="text-purple-400 font-bold text-xs flex items-center gap-1.5">
-                    <i data-lucide="shield-check" class="text-sm"></i> 租户分摊异议彻底清零
+                    <i data-lucide="shield-check" class="text-sm"></i> Không Còn Tranh chấp với Khách thuê
                   </div>
-                  <p class="text-[11px] text-slate-400 leading-tight">透明化输出分摊算式明细与带时标的水电抄表底表证据链。</p>
+                  <p class="text-[11px] text-slate-400 leading-tight">Cung cấp minh bạch bảng kê chi tiết và căn cứ chỉ số công tơ đo đếm</p>
                 </div>
               </div>
             </div>
@@ -2100,9 +2100,9 @@
             <!-- Footer Message -->
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
               <span class="flex items-center gap-2">
-                <i data-lucide="building-2" class="text-cyan-400"></i> 面向商业广场、超大写字楼、高新产业园数百家租户定制的水电燃气综合公摊精密管理工业级标准。
+                <i data-lucide="building-2" class="text-cyan-400"></i> Tiêu chuẩn quản lý chính xác chi phí tiện ích công tơ cho hàng trăm cửa hàng trong trung tâm thương mại, văn phòng lớn, trung tâm công nghiệp tri thức
               </span>
-              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">财务核算对账周期压降90%</span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">Rút ngắn 90% Thời gian Chốt Quyết toán</span>
             </div>
           </div>
         `
@@ -2110,8 +2110,8 @@
 
       {
         id: "slide-19",
-        chapter: "第四章. 企业级系统集成",
-        topic: "企业级系统打通：MGRV 共享公寓API & SAP FI财务集成",
+        chapter: "Chương 4. Liên kết Cấp Doanh nghiệp",
+        topic: "Liên kết Doanh nghiệp: MGRV Co-living API & Liên kết SAP FI",
         origPage: 41,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -2120,15 +2120,15 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="git-fork" class=""></i> Enterprise API
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">大型集团级系统互通: 共享社区开放API与大企业SAP ERP无缝集成</h2>
-                <p class="text-slate-400 text-xs mt-0.5">将客户自建的品牌客户端移动端与世界级企业财务中枢(SAP)实现毫秒级打通。</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Liên kết Cấp Doanh nghiệp: Open API Co-Living & Tích hợp SAP ERP</h2>
+                <p class="text-slate-400 text-xs mt-0.5">Tích hợp hoàn hảo ứng dụng di động riêng của khách hàng và hệ thống kế toán doanh nghiệp lớn (SAP).</p>
               </div>
               <div class="self-start sm:self-auto flex items-center gap-2 flex-shrink-0">
                 <button onclick="openOriginalModal(40)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
-                  <i data-lucide="file-text" class=""></i> 开放API方案 (P.40)
+                  <i data-lucide="file-text" class=""></i> Slide Open API (P.40)
                 </button>
                 <button onclick="openOriginalModal(41)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-400 text-xs font-semibold border border-indigo-800/40 transition shadow-sm hover:border-indigo-500/50">
-                  <i data-lucide="file-text" class=""></i> SAP对接方案 (P.41)
+                  <i data-lucide="file-text" class=""></i> Slide Liên kết SAP (P.41)
                 </button>
               </div>
             </div>
@@ -2140,14 +2140,14 @@
                   <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
                     <i data-lucide="code" class=""></i>
                   </div>
-                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 font-medium">B2C 租客移动端集成</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 font-medium">Liên kết B2C App</span>
                 </div>
-                <h3 class="font-bold text-white text-base">MGRV (Mangrove) 青年社区开放API集成</h3>
+                <h3 class="font-bold text-white text-base">MGRV (Mangrove) Co-Living Open API</h3>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  由 ezREMS 核心 PMS 系统全流程纳管的 <span class="text-cyan-400 font-bold">资产空间·租约合同·出账结算数据</span>——通过标准 RESTful API 全面赋能客户自研品牌App，首创实现“实时在线房态盘查·移动端极速网签闭环”。
+                  Được quản lý trong PMS ezREMS: <span class="text-cyan-400 font-bold">Dữ liệu Không gian · Hợp đồng · Thanh toán</span> cung cấp theo thời gian thực cho ứng dụng riêng của khách hàng qua REST API, tiên phong triển khai 'Tra cứu phòng trống thời gian thực & Hợp đồng trực tuyến' đầu tiên tại Hàn Quốc.
                 </p>
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
-                  <i data-lucide="newspaper" class="text-cyan-400"></i> 权威财经报道：《签约共享公寓运营管理数字化转型战略合作》
+                  <i data-lucide="newspaper" class="text-cyan-400"></i> Chosun Biz: 'Thỏa thuận Hợp tác Chuyển đổi Số Vận hành Quản lý Co-Living'
                 </div>
               </div>
 
@@ -2159,27 +2159,27 @@
                   </div>
                   <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 font-medium">Enterprise ERP</span>
                 </div>
-                <h3 class="font-bold text-white text-base">大型集团企业 SAP FI 财务会计模块直连</h3>
+                <h3 class="font-bold text-white text-base">Liên kết Mô-đun Kế toán Doanh nghiệp SAP FI</h3>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  在 ezREMS 系统中实时沉淀的 <span class="text-indigo-400 font-bold">押金资金池、营业流水、实收实结、逾期利息与运营成本全维度凭证</span>——穿透企业安全隔离网闸，直驱注入客户现役 SAP FI 财务核算总账模块，彻底根绝二次录入与人工对账。
+                  Phát sinh từ ezREMS: <span class="text-indigo-400 font-bold">Chứng từ Tiền cọc/Doanh thu/Thu tiền/Phí quá hạn/Chi phí</span> tự động truyền qua tường lửa đến phân hệ SAP FI của khách hàng, hoàn thành quyết toán mà không cần nhập liệu trùng lặp.
                 </p>
                 <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
-                  <i data-lucide="shield-check" class="text-emerald-400"></i> 专有企业级安全隧道代理中间件（WAS ↔ RFC / API）高可靠稳定通讯
+                  <i data-lucide="shield-check" class="text-emerald-400"></i> Liên kết hoàn hảo qua Agent bảo mật khu vực tường lửa (WAS ↔ RFC/API)
                 </div>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
-              <span class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 无需推倒替换企业现行核心ERP，通过专有总线适配器即插即用</span>
-              <span class="text-cyan-400 font-bold">相较于传统传统定制开发 (SI) 模式节约80%以上的资金投入与实施周期</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Kết nối dễ dàng bằng adapter mà không cần thay thế hệ thống ERP cũ</span>
+              <span class="text-cyan-400 font-bold">Tiết kiệm hơn 80% chi phí và thời gian so với việc tự xây dựng SI riêng</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-20",
-        chapter: "第六章. 商业模式拓展",
-        topic: "商业模式拓展：超越房地产，面向【全部】收益型有形/无形资产的运营ERP",
+        chapter: "Chương 6. Mở rộng Mô hình Kinh doanh",
+        topic: "Mở rộng Mô hình Kinh doanh: ERP Vận hành [MỌI] Tài sản Hữu hình & Vô hình Tạo Doanh thu Ngoài Bất động sản",
         origPage: 41,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -2187,21 +2187,21 @@
               <div>
                 <div class="flex items-center gap-2">
                   <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <i data-lucide="layers" class=""></i> 第六章. 商业模式拓展 Expansion
+                    <i data-lucide="layers" class=""></i> Chương 6. Mở rộng Mô hình Kinh doanh Expansion
                   </span>
-                  <!-- 회전형/말풍선 그린 뱃지: 仅限房地产？ -->
+                  <!-- 회전형/말풍선 그린 뱃지: Chỉ Bất động sản? -->
                   <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 font-extrabold text-[11px] border border-emerald-500/50 shadow-sm animate-pulse flex items-center gap-1">
-                    <span>仅限房地产？</span>
+                    <span>Chỉ Bất động sản?</span>
                     <i data-lucide="arrow-right" class="text-[10px]"></i>
-                    <span class="text-white font-black">不！全面覆盖所有收益型资产</span>
+                    <span class="text-white font-black">KHÔNG! Tất cả Tài sản Tạo doanh thu</span>
                   </span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 flex items-center flex-wrap gap-2">
-                  <span>收益型</span>
-                  <span class="text-emerald-400 border-2 border-emerald-400 px-2 py-0.5 rounded-xl shadow-lg shadow-emerald-500/30 bg-emerald-950/80 font-black tracking-wide">【全部】</span>
-                  <span>资产，运营已成为核心。</span>
+                  <span>Tạo Doanh Thu</span>
+                  <span class="text-emerald-400 border-2 border-emerald-400 px-2 py-0.5 rounded-xl shadow-lg shadow-emerald-500/30 bg-emerald-950/80 font-black tracking-wide">[TẤT CẢ]</span>
+                  <span>Tài sản — Bây giờ vận hành là cốt lõi.</span>
                 </h2>
-                <p class="text-slate-400 text-xs mt-0.5">打破传统不动产局限，横跨动产、设施、算力基建及无形版权——依托单一核心引擎全面纳管的下一代ERP。</p>
+                <p class="text-slate-400 text-xs mt-0.5">Vượt xa bất động sản, mở rộng đến động sản, cơ sở vật chất, hạ tầng IT và bản quyền vô hình — ERP thế hệ mới vận hành tích hợp trên động cơ lõi duy nhất</p>
               </div>
 
               <!-- 우측 다국어 지원 뱃지 (KO, EN, JA, ZH, VI, TH) -->
@@ -2209,14 +2209,14 @@
                 <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center gap-2 text-xs">
                   <div class="flex items-center gap-1 text-slate-300 font-bold">
                     <i data-lucide="languages" class="text-cyan-400"></i>
-                    <span>支持6种语言</span>
+                    <span>Hỗ trợ 6 ngôn ngữ</span>
                   </div>
                   <div class="flex items-center gap-1 text-[11px]">
                     <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">KO</span>
                     <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">EN</span>
                     <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">JA</span>
-                    <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 font-bold border border-blue-800/40">ZH</span>
-                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">VI</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">ZH</span>
+                    <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 font-bold border border-blue-800/40">VI</span>
                     <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">TH</span>
                   </div>
                 </div>
@@ -2225,31 +2225,31 @@
 
             <!-- 10대 유무형 자산 그리드 카드 (5x2) -->
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 my-auto">
-              <!-- 1. 长租公寓 / 青年社区 -->
+              <!-- 1. Nhà ở / Nhà chia sẻ (Co-living) -->
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-emerald-800/40 hover:border-emerald-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-emerald-950/30">
                 <div class="flex items-center justify-between mb-2">
                   <div class="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="home"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/40">住宅/公寓</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/40">Nhà ở / Căn hộ dịch vụ</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition">长租公寓 / 青年社区</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">青年宿舍 · 银发康养社区 · 青年共享公寓</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition">Nhà ở / Nhà chia sẻ (Co-living)</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Ký túc xá · Viện dưỡng lão cao cấp · Nhà cho thanh niên thuê</p>
                 </div>
               </div>
 
-              <!-- 2. 商业零售 / 购物中心 -->
+              <!-- 2. Bán lẻ / Trung tâm thương mại -->
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-amber-800/40 hover:border-amber-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-amber-950/30">
                 <div class="flex items-center justify-between mb-2">
                   <div class="w-9 h-9 rounded-xl bg-amber-950/80 border border-amber-500/30 text-amber-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="store"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">商业/购物中心</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">Thương mại / Bán lẻ</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-amber-300 transition">商业零售 / 购物中心</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">POS流水实时对账 · 租金提成与保底抽佣</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-amber-300 transition">Bán lẻ / Trung tâm thương mại</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Liên kết doanh thu POS · Quyết toán hoa hồng biến đổi</p>
                 </div>
               </div>
 
@@ -2259,11 +2259,11 @@
                   <div class="w-9 h-9 rounded-xl bg-blue-950/80 border border-blue-500/30 text-blue-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="building-2"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">商办写字楼</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">Cơ sở Văn phòng</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition">办公写字楼 / 商用楼宇</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">超甲级高端商务写字楼与城市商办全资产统管</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition">Văn phòng / Tòa nhà</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Văn phòng Hạng A · Quản lý tài sản tòa nhà tiêu chuẩn</p>
                 </div>
               </div>
 
@@ -2273,39 +2273,39 @@
                   <div class="w-9 h-9 rounded-xl bg-orange-950/80 border border-orange-500/30 text-orange-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="warehouse"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-800/40">物流仓储</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-800/40">Logistics / Kho bãi</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-orange-300 transition">现代仓储 / 冷链物流中心</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">常温/冷链电商履行中心与物流综合设施</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-orange-300 transition">Kho bãi / Trung tâm Logistics</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Không gian & thiết bị hoàn tất đơn hàng nhiệt độ thường và kho lạnh</p>
                 </div>
               </div>
 
-              <!-- 5. IDC 绿色数据中心 -->
+              <!-- 5. Trung tâm Dữ liệu IDC -->
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-cyan-800/40 hover:border-cyan-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-cyan-950/30">
                 <div class="flex items-center justify-between mb-2">
                   <div class="w-9 h-9 rounded-xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="server"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">IT数字基建</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">Hạ tầng IT</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition">IDC 绿色数据中心</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">服务器机柜(Rack)出租与机房强电能耗智控</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition">Trung tâm Dữ liệu IDC</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Quản lý diện tích tủ Rack máy chủ · Hạ tầng điện lực</p>
                 </div>
               </div>
 
-              <!-- 6. 陵园墓园 / 骨灰安放设施 -->
+              <!-- 6. Nhà tang lễ / Nhà để tro cốt -->
               <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-purple-800/40 hover:border-purple-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-purple-950/30">
                 <div class="flex items-center justify-between mb-2">
                   <div class="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/30 text-purple-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="landmark"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">陵园/永代安葬</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">Tưởng niệm / Tro cốt</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-purple-300 transition">陵园墓园 / 骨灰安放设施</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">生态陵园与骨灰寄存设施长期协议及费用托管</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-purple-300 transition">Nhà tang lễ / Nhà để tro cốt</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Công viên tưởng niệm · Hợp đồng/Thu tiền dài hạn cơ sở tro cốt</p>
                 </div>
               </div>
 
@@ -2315,11 +2315,11 @@
                   <div class="w-9 h-9 rounded-xl bg-sky-950/80 border border-sky-500/30 text-sky-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="car"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/40">出行/汽车租赁</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/40">Giao thông thông minh (Mobility)</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-sky-300 transition">汽车租赁 / 融资租赁</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">长短租代步车辆 · 融资租赁回款与维修机动保养全流程整合</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-sky-300 transition">Thuê xe / Thuê mua ô tô</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Cho thuê xe · Tích hợp phí thuê định kỳ và bảo dưỡng</p>
                 </div>
               </div>
 
@@ -2329,11 +2329,11 @@
                   <div class="w-9 h-9 rounded-xl bg-rose-950/80 border border-rose-500/30 text-rose-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="shirt"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800/40">订阅/设备租赁</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800/40">Thuê bao / Cho thuê</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-rose-300 transition">高价值服饰 / 专用设备订阅</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">时尚潮流服饰与高端专业设备定期订阅流转台账</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-rose-300 transition">Trang phục / Cho thuê thiết bị</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Quản lý Gói Đăng ký Định kỳ Trang phục Thời trang & Thiết bị Cao cấp</p>
                 </div>
               </div>
 
@@ -2343,11 +2343,11 @@
                   <div class="w-9 h-9 rounded-xl bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="file-text"></i>
                   </div>
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40">无形资产/IP</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40">Tài sản vô hình</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition">无形软件版权 / 知识产权</h4>
-                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">软硬件长期运维保障协议与定期授权许可分摊ERP</p>
+                  <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition">Bản quyền vô hình / Phần mềm</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">Hợp đồng bảo trì · ERP bản quyền phần mềm định kỳ</p>
                 </div>
               </div>
 
@@ -2357,11 +2357,11 @@
                   <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 flex items-center justify-center text-base group-hover:scale-110 transition">
                     <i data-lucide="lightbulb"></i>
                   </div>
-                  <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-md animate-pulse">NEW 新业态</span>
+                  <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-md animate-pulse">Khai phá MỚI</span>
                 </div>
                 <div>
-                  <h4 class="font-extrabold text-amber-300 text-sm group-hover:text-white transition">孵化创新商业模式</h4>
-                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">灵活接入各类新型有形与无形资产运营商业业态</p>
+                  <h4 class="font-extrabold text-amber-300 text-sm group-hover:text-white transition">Phát triển Mô hình Kinh doanh Mới</h4>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">Tiếp nhận ngay lập tức mọi mô hình kinh doanh mới hữu hình và vô hình</p>
                 </div>
               </div>
             </div>
@@ -2370,11 +2370,11 @@
             <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
               <div class="flex items-center gap-2">
                 <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-800/50">Core Platform</span>
-                <span class="text-slate-300 font-semibold">智能资产管理ERP平台底座 —— <strong class="text-white text-sm">ezREMS™</strong></span>
+                <span class="text-slate-300 font-semibold">Nền tảng ERP Quản lý Tài sản Thông minh — <strong class="text-white text-sm">ezREMS™</strong></span>
               </div>
               <div class="text-[11px] text-slate-400 flex items-center gap-2">
                 <i data-lucide="check-circle-2" class="text-emerald-400"></i>
-                <span>签约 ➔ 出账 ➔ 自动对账 ➔ 财务凭证 ➔ 国税申报单核全流程无缝支撑新业态。</span>
+                <span>Hợp đồng ➔ Thanh toán ➔ Thu tiền tự động ➔ Chứng từ kế toán ➔ Khai thuế trên một lõi duy nhất, tiếp nhận ngay mô hình kinh doanh mới</span>
               </div>
             </div>
           </div>
@@ -2382,8 +2382,8 @@
       },
       {
         id: "slide-21",
-        chapter: "第五章. 安全生产与未来愿景",
-        topic: "生态系列服务：重大灾害安全生产健康管理 'EASY SAFE'",
+        chapter: "Chương 5. Quản lý An toàn & Tầm nhìn Tương lai",
+        topic: "Dịch vụ Gia đình: An toàn & Sức khỏe Tai nạn Nghiêm trọng 'EASY SAFE'",
         origPage: 51,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -2391,8 +2391,8 @@
               <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="hard-hat" class=""></i> Safety Platform
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">安全生产重大事故法治合规平台「EASY SAFE」</h2>
-              <p class="text-slate-400 text-xs mt-0.5">在资产数字化运营的同时，无缝协同企业高管与物业团队全面履行法定安全生产安保责任。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Đối phó Đạo luật Trừng phạt Tai nạn Nghiêm trọng: 'EASY SAFE'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Nền tảng liên kết giúp thực hiện hoàn hảo các nghĩa vụ an toàn vệ sinh lao động của tòa nhà cùng với việc quản lý tài sản bất động sản.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
@@ -2400,9 +2400,9 @@
                 <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
                   <i data-lucide="gavel" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-base">01. 法定义务全自动履职</h4>
+                <h4 class="font-bold text-white text-base">01. Tự động hóa Nghĩa vụ Pháp lý</h4>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  全面覆盖中小型商务楼宇、住宅物业及外包工程现场，全流程指引法定职业健康安全巡检，杜绝任何合规疏漏。
+                  Hướng dẫn thực hiện đầy đủ, không bỏ sót các đợt kiểm tra an toàn vệ sinh lao động theo luật định bắt buộc tại các tòa nhà vừa và nhỏ, ban quản lý chung cư, công trường xây dựng thuê ngoài.
                 </p>
               </div>
 
@@ -2410,9 +2410,9 @@
                 <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
                   <i data-lucide="clipboard-check" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-base">02. 移动端无纸化现场巡检</h4>
+                <h4 class="font-bold text-white text-base">02. Kiểm tra Hiện trường trên Di động</h4>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  班前安全早会 (TBM) 签到与日常巡查巡回记录直接在手机端完成电子签署，加密归档永久云端留痕。
+                  Ký và lập biên bản họp an toàn trước ca làm việc (TBM) và danh mục kiểm tra tuần tra hàng ngày trên điện thoại thông minh, lưu trữ vĩnh viễn trên đám mây.
                 </p>
               </div>
 
@@ -2420,9 +2420,9 @@
                 <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
                   <i data-lucide="link" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-base">03. ezREMS 一键秒级数据打通</h4>
+                <h4 class="font-bold text-white text-base">03. Liên kết ezREMS Chỉ với 1 Cú nhấp</h4>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  不动产单元台账与工程日常维修巡检计划深度交融，为企业主要负责人筑牢不可逾越的法定合规免责防线。
+                  Quản lý phòng ốc tòa nhà và lịch trình công tác sửa chữa/bảo trì được liên kết với EASY SAFE, cung cấp đầy đủ bằng chứng miễn trừ trách nhiệm pháp lý cho người điều hành.
                 </p>
               </div>
             </div>
@@ -2430,17 +2430,17 @@
             <div class="p-3 rounded-xl bg-amber-950/20 text-xs text-amber-200 flex justify-between items-center">
               <span class="flex items-center gap-2">
                 <i data-lucide="shield-check" class="text-amber-400"></i>
-                “Simple, Smart and Solve —— 聚焦实战刚需，一线作业人员轻松上手的企业级安全生产合规底座”
+                "Simple, Smart and Solve - Nền tảng an toàn dễ dàng sử dụng cho nhân viên thực địa tập trung vào các tính năng thiết yếu nhất"
               </span>
-              <span class="font-bold text-white bg-amber-800/60 px-2 py-0.5 rounded">ezREMS 战略客户专属护航权益包</span>
+              <span class="font-bold text-white bg-amber-800/60 px-2 py-0.5 rounded">Hỗ trợ Gói Doanh nghiệp Đặc biệt cho Khách hàng ezREMS</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-22",
-        chapter: "第五章. 核心技术路线图",
-        topic: "下一代路线图：基于AI的智能资产管理与国家住建数据对接",
+        chapter: "Chương 5. Lộ trình Công nghệ",
+        topic: "Lộ trình Thế hệ mới: Quản lý Tài sản Dựa trên AI & Liên kết Bộ Địa chính",
         origPage: 55,
         render: () => `
           <div class="h-full flex flex-col justify-between">
@@ -2448,8 +2448,8 @@
               <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                 <i data-lucide="sparkles" class=""></i> Future Roadmap
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ezREMS 面向未来的AI智慧运营中台与国家级发展蓝图</h2>
-              <p class="text-slate-400 text-xs mt-0.5">超越单纯的被动记账式工具，全面进阶至由人工智能主动守护资产增值与收益最大化的自动驾驶运营时代。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Tầm nhìn Thế hệ mới & Lộ trình AI của ezREMS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Vượt xa hệ thống ERP ghi chép đơn thuần, tiến hóa lên giai đoạn vận hành tự chủ nơi trí tuệ nhân tạo bảo vệ giá trị tài sản và tối đa hóa lợi nhuận.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
@@ -2457,9 +2457,9 @@
                 <div class="icon-badge icon-badge-rose w-10 h-10 text-base">
                   <i data-lucide="shield-alert" class=""></i>
                 </div>
-                <div class="text-rose-400 font-bold text-sm">AI租约风控与防欺诈审计</div>
+                <div class="text-rose-400 font-bold text-sm">Hợp đồng & Giám sát Gian lận bằng AI</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  深度核验承租方资信状况，智能审校合同苛刻不利条款并前置探查欺诈苗头，全方位捍卫资产持有方合法权益。
+                  Thẩm định độ tin nhiệm của khách thuê và phát hiện sớm các điều khoản bất lợi trong hợp đồng cũng như dấu hiệu lừa đảo tiền đặt cọc để giảm thiểu rủi ro cho chủ nhà.
                 </p>
               </div>
 
@@ -2467,9 +2467,9 @@
                 <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
                   <i data-lucide="brain" class=""></i>
                 </div>
-                <div class="text-cyan-400 font-bold text-sm">AI前瞻预测智能回款 (99.6%)</div>
+                <div class="text-cyan-400 font-bold text-sm">Thu tiền Dự đoán bằng AI (99.6%)</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  深度挖掘历史履约节奏提前预判潜在违约隐患，自动选用温和友善的契合语调与最佳渠道精准定向触达。
+                  Dự đoán trước khả năng chậm nộp thông qua học tập quy luật thanh toán, đồng thời gửi thông điệp qua giọng điệu và kênh liên lạc phù hợp riêng cho từng khách thuê.
                 </p>
               </div>
 
@@ -2477,9 +2477,9 @@
                 <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
                   <i data-lucide="headphones" class=""></i>
                 </div>
-                <div class="text-blue-400 font-bold text-sm">7×24小时全时段 AI 智能客服</div>
+                <div class="text-blue-400 font-bold text-sm">Bot Xử lý Khiếu nại AI 24/7</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  全天候秒级解答银行账户、电子收据、滞纳金核算等高频疑问，更能一站式协同制定个性化缴费还款计划。
+                  Phản hồi theo thời gian thực 24/7 đối với các câu hỏi lặp lại như thông tin tài khoản, biên lai, tiền phạt chậm nộp và xử lý một cửa việc điều chỉnh kế hoạch thanh toán.
                 </p>
               </div>
 
@@ -2487,9 +2487,9 @@
                 <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
                   <i data-lucide="cpu" class=""></i>
                 </div>
-                <div class="text-purple-400 font-bold text-sm">关键机电设备故障前瞻预警</div>
+                <div class="text-purple-400 font-bold text-sm">Dự đoán Sự cố Thiết bị Trước</div>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                  实时采集分析机电IoT传感器物联遥测数据，防患于未然杜绝突发停机事故，执行预防性维保延长核心资产服役年限。
+                  Phân tích dữ liệu vận hành từ cảm biến IoT để ngăn ngừa sự cố đột xuất và thực hiện bảo trì phòng ngừa, kéo dài tuổi thọ tài sản.
                 </p>
               </div>
             </div>
@@ -2497,17 +2497,17 @@
             <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
               <span class="flex items-center gap-2">
                 <i data-lucide="landmark" class="text-cyan-300"></i>
-                韩国国土交通部国家不动产官方电子签约系统将于2026年正式官宣打通(官方行政许可已获批)。
+                Dự kiến chính thức mở liên kết với Hệ thống Hợp đồng Điện tử Giao dịch BĐS của Bộ Địa chính & Giao thông vào năm 2026 (Đã hoàn tất phê duyệt hành chính)
               </span>
-              <span class="text-cyan-300 font-bold">打造行业标杆级全国产不动产数字基座</span>
+              <span class="text-cyan-300 font-bold">Bước nhảy vọt trở thành Nền tảng Bất động sản Tiêu chuẩn Hàn Quốc</span>
             </div>
           </div>
         `
       },
       {
         id: "slide-23",
-        chapter: "公司概况与方案总结",
-        topic: "公司介绍与方案总结 / 问答互动",
+        chapter: "Giới thiệu Công ty & Kết thúc Đề xuất",
+        topic: "Giới thiệu Công ty & Kết thúc Đề xuất / Q&A",
         origPage: 43,
         render: () => `
           <div class="h-full flex flex-col justify-between text-center py-2">
@@ -2515,8 +2515,8 @@
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
                 <i data-lucide="handshake" class=""></i> Company & Partnership
               </span>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">启幕数字地产新纪元的卓越领航者: ZEONS 株式社</h2>
-              <p class="text-slate-400 text-xs mt-0.5">凭借逾二十载深厚行业底蕴与全自研硬核技术，携手助力贵司资产运营价值实现质的飞跃。</p>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Đối tác Mở ra Tương lai PropTech: Công ty Cổ phần ZEONS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">Với hơn 20 năm kinh nghiệm và công nghệ tích lũy, chúng tôi sẽ đồng hành tối đa hóa giá trị tài sản của Quý công ty.</p>
             </div>
 
             <div class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
@@ -2524,9 +2524,9 @@
                 <div class="icon-badge icon-badge-amber w-10 h-10 text-base">
                   <i data-lucide="history" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">20年经久不衰的品牌信赖</h4>
+                <h4 class="font-bold text-white text-sm">Niềm tin từ hơn 20 năm kinh nghiệm</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  历经 Tmark、iBMS 到集大成者 ezREMS，始终领航中大型商办写字楼与购物中心数智化运营的资深房产科技领军者。
+                  Từ Tmark, iBMS đến ezREMS, doanh nghiệp PropTech tiêu biểu của Hàn Quốc dẫn đầu các hệ thống vận hành tòa nhà vừa và nhỏ và trung tâm thương mại phức hợp trong nước
                 </p>
               </div>
 
@@ -2534,9 +2534,9 @@
                 <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
                   <i data-lucide="graduation-cap" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">KPM权威认证资深专家天团</h4>
+                <h4 class="font-bold text-white text-sm">Nhóm Chuyên gia Được chứng nhận KPM</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  超越传统软件定制外包公司，持续培养国家认证不动产资管专业人才 (KPM)，100%深度洞察并赋能一线业务流程。
+                  Vượt xa công ty phát triển IT đơn thuần, tổ chức chuyên nghiệp đào tạo Chuyên gia Quản lý Tài sản BĐS Hàn Quốc (KPM) và thấu hiểu 100% quy trình thực tế
                 </p>
               </div>
 
@@ -2544,32 +2544,32 @@
                 <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
                   <i data-lucide="handshake" class=""></i>
                 </div>
-                <h4 class="font-bold text-white text-sm">全流程贴身咨询与落地运维支撑</h4>
+                <h4 class="font-bold text-white text-sm">Tư vấn & Hỗ trợ Chuyên biệt</h4>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                  紧密围绕贵司管理体量与资产形态，量身定制历史数据清洗迁移、专属参数调优、骨干实操赋能培训及专属驻场技术支持。
+                  Cung cấp di chuyển dữ liệu ban đầu, cài đặt tùy chỉnh, đào tạo cán bộ nhân viên và hỗ trợ kỹ thuật chuyên trách phù hợp với quy mô và đặc thù tài sản của Quý công ty
                 </p>
               </div>
             </div>
 
             <div class="space-y-2.5">
               <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
-                <i data-lucide="smile" class="text-cyan-400"></i> 感谢您的倾听与关注
+                <i data-lucide="smile" class="text-cyan-400"></i> Xin chân thành cảm ơn quý vị đã lắng nghe
               </h3>
-              <p class="text-slate-400 text-xs">携手 ezREMS，即刻启航属于贵司的资产数字化精细化运营崭新篇章。</p>
+              <p class="text-slate-400 text-xs">Hãy bắt đầu đổi mới vận hành tài sản bất động sản của Quý công ty ngay hôm nay cùng ezREMS.</p>
               <div class="flex items-center justify-center space-x-3 pt-1">
                 <button onclick="openContactModal()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/40 transition flex items-center gap-1.5">
                   <i data-lucide="send" class=""></i>
-                  <span>申请专业咨询与系统实机演示</span>
+                  <span>Tư vấn Triển khai & Đăng ký Demo Miễn phí</span>
                 </button>
                 <a href="https://www.ezrems.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition flex items-center gap-1.5">
                   <i data-lucide="globe" class=""></i>
-                  <span>官方网站 (www.ezrems.com)</span>
+                  <span>Trang web Chính thức (www.ezrems.com)</span>
                 </a>
               </div>
             </div>
 
             <div class="text-[11px] text-slate-400 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 font-mono">
-              <span class="flex items-center gap-1 font-sans"><i data-lucide="map-pin" class="text-slate-500"></i> 首尔特别市江南区宣陵路93街40号 2层</span>
+              <span class="flex items-center gap-1 font-sans"><i data-lucide="map-pin" class="text-slate-500"></i> Tầng 2, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Hàn Quốc</span>
               <span class="text-slate-600">|</span>
               <span class="text-slate-300 font-semibold">TEL : 070-8811-8881</span>
               <span class="text-slate-600">|</span>
@@ -2709,7 +2709,7 @@
                 <span class="text-xs font-semibold text-slate-400 uppercase">${s.chapter}</span>
               </div>
               <button onclick="goToSlide(${idx})" class="text-xs text-blue-400 hover:underline flex items-center space-x-1">
-                <span>切换至幻灯片演播模式</span>
+                <span>Xem ở Chế độ Trình chiếu PT</span>
                 <i data-lucide="arrow-right" class="text-[10px]"></i>
               </button>
             </div>
@@ -2808,7 +2808,7 @@
       const indicator = document.getElementById('orig-page-indicator');
 
       img.src = `images/slides/slide_${String(currentOrigPage).padStart(2, '0')}.png`;
-      title.innerText = `提案书原版幻灯片 P.${currentOrigPage}`;
+      title.innerText = `Slide Đề xuất Gốc P.${currentOrigPage}`;
       indicator.innerText = `P.${String(currentOrigPage).padStart(2, '0')} / 56`;
       modal.classList.remove('hidden');
     }
@@ -2821,8 +2821,8 @@
       const indicator = document.getElementById('orig-page-indicator');
 
       img.src = imgSrc;
-      title.innerText = titleText || '客户真实落地应用架构图';
-      indicator.innerText = '客户落地实绩案例';
+      title.innerText = titleText || 'Biểu đồ Thực chứng của Khách hàng';
+      indicator.innerText = 'Trường hợp Thực chứng của Khách hàng';
       modal.classList.remove('hidden');
     }
 

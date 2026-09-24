@@ -12,7 +12,7 @@
 2. **Enterprise PropTech & FinTech Fusion**:
    - 차분하고 깊이 있는 Slate-950 배경 위에 네온 Cyan 및 Royal Blue 포인트를 활용하여 최첨단 클라우드 및 핀테크 이미지 극대화.
 3. **Seamless State Persistence (무결점 상호작용)**:
-   - 슬라이드 PT 모드 ↔ 스크롤 문서 모드, 4개 국어(KO, EN, JA, ZH) 전환 시 사용자의 맥락(Context)을 100% 보존.
+   - 슬라이드 PT 모드 ↔ 스크롤 문서 모드, 6개 국어(KO, EN, JA, ZH, VI, TH) 전환 시 사용자의 맥락(Context)을 100% 보존.
 
 ---
 
@@ -112,16 +112,23 @@
 - **그림자 효과**: `shadow-2xl shadow-blue-950/40`
 - **배경**: `bg-slate-900/90` backdrop-blur
 
-### 4.2 내비게이션 바 & 언어 선택기 (GNB & Language Selector)
+### 4.2 내비게이션 바 & 언어 선택 콤보박스 (GNB & Combobox Selector)
 - **위치**: GNB 우측 액션 바 최우선 순위
+- **디자인 목적**: 가로형 버튼 그룹 대신 컴팩트한 드롭다운 콤보박스를 채택하여, 6개 언어 체계 확장 시에도 헤더 레이아웃이 무너지지 않고 깔끔한 폭(약 130px)을 유지.
 - **컴포넌트 구조**:
   ```html
-  <div id="lang-selector-group" class="flex items-center bg-slate-900 border border-slate-700/80 rounded-xl p-0.5 shadow-inner mr-1">
-    <i data-lucide="globe" class="w-3.5 h-3.5 text-slate-400 ml-1.5 mr-1"></i>
-    <button type="button" class="px-2 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow">KO</button>
-    <button type="button" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">EN</button>
-    <button type="button" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">JA</button>
-    <button type="button" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">ZH</button>
+  <!-- Language Selector Combobox (6 Languages) -->
+  <div id="lang-selector-group" class="relative flex items-center bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1.5 shadow-inner hover:border-slate-600 transition mr-1">
+    <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0"></i>
+    <select id="lang-select-combo" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-4 appearance-none">
+      <option value="index.html" class="bg-slate-900 text-white" selected>🇰🇷 KO (한국어)</option>
+      <option value="index_en.html" class="bg-slate-900 text-white">🇺🇸 EN (English)</option>
+      <option value="index_ja.html" class="bg-slate-900 text-white">🇯🇵 JA (日本語)</option>
+      <option value="index_zh.html" class="bg-slate-900 text-white">🇨🇳 ZH (中文)</option>
+      <option value="index_vi.html" class="bg-slate-900 text-white">🇻🇳 VI (Tiếng Việt)</option>
+      <option value="index_th.html" class="bg-slate-900 text-white">🇹🇭 TH (ภาษาไทย)</option>
+    </select>
+    <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
   </div>
   ```
 
@@ -141,7 +148,7 @@
 ## 📱 5. 반응형 브레이크포인트 (Responsive Design)
 
 - **Mobile (< 640px)**:
-  - 1열 스택 레이아웃, 모달 패딩 축소, 불필요한 서브 아이콘 숨김
+  - 1열 스택 레이아웃, 모달 패딩 축소, 콤보박스 자동 폭 조정
 - **Tablet (640px ~ 1024px)**:
   - 2열/3열 그리드 배치, 모드 전환 바 축소형 적용
 - **Desktop (1024px+)**:

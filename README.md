@@ -4,7 +4,7 @@
 > 클라우드 SaaS 기반 임대차·수납·시설·세무 올인원 운영 ERP 플랫폼 — **이지램스 (ezREMS)™** 제안 발표 웹사이트
 
 [![Platform](https://img.shields.io/badge/Platform-ezREMS-blue.svg)](https://www.ezrems.com)
-[![Languages](https://img.shields.io/badge/Languages-KO%20%7C%20EN%20%7C%20JA%20%7C%20ZH-emerald.svg)](index.html)
+[![Languages](https://img.shields.io/badge/Languages-KO%20%7C%20EN%20%7C%20JA%20%7C%20ZH%20%7C%20VI%20%7C%20TH-emerald.svg)](index.html)
 [![Dual Mode](https://img.shields.io/badge/View_Mode-Slide_PT_%7C_Scroll_Doc-cyan.svg)](index.html)
 [![License](https://img.shields.io/badge/Company-ZEONS%2C_Inc.-indigo.svg)](https://www.ezrems.com)
 
@@ -20,12 +20,15 @@
 
 ## ✨ 핵심 기능 (Key Features)
 
-### 1. 🌐 완벽한 4개 국어 다국어 지원 (Full Multilingual Support)
+### 1. 🌐 완벽한 6개 국어 다국어 지원 & 컴팩트 콤보박스 UI (Full 6-Language Support & Combobox UI)
 - **한국어 (KO)**: [`index.html`](index.html) - 표준 한국어 원본 에디션
 - **영어 (EN)**: [`index_en.html`](index_en.html) - 글로벌 비즈니스 프롭테크 영문 에디션
 - **일본어 (JA)**: [`index_ja.html`](index_ja.html) - 일본 자산관리 비즈니스 실무 일문 에디션
 - **중국어 (ZH)**: [`index_zh.html`](index_zh.html) - 표준 중국어(간체) 전문 용어 에디션
-- **상태 보존형 동기화 엔진**: 상단 GNB의 `[🌐 KO | EN | JA | ZH]` 언어 전환 시, 현재 보고 있던 슬라이드 번호(`?slide=N`)와 뷰 모드(`mode=scroll` or `pt`)가 유지되어 끊김 없는 화면 전환을 제공합니다.
+- **베트남어 (VI)**: [`index_vi.html`](index_vi.html) - 동남아 신흥 프롭테uk 허브 베트남어 에디션 (Tiếng Việt)
+- **태국어 (TH)**: [`index_th.html`](index_th.html) - 아세안 중심 상업용 부동산 태국어 에디션 (ภาษาไทย)
+- **컴팩트 콤보박스 (Select Combobox) UI**: 상단 GNB 내 가로 공간을 차지하던 기존 버튼 그룹을 다크 모드에 최적화된 드롭다운 셀렉트 콤보박스로 혁신 개편하여, 헤더 영역의 레이아웃 안정성과 모바일 터치 사용성을 극대화했습니다.
+- **상태 보존형 동기화 엔진**: 언어 변경 시 현재 열람 중인 슬라이드 번호(`?slide=N`)와 뷰 모드(`mode=scroll` or `pt`)를 유지하여 화면 이탈 없이 즉시 전환됩니다.
 
 ### 2. 🖥️ 혁신적인 듀얼 뷰 모드 (Dual View Mode)
 - **슬라이드 PT 모드 (Presentation Mode)**:
@@ -72,6 +75,8 @@ ezrems-proposal/
 ├── index_en.html           # 영어 에디션 (EN)
 ├── index_ja.html           # 일본어 에디션 (JA)
 ├── index_zh.html           # 중국어(간체) 에디션 (ZH)
+├── index_vi.html           # 베트남어 에디션 (VI)
+├── index_th.html           # 태국어 에디션 (TH)
 ├── README.md               # 프로젝트 안내 마크다운 문서
 ├── README.html             # 프로젝트 안내 웹 리포트 (Paperlogy 폰트 적용)
 ├── design_guide.md         # 디자인 시스템 및 UI 가이드 문서
@@ -98,34 +103,25 @@ ezrems-proposal/
 | **`Home` / `End`** | 첫 페이지 / 마지막 페이지 이동 |
 | **`F`** | 전체화면 모드 토글 (Fullscreen) |
 | **`M`** | 제안 발표 목차 (Agenda) 모달 열기 |
-| **`G`** | 원본 56P PDF 슬라이드 갤러리 열기 |
-| **`Esc`** | 열려있는 모든 팝업 모달 닫기 |
+| **`G`** | 원본 PDF 56P 슬라이드 갤러리 열기 |
+| **`V`** | 슬라이드 PT ↔ 스크롤 웹 문서 모드 전환 |
+| **`?`** | 단축키 안내 팝업 열기 |
+| **`Esc`** | 열려 있는 모든 모달 닫기 |
 
 ---
 
-## 💻 실행 및 브라우저 호환성 (Getting Started)
+## 🎨 기술 스택 & 디자인 시스템 (Tech Stack)
 
-별도의 백엔드 설치나 빌드 과정 없이, 모든 최신 웹 브라우저에서 즉시 실행 가능합니다.
-
-```bash
-# 로컬 웹 서버 실행 (Python 3 기준)
-python -m http.server 8000
-
-# 브라우저 접속
-http://localhost:8000/index.html
-```
-
-- **지원 브라우저**: Chrome, Edge, Safari, Firefox 최신 버전
-- **기술 스택**: HTML5, Tailwind CSS (JIT via CDN), JavaScript (ES6+ Vanilla), Lucide Icons, Paperlogy Web Font
+- **UI Framework**: Tailwind CSS (CDN 최신 빌드), Lucide Icons
+- **Typography**: Pretendard, Inter, Paperlogy (README/Design Guide 전용)
+- **Architecture**: Single Page Architecture (Pure Vanilla JS, 무의존성 고성능 구조)
+- **Cloud Infrastructure**: AWS S3 & CloudFront, GitHub Pages
 
 ---
 
-## 🏢 회사 소개 및 문의 (Company & Contact)
+## 🏢 기업 정보 (Company Info)
 
-- **기업명**: (주)제온스 (ZEONS, Inc.)
-- **설립 및 업력**: 20년 프롭테크 전문 기업
-- **본사 주소**: 서울특별시 강남구 선릉로 93길 40, 2층
+- **운영사**: (주)제온스 (ZEONS, Inc.)
+- **주소**: 서울특별시 강남구 선릉로 93길 40, 2층
+- **대표전화**: 02-555-5555
 - **공식 웹사이트**: [www.ezrems.com](https://www.ezrems.com)
-- **대표 이메일**: sales@zeons.co.kr / master@zeons.co.kr
-- **대표 전화**: 02-555-8945
-- **보유 인증**: GS 1등급 국가 공인 소프트웨어 품질인증, 부동산 임대관리 원천 특허 기술 보유

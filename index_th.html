@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การนำเสนอข้อเสนอ ezREMS | บริษัท ZEONS จำกัด</title>
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon-32x32.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google & Project Noonnu Fonts: Paperlogy & Pretendard fallback -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    /* Global Font Enforcement for Typography without breaking SVG Icons */
+    body {
+      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, select, textarea, table, th, td, kbd, li {
+      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .lucide {
+      width: 1.15em;
+      height: 1.15em;
+      display: inline-block;
+      vertical-align: -0.18em;
+      stroke-width: 2.2;
+      stroke: currentColor;
+    }
+    .icon-badge .lucide {
+      width: 1.45em;
+      height: 1.45em;
+      vertical-align: middle;
+      stroke-width: 2.4;
+    }
+  
+    /* โหมดเลื่อนเอกสาร: ซ่อนเส้นแบ่งส่วนหัวของสไลด์เพื่อป้องกันการซ้อนทับกับเส้นขอบกล่องด้านล่าง */
+    #scroll-content .slide-header {
+      border-bottom: none !important;
+      padding-bottom: 0.375rem !important; /* pb-1.5 */
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Paperlogy', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+              accent: '#00d2ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    /* Slide Aspect Ratio Lock for PT Mode */
+    .slide-canvas {
+      aspect-ratio: 16 / 9;
+      max-height: 88vh;
+      max-width: calc(88vh * 16 / 9);
+    }
+    
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .slide-fade {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px) scale(0.995); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .btn-press:active { transform: scale(0.97); }
+
+    /* Visual Icon Badges */
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.85rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+    }
+    .icon-badge-blue {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(30, 64, 175, 0.45));
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #60a5fa;
+    }
+    .icon-badge-cyan {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(8, 145, 178, 0.45));
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: #22d3ee;
+    }
+    .icon-badge-emerald {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(4, 120, 87, 0.45));
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: #34d399;
+    }
+    .icon-badge-amber {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(180, 83, 9, 0.45));
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      color: #fbbf24;
+    }
+    .icon-badge-rose {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(190, 18, 60, 0.45));
+      border: 1px solid rgba(251, 113, 133, 0.4);
+      color: #fb7185;
+    }
+    .icon-badge-purple {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(126, 34, 206, 0.45));
+      border: 1px solid rgba(192, 132, 252, 0.4);
+      color: #c084fc;
+    }
+    .group:hover .icon-badge {
+      transform: translateY(-2px) scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white flex flex-col">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+      <!-- Left: Logo & Title -->
+      <div class="flex items-center space-x-3">
+        <a href="#cover" onclick="goToSlide(0)" class="flex items-center space-x-2.5 group">
+          <img src="images/logo.png" alt="ezREMS 로고" class="h-7 w-auto object-contain brightness-110" onerror="this.src='https://placehold.co/120x35/0f172a/ffffff?text=ezREMS'">
+          <div class="border-l border-slate-700 pl-2.5 hidden sm:block">
+            <span class="text-xs font-semibold tracking-wider text-blue-400 uppercase flex items-center gap-1.5">
+              <i data-lucide="presentation" class="text-[11px]"></i> Proposal PT
+            </span>
+            <span class="text-xs text-slate-300 block leading-tight font-medium">อสังหาริมทรัพย์เพื่อการลงทุน — ตอนนี้การดำเนินงานคือหัวใจสำคัญ</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center: View Mode Toggle -->
+      <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 shadow-inner">
+        <button id="btn-mode-pt" onclick="switchMode('pt')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow">
+          <i data-lucide="monitor" class="text-xs"></i>
+          <span>โหมดสไลด์ PT</span>
+        </button>
+        <button id="btn-mode-scroll" onclick="switchMode('scroll')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all">
+          <i data-lucide="file-text" class="text-xs"></i>
+          <span>โหมดเลื่อนเอกสาร</span>
+        </button>
+      </div>
+
+      <!-- Right: Action Buttons -->
+      <div class="flex items-center space-x-2">
+        <!-- Language Selector Combobox (6 Languages) -->
+        <div id="lang-selector-group" class="relative flex items-center bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1.5 shadow-inner hover:border-slate-600 transition mr-1">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0"></i>
+          <select id="lang-select-combo" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-4 appearance-none">
+            <option value="index.html" class="bg-slate-900 text-white">🇰🇷 KO (한국어)</option>
+            <option value="index_en.html" class="bg-slate-900 text-white">🇺🇸 EN (English)</option>
+            <option value="index_ja.html" class="bg-slate-900 text-white">🇯🇵 JA (日本語)</option>
+            <option value="index_zh.html" class="bg-slate-900 text-white">🇨🇳 ZH (中文)</option>
+            <option value="index_vi.html" class="bg-slate-900 text-white">🇻🇳 VI (Tiếng Việt)</option>
+            <option value="index_th.html" class="bg-slate-900 text-white" selected>🇹🇭 TH (ภาษาไทย)</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
+        </div>
+        <button onclick="toggleTocModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 flex items-center space-x-1.5 transition" title="สารบัญ (M)">
+          <i data-lucide="list" class="text-slate-400"></i>
+          <span class="hidden md:inline">สารบัญ</span>
+        </button>
+        <button onclick="openGalleryModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-medium border border-cyan-900/40 flex items-center space-x-1.5 transition" title="สไลด์ต้นฉบับ">
+          <i data-lucide="images" class="text-cyan-400"></i>
+          <span class="hidden md:inline">สไลด์ต้นฉบับ</span>
+        </button>
+        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="เต็มหน้าจอ (F)">
+          <i id="fs-icon" data-lucide="maximize" class="w-4 h-4 text-slate-300"></i>
+        </button>
+        <button onclick="openContactModal()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition flex items-center space-x-1.5">
+          <i data-lucide="send" class="text-xs"></i>
+          <span>สอบถามการใช้งาน</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PT PRESENTATION CONTAINER ================= -->
+  <main id="pt-container" class="flex-1 flex flex-col items-center justify-center p-2 sm:p-4 overflow-hidden relative">
+    
+    <!-- Presentation Viewport (16:9 Canvas) -->
+    <div id="slide-stage" class="slide-canvas w-full bg-slate-900/90 rounded-2xl border border-slate-800/90 shadow-2xl shadow-blue-950/40 relative overflow-hidden flex flex-col slide-fade">
+      <!-- Slide Content injected by JS -->
+      <div id="current-slide-content" class="flex-1 overflow-y-auto p-6 sm:p-10 flex flex-col justify-between">
+        <!-- Content rendered dynamically -->
+      </div>
+
+      <!-- Slide Bottom Control Bar -->
+      <div class="h-12 bg-slate-950/80 backdrop-blur-md border-t border-slate-800/80 px-6 flex items-center justify-between text-xs text-slate-400 select-none">
+        <!-- Chapter Indicator -->
+        <div class="flex items-center space-x-2">
+          <span id="slide-chapter-tag" class="px-2 py-0.5 rounded bg-blue-950/70 border border-blue-800/50 text-blue-400 font-medium text-[11px] flex items-center gap-1">
+            <i data-lucide="bookmark" class="text-[10px]"></i>
+            <span>Chapter 1</span>
+          </span>
+          <span id="slide-topic" class="text-slate-300 font-medium hidden sm:inline">ข้อเสนอโซลูชัน ezREMS</span>
+        </div>
+
+        <!-- Navigation Buttons & Page Number -->
+        <div class="flex items-center space-x-3">
+          <button onclick="prevSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="ก่อนหน้า (←)">
+            <i data-lucide="chevron-left" class="text-xs"></i>
+          </button>
+          
+          <div class="font-mono text-slate-300 text-xs tracking-wider">
+            <span id="slide-curr-num" class="font-bold text-blue-400 text-sm">01</span>
+            <span class="text-slate-600">/</span>
+            <span id="slide-total-num">20</span>
+          </div>
+
+          <button onclick="nextSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="ถัดไป (→ / Space)">
+            <i data-lucide="chevron-right" class="text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Quick Actions on Slide Footer -->
+        <div class="flex items-center space-x-2">
+          <button id="btn-orig-slide" onclick="viewCurrentOriginalSlide()" class="text-xs text-slate-400 hover:text-cyan-400 transition flex items-center space-x-1.5" title="ดูสไลด์ต้นฉบับ">
+            <i data-lucide="zoom-in" class="text-xs"></i>
+            <span class="hidden md:inline">ดูสไลด์ต้นฉบับ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linear Progress Bar -->
+      <div class="w-full h-1 bg-slate-800">
+        <div id="slide-progress" class="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 transition-all duration-300" style="width: 5%;"></div>
+      </div>
+    </div>
+
+    <!-- Keyboard Navigation Helper Badge -->
+    <div class="mt-2 text-slate-500 text-[11px] hidden sm:flex items-center space-x-4">
+      <span><i data-lucide="keyboard" class="mr-1"></i>คีย์ลัด: <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">→</kbd> เลื่อนสไลด์</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">Space</kbd> ถัดไป</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">F</kbd> เต็มหน้าจอ</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">M</kbd> สารบัญ</span>
+    </div>
+  </main>
+
+  <!-- ================= SCROLL WEB DOCUMENT CONTAINER ================= -->
+  <div id="scroll-container" class="hidden flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-10 space-y-16">
+    <div id="scroll-content" class="space-y-16"></div>
+  </div>
+
+  <!-- ================= TOC MODAL ================= -->
+  <div id="modal-toc" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="list-checks" class="text-blue-400"></i>
+          <h3 class="font-bold text-slate-200">สารบัญการนำเสนอข้อเสนอ</h3>
+        </div>
+        <button onclick="toggleTocModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="text-lg"></i>
+        </button>
+      </div>
+      <div id="toc-list" class="p-4 overflow-y-auto space-y-2 flex-1 divide-y divide-slate-800/50"></div>
+    </div>
+  </div>
+
+  <!-- ================= ORIGINAL PDF SLIDE VIEWER MODAL ================= -->
+  <div id="modal-original" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex flex-col items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full max-h-[92vh] bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl">
+      <!-- Header -->
+      <div class="p-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-sm">
+        <div class="flex items-center space-x-2">
+          <span class="px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800/50 rounded text-xs font-semibold flex items-center gap-1">
+            <i data-lucide="file-text" class=""></i> สไลด์ PDF ต้นฉบับ
+          </span>
+          <span id="orig-modal-title" class="text-slate-300 font-medium">ตรวจสอบหน้าสไลด์ต้นฉบับของข้อเสนอ</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="prevOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
+            <i data-lucide="chevron-left" class="text-[10px]"></i> ก่อนหน้า
+          </button>
+          <span id="orig-page-indicator" class="font-mono text-xs text-blue-400">P.01 / 56</span>
+          <button onclick="nextOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
+            ถัดไป <i data-lucide="chevron-right" class="text-[10px]"></i>
+          </button>
+          <button onclick="closeOriginalModal()" class="text-slate-400 hover:text-white ml-3 p-1">
+            <i data-lucide="x" class="text-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Image Body -->
+      <div class="flex-1 bg-black overflow-auto flex items-center justify-center p-2">
+        <img id="orig-slide-img" src="" alt="PDF 슬라이드" class="max-w-full max-h-[78vh] object-contain shadow-md rounded">
+      </div>
+      <!-- Footer Note -->
+      <div class="p-2 bg-slate-950 text-center text-xs text-slate-500 border-t border-slate-800">
+        ข้อเสนอต้นฉบับ: [ZEONS] ezREMS - อสังหาริมทรัพย์เพื่อการลงทุน ตอนนี้การดำเนินงานคือหัวใจสำคัญ_v3.3.pdf
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ALL 56-PAGE GALLERY MODAL ================= -->
+  <div id="modal-gallery" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6">
+    <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <div>
+          <h3 class="font-bold text-slate-100 flex items-center space-x-2">
+            <i data-lucide="layers" class="text-cyan-400"></i>
+            <span>แกลเลอรีสไลด์ PDF ต้นฉบับทั้งหมด 56 หน้า</span>
+            <span class="text-xs font-normal text-cyan-400 bg-cyan-950/70 border border-cyan-800/40 px-2 py-0.5 rounded">การดึงภาพความละเอียดสูง</span>
+          </h3>
+          <p class="text-xs text-slate-400">คลิกเพื่อดูสไลด์ที่ต้องการบนหน้าจอขนาดใหญ่ได้ทันที</p>
+        </div>
+        <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white p-2">
+          <i data-lucide="x" class="text-xl"></i>
+        </button>
+      </div>
+      <div id="gallery-grid" class="flex-1 overflow-y-auto p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"></div>
+    </div>
+  </div>
+
+  <!-- ================= CONTACT / DEMO MODAL ================= -->
+  <div id="modal-contact" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="text-lg"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30 shadow-lg shadow-blue-500/20">
+          <i data-lucide="message-square" class="text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">สอบถามการนำไปใช้และการสาธิต ezREMS</h3>
+        <p class="text-xs text-slate-400 mt-1">เราให้บริการคำปรึกษาการบริหารทรัพย์สินที่ปรับให้เหมาะกับองค์กรและการสาธิตระบบฟรี</p>
+      </div>
+
+      <div class="space-y-3 bg-slate-950/70 p-4 rounded-xl border border-slate-800 text-sm">
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="building" class="text-slate-500"></i> ผู้ประกอบการ</span>
+          <span class="font-medium text-white">บริษัท ZEONS จำกัด (ZEONS, Inc.)</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="globe" class="text-slate-500"></i> เว็บไซต์</span>
+          <a href="https://www.ezrems.com" target="_blank" class="text-blue-400 hover:underline">www.ezrems.com</a>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="map-pin" class="text-slate-500"></i> ที่อยู่สำนักงานใหญ่</span>
+          <span class="text-slate-300 text-right text-xs">ชั้น 2, 40, Seolleung-ro 93-gil, Gangnam-gu, โซล, เกาหลีใต้</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="graduation-cap" class="text-slate-500"></i> บุคลากรผู้เชี่ยวชาญ</span>
+          <span class="text-emerald-400 text-xs font-semibold">ผู้เชี่ยวชาญด้านการบริหารจัดการทรัพย์สินอสังหาริมทรัพย์ที่ได้รับการรับรอง KPM</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="phone" class="text-slate-500"></i> เบอร์โทรศัพท์หลัก</span>
+          <span class="text-slate-200 font-semibold text-xs">TEL : 070-8811-8881</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="printer" class="text-slate-500"></i> หมายเลขโทรสาร</span>
+          <span class="text-slate-300 text-xs">FAX : 070-4850-8848</span>
+        </div>
+        <div class="flex justify-between items-center py-1">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="mail" class="text-slate-500"></i> อีเมลทางการ</span>
+          <span class="text-blue-400 font-medium text-xs">EMAIL : support@zeons.co.kr</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex space-x-3">
+        <a href="https://pms.ezrems.com" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-center py-2.5 rounded-xl font-medium text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
+          <i data-lucide="external-link" class=""></i>
+          <span>สำรวจคุณสมบัติระบบ PMS</span>
+        </a>
+        <a href="https://www.ezrems.com" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-center py-2.5 rounded-xl font-medium text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-1.5">
+          <i data-lucide="home" class=""></i>
+          <span>เยี่ยมชมเว็บไซต์ทางการ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS & SLIDE DATA ================= -->
+  <script>
+    // 20 Selected Structured Presentation Slides Data with Rich FontAwesome Visual Icons
+    const slidesData = [
+      {
+        id: "slide-01",
+        chapter: "บทนำ",
+        topic: "หน้าปก",
+        origPage: 1,
+        render: () => `
+          <div class="h-full flex flex-col justify-between items-center text-center py-4">
+            <div class="flex items-center space-x-2.5 bg-blue-950/70 border border-blue-800/50 px-4 py-1.5 rounded-full shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <i data-lucide="zap" class="text-cyan-400 text-xs"></i>
+              <span class="text-xs font-semibold text-cyan-300 tracking-wide">แพลตฟอร์มจัดการทรัพย์สินอัจฉริยะ | FinTech X PropTech</span>
+            </div>
+
+            <div class="max-w-3xl space-y-4 my-auto">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs text-slate-300 mb-1">
+                <i data-lucide="sparkles" class="text-amber-400"></i>
+                <span>กระบวนทัศน์ใหม่ในการบริหารจัดการทรัพย์สินอสังหาริมทรัพย์</span>
+              </div>
+              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                อสังหาริมทรัพย์เพื่อการลงทุน,<br>
+                <span class="gradient-text">ในเวลานี้ การดำเนินงานคือหัวใจสำคัญ</span>
+              </h1>
+              <p class="text-slate-300 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
+                แพลตฟอร์มครบวงจรสำหรับการบริหารจัดการการเช่าทุกพื้นที่ทั้งที่มีตัวตนและไม่มีตัวตน<br>
+                <span class="text-blue-400 font-bold"><i data-lucide="cloud-upload" class="mr-1 text-cyan-400"></i>ezREMS</span> — เริ่มต้นการเปลี่ยนแปลงทางดิจิทัล (DX) ของคุณวันนี้
+              </p>
+            </div>
+
+            <div class="w-full max-w-3xl grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="brain" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-extrabold text-xl sm:text-2xl">99.6%</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">อัตราการจัดเก็บที่คาดการณ์โดย AI</div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="building-2" class=""></i>
+                </div>
+                <div class="text-blue-400 font-extrabold text-xl sm:text-2xl">55,000+</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">จำนวนยูนิตที่บริหารจัดการสะสม</div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="award" class=""></i>
+                </div>
+                <div class="text-amber-400 font-extrabold text-xl sm:text-2xl">20 ปี+</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">ประสบการณ์เชี่ยวชาญด้าน PropTech</div>
+              </div>
+            </div>
+
+            <div class="text-slate-500 text-xs flex items-center gap-2">
+              <i data-lucide="building" class="text-slate-600"></i>
+              <span>บริษัทผู้นำเสนอ: ZEONS, Inc. | www.ezrems.com</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-02",
+        chapter: "กำหนดการนำเสนอ",
+        topic: "สารบัญการนำเสนอข้อเสนอ",
+        origPage: 2,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="list" class=""></i> Table of Contents
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">กำหนดการนำเสนอข้อเสนอ (กำหนดการนำเสนอ)</h2>
+              </div>
+              <span class="text-xs text-slate-400 bg-slate-800/60 px-3 py-1 rounded-lg border border-slate-700/60">
+                <i data-lucide="clock" class="mr-1"></i> ทั้งหมด 4 ส่วนหลัก
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+              <div onclick="goToSlide(2)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-blue w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="trending-up" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-blue-400 uppercase">Part 01</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-blue-300 text-base">การเปลี่ยนแปลงครั้งใหญ่ของตลาดอสังหาริมทรัพย์</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">ตลาด PMS โลก 72 ล้านล้านวอน, อัตราการเช่ารายเดือนในประเทศพุ่งสูง (57.4%), การบริหารทรัพย์สินด้วย AI</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(5)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-amber w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="alert-triangle" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-amber-400 uppercase">Part 02</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-amber-300 text-base">ข้อจำกัดเชิงปฏิบัติของการดำเนินงานทรัพย์สินอสังหาริมทรัพย์</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">การบริหารการดำเนินงานคิดเป็น 80% ของต้นทุนวงจรชีวิตอาคาร และความเสี่ยงจากการทำงานแบบแมนนวลด้วย Excel</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(8)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-cyan w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="cloud" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-cyan-400 uppercase">Part 03</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-cyan-300 text-base">แพลตฟอร์มบริหารจัดการทรัพย์สินอัจฉริยะ ezREMS</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">SaaS All-in-One ERP, แอปสำหรับผู้เช่า Connect, เอกสารอิเล็กทรอนิกส์, นวัตกรรมระบบชำระเงินผ่านบัตร PG</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(13)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-emerald w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="trophy" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-emerald-400 uppercase">Part 04</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-emerald-300 text-base">กรณีศึกษาการดำเนินงานของลูกค้าที่ผ่านการพิสูจน์แล้วและข้อมูลเชิงประจักษ์</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">อาคาร K-REITs 10 แห่ง, ห้างสรรพสินค้า Alleyway, อัตราค้างชำระ Jeil Punggyeongchae ลดลงฮวบ, การคำนวณค่าน้ำ-ไฟอัตโนมัติ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 flex items-center justify-between text-xs text-slate-300">
+              <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-amber-400"></i>
+                องค์ความรู้ PropTech 20 ปีของ ZEONS · ERP ขยายสู่ 10 ทรัพย์สิน · ความปลอดภัยและอาชีวอนามัย (EASY SAFE)
+              </span>
+              <button onclick="goToSlide(19)" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+                ดูข้อมูลบริษัทและแผนการดำเนินงาน <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-03",
+        chapter: "บทที่ 1. ตลาด",
+        topic: "การวิเคราะห์ตลาดโลก: ขนาดและแนวโน้มระบบบริหารจัดการทรัพย์สิน (PMS)",
+        origPage: 4,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="globe" class="text-cyan-400"></i> Market Trend 01 (Global)
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ขนาดและแนวโน้มของตลาดระบบบริหารจัดการทรัพย์สิน (PMS) ระดับโลก</h2>
+                <p class="text-slate-400 text-xs mt-0.5">โครงสร้างพื้นฐานที่จำเป็นซึ่งได้รับการพิสูจน์แล้วในประเทศพัฒนาแล้วอย่างสหรัฐฯ และยุโรป กำลังเติบโตอย่างรวดเร็วสู่ตลาดมูลค่า 72 ล้านล้านวอนทั่วโลกในปี 2032</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-black text-xs shadow-lg shadow-rose-600/30 border border-rose-400/40 animate-pulse">
+                  <i data-lucide="flame" class="mr-1"></i> ขนาดตลาดโลก 72 ล้านล้านวอน
+                </span>
+                <button onclick="openCustomImageModal('images/case_global_market.png', 'รายงานตลาด PMS ทั่วโลก (Fortune Business Insights)')" class="hidden sm:flex whitespace-nowrap flex-shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                  <i data-lucide="pie-chart" class=""></i> ดูรายงานต้นฉบับ
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 my-auto">
+              <!-- Left 6 cols: Key Trends & Metrics Table -->
+              <div class="lg:col-span-6 space-y-3">
+                <!-- 4 Core Insights -->
+                <div class="grid grid-cols-2 gap-2.5 text-xs">
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-blue-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-blue-400 font-bold">
+                      <i data-lucide="building" class=""></i>
+                      <span>การใช้งานเชิงพาณิชย์ของโครงสร้างพื้นฐานที่จำเป็นในประเทศพัฒนาแล้ว</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      PMS เป็นแพลตฟอร์มการดำเนินงานที่จำเป็นและเป็นมาตรฐานอย่างสมบูรณ์แล้วในตลาดโลก เช่น สหรัฐอเมริกาและยุโรป
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-cyan-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-cyan-400 font-bold">
+                      <i data-lucide="cloud-upload" class=""></i>
+                      <span>การเร่งตัวของ SaaS & คลาวด์</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      การเปลี่ยนผ่านอย่างรวดเร็วจาก On-Premises สู่ Cloud SaaS 100%, การพึ่งพาแพลตฟอร์มแบบบูรณาการที่ลึกซึ้งยิ่งขึ้น
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-amber-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-amber-400 font-bold">
+                      <i data-lucide="trophy" class=""></i>
+                      <span>AppFolio ของสหรัฐฯ มีมูลค่าตลาด 13 ล้านล้านวอน</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      การแข่งขันของบริษัทยูนิคอร์นระดับโลก เช่น AppFolio บริษัทจดทะเบียนในสหรัฐฯ (มูลค่าตลาด 13 ล้านล้านวอน), Yardi, RealPage
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-emerald-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-emerald-400 font-bold">
+                      <i data-lucide="zap" class=""></i>
+                      <span>ภูมิภาค APAC เติบโตเร็วที่สุดในโลก</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      ท่ามกลางการเติบโตเฉลี่ยต่อปีของโลก 10.1% ภูมิภาคเอเชียแปซิฟิกรวมถึงเกาหลีใต้มีการเติบโตที่รวดเร็วที่สุด
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Structured Data Table -->
+                <div class="rounded-xl border border-slate-800 overflow-hidden text-xs">
+                  <table class="w-full text-left">
+                    <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
+                      <tr>
+                        <th class="py-2 px-3 w-1/2">ดัชนีการสำรวจตลาดโลก</th>
+                        <th class="py-2 px-3 w-1/2 text-cyan-400 font-bold">Fortune Business Insights (ต.ค. 2025)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300 text-[11px]">
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">ขนาดตลาดโลกในปี 2024</td>
+                        <td class="py-1.5 px-3 font-semibold text-slate-300">ประมาณ 24.18 พันล้านดอลลาร์สหรัฐ <span class="text-blue-400">(ประมาณ 33 ล้านล้านวอน)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">ขนาดตลาดโลกที่คาดการณ์ในปี 2032</td>
+                        <td class="py-1.5 px-3 font-extrabold text-amber-400">ประมาณ 52.21 พันล้านดอลลาร์สหรัฐ <span class="text-rose-400 text-xs">(ประมาณ 72 ล้านล้านวอน)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">อัตราการเติบโตต่อปีแบบทบต้น (CAGR 2025~2032)</td>
+                        <td class="py-1.5 px-3 font-bold text-emerald-400">เติบโตสูงอย่างต่อเนื่อง 10.1%</td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">ส่วนแบ่งตลาดตามภูมิภาคในปี 2025</td>
+                        <td class="py-1.5 px-3 text-slate-400">อเมริกาเหนือ 37%, <strong class="text-cyan-400">APAC 30%</strong>, ยุโรป 20%, อื่นๆ 13%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Right 6 cols: Growth Graph & Trend Visualization (원본 장표 대체 차트) -->
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl glass-card border border-blue-900/50 bg-slate-950/70 shadow-xl space-y-3.5 flex-1 flex flex-col justify-between">
+                  <!-- Graph Header -->
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="flex items-center gap-1.5 text-xs font-bold text-cyan-400">
+                        <i data-lucide="trending-up" class=""></i>
+                        <span>แนวโน้มและมุมมองขนาดตลาด PMS ทั่วโลก</span>
+                      </div>
+                      <h4 class="text-sm sm:text-base font-extrabold text-white mt-0.5">ปี 2024: 33 ล้านล้านวอน ➔ ปี 2032: 72 ล้านล้านวอน (เติบโตแบบก้าวกระโดด 2.2 เท่า)</h4>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-[11px] shadow-md shadow-emerald-900/40 whitespace-nowrap flex-shrink-0">
+                      CAGR +10.1%
+                    </span>
+                  </div>
+
+                  <!-- Bar Chart Visualization -->
+                  <div class="py-1 px-1">
+                    <div class="h-40 w-full flex items-end justify-between gap-2 sm:gap-3 pt-6 pb-2 border-b border-slate-800 relative">
+                      <!-- Trend Tag overlay -->
+                      <div class="absolute top-0 right-1 flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full shadow">
+                        <i data-lucide="arrow-up-right" class="text-xs"></i> ขยายตัวสะสม +116% ในรอบ 8 ปี
+                      </div>
+
+                      <!-- 2024 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-blue-400 transition">24 พันล้านดอลลาร์</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-blue-600 relative overflow-hidden shadow" style="height: 46%;">
+                          <div class="w-full h-full bg-blue-600/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2024</span>
+                      </div>
+
+                      <!-- 2026 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-cyan-400 transition">30 พันล้านดอลลาร์</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-cyan-600 relative overflow-hidden shadow" style="height: 57%;">
+                          <div class="w-full h-full bg-blue-500/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2026(E)</span>
+                      </div>
+
+                      <!-- 2028 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-indigo-400 transition">37 พันล้านดอลลาร์</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-indigo-600 relative overflow-hidden shadow" style="height: 69%;">
+                          <div class="w-full h-full bg-indigo-500/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2028(E)</span>
+                      </div>
+
+                      <!-- 2030 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-purple-400 transition">45 พันล้านดอลลาร์</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-purple-600 relative overflow-hidden shadow" style="height: 84%;">
+                          <div class="w-full h-full bg-purple-500/80"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2030(E)</span>
+                      </div>
+
+                      <!-- 2032 Target Bar (Highlighted!) -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <div class="flex flex-col items-center">
+                          <span class="text-[9px] text-amber-300 font-bold bg-amber-950/80 px-1 rounded border border-amber-500/40 animate-pulse">2.2 เท่า</span>
+                          <span class="text-[11px] sm:text-xs font-extrabold text-amber-400">52.2 พันล้านดอลลาร์สหรัฐ</span>
+                        </div>
+                        <div class="w-full rounded-t-lg transition-all duration-700 relative overflow-hidden shadow-lg shadow-amber-500/20 border-t-2 border-amber-400" style="height: 100%;">
+                          <div class="w-full h-full bg-gradient-to-t from-blue-600 via-indigo-600 to-amber-500"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-amber-300 font-bold">2032(E)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2 Summary Badges -->
+                  <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
+                      <div class="text-slate-400 text-[10px] flex items-center gap-1">
+                        <i data-lucide="activity" class="text-cyan-400 text-xs"></i> ขนาดตลาดในปี 2032
+                      </div>
+                      <div class="text-xs sm:text-sm font-extrabold text-white">52.21 พันล้านดอลลาร์ <span class="text-cyan-400 text-xs">(72 ล้านล้านวอน)</span></div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
+                      <div class="text-slate-400 text-[10px] flex items-center gap-1">
+                        <i data-lucide="compass" class="text-emerald-400 text-xs"></i> เอเชียแปซิฟิก (APAC)
+                      </div>
+                      <div class="text-xs sm:text-sm font-extrabold text-emerald-400">ส่วนแบ่ง 30% <span class="text-slate-400 text-xs font-normal">(อันดับ 2 ของโลก)</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Source info -->
+                <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex justify-between items-center">
+                  <span>ที่มา: Fortune Business Insights (การวิเคราะห์ PMS ทั่วโลก ต.ค. 2025)</span>
+                  <button onclick="openCustomImageModal('images/case_global_market.png', 'รายงานตลาด PMS ทั่วโลก (Fortune Business Insights)')" class="text-blue-400 hover:text-cyan-300 underline flex items-center gap-1">
+                    <i data-lucide="external-link" class="text-xs"></i> เปิดรายงานต้นฉบับ
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="globe" class="text-cyan-400"></i> ตลาดอสังหาริมทรัพย์ระดับโลกได้ปรับโครงสร้างใหม่อยู่บนพื้นฐานของ Cloud PMS แล้วอย่างสมบูรณ์
+              </span>
+              <span class="text-white font-bold bg-blue-600/80 px-2.5 py-0.5 rounded">ผู้นำ PropTech ของเกาหลีใต้: ezREMS</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-04",
+        chapter: "บทที่ 1. ตลาด",
+        topic: "การเปลี่ยนแปลงของตลาด: การเพิ่มขึ้นของค่าเช่ารายเดือนและภาระงานของผู้ให้เช่า",
+        origPage: 4,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="trending-up" class=""></i> Market Trend 02 (Domestic)
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ความนิยมเช่ารายเดือนพุ่งสูง ส่งผลให้ภาระงานของผู้ให้เช่าเพิ่มขึ้นอย่างมาก</h2>
+              <p class="text-slate-400 text-xs mt-0.5">จากผลกระทบของการหลอกลวงค่าเช่าและความผันผวนของอัตราดอกเบี้ย ธุรกรรมการเช่าส่วนใหญ่ได้เปลี่ยนเป็นค่าเช่ารายเดือน</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <!-- Card 1 -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-blue w-11 h-11 text-lg">
+                      <i data-lucide="pie-chart" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">ระดับสูงสุดเป็นประวัติการณ์</span>
+                  </div>
+                  <div class="text-3xl sm:text-4xl font-black text-white mt-3">57.4%</div>
+                  <div class="text-xs font-semibold text-slate-300 mt-1">สัดส่วนธุรกรรมการเช่ารายเดือนในธุรกรรมการเช่าทั้งหมด</div>
+                  <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    จากข้อมูล ม.ค.-พ.ย. 2024 ตลาดเปลี่ยนสู่การเช่ารายเดือนอย่างรวดเร็ว ส่งผลให้ธุรกรรมทางการเงินรายเดือนที่ผู้ให้เช่าต้องจัดการพุ่งสูงขึ้น
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center gap-1">
+                  <i data-lucide="building-2" class="text-[10px]"></i> ที่มา: ระบบราคาซื้อขายจริง กระทรวงที่ดิน โครงสร้างพื้นฐาน และการขนส่ง
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="p-5 rounded-2xl glass-card border border-rose-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-rose w-11 h-11 text-lg">
+                      <i data-lucide="alert-circle" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-rose-400 bg-rose-950 px-2 py-0.5 rounded border border-rose-800">Pain Point</span>
+                  </div>
+                  <div class="text-2xl font-black text-white mt-3">กับดักของงานที่ทำซ้ำซาก</div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1.5">
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> ตรวจสอบรายการเดินบัญชีธนาคารด้วยตนเอง (ยืนยันยอดเงินเข้า)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> ระบุตัวผู้เช่าที่ค้างชำระและโทรทวงหนี้ด้วยตนเอง</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> ความเสี่ยงจากการตกหล่นในการออกใบกำกับภาษีด้วยตนเอง</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> พลาดกำหนดเวลาแจ้งเตือนการหมดอายุหรือต่อสัญญา</li>
+                  </ul>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-rose-400 font-medium flex items-center gap-1">
+                  <i data-lucide="alert-triangle" class=""></i> ถึงขีดจำกัดของการจัดการด้วย Excel แบบดั้งเดิม
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="p-5 rounded-2xl glass-card border border-emerald-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-emerald w-11 h-11 text-lg">
+                      <i data-lucide="sparkles" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Solution</span>
+                  </div>
+                  <div class="text-2xl font-black text-white mt-3">ระบบอัตโนมัติดิจิทัล</div>
+                  <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                    ก้าวข้ามการเป็นเพียงนายหน้าธรรมดา, <span class="text-emerald-400 font-bold">ตรวจสอบบัญชีเสมือน · ออกใบแจ้งหนี้อิเล็กทรอนิกส์ · ป้องกันการค้างชำระ · ใบกำกับภาษี</span> — แพลตฟอร์มมืออาชีพที่ทำงานอัตโนมัติแบบครบวงจรในที่เดียวกลายเป็นสิ่งจำเป็นอย่างยิ่ง
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                  <i data-lucide="check-circle-2" class=""></i> จำเป็นต้องนำ ezREMS มาใช้งาน
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
+              <i data-lucide="lightbulb" class="text-amber-400 text-sm"></i>
+              <span><strong class="text-slate-200">บทสรุปของตลาด:</strong> "การเปลี่ยนผ่านครั้งใหญ่จากการปล่อยเช่าแบบปล่อยปละละเลย สู่การดำเนินงานให้เช่าแบบมืออาชีพที่มีธุรกรรมการเงินและภาษีทุกเดือน"</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-05",
+        chapter: "บทที่ 1. ตลาด",
+        topic: "การเปลี่ยนแปลงของตลาด: เทรนด์ที่อยู่อาศัยใหม่และการจัดการทรัพย์สินด้วย AI",
+        origPage: 7,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="brain" class=""></i> Market Trend 03
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">เทรนด์ที่อยู่อาศัยใหม่และกระบวนทัศน์ AI สู่การจัดเก็บรายได้ 99.6%</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ท่ามกลางความหลากหลายของบ้านพักผู้สูงอายุ โค-ลิฟวิ่ง และบ้านเช่า AI จะเป็นตัวกำหนดความสำเร็จของการบริหารจัดการทรัพย์สิน</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Left: New Space Trends -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="building-2" class="text-cyan-400"></i> การกระจายตัวอย่างรวดเร็วของประเภทพื้นที่
+                  </h3>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800 font-medium">New Living</span>
+                </div>
+                <div class="space-y-2.5 text-xs text-slate-300">
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start gap-3">
+                    <div class="icon-badge icon-badge-purple w-9 h-9 text-sm flex-shrink-0">
+                      <i data-lucide="heart-handshake" class=""></i>
+                    </div>
+                    <div>
+                      <span class="font-bold text-purple-300 text-sm">การเติบโตอย่างรวดเร็วของที่อยู่อาศัยสำหรับผู้สูงอายุ</span>
+                      <p class="text-slate-400 mt-1">ความต้องการพื้นที่อยู่อาศัยระดับพรีเมียมสำหรับผู้สูงอายุพร้อมบริการสุขภาพและอาหารพุ่งสูงขึ้นตามสังคมผู้สูงอายุ</p>
+                    </div>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start gap-3">
+                    <div class="icon-badge icon-badge-cyan w-9 h-9 text-sm flex-shrink-0">
+                      <i data-lucide="home" class=""></i>
+                    </div>
+                    <div>
+                      <span class="font-bold text-cyan-300 text-sm">โค-ลิฟวิ่ง (Co-Living) และที่อยู่อาศัยให้เช่าสำหรับคนรุ่นใหม่</span>
+                      <p class="text-slate-400 mt-1">ระบบการจัดการที่อยู่อาศัยอัจฉริยะและแอปพลิเคชันมือถือสำหรับผู้อยู่อาศัยคนเดียว เช่น MGRV (Mangrove) กลายเป็นสิ่งจำเป็น</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: AI-driven Asset Management -->
+              <div class="p-5 rounded-2xl glass-card border border-indigo-900/50 space-y-3 bg-gradient-to-br from-slate-900/90 to-indigo-950/40">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="bot" class="text-indigo-400"></i> AI เปลี่ยนแปลงการบริหารจัดการทรัพย์สินอสังหาริมทรัพย์อย่างไร
+                  </h3>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 border border-indigo-800 font-medium">AI Core</span>
+                </div>
+                <div class="text-center py-2 bg-slate-950/60 rounded-xl border border-indigo-900/40">
+                  <div class="text-4xl sm:text-5xl font-black gradient-text">อัตราการจัดเก็บ 99.6%</div>
+                  <div class="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1">
+                    <i data-lucide="trending-up" class="text-emerald-400"></i> การประยุกต์ใช้ระบบคาดการณ์การค้างชำระและการจัดเก็บที่ปรับแต่งเฉพาะบุคคลด้วย AI
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  AI เรียนรู้พฤติกรรมการชำระเงินที่ผ่านมาเพื่อคัดกรองกลุ่มเสี่ยงค้างชำระล่วงหน้า และจับคู่ช่องทางแจ้งเตือนที่เหมาะสมพร้อมการผ่อนชำระผ่านบัตรเพื่อป้องกันหนี้เสีย
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-indigo-950/30 text-xs text-indigo-200 flex items-center justify-between">
+              <span class="flex items-center gap-2">
+                <i data-lucide="cpu" class="text-cyan-400"></i>
+                "ปัจจุบัน ปัญญาประดิษฐ์ (AI) และคลาวด์ไม่ใช่ทางเลือกอีกต่อไป แต่เป็นเครื่องมือที่จำเป็นอย่างยิ่งในการจัดการทรัพย์สิน"
+              </span>
+              <span class="text-cyan-400 font-bold">ezREMS AI Engine</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-06",
+        chapter: "บทที่ 2. ปัญหา",
+        topic: "ต้นทุนตลอดวงจรชีวิตอาคาร: 80% เกิดขึ้นระหว่างการดำเนินงาน",
+        origPage: 9,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="git-commit" class=""></i> Life Cycle Cost Analysis
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">80% ของต้นทุนตลอดวงจรชีวิตอาคารขึ้นอยู่กับ 'การดำเนินงาน'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ต้นทุนการออกแบบและการก่อสร้างคิดเป็นเพียง 20% เท่านั้น มูลค่าและผลตอบแทนที่แท้จริงของอาคารถูกกำหนดในขั้นตอนการดำเนินงานและบำรุงรักษาตลอดหลายสิบปี</p>
+            </div>
+
+            <div class="my-auto space-y-5">
+              <!-- Life Cycle Diagram Bar -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800">
+                <div class="text-xs font-semibold text-slate-400 mb-2.5 flex justify-between items-center">
+                  <span class="flex items-center gap-1.5"><i data-lucide="git-branch" class="text-blue-400"></i> สัดส่วนค่าใช้จ่ายตามแต่ละขั้นตอนของวงจรชีวิตอาคาร (LCC)</span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">การดำเนินงานและการบำรุงรักษามากกว่า 80% (83.2%)</span>
+                    <span class="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/50">รื้อถอน 0.4%</span>
+                  </div>
+                </div>
+                <div class="h-12 w-full rounded-xl overflow-hidden flex font-bold text-xs shadow-inner border border-slate-700/60">
+                  <div class="w-[6%] bg-slate-800 flex items-center justify-center text-slate-300 text-[11px]" title="การวางแผน / ออกแบบ">
+                    <i data-lucide="compass" class="mr-1"></i> การออกแบบ
+                  </div>
+                  <div class="w-[14%] bg-slate-700 flex items-center justify-center text-slate-200 border-l border-slate-800 text-[11px]" title="การก่อสร้าง: ประมาณ 16%">
+                    <i data-lucide="hammer" class="mr-1"></i> ก่อสร้าง 16%
+                  </div>
+                  <div class="flex-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg border-l border-slate-800">
+                    <i data-lucide="settings-2" class="mr-1.5"></i> การดำเนินงานและการบำรุงรักษา (Operating & Management) 83.2%
+                  </div>
+                  <div class="w-[9%] sm:w-[8%] bg-amber-600/90 hover:bg-amber-500 flex flex-col items-center justify-center text-white border-l border-slate-800 transition" title="ขั้นตอนการรื้อถอน: 0.4%">
+                    <i data-lucide="refresh-cw" class="text-[11px]"></i>
+                    <span class="text-[10px] font-black leading-none mt-0.5">รื้อถอน 0.4%</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center text-[11px] text-slate-500 mt-2">
+                  <span>ขั้นตอนการลงทุนเริ่มต้น (การออกแบบ + การก่อสร้าง ประมาณ 16.4%)</span>
+                  <span class="text-blue-400 font-semibold flex items-center gap-1">
+                    <i data-lucide="check-circle-2" class="text-cyan-400"></i> ขั้นตอนการสร้างรายได้ระยะยาวและเพิ่มมูลค่าทรัพย์สินสูงสุด (83.2%)
+                  </span>
+                  <span class="text-amber-400 font-semibold flex items-center gap-1">
+                    <i data-lucide="refresh-cw" class="text-amber-400"></i> รื้อถอน (0.4%)
+                  </span>
+                </div>
+                <div class="text-[10px] text-slate-500 text-right mt-1">
+                  * ที่มา: สถาบันวิจัยอุตสาหกรรมการก่อสร้างแห่งเกาหลี รายงานการวิเคราะห์ LCC
+                </div>
+              </div>
+
+              <!-- 3 Core Losses -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="log-out" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">01. ความล้มเหลวในการจัดการห้องว่าง</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">การขาดการคาดการณ์การหมดอายุสัญญาทำให้ห้องว่างยาวนานขึ้น ส่งผลให้อัตราผลตอบแทนจากการเช่าลดลงอย่างมาก</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="receipt" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">02. การตกหล่นในการจัดเก็บและการค้างชำระ</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">การตกหล่นจากการตรวจสอบด้วยตนเองทำให้การค้างชำระถูกละเลย นำไปสู่หนี้สูญและความเสี่ยงในการฟ้องร้องขับไล่</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="wrench" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">03. ขาดประวัติการซ่อมบำรุงอุปกรณ์</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">การสูญหายของบันทึกการซ่อมแซมและตรวจสอบทำให้เกิดค่าใช้จ่ายซ้ำซ้อนและเร่งให้อาคารเสื่อมสภาพเร็วขึ้น</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-rose-950/20 text-xs text-rose-200 flex items-center gap-2">
+              <i data-lucide="alert-triangle" class="text-rose-400"></i>
+              <span><strong>สาเหตุที่ทำให้มูลค่าทรัพย์สินลดลง:</strong> การขาดระบบการดำเนินงานระดับมืออาชีพจะนำไปสู่อัตราห้องว่างที่เพิ่มขึ้น รายได้จากการดำเนินงานสุทธิ (NOI) ลดลง และมูลค่าขายของอาคารลดฮวบลงโดยตรง</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-07",
+        chapter: "บทที่ 2. ปัญหา",
+        topic: "กระบวนการดำเนินงานทรัพย์สินอสังหาริมทรัพย์ (LM · PM · FM · AM)",
+        origPage: 12,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="network" class=""></i> Process Complexity
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">กระบวนการปฏิบัติงานบริหารสินทรัพย์ที่มีความซับซ้อนหลายขั้นตอน</h2>
+                <p class="text-slate-400 text-xs mt-0.5">ตั้งแต่การตลาดปล่อยเช่าไปจนถึงสิ่งอำนวยความสะดวก การบัญชีการเงิน และการบริหารสินทรัพย์ ทุกภาคส่วนต้องเชื่อมโยงกันอย่างราบรื่น</p>
+              </div>
+              <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 border border-cyan-400/40 transition btn-press group">
+                <div class="w-5 h-5 rounded-lg bg-white/20 flex items-center justify-center text-[10px]">
+                  <i data-lucide="layers" class="text-white"></i>
+                </div>
+                <span>ดูโครงสร้างการบริหารจัดการทรัพย์สินอสังหาริมทรัพย์ (PM)</span>
+                <i data-lucide="external-link" class="text-[10px] text-cyan-200 group-hover:translate-x-0.5 transition"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <!-- LM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-blue-900/40 hover:border-blue-500/60 transition group">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base mb-2">
+                  <i data-lucide="megaphone" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-blue-400 uppercase">LM (Leasing)</div>
+                <div class="text-sm font-black text-white mt-0.5">การตลาดการเช่า</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> การให้คำปรึกษาสัญญาและการหาผู้เช่า</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> การทำสัญญาเช่ามาตรฐาน</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> การรับเงินมัดจำและการจัดการย้ายเข้า</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> การตลาดเพื่อลดอัตราห้องว่างให้เหลือน้อยที่สุด</li>
+                </ul>
+              </div>
+
+              <!-- PM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-cyan-900/40 hover:border-cyan-500/60 transition group">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base mb-2">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-cyan-400 uppercase">PM (Property)</div>
+                <div class="text-sm font-black text-white mt-0.5">การบริหารจัดการการดำเนินงานเช่า</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> การเรียกเก็บค่าเช่า/ค่าส่วนกลางรายเดือน</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> การรับชำระแบบเรียลไทม์และการทวงหนี้ค้างชำระ</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> การจัดการข้อร้องเรียนของผู้เช่า (VOC)</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> การคำนวณ NOI และรายงานประจำเดือน</li>
+                </ul>
+              </div>
+
+              <!-- FM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-emerald-900/40 hover:border-emerald-500/60 transition group">
+                <div class="icon-badge icon-badge-emerald w-10 h-10 text-base mb-2">
+                  <i data-lucide="wrench" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-emerald-400 uppercase">FM (Facility)</div>
+                <div class="text-sm font-black text-white mt-0.5">การจัดการสิ่งอำนวยความสะดวกและความปลอดภัย</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> การตรวจสอบสิ่งอำนวยความสะดวกตามกฎหมายเป็นประจำ</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> การสั่งจ้างและตรวจรับงานซ่อมแซมบำรุงรักษา</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> การประหยัดพลังงานและการจัดการผู้รับเหมาภายนอก</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> การปฏิบัติตามกฎหมายความปลอดภัยและอาชีวอนามัย</li>
+                </ul>
+              </div>
+
+              <!-- AM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-indigo-900/40 hover:border-indigo-500/60 transition group">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base mb-2">
+                  <i data-lucide="landmark" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-indigo-400 uppercase">AM (Asset)</div>
+                <div class="text-sm font-black text-white mt-0.5">การบริหารทรัพย์สินและการปิดบัญชี</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> การปิดบัญชีเชื่อมโยงใบสำคัญ ERP การบัญชี</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> สร้างไฟล์ยื่นแบบภาษีมูลค่าเพิ่มอิเล็กทรอนิกส์</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> การประเมินมูลค่าทรัพย์สินและการปรับปรุงอาคาร</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> การจัดการเงินปันผลกองทุน REITs / นักลงทุน</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex items-center justify-between">
+              <span class="flex items-center gap-2">
+                <i data-lucide="unlink" class="text-rose-400"></i> การแยกส่วนของข้อมูลใน 4 ด้านหลัก (AM·PM·FM·LM) ทำให้งานหยุดชะงักและเกิดความเสี่ยง
+              </span>
+              <div class="flex items-center gap-3">
+                <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1.5 bg-cyan-950/60 px-2.5 py-1 rounded-lg border border-cyan-800/40">
+                  <i data-lucide="image" class=""></i> ดูแผนผังโครงสร้าง PM แบบป๊อปอัป
+                </button>
+                <span class="text-cyan-400 font-bold flex items-center gap-1">
+                  <i data-lucide="check-check" class="text-emerald-400"></i> ezREMS รวบรวมไว้อย่างสมบูรณ์แบบในแพลตฟอร์มเดียว
+                </span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-08",
+        chapter: "บทที่ 2. ปัญหา",
+        topic: "เปรียบเทียบโซลูชัน: Excel แบบดั้งเดิม vs ezREMS",
+        origPage: 20,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="arrow-left-right" class=""></i> Comparison Analysis
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">การจัดการด้วย Excel vs ezREMS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ยิ่งขนาดทรัพย์สินใหญ่ขึ้น Excel จะกลายเป็นต้นตอของความเสี่ยง การนำระบบมาใช้จึงเป็นเงื่อนไขสำคัญต่อความอยู่รอด</p>
+            </div>
+
+            <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
+              <table class="w-full text-xs text-left">
+                <thead class="bg-slate-950 text-slate-300 border-b border-slate-800 uppercase">
+                  <tr>
+                    <th class="py-3 px-4 w-1/4">รายการเปรียบเทียบ</th>
+                    <th class="py-3 px-4 w-3/8 text-rose-400 bg-rose-950/30 font-bold">
+                      <i data-lucide="file-spreadsheet" class="mr-1 text-rose-400"></i> วิธี Excel แบบดั้งเดิม
+                    </th>
+                    <th class="py-3 px-4 w-3/8 text-cyan-400 bg-blue-950/50 font-bold">
+                      <i data-lucide="cloud" class="mr-1 text-cyan-400"></i> แพลตฟอร์ม ezREMS
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="database" class="text-slate-400"></i> ความสมบูรณ์ของข้อมูล
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> มีความเสี่ยงจากสูตรคำนวณผิดพลาด การบันทึกทับ และไฟล์สูญหายอยู่เสมอ
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> จัดเก็บบนฐานข้อมูลคลาวด์แบบเรียลไทม์และเก็บรักษาประวัติเวอร์ชันอย่างสมบูรณ์
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="receipt" class="text-slate-400"></i> การรับชำระและการเรียกเก็บเงิน
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> ตรวจสอบรายการเดินบัญชีกับ Excel ด้วยตนเองทุกเดือน พิมพ์ใบแจ้งหนี้ทีละใบ
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> ตรวจสอบบัญชีเสมือน/Firm Banking อัตโนมัติ ส่งเอกสารอิเล็กทรอนิกส์อัตโนมัติ
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="file-text" class="text-slate-400"></i> ภาษีและใบแจ้งหนี้
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> เข้าสู่ระบบสรรพากรเพื่อออกใบกำกับภาษีด้วยตนเอง (เกิดข้อผิดพลาดและตกหล่นบ่อยครั้ง)
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> ออกใบกำกับภาษีอิเล็กทรอนิกส์อัตโนมัติแบบกลุ่มและไฟล์ยื่นภาษีมูลค่าเพิ่ม
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="lock" class="text-slate-400"></i> ความปลอดภัยและสิทธิ์การเข้าถึง
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> จัดเก็บบนคอมพิวเตอร์ส่วนบุคคลเสี่ยงต่อข้อมูลรั่วไหลและเกิดการชนกันของไฟล์เมื่อทำงานพร้อมกัน
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> ควบคุมสิทธิ์ตามผู้ใช้งาน การเข้ารหัสและความปลอดภัยระดับสถาบันการเงิน
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="message-square" class="text-slate-400"></i> การสื่อสารกับผู้เช่า
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> พึ่งพาการโทร ข้อความ และใบแจ้งหนี้กระดาษ (ไม่สามารถพิสูจน์การแจ้งเตือนได้)
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> แอปมือถือสำหรับผู้เช่า เอกสารอิเล็กทรอนิกส์ที่มีผลผูกพันทางกฎหมาย รองรับการชำระด้วยบัตร
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="quote" class="text-blue-400"></i>
+                "Excel เป็นเพียงเครื่องมือทำเอกสาร ไม่สามารถเป็น ERP สำหรับบริหารจัดการทรัพย์สินมูลค่ามหาศาลได้"
+              </span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">
+                <i data-lucide="arrow-down" class="mr-1"></i> ลดเวลาและภาระงานได้มากกว่า 70%
+              </span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-09",
+        chapter: "บทที่ 3. โซลูชัน",
+        topic: "ภาพรวมโซลูชันและการรับรอง ezREMS",
+        origPage: 21,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="award" class=""></i> ezREMS Overview
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">SaaS จัดการทรัพย์สินอัจฉริยะ 'ezREMS'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">บริหารจัดการแบบบูรณาการบนคลาวด์สำหรับอสังหาริมทรัพย์ทุกประเภท: สำนักงาน ที่อยู่อาศัย ค้าปลีก และมิกซ์ยูส</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <!-- Cert 1 -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 space-y-3 group hover:border-blue-500/60 transition">
+                <div class="icon-badge icon-badge-blue w-12 h-12 text-xl">
+                  <i data-lucide="badge-check" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">การรับรองระดับชาติ GS เกรด 1</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  เกรดสูงสุดของการรับรองคุณภาพซอฟต์แวร์ระดับประเทศ, <span class="text-cyan-400 font-bold">การรับรอง GS (Good Software) เกรด 1</span> — ได้รับการรับรองความเสถียรและความน่าเชื่อถือจากหน่วยงานที่ได้รับการรับรองจากรัฐบาล
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="check-circle-2" class="text-emerald-400"></i> ขึ้นทะเบียนจัดซื้อจัดจ้างภาครัฐและมีคุณสมบัติเหมาะสมสำหรับหน่วยงานรัฐ
+                </div>
+              </div>
+
+              <!-- Cert 2 -->
+              <div class="p-5 rounded-2xl glass-card border border-cyan-800/40 space-y-3 group hover:border-cyan-500/60 transition">
+                <div class="icon-badge icon-badge-cyan w-12 h-12 text-xl">
+                  <i data-lucide="stamp" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">สิทธิบัตรต้นฉบับการจัดการอสังหาริมทรัพย์</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  เกี่ยวกับระบบบริหารจัดการการรับชำระและการเคลียร์ค่าเช่าอสังหาริมทรัพย์: <span class="text-cyan-400 font-bold">เทคโนโลยีสิทธิบัตรที่เป็นกรรมสิทธิ์</span> — รองรับกระบวนการชำระเงินที่ซับซ้อนได้อย่างแม่นยำไร้ข้อผิดพลาด
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="shield-check" class="text-cyan-400"></i> อัลกอริทึมที่เป็นกรรมสิทธิ์และการผสานรวม FinTech
+                </div>
+              </div>
+
+              <!-- Cert 3 -->
+              <div class="p-5 rounded-2xl glass-card border border-purple-800/40 space-y-3 group hover:border-purple-500/60 transition">
+                <div class="icon-badge icon-badge-purple w-12 h-12 text-xl">
+                  <i data-lucide="cloud-upload" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">คลาวด์ SaaS 100%</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  เข้าถึงได้ทุกที่ทุกเวลาผ่านเว็บเบราว์เซอร์และมือถือโดยไม่ต้องติดตั้งโปรแกรมแยกต่างหาก: <span class="text-purple-300 font-bold">คลาวด์ SaaS แท้ 100%</span> มอบสภาพแวดล้อมการทำงานที่มีเสถียรภาพสูง
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="rotate-cw" class="text-purple-400"></i> อัปเดตอัตโนมัติแบบไร้รอยต่อและสำรองข้อมูลแบบเรียลไทม์
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="globe" class="text-blue-400"></i>
+                บริการ B2B PMS สำหรับองค์กร: <a href="https://pms.ezrems.com" target="_blank" class="text-blue-400 underline">pms.ezrems.com</a>
+              </span>
+              <span class="text-slate-300 font-medium">ดำเนินงานและพัฒนาอย่างต่อเนื่องมากว่า 10 ปีนับตั้งแต่ได้รับการรับรองครั้งแรกในปี 2014</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-10",
+        chapter: "บทที่ 3. โซลูชัน",
+        topic: "แผนผังการเชื่อมต่อแพลตฟอร์มและสถาปัตยกรรมระบบ",
+        origPage: 23,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="network-wired" class=""></i> Architecture
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">แผนผังการเชื่อมต่อแพลตฟอร์ม ezREMS</h2>
+                <p class="text-slate-400 text-xs mt-0.5">โดยมีคลาวด์เซิร์ฟเวอร์เป็นศูนย์กลาง การเงิน (PG/ธนาคาร) ภาษี (Hometax) การสื่อสาร (การแจ้งเตือน/SMS) และแอปผู้เช่าจะเชื่อมโยงกันอย่างไร้รอยต่อ</p>
+              </div>
+              <button onclick="openOriginalModal(23)" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition">
+                <i data-lucide="layout-grid" class=""></i> ดูแผนผังต้นฉบับ (หน้า 23)
+              </button>
+            </div>
+
+            <div class="my-auto p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-[1fr,auto,1.15fr,auto,1fr] gap-2.5 items-center text-center">
+                <!-- 1. Left: Channels -->
+                <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-cyan w-10 h-10 mx-auto text-base">
+                      <i data-lucide="smartphone" class=""></i>
+                    </div>
+                    <div class="text-xs font-bold text-cyan-400 mt-1">ช่องทางผู้ใช้งาน (Channel)</div>
+                    <div class="text-sm font-semibold text-white">ผู้ดูแลระบบ / ผู้เช่า</div>
+                  </div>
+                  <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
+                    <li class="flex items-center gap-1.5"><i data-lucide="laptop" class="text-blue-400 text-[10px]"></i> เว็บผู้ดูแลระบบ (PC / แท็บเล็ต)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> โมบายล์เว็บสำหรับการจัดการภาคสนาม</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> แอปพลิเคชันผู้เช่า (ezREMS Connect)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-blue-400 text-[10px]"></i> คีออสก์ควบคุมการเข้าออก / จัดการที่จอดรถ</li>
+                  </ul>
+                </div>
+
+                <!-- Arrow Connector 1 (Between Channel and Core) -->
+                <div class="flex md:flex-col items-center justify-center py-2 md:py-0 text-cyan-400">
+                  <div class="p-2 sm:p-2.5 rounded-full bg-slate-900 border border-cyan-500/50 shadow-lg shadow-cyan-500/30 flex items-center justify-center space-x-1.5 animate-pulse">
+                    <i data-lucide="arrow-left" class="text-xs sm:text-sm text-cyan-300"></i>
+                    <i data-lucide="arrow-right" class="text-xs sm:text-sm text-cyan-300"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-cyan-300 ml-2 md:ml-0 md:mt-1.5 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/50 whitespace-nowrap">
+                    การเชื่อมต่อเว็บ/แอปแบบเรียลไทม์
+                  </span>
+                </div>
+
+                <!-- 2. Center: ezREMS Core Engine -->
+                <div class="p-4 rounded-xl bg-blue-950/60 border border-blue-500/60 space-y-2 relative shadow-lg shadow-blue-900/40 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-blue w-10 h-10 mx-auto text-base">
+                      <i data-lucide="server" class=""></i>
+                    </div>
+                    <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-600 text-white text-[11px] font-bold mt-1">CORE ENGINE</div>
+                    <div class="text-base font-extrabold text-white">แพลตฟอร์มคลาวด์ ezREMS</div>
+                  </div>
+                  <div class="text-xs text-blue-200 space-y-1 text-left pt-2 border-t border-blue-800/50">
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> สัญญาเช่า / การจัดการประวัติห้องพัก</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> แผนผังแยกตามชั้น Stacking Plan</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> การรับเงินอัตโนมัติ / การตรวจสอบบัญชีเสมือน</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> ใบกำกับภาษีอิเล็กทรอนิกส์ / การยื่นภาษีมูลค่าเพิ่ม</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> ข้อร้องเรียน VOC / ประวัติการซ่อมบำรุงสิ่งอำนวยความสะดวก</div>
+                  </div>
+                </div>
+
+                <!-- Arrow Connector 2 (Between Core and Interface) -->
+                <div class="flex md:flex-col items-center justify-center py-2 md:py-0 text-indigo-400">
+                  <div class="p-2 sm:p-2.5 rounded-full bg-slate-900 border border-indigo-500/50 shadow-lg shadow-indigo-500/30 flex items-center justify-center space-x-1.5 animate-pulse">
+                    <i data-lucide="arrow-left" class="text-xs sm:text-sm text-indigo-300"></i>
+                    <i data-lucide="arrow-right" class="text-xs sm:text-sm text-indigo-300"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-indigo-300 ml-2 md:ml-0 md:mt-1.5 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/50 whitespace-nowrap">
+                    Open API / การเชื่อมต่อระบบเฉพาะทาง
+                  </span>
+                </div>
+
+                <!-- 3. Right: External Interfaces -->
+                <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-purple w-10 h-10 mx-auto text-base">
+                      <i data-lucide="zap" class=""></i>
+                    </div>
+                    <div class="text-xs font-bold text-indigo-400 mt-1">ส่วนต่อประสานภายนอก (Interface)</div>
+                    <div class="text-sm font-semibold text-white">การเชื่อมต่อการเงิน · ภาษี · ERP</div>
+                  </div>
+                  <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
+                    <li class="flex items-center gap-1.5"><i data-lucide="building-2" class="text-indigo-400 text-[10px]"></i> เฟิร์มแบงกิ้ง / บัญชีเสมือน (ธนาคารพาณิชย์)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-indigo-400 text-[10px]"></i> ระบบชำระเงินผ่านบัตรเครดิต PG (ชำระบัญชี D+1)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="file-text" class="text-indigo-400 text-[10px]"></i> ใบกำกับภาษีอิเล็กทรอนิกส์ (กรมสรรพากร)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="message-square" class="text-indigo-400 text-[10px]"></i> เอกสารอิเล็กทรอนิกส์รับรอง / การแจ้งเตือนอัตโนมัติ</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-indigo-400 text-[10px]"></i> ERP การบัญชีองค์กร (เชื่อมต่อ SAP FI)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between">
+              <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="text-emerald-400"></i> โครงสร้างพื้นฐานคลาวด์ระดับองค์กรที่เสถียร (AWS / Naver Cloud)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="text-blue-400"></i> การตรวจสอบต่อเนื่องตลอด 24 ชั่วโมงทุกวัน และรองรับการสำรองข้อมูลอัตโนมัติ</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-11",
+        chapter: "บทที่ 3. โซลูชัน",
+        topic: "ฟังก์ชันหลัก: B2B PMS ระดับมืออาชีพ (ยูนิต·สัญญา·การรับชำระ·ภาษี)",
+        origPage: 25,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="sliders" class=""></i> PMS Core Features
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ฟังก์ชันหลักของการบริหารจัดการทรัพย์สิน B2B ระดับองค์กร (PMS)</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ออกแบบตามเสียงสะท้อนจากผู้ปฏิบัติงานจริงในสายงาน ช่วยให้งานจัดการการเช่าที่ซับซ้อนเสร็จสิ้นได้ด้วยการคลิกเพียงไม่กี่ครั้ง</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <!-- Feature 1 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="layers" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-bold text-sm">01. พื้นที่ & Stacking Plan</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  แสดงภาพสถานะห้องพักตามชั้นของอาคารอย่างเข้าใจง่ายด้วย <span class="text-cyan-300 font-semibold">Stacking Plan</span> เพื่อตรวจสอบห้องว่างและการหมดอายุสัญญาได้ในพริบตาเดียว
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="circle-dollar-sign" class=""></i>
+                </div>
+                <div class="text-blue-400 font-bold text-sm">02. การตัดรับชำระอัตโนมัติและการจัดการหนี้ค้างชำระ</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  เมื่อมีการโอนเงินเข้าบัญชีเสมือน จะได้รับการประมวลผลรับเงินอัตโนมัติแบบเรียลไทม์ และหากเกิดการค้างชำระ จะรองรับการพิมพ์หนังสือทวงถามหนี้รวมถึงส่งอีเมล/SMS อัตโนมัติ
+                </p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-emerald-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-10 h-10 text-base">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-emerald-400 font-bold text-sm">03. การเชื่อมต่อใบกำกับภาษีอิเล็กทรอนิกส์</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ออกใบกำกับภาษีอิเล็กทรอนิกส์แบบกลุ่มในคลิกเดียวโดยอิงจากข้อมูลเรียกเก็บค่าเช่าและค่าส่วนกลาง พร้อมฟังก์ชันคำนวณค่าเช่าโดยประมาณจากเงินประกันโดยอัตโนมัติ
+                </p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-purple-400 font-bold text-sm">04. สร้างไฟล์ยื่นแบบภาษีมูลค่าเพิ่ม</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  สร้างไฟล์อิเล็กทรอนิกส์สำหรับการยื่นภาษีมูลค่าเพิ่มและรายงานมูลค่าการให้บริการเช่าอสังหาริมทรัพย์เพื่อส่ง Hometax ของกรมสรรพากรได้ทันที ช่วยลดค่าใช้จ่ายตัวแทนภาษี
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-cyan-400"></i> ติดตั้งฟังก์ชันมาตรฐานในตัวสำหรับการพิมพ์สัญญาเช่ามาตรฐาน ใบแจ้งหนี้รวม/แยก และการจัดการข้อร้องเรียน (VOC)</span>
+              <a href="https://pms.ezrems.com" target="_blank" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+                ไปที่หน้าจอสาธิตระบบ PMS <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-12",
+        chapter: "บทที่ 3. โซลูชัน",
+        topic: "แอปผู้เช่า: ezREMS Connect (บริการความสะดวกสบายในการอยู่อาศัย)",
+        origPage: 26,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="smartphone" class=""></i> Tenant Mobile App
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">แอปพลิเคชันมือถือสำหรับผู้เช่า 'ezREMS Connect'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">มอบความสะดวกสบายในการอยู่อาศัยแก่ผู้เช่า พร้อมสร้างรายได้เสริมและเปิดโอกาสในการจัดการข้อร้องเรียนอัตโนมัติให้แก่ผู้ประกอบการ</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-9 h-9 text-sm">
+                  <i data-lucide="bell" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">01. บริการสิ่งอำนวยความสะดวกเพื่อการอยู่อาศัย</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ใช้บริการเสริม เช่น ทำความสะอาดห้องพัก ส่งซักรีด จองฟิตเนส ลงทะเบียนจอดรถ ได้เหมือนตลาดออนไลน์</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-9 h-9 text-sm">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">02. การจัดการสถานะสัญญา</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ตรวจสอบระยะเวลาสัญญา เงินประกัน เงื่อนไขค่าเช่ารายเดือน ฯลฯ ได้ตลอดเวลาในแอป และยื่นขอต่อสัญญาได้อย่างง่ายดาย</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-9 h-9 text-sm">
+                  <i data-lucide="vote" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">03. ฟังก์ชันการลงคะแนนอิเล็กทรอนิกส์</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ดำเนินการลงคะแนนเสียงอิเล็กทรอนิกส์บนมือถือที่มีผลทางกฎหมายโดยไม่ต้องจัดการประชุมแบบออฟไลน์ เช่น การแก้ไขข้อบังคับการจัดการ การเลือกตั้งตัวแทนอาคาร</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-emerald-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-9 h-9 text-sm">
+                  <i data-lucide="receipt" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">04. ใบแจ้งหนี้บนมือถือ</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ตรวจสอบรายละเอียดค่าเช่า/ค่าส่วนกลางที่เรียกเก็บในแต่ละเดือน และออกใบยืนยันการชำระเงินได้ทันที</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-blue-800/40 bg-blue-950/30 space-y-1.5 group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-9 h-9 text-sm">
+                  <i data-lucide="credit-card" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">05. ชำระค่าเช่าด้วยบัตรเครดิต</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ผ่อนชำระปลอดดอกเบี้ยและสะสมคะแนนบัตร พร้อมระบบชำระเงินอัตโนมัติตามรอบด้วย Billing Key ทำให้ยอดค้างชำระกลายเป็นศูนย์</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-rose-500/50 transition">
+                <div class="icon-badge icon-badge-rose w-9 h-9 text-sm">
+                  <i data-lucide="message-square" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">06. การจัดการข้อร้องเรียน VOC</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">แจ้งข้อบกพร่องพร้อมแนบรูปภาพ/วิดีโอ และตรวจสอบการแจ้งเตือนสถานะการดำเนินการแบบเรียลไทม์</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="coins" class="text-amber-400"></i> ประโยชน์ของผู้ประกอบการ: สร้างรายได้เสริมใหม่ผ่านค่าธรรมเนียมความร่วมมือบริการสิ่งอำนวยความสะดวกเพื่อการอยู่อาศัย (Embedded Commerce)</span>
+              <span class="text-cyan-400 font-bold flex items-center gap-1"><i data-lucide="trending-up" class=""></i> ความพึงพอใจของผู้อยู่อาศัย เพิ่มขึ้น & ค่าแรงในการบริหารจัดการ ลดลง</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-13",
+        chapter: "บทที่ 3. โซลูชัน",
+        topic: "เอกสารอิเล็กทรอนิกส์และการเปรียบเทียบบริการชำระค่าเช่าด้วยบัตรเครดิต (PG)",
+        origPage: 30,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="credit-card" class=""></i> Fintech Innovation
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">นวัตกรรมการชำระค่าเช่าด้วยบัตรเครดิตและเอกสารอิเล็กทรอนิกส์</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ระบบการชำระเงินเฉพาะของ ezREMS ที่ป้องกันความเสี่ยงจากการแปลงวงเงินบัตรเครดิตเป็นเงินสดอย่างผิดกฎหมาย และรองรับการชำระบัญชีที่เร็วที่สุดในอุตสาหกรรม (D+1)</p>
+            </div>
+
+            <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 text-xs shadow-xl">
+              <table class="w-full text-left">
+                <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
+                  <tr>
+                    <th class="py-2.5 px-3">รายการเปรียบเทียบ</th>
+                    <th class="py-2.5 px-3 text-slate-400">บริษัทบัตรเครดิตทั่วไป</th>
+                    <th class="py-2.5 px-3 text-slate-400">ตัวแทนรับชำระค่าเช่ารายอื่น</th>
+                    <th class="py-2.5 px-3 text-cyan-400 bg-blue-950/50 font-bold">
+                      <i data-lucide="star" class="text-amber-400 mr-1"></i> ezREMS Connect (ezREMS)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="pen-tool" class="text-slate-400 text-[11px]"></i> การยินยอมของผู้ให้เช่า
+                    </td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold"><i data-lucide="check" class="text-emerald-400"></i> จำเป็นต้องได้รับความยินยอม</td>
+                    <td class="py-2 px-3 text-rose-400"><i data-lucide="x" class="text-rose-400"></i> ไม่จำเป็น</td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
+                      <i data-lucide="check-check" class="text-emerald-400"></i> ไม่มีภาระสำหรับผู้ให้เช่า
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="zap" class="text-slate-400 text-[11px]"></i> ระยะเวลาการชำระบัญชี
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">D+3 วัน</td>
+                    <td class="py-2 px-3 text-slate-400">D+3 ~ D+5 วัน (ชำระบัญชีล่าช้า)</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="zap" class="text-cyan-400 mr-1"></i> D+1 วัน (ชำระบัญชีรวดเร็วในวันถัดไป)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="shield-check" class="text-slate-400 text-[11px]"></i> ความเสี่ยงจากการแสวงหาประโยชน์จากบัตรเครดิต
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">ไม่มี</td>
+                    <td class="py-2 px-3 text-rose-400 font-bold"><i data-lucide="alert-triangle" class="text-rose-400"></i> มีโอกาสนำไปใช้ในทางที่ผิดด้วยธุรกรรมเท็จ</td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
+                      <i data-lucide="shield-check" class="text-emerald-400 mr-1"></i> ป้องกันตั้งแต่ต้นทางโดยอิงจากสัญญาจริงและใบแจ้งหนี้
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="rotate-cw" class="text-slate-400 text-[11px]"></i> วิธีการชำระเงิน
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">การยืนยันตัวตนด้วยตนเองทุกเดือน</td>
+                    <td class="py-2 px-3 text-slate-400">การยืนยันตัวตนด้วยตนเองทุกเดือน</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="repeat" class="text-cyan-400 mr-1"></i> ชำระเงินอัตโนมัติด้วย Billing Key (นับยอดสะสมบัตรเครดิต)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="calculator" class="text-slate-400 text-[11px]"></i> การสนับสนุนการลดหย่อนภาษี
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">ไม่รองรับ</td>
+                    <td class="py-2 px-3 text-slate-400">ไม่รองรับ</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="file-check" class="text-cyan-400 mr-1"></i> ออกเอกสารหลักฐานการลดหย่อนภาษีสิ้นปีโดยอัตโนมัติ
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-3 rounded-xl bg-emerald-950/20 text-xs text-emerald-300 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="mail-check" class="text-emerald-400"></i>
+                ลดค่าไปรษณีย์กระดาษลง 80% ผ่านการเชื่อมต่อเอกสารอิเล็กทรอนิกส์ที่รับรองโดย Naver พร้อมหลักฐานทางกฎหมายที่สมบูรณ์ในการรับเอกสาร
+              </span>
+              <span class="font-bold text-white bg-emerald-800/60 px-2 py-0.5 rounded">รับประกันการชำระบัญชีในวันถัดไป D+1</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-14",
+        chapter: "บทที่ 4. ผลงานและขนาดการบริหาร",
+        topic: "ขนาดยอดธุรกรรมและการเงินของ ezREMS พิสูจน์ได้ด้วยข้อมูล",
+        origPage: 32,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="bar-chart-2" class=""></i> Proven Scale
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ความน่าเชื่อถือและขนาดของ ezREMS พิสูจน์ได้ด้วยตัวเลข</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ตั้งแต่ศูนย์การค้าครบวงจรขนาดใหญ่ไปจนถึงที่อยู่อาศัยเพื่อสังคมและอาคารสำนักงานชั้นนำ ธุรกรรมทางการเงินมูลค่านับหมื่นล้านวอนได้รับการประมวลผลอย่างมั่นคงในแต่ละเดือน</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-auto">
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="building-2" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">จำนวนยูนิตที่บริหารจัดการสะสม</div>
+                <div class="text-3xl sm:text-4xl font-black text-cyan-400 mt-1">55,000+</div>
+                <div class="text-[11px] text-slate-500 mt-1">ห้องพักและพื้นที่สิ่งอำนวยความสะดวก</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="trending-up" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">ยอดประมวลผลค่าเช่า/ค่าส่วนกลางรายเดือน</div>
+                <div class="text-3xl sm:text-4xl font-black text-blue-400 mt-1">65,000 ล้าน+ วอน</div>
+                <div class="text-[11px] text-slate-500 mt-1">จัดเก็บแบบเรียลไทม์ทุกเดือน</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-indigo-800/40 text-center group hover:border-indigo-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="map-pin" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">ขนาดพื้นที่ในการดูแลจัดการ</div>
+                <div class="text-3xl sm:text-4xl font-black text-indigo-400 mt-1">6,113 ตร.กม.+</div>
+                <div class="text-[11px] text-slate-500 mt-1">ประมาณ 3.3 เท่าของเกาะเชจู</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-purple-800/40 text-center group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="lock" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">มูลค่าเงินประกันภายใต้การจัดการ</div>
+                <div class="text-3xl sm:text-4xl font-black text-emerald-400 mt-1">332,000 ล้าน+ วอน</div>
+                <div class="text-[11px] text-slate-500 mt-1">การฝากดูแลอย่างปลอดภัยและการชำระบัญชี</div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/50 space-y-1.5 text-xs">
+              <div class="flex justify-between items-center text-slate-300">
+                <span class="font-semibold text-white flex items-center gap-2">
+                  <i data-lucide="building-2" class="text-cyan-400"></i> ขนาดยอดประมวลผลการโอนเงินเข้าบัญชีเสมือนอัตโนมัติ
+                </span>
+                <span class="text-cyan-400 font-bold bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">มากกว่า 12,000 ล้าน+ วอน/เดือน</span>
+              </div>
+              <p class="text-[11px] text-slate-500">
+                ※ สถิตินี้ไม่รวมข้อมูลจาก KT Group (2,100+), Lotte C&T, Gangbyeon TechnoMart และศูนย์การค้าคอมเพล็กซ์อื่นๆ
+              </p>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-15",
+        chapter: "บทที่ 4. กรณีศึกษาของลูกค้า",
+        topic: "กรณีศึกษาลูกค้า 1: บริษัท K REITs (การบริหารจัดการแบบบูรณาการ 10 อาคารทั่วประเทศ)",
+        origPage: 35,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="briefcase" class=""></i> Case Study 01
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">บริษัท K-REITs: การบริหารทรัพย์สินแบบบูรณาการสำหรับอาคารสำนักงานเกรดพรีเมียม 10 แห่งทั่วประเทศ</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ตรวจสอบและบริหารจัดการสินทรัพย์อาคารสำนักงานขนาดใหญ่ที่กระจายอยู่ทั่วประเทศแบบบูรณาการเรียลไทม์จากสำนักงานใหญ่ และป้องกันการตกหล่นของรายได้</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+              <!-- Left: Challenges & Solution -->
+              <div class="space-y-3">
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
+                  <div class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
+                    <i data-lucide="x-circle" class=""></i> ปัญหาก่อนการนำไปใช้
+                  </div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1">
+                    <li>• ผู้บริหารจัดการของแต่ละอาคารแตกต่างกัน ทำให้การรวบรวมข้อมูลที่สำนักงานใหญ่ใช้เวลามากกว่า 5 วัน</li>
+                    <li>• การจัดการการหมดอายุสัญญา (Gantt) ไม่เพียงพอ ทำให้ระยะเวลาห้องว่างยาวนานขึ้น</li>
+                    <li>• มีความเสี่ยงต่อเนื่องจากการเสียภาษีเพิ่มเนื่องจากการตกหล่นในการยื่นภาษี</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-800/40">
+                  <div class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
+                    <i data-lucide="check-circle-2" class=""></i> แก้ปัญหาได้หลังจากการนำ ezREMS มาใช้
+                  </div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1">
+                    <li>• รวมสถานะการเช่าของอาคารทั้ง 10 แห่งในคลิกเดียวบนแดชบอร์ดเดียวแบบบูรณาการ</li>
+                    <li>• เริ่มกระบวนการต่อสัญญาล่วงหน้าโดยอิงตามแผนภูมิแกนต์ (Gantt Chart) ของสัญญา</li>
+                    <li>• บรรลุการตกหล่นของการยื่นภาษีเป็น 0 รายการ ด้วยการออกใบกำกับภาษีอิเล็กทรอนิกส์อัตโนมัติ</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Right: Delivered Value -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="pie-chart" class="text-cyan-400"></i> ฟังก์ชันและหน้าจอหลักที่ให้บริการ
+                  </h3>
+                  <div class="space-y-2.5 mt-3 text-xs">
+                    <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
+                      <i data-lucide="table" class="text-cyan-400 text-sm mt-0.5"></i>
+                      <div>
+                        <span class="text-cyan-400 font-semibold">ตารางสถานะสัญญาเช่าและการเรียกเก็บเงินตามอสังหาริมทรัพย์</span>
+                        <p class="text-slate-400 mt-0.5">การวิเคราะห์เปรียบเทียบอัตราผลตอบแทนตามอาคารและการพิมพ์รายงานนักลงทุน (MR) ในคลิกเดียว</p>
+                      </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
+                      <i data-lucide="star" class="text-amber-400 text-sm mt-0.5"></i>
+                      <div>
+                        <span class="text-amber-300 font-semibold">การดึงรายชื่อลูกค้า (ผู้เช่า) ชั้นดี</span>
+                        <p class="text-slate-400 mt-0.5">มอบสิทธิประโยชน์แก่ผู้เช่าที่ชำระตรงเวลาและกระตุ้นการต่อสัญญาระยะยาว</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-emerald-400 font-bold flex items-center gap-1.5">
+                  <i data-lucide="zap" class="text-emerald-400"></i> ระยะเวลาการจัดทำรายงานสรุปยอดบัญชี: ลดลงจาก 5 วัน → เหลือ 2 ชั่วโมง
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
+              <i data-lucide="building" class="text-slate-500"></i>
+              <span>ขอบเขตการใช้งาน: อาคารสำนักงานเกรดพรีเมียมขนาดใหญ่, กองทรัสต์เพื่อการลงทุนในอสังหาริมทรัพย์ (REITs), บริษัทจัดการกองทุนอสังหาริมทรัพย์ (AMC)</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-16",
+        chapter: "บทที่ 4. กรณีศึกษาของลูกค้า",
+        topic: "กรณีศึกษาลูกค้า 2: ห้างสรรพสินค้า Alleyway (การจัดการรายได้เชื่อมโยงกับระบบ POS)",
+        origPage: 37,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="shopping-bag" class=""></i> Case Study 02
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">การดำเนินงานแบบบูรณาการศูนย์การค้า Alleyway Gwanggyo และ Incheon</h2>
+                <p class="text-slate-400 text-xs mt-0.5">รวบรวมข้อมูลยอดขาย POS ของร้านค้าในศูนย์การค้าแบบเรียลไทม์เพื่อเรียกเก็บค่าเช่าตามอัตราเปอร์เซ็นต์ส่วนแบ่งโดยอัตโนมัติ</p>
+              </div>
+              <button onclick="openOriginalModal(37)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                <i data-lucide="file-text" class=""></i> ดูหน้าเอกสาร PDF ต้นฉบับ (หน้า 37)
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="calculator" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-blue-400">Step 01</div>
+                <h4 class="font-bold text-white text-sm">การรวบรวมข้อมูลยอดขาย POS</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  รวบรวมข้อมูลยอดขายที่ชำระผ่าน POS ของร้านค้าหลายร้อยร้านโดยอัตโนมัติผ่าน API และไฟล์ พร้อมตรวจสอบความถูกต้องของข้อมูล
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="calculator" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-cyan-400">Step 02</div>
+                <h4 class="font-bold text-white text-sm">การเรียกเก็บเงินตามอัตราส่วนแบ่งโดยอัตโนมัติ</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  คำนวณค่าเช่าโดยอัตโนมัติตามเงื่อนไขที่ซับซ้อน เช่น ค่าเช่าคงที่ อัตราค่าธรรมเนียมผันแปร และการรับประกันขั้นต่ำ (MG)
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="map" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-indigo-400">Step 03</div>
+                <h4 class="font-bold text-white text-sm">การแสดงภาพยอดขายบนผังร้านค้า</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  แสดงภาพยอดขายต่อพื้นที่และการมีส่วนร่วมของเส้นทางเดินบนผังศูนย์การค้าเพื่อสนับสนุนการตัดสินใจปรับเปลี่ยนผังร้านค้า (MD)
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 flex items-center justify-between text-xs">
+              <div class="space-y-1">
+                <span class="font-bold text-white text-sm flex items-center gap-1.5">
+                  <i data-lucide="shopping-bag" class="text-cyan-400"></i> ครบครันด้วยฟังก์ชัน PMS เฉพาะสำหรับศูนย์การค้าคอมเพล็กซ์
+                </span>
+                <p class="text-slate-400">ผลงานอ้างอิงการดำเนินงานในศูนย์การค้าแลนด์มาร์กระดับประเทศ เช่น Alleyway Gwanggyo, Alleyway Incheon, Gangbyeon TechnoMart</p>
+              </div>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-3 py-1.5 rounded-lg border border-cyan-800/40">ข้อผิดพลาดในการปิดยอดขาย 0%</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-17",
+        chapter: "บทที่ 4. กรณีศึกษาของลูกค้า",
+        topic: "กรณีศึกษาลูกค้า 3: Jeil Punggyeongchae 1,045 ยูนิต (อัตราค้างชำระ 25% → 6%)",
+        origPage: 39,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="trending-down" class=""></i> Dramatic Result
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">โครงการขนาดใหญ่ Jeil Punggyeongchae: อัตราค้างชำระลดลงอย่างมากจาก 25% → 6%</h2>
+                <p class="text-slate-400 text-xs mt-0.5">นำเอกสารอิเล็กทรอนิกส์ Naver และการชำระเงินด้วยบัตรเครดิตมาใช้ในอพาร์ตเมนต์ขนาดใหญ่ 1,045 ยูนิต ช่วยลดอัตราการค้างชำระได้อย่างมาก</p>
+              </div>
+              <button onclick="openOriginalModal(39)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold border border-emerald-800/40 transition shadow-sm hover:border-emerald-500/50">
+                <i data-lucide="file-text" class=""></i> ดูหน้าเอกสาร PDF ต้นฉบับ (หน้า 39)
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Left: Graph Comparison -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="font-bold text-white text-sm flex items-center gap-2">
+                    <i data-lucide="bar-chart-3" class="text-blue-400"></i> เปรียบเทียบแนวโน้มอัตราค้างชำระก่อนและหลังการนำไปใช้
+                  </h3>
+                  <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">ปรับปรุงดีขึ้นอย่างมากถึง 19%p</span>
+                </div>
+
+                <div class="space-y-4 py-2">
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="x-circle" class="text-rose-400"></i> ก่อนการนำไปใช้ (ม.ค. 2025)</span>
+                      <span class="text-rose-400 font-bold text-sm">อัตราค้างชำระ 25%</span>
+                    </div>
+                    <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-rose-500 rounded-full" style="width: 25%;"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="text-emerald-400"></i> หลังนำ ezREMS มาใช้ (ส.ค. 2025)</span>
+                      <span class="text-emerald-400 font-bold text-sm">อัตราค้างชำระ 6%</span>
+                    </div>
+                    <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-emerald-500 rounded-full transition-all duration-1000" style="width: 6%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-[11px] text-slate-400">
+                  * ข้อมูลเชิงประจักษ์ 1,045 ยูนิต: อัตราการเปิดอ่านเอกสารอิเล็กทรอนิกส์ Naver ทะลุ 89% และการชำระผ่านบัตรเครดิตแบบผ่อน 0% เพิ่มขึ้น
+                </p>
+              </div>
+
+              <!-- Right: Key Success Factors -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-900/40 space-y-3">
+                <h3 class="font-bold text-white text-base flex items-center gap-2">
+                  <i data-lucide="key" class="text-amber-400"></i> ปัจจัยความสำเร็จหลัก 3 ประการ
+                </h3>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="mail" class="text-rose-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-rose-300 font-bold">1. หลุดพ้นจากการใช้ใบแจ้งหนี้กระดาษ</span>
+                      <p class="text-slate-400 mt-0.5">แก้ปัญหาการลืมกำหนดชำระเงินเนื่องจากการทิ้งใบแจ้งหนี้ไว้ในตู้จดหมายอย่างสมบูรณ์</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="shield-check" class="text-emerald-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-emerald-300 font-bold">2. การจัดส่งเอกสารอิเล็กทรอนิกส์ที่รับรองโดย Naver</span>
+                      <p class="text-slate-400 mt-0.5">ยืนยันการรับของตนเองผ่านการตรวจสอบสิทธิ์บนสมาร์ทโฟนและกระตุ้นให้ชำระเงินทันที</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="credit-card" class="text-cyan-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-cyan-300 font-bold">3. ชำระเงินผ่านบัตรอย่างง่ายดาย & รองรับการผ่อนชำระ</span>
+                      <p class="text-slate-400 mt-0.5">ผู้เช่าที่ขาดแคลนเงินสดชั่วคราวสามารถชำระแบบผ่อนผ่านบัตรเพื่อป้องกันการค้างชำระ</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-emerald-950/25 text-xs text-emerald-200 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="phone-off" class="text-emerald-400"></i> ความพึงพอใจของสำนักงานนิติบุคคล: งานโทรทวงหนี้ผู้อยู่อาศัยลดลง 80% และข้อพิพาทเป็นศูนย์</span>
+              <span class="text-white font-bold bg-emerald-800/60 px-2 py-0.5 rounded">เก็บเงินได้ล่วงหน้าเพิ่มเติมมากกว่า 14 ล้านวอน+/เดือน</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-18",
+        chapter: "บทที่ 4. กรณีศึกษาของลูกค้า",
+        topic: "กรณีศึกษาลูกค้า 4: การเรียกเก็บและบริหารจัดการค่าน้ำ ค่าไฟ ค่าก๊าซที่มีโครงสร้างซับซ้อน",
+        origPage: 46,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="zap" class="text-amber-400"></i> Case Study 04
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">กรณีศึกษาการเรียกเก็บค่าสาธารณูปโภคโครงสร้างซับซ้อน (การบริหารจัดการค่าน้ำ-ค่าไฟ)</h2>
+                <p class="text-slate-400 text-xs mt-0.5">ดำเนินการครอบคลุมตั้งแต่ฟังก์ชันคำนวณค่าน้ำ-ไฟที่ซับซ้อนไปจนถึงการออกใบกำกับภาษี ป้องกันข้อผิดพลาดจากมนุษย์ได้อย่างสมบูรณ์</p>
+              </div>
+              <button onclick="openCustomImageModal('images/case_utility.png', '복잡한 구조 수광비 부과 프로세스 원본 도표')" class="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50 whitespace-nowrap flex-shrink-0">
+                <i data-lucide="image" class=""></i> ดูแผนผังต้นฉบับ (หน้า 46)
+              </button>
+            </div>
+
+            <!-- Main Content Container (Right Diagram removed as requested, full width structured layout) -->
+            <div class="my-auto space-y-3.5">
+              <!-- Top Highlight Value Box -->
+              <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/40 via-blue-950/40 to-slate-900 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-xs">
+                  <i data-lucide="check-circle-2" class="text-amber-400"></i>
+                  <span>ระบบอัตโนมัติตลอดกระบวนการตั้งแต่การคำนวณค่าน้ำ-ไฟที่ซับซ้อนไปจนถึงการออกใบกำกับภาษี</span>
+                </div>
+                <div class="flex items-center gap-2 text-cyan-300 font-bold text-xs">
+                  <i data-lucide="shield-check" class="text-cyan-400"></i>
+                  <span>ป้องกันข้อผิดพลาดร้ายแรงจากมนุษย์ (Human Error) เช่น การคำนวณผิดพลาดด้วยตนเองและการตกหล่นในการรวบรวมข้อมูลอย่างสมบูรณ์</span>
+                </div>
+              </div>
+
+              <!-- 3-Step Pipeline Box (Full Width 3 Columns) -->
+              <div class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-800 space-y-3.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-cyan-400"></i> กระบวนการอัตโนมัติ 3 ขั้นตอนในการเรียกเก็บค่าน้ำ-ไฟของ ezREMS</span>
+                  <span class="text-[11px] text-slate-400">ครบวงจรในที่เดียวตั้งแต่การจดมิเตอร์ระยะไกลไปจนถึงการบันทึกสลิปบัญชี</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Step 01</span>
+                      <i data-lucide="database" class="text-blue-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">รวบรวมข้อมูลพื้นฐานและการจดมิเตอร์ระยะไกล</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      เชื่อมโยงค่ามิเตอร์โดยอัตโนมัติ รวบรวมข้อมูลพื้นฐานสำหรับการเรียกเก็บแบบเรียลไทม์ เช่น ค่าบริการส่วนกลาง ค่าซ่อมแซมและวัสดุสิ้นเปลือง
+                    </p>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Step 02</span>
+                      <i data-lucide="calculator" class="text-cyan-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">การปันส่วนตามเกณฑ์ที่แม่นยำในขั้นตอนที่ 1 และ 2</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      คำนวณยอดเรียกเก็บของแต่ละร้านค้าโดยไม่มีข้อผิดพลาด ด้วยการใช้การปันส่วนพื้นฐานตามการใช้งาน/พื้นที่ ควบคู่กับจำนวนอุปกรณ์ตามโซน และอัตราข้อตกลงพิเศษตามชั้น
+                    </p>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Step 03</span>
+                      <i data-lucide="file-check-2" class="text-emerald-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">ระบบอัตโนมัติสำหรับการแจ้งหนี้ การจัดเก็บ และสลิปบัญชี</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      แจ้งเตือนทางอิเล็กทรอนิกส์ผ่านข้อความแจ้งเตือน/อีเมล ➔ จัดเก็บอัตโนมัติผ่านบัญชีเสมือน ➔ สร้างสลิปเรียกเก็บ/รับเงิน และออกใบกำกับภาษีอิเล็กทรอนิกส์ส่งกรมสรรพากรแบบกลุ่ม
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Feature Highlights Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-amber-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="calculator" class="text-sm"></i> จัดการสูตรคำนวณที่ซับซ้อนได้อย่างสมบูรณ์แบบ
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">คำนวณอัตราคงที่ อัตราค่าธรรมเนียม การปันส่วนตามการใช้งานจริง และอัตราภาษีแบบก้าวหน้าโดยอัตโนมัติ</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-emerald-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="file-text" class="text-sm"></i> เชื่อมต่อใบกำกับภาษี
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">ออกใบกำกับภาษีอิเล็กทรอนิกส์และใบเสร็จรับเงินสดผ่านการเชื่อมต่อ Hometax ของกรมสรรพากรแบบกลุ่ม</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-cyan-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="refresh-cw" class="text-sm"></i> ระบบสลิปบัญชีอัตโนมัติ
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">สลิปการรับเงิน ค่าปรับล่าช้า และภาษีมูลค่าเพิ่มจะเชื่อมโยงกับ ERP โดยอัตโนมัติแบบเรียลไทม์</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-purple-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="text-sm"></i> ข้อพิพาทกับผู้เช่าเป็นศูนย์
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">ให้รายละเอียดการคำนวณและหลักฐานการจดมิเตอร์อย่างโปร่งใส</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="building-2" class="text-cyan-400"></i> มาตรฐานการบริหารจัดการค่าน้ำ-ไฟตามมิเตอร์อย่างแม่นยำสำหรับร้านค้าหลายร้อยร้านในห้างสรรพสินค้า สำนักงานขนาดใหญ่ และศูนย์อุตสาหกรรมความรู้
+              </span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">ลดเวลาการปิดรอบชำระบัญชีลง 90%</span>
+            </div>
+          </div>
+        `
+      },
+
+      {
+        id: "slide-19",
+        chapter: "บทที่ 4. การเชื่อมต่อระดับองค์กร",
+        topic: "การเชื่อมต่อระดับองค์กร: MGRV Co-living API และการเชื่อมต่อกับ SAP FI",
+        origPage: 41,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="git-fork" class=""></i> Enterprise API
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">การเชื่อมต่อระดับองค์กร: Open API Co-Living และการผสานรวมกับ SAP ERP</h2>
+                <p class="text-slate-400 text-xs mt-0.5">ผสานรวมแอปพลิเคชันมือถือของลูกค้าและระบบบัญชีองค์กรขนาดใหญ่ (SAP) ได้อย่างสมบูรณ์แบบ</p>
+              </div>
+              <div class="self-start sm:self-auto flex items-center gap-2 flex-shrink-0">
+                <button onclick="openOriginalModal(40)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                  <i data-lucide="file-text" class=""></i> สไลด์ Open API (หน้า 40)
+                </button>
+                <button onclick="openOriginalModal(41)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-400 text-xs font-semibold border border-indigo-800/40 transition shadow-sm hover:border-indigo-500/50">
+                  <i data-lucide="file-text" class=""></i> สไลด์การเชื่อมต่อ SAP (หน้า 41)
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Case 1: MGRV Open API -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 space-y-3 group hover:border-blue-500/50 transition">
+                <div class="flex justify-between items-center">
+                  <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                    <i data-lucide="code" class=""></i>
+                  </div>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 font-medium">เชื่อมต่อแอป B2C</span>
+                </div>
+                <h3 class="font-bold text-white text-base">MGRV (Mangrove) Co-Living Open API</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  จัดการใน ezREMS PMS: <span class="text-cyan-400 font-bold">ข้อมูลพื้นที่ สัญญา และการเรียกเก็บเงิน</span> ให้บริการแบบเรียลไทม์แก่แอปพลิเคชันเฉพาะของลูกค้าผ่าน REST API เพื่อสร้าง 'การตรวจสอบห้องว่างแบบเรียลไทม์และทำสัญญาออนไลน์' ครั้งแรกในประเทศ
+                </p>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
+                  <i data-lucide="newspaper" class="text-cyan-400"></i> Chosun Biz: 'บันทึกข้อตกลงความร่วมมือการเปลี่ยนแปลงการดำเนินงาน Co-Living สู่ดิจิทัล'
+                </div>
+              </div>
+
+              <!-- Case 2: SAP FI ERP Integration -->
+              <div class="p-5 rounded-2xl glass-card border border-indigo-800/40 space-y-3 group hover:border-indigo-500/50 transition">
+                <div class="flex justify-between items-center">
+                  <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                    <i data-lucide="database" class=""></i>
+                  </div>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 font-medium">Enterprise ERP</span>
+                </div>
+                <h3 class="font-bold text-white text-base">การเชื่อมต่อโมดูลบัญชีองค์กรขนาดใหญ่ SAP FI</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  เกิดขึ้นจาก ezREMS: <span class="text-indigo-400 font-bold">สลิปเงินประกัน/ยอดขาย/การรับเงิน/ค่าปรับล่าช้า/ค่าใช้จ่าย</span> ส่งผ่านระบบความปลอดภัยไฟร์วอลล์ไปยังโมดูล SAP FI ของลูกค้าโดยอัตโนมัติ และปิดบัญชีได้โดยไม่ต้องป้อนข้อมูลซ้ำซ้อน
+                </p>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
+                  <i data-lucide="shield-check" class="text-emerald-400"></i> เชื่อมโยงกับเอเจนต์ความปลอดภัยในส่วนไฟร์วอลล์ (WAS ↔ RFC/API) ได้อย่างสมบูรณ์แบบ
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> เชื่อมต่อง่ายดายด้วยอะแดปเตอร์โดยไม่จำเป็นต้องเปลี่ยนระบบ Legacy ERP เดิม</span>
+              <span class="text-cyan-400 font-bold">ประหยัดค่าใช้จ่ายและระยะเวลาได้มากกว่า 80% เมื่อเทียบกับการพัฒนาระบบ SI ขึ้นมาเอง</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-20",
+        chapter: "บทที่ 6. การขยายโมเดลธุรกิจ",
+        topic: "การขยายโมเดลธุรกิจ: ก้าวข้ามอสังหาริมทรัพย์สู่ระบบ ERP ดำเนินงานสินทรัพย์ที่สร้างรายได้ [ทั้งหมด] ทั้งมีตัวตนและไม่มีตัวตน",
+        origPage: 41,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <i data-lucide="layers" class=""></i> บทที่ 6. การขยายโมเดลธุรกิจ Expansion
+                  </span>
+                  <!-- 회전형/말풍선 그린 뱃지: เฉพาะอสังหาริมทรัพย์เท่านั้นหรือ? -->
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 font-extrabold text-[11px] border border-emerald-500/50 shadow-sm animate-pulse flex items-center gap-1">
+                    <span>เฉพาะอสังหาริมทรัพย์เท่านั้นหรือ?</span>
+                    <i data-lucide="arrow-right" class="text-[10px]"></i>
+                    <span class="text-white font-black">ไม่! สินทรัพย์ที่สร้างรายได้ทั้งหมด</span>
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 flex items-center flex-wrap gap-2">
+                  <span>เพื่อการสร้างรายได้</span>
+                  <span class="text-emerald-400 border-2 border-emerald-400 px-2 py-0.5 rounded-xl shadow-lg shadow-emerald-500/30 bg-emerald-950/80 font-black tracking-wide">[ทั้งหมด]</span>
+                  <span>สินทรัพย์ ตอนนี้การดำเนินงานคือหัวใจสำคัญ</span>
+                </h2>
+                <p class="text-slate-400 text-xs mt-0.5">ก้าวข้ามอสังหาริมทรัพย์สู่อสังหาริมทรัพย์แบบสังหาริมทรัพย์ สิ่งอำนวยความสะดวก โครงสร้างพื้นฐานไอที และใบอนุญาตที่ไม่มีตัวตน — Next-gen ERP รวมศูนย์การทำงานด้วยแกนหลักเดียว</p>
+              </div>
+
+              <!-- 우측 다국어 지원 뱃지 (KO, EN, JA, ZH, VI, TH) -->
+              <div class="self-start sm:self-auto flex items-center gap-2 flex-shrink-0">
+                <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center gap-2 text-xs">
+                  <div class="flex items-center gap-1 text-slate-300 font-bold">
+                    <i data-lucide="languages" class="text-cyan-400"></i>
+                    <span>รองรับ 6 ภาษา</span>
+                  </div>
+                  <div class="flex items-center gap-1 text-[11px]">
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">KO</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">EN</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">JA</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">ZH</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">VI</span>
+                    <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 font-bold border border-blue-800/40">TH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10대 유무형 자산 그리드 카드 (5x2) -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 my-auto">
+              <!-- 1. ที่อยู่อาศัย / แชร์เฮาส์ -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-emerald-800/40 hover:border-emerald-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-emerald-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="home"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/40">ที่อยู่อาศัย / เรสซิเดนซ์</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition">ที่อยู่อาศัย / แชร์เฮาส์</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">หอพัก · ที่พักผู้สูงอายุ · ที่อยู่อาศัยเยาวชนให้เช่า</p>
+                </div>
+              </div>
+
+              <!-- 2. ค้าปลีก / ห้างสรรพสินค้า -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-amber-800/40 hover:border-amber-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-amber-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-amber-950/80 border border-amber-500/30 text-amber-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="store"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">พาณิชยกรรม / ค้าปลีก</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-amber-300 transition">ค้าปลีก / ห้างสรรพสินค้า</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">เชื่อมโยงยอดขาย POS · ชำระส่วนแบ่งรายได้แบบผันแปร</p>
+                </div>
+              </div>
+
+              <!-- 3. 오피스 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-blue-800/40 hover:border-blue-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-blue-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-blue-950/80 border border-blue-500/30 text-blue-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="building-2"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">อาคารสำนักงาน</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition">สำนักงาน / อาคาร</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">อาคารสำนักงานพรีเมียม · การบริหารทรัพย์สินอาคารทั่วไป</p>
+                </div>
+              </div>
+
+              <!-- 4. 창고 / 물류 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-orange-800/40 hover:border-orange-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-orange-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-orange-950/80 border border-orange-500/30 text-orange-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="warehouse"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-800/40">โลจิสติกส์ / คลังสินค้า</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-orange-300 transition">คลังสินค้า / ศูนย์โลจิสติกส์</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">พื้นที่และอุปกรณ์คลังสินค้าควบคุมอุณหภูมิปกติและห้องเย็น</p>
+                </div>
+              </div>
+
+              <!-- 5. ศูนย์ข้อมูล IDC -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-cyan-800/40 hover:border-cyan-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-cyan-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="server"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">โครงสร้างพื้นฐานไอที</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition">ศูนย์ข้อมูล IDC</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">การจัดการพื้นที่วางเซิร์ฟเวอร์ (Rack) · โครงสร้างพื้นฐานไฟฟ้า</p>
+                </div>
+              </div>
+
+              <!-- 6. สุสาน / อาคารเก็บอัฐิ -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-purple-800/40 hover:border-purple-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-purple-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/30 text-purple-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="landmark"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">อนุสรณ์สถาน / ที่เก็บอัฐิ</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-purple-300 transition">สุสาน / อาคารเก็บอัฐิ</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">สุสานอนุสรณ์ · สัญญาและการจัดเก็บเงินระยะยาวสำหรับสถานที่เก็บอัฐิ</p>
+                </div>
+              </div>
+
+              <!-- 7. 렌터카 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-sky-800/40 hover:border-sky-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-sky-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-sky-950/80 border border-sky-500/30 text-sky-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="car"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/40">การเดินทางและยานยนต์ (Mobility)</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-sky-300 transition">รถเช่า / ออโต้ลีสซิ่ง</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">การเช่ารถยนต์ · รวมค่าเช่ารายงวดและการซ่อมบำรุง</p>
+                </div>
+              </div>
+
+              <!-- 8. 의류 대여 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-rose-800/40 hover:border-rose-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-rose-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-rose-950/80 border border-rose-500/30 text-rose-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="shirt"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800/40">ระบบสมาชิก / การเช่า</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-rose-300 transition">เครื่องแต่งกาย / การเช่าอุปกรณ์</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">การจัดการการสมัครสมาชิกระยะยาวสำหรับเสื้อผ้าแฟชั่นและอุปกรณ์มูลค่าสูง</p>
+                </div>
+              </div>
+
+              <!-- 9. 무형 자산 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-indigo-800/40 hover:border-indigo-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-indigo-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="file-text"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40">สินทรัพย์ไม่มีตัวตน</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition">ใบอนุญาตไร้ตัวตน / ซอฟต์แวร์</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">สัญญาการบำรุงรักษา · ERP ใบอนุญาตซอฟต์แวร์รายงวด</p>
+                </div>
+              </div>
+
+              <!-- 10. 새로운 비즈니스 발굴 -->
+              <div class="p-3.5 rounded-2xl bg-gradient-to-br from-amber-950/60 to-slate-950 border-2 border-amber-400/70 hover:border-amber-300 transition-all duration-300 group flex flex-col justify-between shadow-xl shadow-amber-900/30 relative overflow-hidden">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="lightbulb"></i>
+                  </div>
+                  <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-md animate-pulse">ค้นพบสิ่งใหม่</span>
+                </div>
+                <div>
+                  <h4 class="font-extrabold text-amber-300 text-sm group-hover:text-white transition">การค้นหาและพัฒนาธุรกิจใหม่</h4>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">รองรับทุกโมเดลธุรกิจใหม่ทั้งที่มีตัวตนและไม่มีตัวตนได้ทันที</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 브랜딩 & 코어 엔진 메시지 -->
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-800/50">Core Platform</span>
+                <span class="text-slate-300 font-semibold">แพลตฟอร์ม ERP บริหารจัดการทรัพย์สินอัจฉริยะ — <strong class="text-white text-sm">ezREMS™</strong></span>
+              </div>
+              <div class="text-[11px] text-slate-400 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="text-emerald-400"></i>
+                <span>สัญญา ➔ เรียกเก็บเงิน ➔ รับเงินอัตโนมัติ ➔ สลิปบัญชี ➔ ยื่นภาษี รวมศูนย์ในแกนหลักเดียว พร้อมรองรับโมเดลธุรกิจใหม่ได้ทันที</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-21",
+        chapter: "บทที่ 5. การบริหารความปลอดภัยและวิสัยทัศน์ในอนาคต",
+        topic: "บริการในเครือ: ความปลอดภัยและอาชีวอนามัยเพื่อป้องกันอุบัติเหตุร้ายแรง 'EASY SAFE'",
+        origPage: 51,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="hard-hat" class=""></i> Safety Platform
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ตอบสนองกฎหมายลงโทษอุบัติเหตุร้ายแรง: 'EASY SAFE'</h2>
+              <p class="text-slate-400 text-xs mt-0.5">แพลตฟอร์มที่เชื่อมโยงกันซึ่งช่วยให้สามารถปฏิบัติตามภาระผูกพันด้านความปลอดภัยและอาชีวอนามัยของอาคารได้อย่างสมบูรณ์แบบควบคู่ไปกับการบริหารสินทรัพย์อสังหาริมทรัพย์</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="gavel" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">01. ระบบอัตโนมัติตามข้อผูกพันทางกฎหมาย</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  แนะนำการตรวจสอบความปลอดภัยและอาชีวอนามัยตามกฎหมายที่ต้องปฏิบัติตามในอาคารขนาดกลางและขนาดย่อม สำนักงานนิติบุคคลอพาร์ตเมนต์ และไซต์งานก่อสร้างภายนอกโดยไม่ตกหล่น
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="clipboard-check" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">02. การตรวจสอบหน้างานผ่านมือถือ</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ลงนามและกรอกแบบประเมินความปลอดภัยก่อนเริ่มงาน (TBM) และแบบตรวจลาดตระเวนประจำวันผ่านสมาร์ทโฟน พร้อมจัดเก็บถาวรบนคลาวด์
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="link" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">03. เชื่อมต่อ ezREMS ในคลิกเดียว</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  การจัดการห้องพักอาคารและกำหนดการซ่อมบำรุง/ปรับปรุงจะเชื่อมต่อกับ EASY SAFE เพื่อเตรียมหลักฐานการยกเว้นความรับผิดตามกฎหมายสำหรับผู้บริหารได้อย่างสมบูรณ์
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-amber-950/20 text-xs text-amber-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-amber-400"></i>
+                "Simple, Smart and Solve - แพลตฟอร์มความปลอดภัยที่ใช้งานง่ายสำหรับผู้ปฏิบัติงาน เน้นเฉพาะฟังก์ชันที่จำเป็นอย่างแท้จริง"
+              </span>
+              <span class="font-bold text-white bg-amber-800/60 px-2 py-0.5 rounded">แพ็กเกจพิเศษระดับองค์กรสำหรับลูกค้า ezREMS</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-22",
+        chapter: "บทที่ 5. แผนงานเทคโนโลยี",
+        topic: "แผนงานยุคใหม่: การบริหารสินทรัพย์ด้วย AI และการเชื่อมต่อกับกระทรวงที่ดิน",
+        origPage: 55,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="sparkles" class=""></i> Future Roadmap
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">วิสัยทัศน์ยุคใหม่และแผนงาน AI ของ ezREMS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ก้าวข้าม ERP แบบบันทึกข้อมูลทั่วไป สู่ขั้นตอนการดำเนินงานอัตโนมัติที่ปัญญาประดิษฐ์ช่วยปกป้องมูลค่าสินทรัพย์และเพิ่มผลตอบแทนสูงสุด</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-rose-500/50 transition">
+                <div class="icon-badge icon-badge-rose w-10 h-10 text-base">
+                  <i data-lucide="shield-alert" class=""></i>
+                </div>
+                <div class="text-rose-400 font-bold text-sm">การตรวจสอบสัญญาและการฉ้อโกงด้วย AI</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ตรวจสอบความน่าเชื่อถือของผู้เช่าและตรวจจับข้อกำหนดที่เป็นพิษในสัญญา รวมถึงสัญญาณการฉ้อโกงสัญญาเช่าล่วงหน้า เพื่อลดความเสี่ยงของผู้ให้เช่าให้เหลือน้อยที่สุด
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="brain" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-bold text-sm">การคาดการณ์การจัดเก็บด้วย AI (99.6%)</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  คาดการณ์แนวโน้มการค้างชำระล่วงหน้าผ่านการเรียนรู้รูปแบบการชำระเงิน และส่งข้อความด้วยน้ำเสียงและช่องทางที่เหมาะสมเฉพาะสำหรับผู้เช่าแต่ละราย
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="headphones" class=""></i>
+                </div>
+                <div class="text-blue-400 font-bold text-sm">บอทจัดการข้อร้องเรียน AI ตลอด 24 ชั่วโมง</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ตอบคำถามซ้ำๆ เช่น ข้อมูลบัญชี ใบเสร็จ ค่าปรับล่าช้า ตลอด 24 ชั่วโมงแบบเรียลไทม์ และประสานงานแผนการชำระเงินแบบครบวงจรในที่เดียว
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="cpu" class=""></i>
+                </div>
+                <div class="text-purple-400 font-bold text-sm">การคาดการณ์ข้อบกพร่องของอุปกรณ์ล่วงหน้า</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  วิเคราะห์ข้อมูลการทำงานของเซ็นเซอร์ IoT เพื่อป้องกันความเสียหายกะทันหันและดำเนินการบำรุงรักษาเชิงป้องกัน ยืดอายุการใช้งานของสินทรัพย์
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="landmark" class="text-cyan-300"></i>
+                มีกำหนดเปิดการเชื่อมต่ออย่างเป็นทางการกับระบบสัญญาอิเล็กทรอนิกส์การทำธุรกรรมอสังหาริมทรัพย์ของกระทรวงที่ดิน โครงสร้างพื้นฐาน และการขนส่งในปี 2026 (ได้รับการอนุมัติจากฝ่ายบริหารแล้ว)
+              </span>
+              <span class="text-cyan-300 font-bold">ก้าวกระโดดสู่แพลตฟอร์มอสังหาริมทรัพย์มาตรฐานแห่งเกาหลีใต้</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-23",
+        chapter: "ภาพรวมบริษัทและบทสรุปการนำเสนอ",
+        topic: "ภาพรวมบริษัทและบทสรุปข้อเสนอ / ตอบข้อซักถาม",
+        origPage: 43,
+        render: () => `
+          <div class="h-full flex flex-col justify-between text-center py-2">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
+                <i data-lucide="handshake" class=""></i> Company & Partnership
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">พันธมิตรผู้เปิดอนาคตของ PropTech: บริษัท ZEONS จำกัด</h2>
+              <p class="text-slate-400 text-xs mt-0.5">ด้วยประสบการณ์และความสามารถทางเทคโนโลยีที่สั่งสมมากว่า 20 ปี เราจะร่วมมือเพื่อเพิ่มมูลค่าสินทรัพย์ของท่านให้สูงสุด</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-10 h-10 text-base">
+                  <i data-lucide="history" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">ความไว้วางใจจากประสบการณ์ยาวนานกว่า 20 ปี</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  ตั้งแต่ Tmark, iBMS ไปจนถึง ezREMS บริษัท PropTech ชั้นนำของเกาหลีใต้ที่เป็นผู้นำระบบการดำเนินงานสำหรับอาคารขนาดกลางและขนาดย่อมและศูนย์การค้าคอมเพล็กซ์
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="graduation-cap" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">กลุ่มผู้เชี่ยวชาญที่ได้รับการรับรอง KPM</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  ก้าวข้ามบริษัทพัฒนาไอทีทั่วไป สู่องค์กรมืออาชีพที่ฝึกอบรมผู้เชี่ยวชาญด้านการบริหารจัดการทรัพย์สินอสังหาริมทรัพย์เกาหลี (KPM) และเข้าใจกระบวนการทำงานจริง 100%
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="handshake" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">การให้คำปรึกษาและการสนับสนุนแบบเฉพาะบุคคล</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  ให้บริการถ่ายโอนข้อมูลเริ่มต้น การตั้งค่าแบบกำหนดเอง การฝึกอบรมพนักงาน และการสนับสนุนทางเทคนิคเฉพาะทางที่ปรับให้เหมาะสมกับขนาดและลักษณะสินทรัพย์ของท่าน
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <i data-lucide="smile" class="text-cyan-400"></i> ขอขอบคุณสำหรับการรับฟัง
+              </h3>
+              <p class="text-slate-400 text-xs">เริ่มต้นนวัตกรรมการดำเนินงานทรัพย์สินอสังหาริมทรัพย์ของท่านได้ทันทีวันนี้ร่วมกับ ezREMS</p>
+              <div class="flex items-center justify-center space-x-3 pt-1">
+                <button onclick="openContactModal()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/40 transition flex items-center gap-1.5">
+                  <i data-lucide="send" class=""></i>
+                  <span>ปรึกษาการใช้งานและขอดูการสาธิตระบบฟรี</span>
+                </button>
+                <a href="https://www.ezrems.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition flex items-center gap-1.5">
+                  <i data-lucide="globe" class=""></i>
+                  <span>เว็บไซต์ทางการ (www.ezrems.com)</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="text-[11px] text-slate-400 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 font-mono">
+              <span class="flex items-center gap-1 font-sans"><i data-lucide="map-pin" class="text-slate-500"></i> ชั้น 2, 40, Seolleung-ro 93-gil, Gangnam-gu, โซล, เกาหลีใต้</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-slate-300 font-semibold">TEL : 070-8811-8881</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-slate-300">FAX : 070-4850-8848</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-cyan-400 font-semibold">EMAIL : support@zeons.co.kr</span>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    // State Variables
+    let currentSlideIdx = 0;
+    let currentViewMode = 'pt';
+    let currentOrigPage = 1;
+
+    function changeLanguage(langTarget) {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.set('slide', currentSlideIdx);
+      if (currentViewMode === 'scroll') {
+        searchParams.set('mode', 'scroll');
+      } else {
+        searchParams.delete('mode');
+      }
+      location.href = langTarget + '?' + searchParams.toString();
+    }
+
+    // Initialize App
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramSlide = urlParams.get('slide');
+      const paramMode = urlParams.get('mode');
+      
+      let initSlide = 0;
+      if (paramSlide !== null && !isNaN(parseInt(paramSlide))) {
+        initSlide = parseInt(paramSlide);
+      }
+      
+      renderSlide(initSlide);
+      setupKeyboard();
+      buildTocModal();
+      buildGalleryModal();
+      buildScrollDocument();
+      
+      if (paramMode === 'scroll') {
+        switchMode('scroll');
+      }
+      
+      if (window.lucide) { lucide.createIcons(); }
+    });
+
+    // Render Slide in PT Mode
+    function renderSlide(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= slidesData.length) idx = slidesData.length - 1;
+      currentSlideIdx = idx;
+
+      const slide = slidesData[idx];
+      const container = document.getElementById('current-slide-content');
+      const stage = document.getElementById('slide-stage');
+
+      // Trigger animation
+      stage.classList.remove('slide-fade');
+      void stage.offsetWidth;
+      stage.classList.add('slide-fade');
+
+            container.innerHTML = slide.render();
+      if (window.lucide) { lucide.createIcons(); }
+
+      // Update Controls
+      document.getElementById('slide-chapter-tag').innerHTML = `<i data-lucide="bookmark" class="text-[10px] mr-1"></i>${slide.chapter}`;
+      document.getElementById('slide-topic').innerText = slide.topic;
+      document.getElementById('slide-curr-num').innerText = String(idx + 1).padStart(2, '0');
+      document.getElementById('slide-total-num').innerText = String(slidesData.length).padStart(2, '0');
+
+      const progress = ((idx + 1) / slidesData.length) * 100;
+      document.getElementById('slide-progress').style.width = `${progress}%`;
+
+      currentOrigPage = slide.origPage || 1;
+    }
+
+    function nextSlide() {
+      if (currentSlideIdx < slidesData.length - 1) {
+        renderSlide(currentSlideIdx + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIdx > 0) {
+        renderSlide(currentSlideIdx - 1);
+      }
+    }
+
+    function goToSlide(idx) {
+      if (currentViewMode === 'scroll') {
+        switchMode('pt');
+      }
+      renderSlide(idx);
+      closeTocModal();
+    }
+
+    function switchMode(mode) {
+      currentViewMode = mode;
+      const ptContainer = document.getElementById('pt-container');
+      const scrollContainer = document.getElementById('scroll-container');
+      const btnPt = document.getElementById('btn-mode-pt');
+      const btnScroll = document.getElementById('btn-mode-scroll');
+
+      if (mode === 'pt') {
+        ptContainer.classList.remove('hidden');
+        scrollContainer.classList.add('hidden');
+        btnPt.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow";
+        btnScroll.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all";
+        renderSlide(currentSlideIdx);
+      } else {
+        ptContainer.classList.add('hidden');
+        scrollContainer.classList.remove('hidden');
+        btnScroll.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow";
+        btnPt.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all";
+        const target = document.getElementById(`doc-section-${currentSlideIdx}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    function buildScrollDocument() {
+      const container = document.getElementById('scroll-content');
+      let html = '';
+      slidesData.forEach((s, idx) => {
+        html += `
+          <section id="doc-section-${idx}" class="p-6 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-4">
+            <div class="doc-section-header flex items-center justify-between pb-1.5">
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded bg-blue-950 text-blue-400 font-bold text-xs">${String(idx + 1).padStart(2, '0')}</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase">${s.chapter}</span>
+              </div>
+              <button onclick="goToSlide(${idx})" class="text-xs text-blue-400 hover:underline flex items-center space-x-1">
+                <span>ดูในโหมดสไลด์ PT</span>
+                <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </button>
+            </div>
+            <div class="min-h-[380px] flex flex-col justify-center">
+              ${s.render()}
+            </div>
+          </section>
+        `;
+      });
+            container.innerHTML = html;
+      if (window.lucide) { lucide.createIcons(); }
+    }
+
+    function setupKeyboard() {
+      window.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentViewMode === 'pt')) {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            nextSlide();
+          }
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            prevSlide();
+          }
+        } else if (e.key === 'Home') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            renderSlide(0);
+          }
+        } else if (e.key === 'End') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            renderSlide(slidesData.length - 1);
+          }
+        } else if (e.key === 'f' || e.key === 'F') {
+          e.preventDefault();
+          toggleFullscreen();
+        } else if (e.key === 'm' || e.key === 'M') {
+          e.preventDefault();
+          toggleTocModal();
+        } else if (e.key === 'Escape') {
+          closeAllModals();
+        }
+      });
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function toggleTocModal() {
+      document.getElementById('modal-toc').classList.toggle('hidden');
+    }
+    function closeTocModal() {
+      document.getElementById('modal-toc').classList.add('hidden');
+    }
+    function buildTocModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      const list = document.getElementById('toc-list');
+      let html = '';
+      slidesData.forEach((s, idx) => {
+        html += `
+          <div onclick="goToSlide(${idx})" class="p-2.5 rounded-xl hover:bg-slate-800 transition cursor-pointer flex items-center justify-between group">
+            <div class="flex items-center space-x-3">
+              <span class="font-mono text-xs font-bold text-blue-500 group-hover:text-cyan-400">${String(idx + 1).padStart(2, '0')}</span>
+              <div>
+                <span class="text-xs text-slate-400 group-hover:text-slate-300 block">${s.chapter}</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300">${s.topic}</span>
+              </div>
+            </div>
+            <span class="text-[11px] text-slate-500 font-mono">P.${s.origPage}</span>
+          </div>
+        `;
+      });
+      list.innerHTML = html;
+    }
+
+    function viewCurrentOriginalSlide() {
+      openOriginalModal(currentOrigPage);
+    }
+    function openOriginalModal(pageNum) {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      currentOrigPage = pageNum || 1;
+      const modal = document.getElementById('modal-original');
+      const img = document.getElementById('orig-slide-img');
+      const title = document.getElementById('orig-modal-title');
+      const indicator = document.getElementById('orig-page-indicator');
+
+      img.src = `images/slides/slide_${String(currentOrigPage).padStart(2, '0')}.png`;
+      title.innerText = `สไลด์ข้อเสนอต้นฉบับ หน้า ${currentOrigPage}`;
+      indicator.innerText = `P.${String(currentOrigPage).padStart(2, '0')} / 56`;
+      modal.classList.remove('hidden');
+    }
+
+    function openCustomImageModal(imgSrc, titleText) {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      const modal = document.getElementById('modal-original');
+      const img = document.getElementById('orig-slide-img');
+      const title = document.getElementById('orig-modal-title');
+      const indicator = document.getElementById('orig-page-indicator');
+
+      img.src = imgSrc;
+      title.innerText = titleText || 'แผนผังเชิงประจักษ์ของลูกค้า';
+      indicator.innerText = 'กรณีศึกษาเชิงประจักษ์ของลูกค้า';
+      modal.classList.remove('hidden');
+    }
+
+    function closeOriginalModal() {
+      document.getElementById('modal-original').classList.add('hidden');
+    }
+    function nextOrigSlide() {
+      if (currentOrigPage < 56) {
+        openOriginalModal(currentOrigPage + 1);
+      }
+    }
+    function prevOrigSlide() {
+      if (currentOrigPage > 1) {
+        openOriginalModal(currentOrigPage - 1);
+      }
+    }
+
+    function openGalleryModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      document.getElementById('modal-gallery').classList.remove('hidden');
+    }
+    function closeGalleryModal() {
+      document.getElementById('modal-gallery').classList.add('hidden');
+    }
+    function buildGalleryModal() {
+      const grid = document.getElementById('gallery-grid');
+      let html = '';
+      for (let i = 1; i <= 56; i++) {
+        const numStr = String(i).padStart(2, '0');
+        html += `
+          <div onclick="openOriginalModal(${i}); closeGalleryModal();" class="group relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800 hover:border-cyan-500 cursor-pointer transition shadow hover:shadow-cyan-500/20">
+            <img src="images/slides/slide_${numStr}.png" alt="Slide ${i}" class="w-full h-auto object-cover group-hover:scale-105 transition duration-200">
+            <div class="absolute bottom-0 inset-x-0 bg-slate-950/80 backdrop-blur-xs p-1 text-center text-[11px] font-mono text-slate-300">
+              Slide ${numStr}
+            </div>
+          </div>
+        `;
+      }
+      grid.innerHTML = html;
+    }
+
+    function openContactModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      document.getElementById('modal-contact').classList.remove('hidden');
+    }
+    function closeContactModal() {
+      document.getElementById('modal-contact').classList.add('hidden');
+    }
+
+    function closeAllModals() {
+      closeTocModal();
+      closeOriginalModal();
+      closeGalleryModal();
+      closeContactModal();
+    }
+  </script>
+</body>
+</html>
