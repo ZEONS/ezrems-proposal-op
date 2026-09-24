@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ezREMS 提案プレゼンテーション | 株式会社ZEONS</title>
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon-32x32.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google & Project Noonnu Fonts: Paperlogy & Pretendard fallback -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Paperlogy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    /* Global Font Enforcement for Typography without breaking SVG Icons */
+    body {
+      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, select, textarea, table, th, td, kbd, li {
+      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .lucide {
+      width: 1.15em;
+      height: 1.15em;
+      display: inline-block;
+      vertical-align: -0.18em;
+      stroke-width: 2.2;
+      stroke: currentColor;
+    }
+    .icon-badge .lucide {
+      width: 1.45em;
+      height: 1.45em;
+      vertical-align: middle;
+      stroke-width: 2.4;
+    }
+  
+    /* スクロール文書モード専用：ヘッダー境界線を非表示にし、下部ボックス枠線との干渉を防止 */
+    #scroll-content .slide-header {
+      border-bottom: none !important;
+      padding-bottom: 0.375rem !important; /* pb-1.5 */
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Paperlogy', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+              accent: '#00d2ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    /* Slide Aspect Ratio Lock for PT Mode */
+    .slide-canvas {
+      aspect-ratio: 16 / 9;
+      max-height: 88vh;
+      max-width: calc(88vh * 16 / 9);
+    }
+    
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .slide-fade {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px) scale(0.995); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .btn-press:active { transform: scale(0.97); }
+
+    /* Visual Icon Badges */
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.85rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+    }
+    .icon-badge-blue {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(30, 64, 175, 0.45));
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #60a5fa;
+    }
+    .icon-badge-cyan {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(8, 145, 178, 0.45));
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: #22d3ee;
+    }
+    .icon-badge-emerald {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(4, 120, 87, 0.45));
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: #34d399;
+    }
+    .icon-badge-amber {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(180, 83, 9, 0.45));
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      color: #fbbf24;
+    }
+    .icon-badge-rose {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(190, 18, 60, 0.45));
+      border: 1px solid rgba(251, 113, 133, 0.4);
+      color: #fb7185;
+    }
+    .icon-badge-purple {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(126, 34, 206, 0.45));
+      border: 1px solid rgba(192, 132, 252, 0.4);
+      color: #c084fc;
+    }
+    .group:hover .icon-badge {
+      transform: translateY(-2px) scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white flex flex-col">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+      <!-- Left: Logo & Title -->
+      <div class="flex items-center space-x-3">
+        <a href="#cover" onclick="goToSlide(0)" class="flex items-center space-x-2.5 group">
+          <img src="images/logo.png" alt="ezREMS 로고" class="h-7 w-auto object-contain brightness-110" onerror="this.src='https://placehold.co/120x35/0f172a/ffffff?text=ezREMS'">
+          <div class="border-l border-slate-700 pl-2.5 hidden sm:block">
+            <span class="text-xs font-semibold tracking-wider text-blue-400 uppercase flex items-center gap-1.5">
+              <i data-lucide="presentation" class="text-[11px]"></i> Proposal PT
+            </span>
+            <span class="text-xs text-slate-300 block leading-tight font-medium">収益型不動産、これからは運営が核心です</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center: View Mode Toggle -->
+      <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 shadow-inner">
+        <button id="btn-mode-pt" onclick="switchMode('pt')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow">
+          <i data-lucide="monitor" class="text-xs"></i>
+          <span>スライドPTモード</span>
+        </button>
+        <button id="btn-mode-scroll" onclick="switchMode('scroll')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all">
+          <i data-lucide="file-text" class="text-xs"></i>
+          <span>スクロール文書モード</span>
+        </button>
+      </div>
+
+      <!-- Right: Action Buttons -->
+      <div class="flex items-center space-x-2">
+        <!-- Language Selector (KO, EN, JA, ZH) -->
+        <div id="lang-selector-group" class="flex items-center bg-slate-900 border border-slate-700/80 rounded-xl p-0.5 shadow-inner mr-1">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-slate-400 ml-1.5 mr-1"></i>
+          <button type="button" onclick="changeLanguage('index.html')" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">KO</button>
+          <button type="button" onclick="changeLanguage('index_en.html')" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">EN</button>
+          <button type="button" onclick="changeLanguage('index_ja.html')" class="px-2 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow">JA</button>
+          <button type="button" onclick="changeLanguage('index_zh.html')" class="px-2 py-1 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200">ZH</button>
+        </div>
+        <button onclick="toggleTocModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 flex items-center space-x-1.5 transition" title="目次を見る (M)">
+          <i data-lucide="list" class="text-slate-400"></i>
+          <span class="hidden md:inline">目次を見る</span>
+        </button>
+        <button onclick="openGalleryModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-medium border border-cyan-900/40 flex items-center space-x-1.5 transition" title="原本スライド">
+          <i data-lucide="images" class="text-cyan-400"></i>
+          <span class="hidden md:inline">原本スライド</span>
+        </button>
+        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="全画面 (F)">
+          <i id="fs-icon" data-lucide="maximize" class="w-4 h-4 text-slate-300"></i>
+        </button>
+        <button onclick="openContactModal()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition flex items-center space-x-1.5">
+          <i data-lucide="send" class="text-xs"></i>
+          <span>お問い合わせ</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PT PRESENTATION CONTAINER ================= -->
+  <main id="pt-container" class="flex-1 flex flex-col items-center justify-center p-2 sm:p-4 overflow-hidden relative">
+    
+    <!-- Presentation Viewport (16:9 Canvas) -->
+    <div id="slide-stage" class="slide-canvas w-full bg-slate-900/90 rounded-2xl border border-slate-800/90 shadow-2xl shadow-blue-950/40 relative overflow-hidden flex flex-col slide-fade">
+      <!-- Slide Content injected by JS -->
+      <div id="current-slide-content" class="flex-1 overflow-y-auto p-6 sm:p-10 flex flex-col justify-between">
+        <!-- Content rendered dynamically -->
+      </div>
+
+      <!-- Slide Bottom Control Bar -->
+      <div class="h-12 bg-slate-950/80 backdrop-blur-md border-t border-slate-800/80 px-6 flex items-center justify-between text-xs text-slate-400 select-none">
+        <!-- Chapter Indicator -->
+        <div class="flex items-center space-x-2">
+          <span id="slide-chapter-tag" class="px-2 py-0.5 rounded bg-blue-950/70 border border-blue-800/50 text-blue-400 font-medium text-[11px] flex items-center gap-1">
+            <i data-lucide="bookmark" class="text-[10px]"></i>
+            <span>Chapter 1</span>
+          </span>
+          <span id="slide-topic" class="text-slate-300 font-medium hidden sm:inline">ezREMS ソリューション提案</span>
+        </div>
+
+        <!-- Navigation Buttons & Page Number -->
+        <div class="flex items-center space-x-3">
+          <button onclick="prevSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="前へ (←)">
+            <i data-lucide="chevron-left" class="text-xs"></i>
+          </button>
+          
+          <div class="font-mono text-slate-300 text-xs tracking-wider">
+            <span id="slide-curr-num" class="font-bold text-blue-400 text-sm">01</span>
+            <span class="text-slate-600">/</span>
+            <span id="slide-total-num">20</span>
+          </div>
+
+          <button onclick="nextSlide()" class="p-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition btn-press flex items-center gap-1" title="次へ (→ / Space)">
+            <i data-lucide="chevron-right" class="text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Quick Actions on Slide Footer -->
+        <div class="flex items-center space-x-2">
+          <button id="btn-orig-slide" onclick="viewCurrentOriginalSlide()" class="text-xs text-slate-400 hover:text-cyan-400 transition flex items-center space-x-1.5" title="原本スライド表示">
+            <i data-lucide="zoom-in" class="text-xs"></i>
+            <span class="hidden md:inline">原本スライド表示</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linear Progress Bar -->
+      <div class="w-full h-1 bg-slate-800">
+        <div id="slide-progress" class="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-indigo-500 transition-all duration-300" style="width: 5%;"></div>
+      </div>
+    </div>
+
+    <!-- Keyboard Navigation Helper Badge -->
+    <div class="mt-2 text-slate-500 text-[11px] hidden sm:flex items-center space-x-4">
+      <span><i data-lucide="keyboard" class="mr-1"></i>ショートカット: <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">→</kbd> スライド移動</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">Space</kbd> 次へ</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">F</kbd> 全画面</span>
+      <span><kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-400">M</kbd> 目次</span>
+    </div>
+  </main>
+
+  <!-- ================= SCROLL WEB DOCUMENT CONTAINER ================= -->
+  <div id="scroll-container" class="hidden flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-10 space-y-16">
+    <div id="scroll-content" class="space-y-16"></div>
+  </div>
+
+  <!-- ================= TOC MODAL ================= -->
+  <div id="modal-toc" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="list-checks" class="text-blue-400"></i>
+          <h3 class="font-bold text-slate-200">提案プレゼンテーション 目次</h3>
+        </div>
+        <button onclick="toggleTocModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="text-lg"></i>
+        </button>
+      </div>
+      <div id="toc-list" class="p-4 overflow-y-auto space-y-2 flex-1 divide-y divide-slate-800/50"></div>
+    </div>
+  </div>
+
+  <!-- ================= ORIGINAL PDF SLIDE VIEWER MODAL ================= -->
+  <div id="modal-original" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex flex-col items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full max-h-[92vh] bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl">
+      <!-- Header -->
+      <div class="p-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-sm">
+        <div class="flex items-center space-x-2">
+          <span class="px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800/50 rounded text-xs font-semibold flex items-center gap-1">
+            <i data-lucide="file-text" class=""></i> 原本PDFスライド
+          </span>
+          <span id="orig-modal-title" class="text-slate-300 font-medium">提案書原本ページを確認</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="prevOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
+            <i data-lucide="chevron-left" class="text-[10px]"></i> 前へ
+          </button>
+          <span id="orig-page-indicator" class="font-mono text-xs text-blue-400">P.01 / 56</span>
+          <button onclick="nextOrigSlide()" class="p-1 px-2.5 rounded bg-slate-800 hover:bg-slate-700 text-xs flex items-center gap-1">
+            次へ <i data-lucide="chevron-right" class="text-[10px]"></i>
+          </button>
+          <button onclick="closeOriginalModal()" class="text-slate-400 hover:text-white ml-3 p-1">
+            <i data-lucide="x" class="text-lg"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Image Body -->
+      <div class="flex-1 bg-black overflow-auto flex items-center justify-center p-2">
+        <img id="orig-slide-img" src="" alt="PDF 슬라이드" class="max-w-full max-h-[78vh] object-contain shadow-md rounded">
+      </div>
+      <!-- Footer Note -->
+      <div class="p-2 bg-slate-950 text-center text-xs text-slate-500 border-t border-slate-800">
+        提案書原本：[ZEONS] ezREMS - 収益型不動産 運営が核心_v3.3.pdf
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ALL 56-PAGE GALLERY MODAL ================= -->
+  <div id="modal-gallery" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex flex-col p-4 sm:p-6">
+    <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <div>
+          <h3 class="font-bold text-slate-100 flex items-center space-x-2">
+            <i data-lucide="layers" class="text-cyan-400"></i>
+            <span>提案書原本 全56ページ スライドギャラリー</span>
+            <span class="text-xs font-normal text-cyan-400 bg-cyan-950/70 border border-cyan-800/40 px-2 py-0.5 rounded">高解像度抽出</span>
+          </h3>
+          <p class="text-xs text-slate-400">クリックすると該当スライドを高解像度の大画面で即座に確認できます。</p>
+        </div>
+        <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white p-2">
+          <i data-lucide="x" class="text-xl"></i>
+        </button>
+      </div>
+      <div id="gallery-grid" class="flex-1 overflow-y-auto p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"></div>
+    </div>
+  </div>
+
+  <!-- ================= CONTACT / DEMO MODAL ================= -->
+  <div id="modal-contact" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="text-lg"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30 shadow-lg shadow-blue-500/20">
+          <i data-lucide="message-square" class="text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">ezREMS 導入およびデモに関するお問い合わせ</h3>
+        <p class="text-xs text-slate-400 mt-1">企業様に最適化された資産管理コンサルティングと無料システムデモをご提供いたします。</p>
+      </div>
+
+      <div class="space-y-3 bg-slate-950/70 p-4 rounded-xl border border-slate-800 text-sm">
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="building" class="text-slate-500"></i> 運営会社</span>
+          <span class="font-medium text-white">株式会社ZEONS</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="globe" class="text-slate-500"></i> ウェブサイト</span>
+          <a href="https://www.ezrems.com" target="_blank" class="text-blue-400 hover:underline">www.ezrems.com</a>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="map-pin" class="text-slate-500"></i> 本社所在地</span>
+          <span class="text-slate-300 text-right text-xs">ソウル市江南区宣陵路93キル40, 2階</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="graduation-cap" class="text-slate-500"></i> 専門人材</span>
+          <span class="text-emerald-400 text-xs font-semibold">KPM公認 不動産資産管理専門家</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="phone" class="text-slate-500"></i> 代表電話</span>
+          <span class="text-slate-200 font-semibold text-xs">TEL : 070-8811-8881</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="printer" class="text-slate-500"></i> FAX番号</span>
+          <span class="text-slate-300 text-xs">FAX : 070-4850-8848</span>
+        </div>
+        <div class="flex justify-between items-center py-1">
+          <span class="text-slate-400 flex items-center gap-1.5"><i data-lucide="mail" class="text-slate-500"></i> 代表メール</span>
+          <span class="text-blue-400 font-medium text-xs">EMAIL : support@zeons.co.kr</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex space-x-3">
+        <a href="https://pms.ezrems.com" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-center py-2.5 rounded-xl font-medium text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
+          <i data-lucide="external-link" class=""></i>
+          <span>PMSシステム詳細を見る</span>
+        </a>
+        <a href="https://www.ezrems.com" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-center py-2.5 rounded-xl font-medium text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-1.5">
+          <i data-lucide="home" class=""></i>
+          <span>公式ウェブサイトを見る</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS & SLIDE DATA ================= -->
+  <script>
+    // 20 Selected Structured Presentation Slides Data with Rich FontAwesome Visual Icons
+    const slidesData = [
+      {
+        id: "slide-01",
+        chapter: "イントロ",
+        topic: "表紙",
+        origPage: 1,
+        render: () => `
+          <div class="h-full flex flex-col justify-between items-center text-center py-4">
+            <div class="flex items-center space-x-2.5 bg-blue-950/70 border border-blue-800/50 px-4 py-1.5 rounded-full shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <i data-lucide="zap" class="text-cyan-400 text-xs"></i>
+              <span class="text-xs font-semibold text-cyan-300 tracking-wide">スマート資産管理プラットフォーム | フィンテック X プロップテック</span>
+            </div>
+
+            <div class="max-w-3xl space-y-4 my-auto">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs text-slate-300 mb-1">
+                <i data-lucide="sparkles" class="text-amber-400"></i>
+                <span>不動産資産運営管理の新たなパラダイム</span>
+              </div>
+              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                収益型不動産、<br>
+                <span class="gradient-text">これからは運営が核心である</span>
+              </h1>
+              <p class="text-slate-300 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
+                有形・無形すべての空間の賃貸運営管理オールインワンプラットフォーム<br>
+                <span class="text-blue-400 font-bold"><i data-lucide="cloud-upload" class="mr-1 text-cyan-400"></i>ezREMS</span>でデジタルトランスフォーメーション(DX)を始めましょう。
+              </p>
+            </div>
+
+            <div class="w-full max-w-3xl grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="brain" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-extrabold text-xl sm:text-2xl">99.6%</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">AI予測回収率</div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="building-2" class=""></i>
+                </div>
+                <div class="text-blue-400 font-extrabold text-xl sm:text-2xl">55,000+</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">累積管理ユニット数</div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 text-center group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-10 h-10 mx-auto mb-2 text-base">
+                  <i data-lucide="award" class=""></i>
+                </div>
+                <div class="text-amber-400 font-extrabold text-xl sm:text-2xl">20年+</div>
+                <div class="text-[11px] text-slate-400 mt-0.5 font-medium">プロップテック専門実績</div>
+              </div>
+            </div>
+
+            <div class="text-slate-500 text-xs flex items-center gap-2">
+              <i data-lucide="building" class="text-slate-600"></i>
+              <span>発表企業: 株式会社ZEONS | www.ezrems.com</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-02",
+        chapter: "アジェンダ",
+        topic: "提案発表 目次",
+        origPage: 2,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="list" class=""></i> Table of Contents
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">提案発表 目次 (アジェンダ)</h2>
+              </div>
+              <span class="text-xs text-slate-400 bg-slate-800/60 px-3 py-1 rounded-lg border border-slate-700/60">
+                <i data-lucide="clock" class="mr-1"></i> 全4大セクション
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+              <div onclick="goToSlide(2)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-blue w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="trending-up" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-blue-400 uppercase">Part 01</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-blue-300 text-base">不動産市場の巨大なパラダイムシフト</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">グローバル72兆ウォンPMS市場、月極化急増(57.4%)、AI資産管理</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(5)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-amber w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="alert-triangle" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-amber-400 uppercase">Part 02</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-amber-300 text-base">不動産資産運営の実務的限界と課題</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">建物LCCの80%を占める運営管理とエクセル手作業のリスク</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(8)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-cyan w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="cloud" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-cyan-400 uppercase">Part 03</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-cyan-300 text-base">スマート資産管理プラットフォーム ezREMS</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">SaaSオールインワンERP、入居者アプリ、電子通知、カード決済PG革新</p>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="goToSlide(13)" class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-800/40 transition cursor-pointer group">
+                <div class="flex items-start space-x-3.5">
+                  <div class="icon-badge icon-badge-emerald w-11 h-11 text-lg flex-shrink-0">
+                    <i data-lucide="trophy" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-emerald-400 uppercase">Part 04</div>
+                    <h3 class="font-bold text-slate-100 group-hover:text-emerald-300 text-base">検証された導入事例と実証データ</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Kリート10棟ビル、複合商業施設、延滞率急減、光熱費自動按分</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 flex items-center justify-between text-xs text-slate-300">
+              <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-amber-400"></i>
+                ZEONS 20年のプロップテック実績 · 10大有形無形資産拡張ERP · 重大災害安全衛生(EASY SAFE)
+              </span>
+              <button onclick="goToSlide(19)" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+                会社概要＆ロードマップを見る <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-03",
+        chapter: "第1章. 市場動向とトレンド",
+        topic: "グローバル市場分析：不動産資産管理システム(PMS)の市場規模とトレンド",
+        origPage: 4,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="globe" class="text-cyan-400"></i> Market Trend 01 (Global)
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">グローバル不動産資産管理システム(PMS) 市場規模とトレンド</h2>
+                <p class="text-slate-400 text-xs mt-0.5">欧米先進国で実証済みの必須インフラ、2032年に世界72兆ウォン規模へ急成長します。</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-black text-xs shadow-lg shadow-rose-600/30 border border-rose-400/40 animate-pulse">
+                  <i data-lucide="flame" class="mr-1"></i> 世界市場規模 72兆ウォン
+                </span>
+                <button onclick="openCustomImageModal('images/case_global_market.png', 'グローバルPMS市場レポート (Fortune Business Insights)')" class="hidden sm:flex whitespace-nowrap flex-shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                  <i data-lucide="pie-chart" class=""></i> レポート原本表示
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 my-auto">
+              <!-- Left 6 cols: Key Trends & Metrics Table -->
+              <div class="lg:col-span-6 space-y-3">
+                <!-- 4 Core Insights -->
+                <div class="grid grid-cols-2 gap-2.5 text-xs">
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-blue-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-blue-400 font-bold">
+                      <i data-lucide="building" class=""></i>
+                      <span>先進国における標準インフラ商用化</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      PMSは欧米など世界市場ですでに標準化された必須の運営基盤です。
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-cyan-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-cyan-400 font-bold">
+                      <i data-lucide="cloud-upload" class=""></i>
+                      <span>SaaS・クラウド導入の加速</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      オンプレミスから100%クラウドSaaSへ急速転換、統合プラットフォーム依存が深化。
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-amber-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-amber-400 font-bold">
+                      <i data-lucide="trophy" class=""></i>
+                      <span>米「AppFolio」時価総額13兆ウォン</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      米上場AppFolio(時価総額13兆ウォン)、Yardi、RealPageなど世界的ユニコーンが台頭。
+                    </p>
+                  </div>
+
+                  <div class="p-3 rounded-xl bg-slate-950/70 border border-emerald-900/40 space-y-1">
+                    <div class="flex items-center gap-1.5 text-emerald-400 font-bold">
+                      <i data-lucide="zap" class=""></i>
+                      <span>APAC: 世界最高の成長スピード</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      世界年平均10.1%の成長の中、韓国を含むアジア太平洋地域が最も急成長。
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Structured Data Table -->
+                <div class="rounded-xl border border-slate-800 overflow-hidden text-xs">
+                  <table class="w-full text-left">
+                    <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
+                      <tr>
+                        <th class="py-2 px-3 w-1/2">グローバル市場調査指標</th>
+                        <th class="py-2 px-3 w-1/2 text-cyan-400 font-bold">Fortune Business Insights (2025.10)</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300 text-[11px]">
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">2024年 世界市場規模</td>
+                        <td class="py-1.5 px-3 font-semibold text-slate-300">約241.8億 USD <span class="text-blue-400">(約33兆ウォン)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">2032年 予想世界市場規模</td>
+                        <td class="py-1.5 px-3 font-extrabold text-amber-400">約522.1億 USD <span class="text-rose-400 text-xs">(約72兆ウォン)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">年平均成長率 (CAGR 2025〜2032)</td>
+                        <td class="py-1.5 px-3 font-bold text-emerald-400">10.1% 高成長の持続</td>
+                      </tr>
+                      <tr>
+                        <td class="py-1.5 px-3 font-medium text-white">2025年 地域別市場シェア</td>
+                        <td class="py-1.5 px-3 text-slate-400">北米 37%、<strong class="text-cyan-400">APAC 30%</strong>、欧州 20%、その他 13%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Right 6 cols: Growth Graph & Trend Visualization (원본 장표 대체 차트) -->
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl glass-card border border-blue-900/50 bg-slate-950/70 shadow-xl space-y-3.5 flex-1 flex flex-col justify-between">
+                  <!-- Graph Header -->
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="flex items-center gap-1.5 text-xs font-bold text-cyan-400">
+                        <i data-lucide="trending-up" class=""></i>
+                        <span>グローバルPMS市場規模 見通し推移</span>
+                      </div>
+                      <h4 class="text-sm sm:text-base font-extrabold text-white mt-0.5">2024年 33兆ウォン ➔ 2032年 72兆ウォン (2.2倍の爆発的急成長)</h4>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-black text-[11px] shadow-md shadow-emerald-900/40 whitespace-nowrap flex-shrink-0">
+                      CAGR +10.1%
+                    </span>
+                  </div>
+
+                  <!-- Bar Chart Visualization -->
+                  <div class="py-1 px-1">
+                    <div class="h-40 w-full flex items-end justify-between gap-2 sm:gap-3 pt-6 pb-2 border-b border-slate-800 relative">
+                      <!-- Trend Tag overlay -->
+                      <div class="absolute top-0 right-1 flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-full shadow">
+                        <i data-lucide="arrow-up-right" class="text-xs"></i> 8年間 累積+116%拡大
+                      </div>
+
+                      <!-- 2024 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-blue-400 transition">33兆</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-blue-600 relative overflow-hidden shadow" style="height: 46%;">
+                          <div class="w-full h-full bg-blue-600/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2024</span>
+                      </div>
+
+                      <!-- 2026 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-cyan-400 transition">41兆</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-cyan-600 relative overflow-hidden shadow" style="height: 57%;">
+                          <div class="w-full h-full bg-blue-500/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2026(E)</span>
+                      </div>
+
+                      <!-- 2028 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-indigo-400 transition">50兆</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-indigo-600 relative overflow-hidden shadow" style="height: 69%;">
+                          <div class="w-full h-full bg-indigo-500/70"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2028(E)</span>
+                      </div>
+
+                      <!-- 2030 Bar -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-300 group-hover:text-purple-400 transition">61兆</span>
+                        <div class="w-full bg-slate-800/80 rounded-t-lg transition-all duration-700 group-hover:bg-purple-600 relative overflow-hidden shadow" style="height: 84%;">
+                          <div class="w-full h-full bg-purple-500/80"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-slate-400 font-semibold">2030(E)</span>
+                      </div>
+
+                      <!-- 2032 Target Bar (Highlighted!) -->
+                      <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                        <div class="flex flex-col items-center">
+                          <span class="text-[9px] text-amber-300 font-bold bg-amber-950/80 px-1 rounded border border-amber-500/40 animate-pulse">2.2倍</span>
+                          <span class="text-[11px] sm:text-xs font-extrabold text-amber-400">72兆ウォン</span>
+                        </div>
+                        <div class="w-full rounded-t-lg transition-all duration-700 relative overflow-hidden shadow-lg shadow-amber-500/20 border-t-2 border-amber-400" style="height: 100%;">
+                          <div class="w-full h-full bg-gradient-to-t from-blue-600 via-indigo-600 to-amber-500"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] text-amber-300 font-bold">2032(E)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2 Summary Badges -->
+                  <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
+                      <div class="text-slate-400 text-[10px] flex items-center gap-1">
+                        <i data-lucide="activity" class="text-cyan-400 text-xs"></i> 2032年 市場規模
+                      </div>
+                      <div class="text-xs sm:text-sm font-extrabold text-white">522.1億 ドル <span class="text-cyan-400 text-xs">(72兆ウォン)</span></div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-0.5">
+                      <div class="text-slate-400 text-[10px] flex items-center gap-1">
+                        <i data-lucide="compass" class="text-emerald-400 text-xs"></i> アジア・太平洋 (APAC)
+                      </div>
+                      <div class="text-xs sm:text-sm font-extrabold text-emerald-400">シェア 30% <span class="text-slate-400 text-xs font-normal">(世界2位)</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Source info -->
+                <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex justify-between items-center">
+                  <span>出典：Fortune Business Insights (2025.10 グローバルPMS分析)</span>
+                  <button onclick="openCustomImageModal('images/case_global_market.png', 'グローバルPMS市場レポート (Fortune Business Insights)')" class="text-blue-400 hover:text-cyan-300 underline flex items-center gap-1">
+                    <i data-lucide="external-link" class="text-xs"></i> 原本レポートを開く
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="globe" class="text-cyan-400"></i> 世界不動産市場はすでにクラウドPMS中心に再編が完了。
+              </span>
+              <span class="text-white font-bold bg-blue-600/80 px-2.5 py-0.5 rounded">韓国プロップテックをリードする: ezREMS</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-04",
+        chapter: "第1章. 市場動向とトレンド",
+        topic: "不動産市場の変化：月極賃貸の急増と賃貸人の業務急増",
+        origPage: 4,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="trending-up" class=""></i> Market Trend 02 (Domestic)
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">月極賃貸の選好急増により賃貸人の業務が激増</h2>
+              <p class="text-slate-400 text-xs mt-0.5">保証金詐欺の余波と金利変動により、賃貸借取引の過半数が月極賃貸へと急転換しました。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <!-- Card 1 -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-blue w-11 h-11 text-lg">
+                      <i data-lucide="pie-chart" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">歴代最高値</span>
+                  </div>
+                  <div class="text-3xl sm:text-4xl font-black text-white mt-3">57.4%</div>
+                  <div class="text-xs font-semibold text-slate-300 mt-1">賃貸借取引における月極賃貸の割合</div>
+                  <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    2024年1〜11月基準、チョンセから月極賃貸への急激な再編により、賃貸人が毎月処理すべき金融トランザクションが爆発的に増加しました。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex items-center gap-1">
+                  <i data-lucide="building-2" class="text-[10px]"></i> 出典：国土交通部 実取引価格システム
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="p-5 rounded-2xl glass-card border border-rose-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-rose w-11 h-11 text-lg">
+                      <i data-lucide="alert-circle" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-rose-400 bg-rose-950 px-2 py-0.5 rounded border border-rose-800">Pain Point</span>
+                  </div>
+                  <div class="text-2xl font-black text-white mt-3">反復業務の沼</div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1.5">
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 通帳明細の手動照合 (入金確認)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 未納入居者の特定と手動催促電話</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 税務計算書の手動発行漏れリスク</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="x" class="text-rose-400"></i> 契約満了・更新通知の期日失念</li>
+                  </ul>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-rose-400 font-medium flex items-center gap-1">
+                  <i data-lucide="alert-triangle" class=""></i> 手作業Excel管理の限界到達
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="p-5 rounded-2xl glass-card border border-emerald-900/40 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <div class="icon-badge icon-badge-emerald w-11 h-11 text-lg">
+                      <i data-lucide="sparkles" class=""></i>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Solution</span>
+                  </div>
+                  <div class="text-2xl font-black text-white mt-3">デジタル自動化</div>
+                  <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                    単純な仲介を超えて、 <span class="text-emerald-400 font-bold">仮想口座入金確認・電子請求書送付・滞納防止・税務計算書</span>までを一括自動化する専門プラットフォームが必須となりました。
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                  <i data-lucide="check-circle-2" class=""></i> ezREMS導入が不可欠
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
+              <i data-lucide="lightbulb" class="text-amber-400 text-sm"></i>
+              <span><strong class="text-slate-200">市場の結論：</strong> 「過去のチョンセ中心の『放置型賃貸』から、毎月金融取引と税務が発生する『専門運営型賃貸』への大転換」</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-05",
+        chapter: "第1章. 市場動向とトレンド",
+        topic: "不動産市場の変化：新しい居住トレンドとAI資産管理",
+        origPage: 7,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="brain" class=""></i> Market Trend 03
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">新居住トレンドと回収率99.6%のAIパラダイム</h2>
+              <p class="text-slate-400 text-xs mt-0.5">シニアレジデンス、コリビング、賃貸住宅の多様化の中で、AIが資産運用の成否を決定づけます。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Left: New Space Trends -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="building-2" class="text-cyan-400"></i> 空間タイプの急速な多様化
+                  </h3>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800 font-medium">New Living</span>
+                </div>
+                <div class="space-y-2.5 text-xs text-slate-300">
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start gap-3">
+                    <div class="icon-badge icon-badge-purple w-9 h-9 text-sm flex-shrink-0">
+                      <i data-lucide="heart-handshake" class=""></i>
+                    </div>
+                    <div>
+                      <span class="font-bold text-purple-300 text-sm">シニアレジデンスの急成長</span>
+                      <p class="text-slate-400 mt-1">高齢化進行に伴うプレミアムシルバー居住空間およびヘルスケア・食事サービス連携運営の需要が急増。</p>
+                    </div>
+                  </div>
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-start gap-3">
+                    <div class="icon-badge icon-badge-cyan w-9 h-9 text-sm flex-shrink-0">
+                      <i data-lucide="home" class=""></i>
+                    </div>
+                    <div>
+                      <span class="font-bold text-cyan-300 text-sm">コ・リビング ＆ 青年向け賃貸住宅</span>
+                      <p class="text-slate-400 mt-1">MGRVなど単身世帯向けスマート居住運営システムとモバイルアプリサービスの必須化。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: AI-driven Asset Management -->
+              <div class="p-5 rounded-2xl glass-card border border-indigo-900/50 space-y-3 bg-gradient-to-br from-slate-900/90 to-indigo-950/40">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="bot" class="text-indigo-400"></i> AIが変革した不動産資産管理
+                  </h3>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 border border-indigo-800 font-medium">AI Core</span>
+                </div>
+                <div class="text-center py-2 bg-slate-950/60 rounded-xl border border-indigo-900/40">
+                  <div class="text-4xl sm:text-5xl font-black gradient-text">回収率 99.6%</div>
+                  <div class="text-xs text-slate-400 mt-1 flex items-center justify-center gap-1">
+                    <i data-lucide="trending-up" class="text-emerald-400"></i> AI滞納予測＆個別最適化回収システムの適用
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  入居者の過去の支払い履歴をAIが学習して滞納リスク層を事前選別し、最適な通知チャネルと無利子カード分割決済を連携して未納を根本から防止します。
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-indigo-950/30 text-xs text-indigo-200 flex items-center justify-between">
+              <span class="flex items-center gap-2">
+                <i data-lucide="cpu" class="text-cyan-400"></i>
+                「今や人工知能(AI)とクラウドは資産管理の選択肢ではなく、絶対的な必須インフラです」
+              </span>
+              <span class="text-cyan-400 font-bold">ezREMS AI Engine</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-06",
+        chapter: "第2章. 運用上の課題と問題点",
+        topic: "建物のライフサイクルコスト：80%は運用段階で発生する",
+        origPage: 9,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="git-commit" class=""></i> Life Cycle Cost Analysis
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">建物のライフサイクルコストの80%は「運用」が左右する</h2>
+              <p class="text-slate-400 text-xs mt-0.5">設計と建築コストはわずか20%に過ぎず、実際の建物の価値と収益は何十年にもわたる運用・維持管理で決まります。</p>
+            </div>
+
+            <div class="my-auto space-y-5">
+              <!-- Life Cycle Diagram Bar -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800">
+                <div class="text-xs font-semibold text-slate-400 mb-2.5 flex justify-between items-center">
+                  <span class="flex items-center gap-1.5"><i data-lucide="git-branch" class="text-blue-400"></i> 建物ライフサイクル(LCC)段階別コスト支出比率</span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">運用・維持管理 80%以上 (83.2%)</span>
+                    <span class="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/50">廃棄 0.4%</span>
+                  </div>
+                </div>
+                <div class="h-12 w-full rounded-xl overflow-hidden flex font-bold text-xs shadow-inner border border-slate-700/60">
+                  <div class="w-[6%] bg-slate-800 flex items-center justify-center text-slate-300 text-[11px]" title="企画・設計">
+                    <i data-lucide="compass" class="mr-1"></i> 設計
+                  </div>
+                  <div class="w-[14%] bg-slate-700 flex items-center justify-center text-slate-200 border-l border-slate-800 text-[11px]" title="施工・建築：約16%">
+                    <i data-lucide="hammer" class="mr-1"></i> 施工 16%
+                  </div>
+                  <div class="flex-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg border-l border-slate-800">
+                    <i data-lucide="settings-2" class="mr-1.5"></i> 運用・維持管理 (Operating & Management) 83.2%
+                  </div>
+                  <div class="w-[9%] sm:w-[8%] bg-amber-600/90 hover:bg-amber-500 flex flex-col items-center justify-center text-white border-l border-slate-800 transition" title="解体・廃棄フェーズ：0.4%">
+                    <i data-lucide="refresh-cw" class="text-[11px]"></i>
+                    <span class="text-[10px] font-black leading-none mt-0.5">廃棄 0.4%</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center text-[11px] text-slate-500 mt-2">
+                  <span>初期投資フェーズ (設計＋施工 約16.4%)</span>
+                  <span class="text-blue-400 font-semibold flex items-center gap-1">
+                    <i data-lucide="check-circle-2" class="text-cyan-400"></i> 長期収益創出＆資産価値最大化フェーズ (83.2%)
+                  </span>
+                  <span class="text-amber-400 font-semibold flex items-center gap-1">
+                    <i data-lucide="refresh-cw" class="text-amber-400"></i> 廃棄 (0.4%)
+                  </span>
+                </div>
+                <div class="text-[10px] text-slate-500 text-right mt-1">
+                  ※ 出典：韓国建設産業研究院「建設事業のLCC⁺分析手法および適用方案」
+                </div>
+              </div>
+
+              <!-- 3 Core Losses -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="log-out" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">01. 空室管理の失敗</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">契約満了の予測不足により空室期間が長期化し、賃貸収益率が急落</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="receipt" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">02. 入金確認漏れと滞納</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">手動確認漏れによる滞納の放置、回収不能および明渡し訴訟リスクの発生</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+                  <div class="icon-badge icon-badge-rose w-9 h-9 text-sm flex-shrink-0">
+                    <i data-lucide="wrench" class=""></i>
+                  </div>
+                  <div>
+                    <div class="text-rose-400 font-bold text-sm">03. 施設点検履歴の不在</div>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">修繕・点検履歴の紛失により重複補修費が発生し、建物の老朽化が加速</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-rose-950/20 text-xs text-rose-200 flex items-center gap-2">
+              <i data-lucide="alert-triangle" class="text-rose-400"></i>
+              <span><strong>資産価値下落の主な原因：</strong> 専門的な運用システムの不在は、空室率の上昇、NOI(純営業収益)の低下、建物売却価値の急落に直結します。</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-07",
+        chapter: "第2章. 運用上の課題と問題点",
+        topic: "不動産資産運用プロセス (LM · PM · FM · AM)",
+        origPage: 12,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="network" class=""></i> Process Complexity
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">複雑多岐にわたる不動産資産運営の実務プロセス</h2>
+                <p class="text-slate-400 text-xs mt-0.5">リーシングから施設、財務会計、資産運用に至るまで、すべての領域が有機的に連携すべきです。</p>
+              </div>
+              <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-blue-600/30 border border-cyan-400/40 transition btn-press group">
+                <div class="w-5 h-5 rounded-lg bg-white/20 flex items-center justify-center text-[10px]">
+                  <i data-lucide="layers" class="text-white"></i>
+                </div>
+                <span>不動産資産管理(PM) 構造を見る</span>
+                <i data-lucide="external-link" class="text-[10px] text-cyan-200 group-hover:translate-x-0.5 transition"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <!-- LM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-blue-900/40 hover:border-blue-500/60 transition group">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base mb-2">
+                  <i data-lucide="megaphone" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-blue-400 uppercase">LM (Leasing)</div>
+                <div class="text-sm font-black text-white mt-0.5">賃貸マーケティング</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 契約相談＆テナント誘致営業</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 標準賃貸借契約書の締結</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 敷金・保証金の受入れ＆入居手続き</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-blue-400 text-[10px]"></i> 空室率最小化プロモーション</li>
+                </ul>
+              </div>
+
+              <!-- PM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-cyan-900/40 hover:border-cyan-500/60 transition group">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base mb-2">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-cyan-400 uppercase">PM (Property)</div>
+                <div class="text-sm font-black text-white mt-0.5">賃貸運営管理</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> 月次賃料・管理費の請求</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> リアルタイム入金確認＆滞納督促</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> 入居者クレーム(VOC)対応管理</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400 text-[10px]"></i> NOI算出＆月次報告書</li>
+                </ul>
+              </div>
+
+              <!-- FM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-emerald-900/40 hover:border-emerald-500/60 transition group">
+                <div class="icon-badge icon-badge-emerald w-10 h-10 text-base mb-2">
+                  <i data-lucide="wrench" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-emerald-400 uppercase">FM (Facility)</div>
+                <div class="text-sm font-black text-white mt-0.5">施設＆安全管理</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 定期設備法定点検の履行</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 営繕・修繕工事の発注・検収</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 省エネ＆外注業者管理</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-emerald-400 text-[10px]"></i> 重大災害安全衛生措置の履行</li>
+                </ul>
+              </div>
+
+              <!-- AM -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-indigo-900/40 hover:border-indigo-500/60 transition group">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base mb-2">
+                  <i data-lucide="landmark" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-indigo-400 uppercase">AM (Asset)</div>
+                <div class="text-sm font-black text-white mt-0.5">資産運用＆決算</div>
+                <ul class="text-xs text-slate-300 mt-2.5 space-y-1.5">
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 会計ERP仕訳連動決算</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 消費税電子申告ファイル生成</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> 資産価値評価＆リニューアル企画</li>
+                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="text-indigo-400 text-[10px]"></i> REIT・投資家配当管理</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex items-center justify-between">
+              <span class="flex items-center gap-2">
+                <i data-lucide="unlink" class="text-rose-400"></i> 4大領域(AM・PM・FM・LM)のデータ分断は業務麻痺とリスクを引き起こします。
+              </span>
+              <div class="flex items-center gap-3">
+                <button onclick="openCustomImageModal('images/case_pm_structure.png', '부동산자산관리(PM) 구조 피라미드 (AM · PM · FM)')" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1.5 bg-cyan-950/60 px-2.5 py-1 rounded-lg border border-cyan-800/40">
+                  <i data-lucide="image" class=""></i> PM構造図ポップアップ表示
+                </button>
+                <span class="text-cyan-400 font-bold flex items-center gap-1">
+                  <i data-lucide="check-check" class="text-emerald-400"></i> ezREMSは単一プラットフォームで完全統合
+                </span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-08",
+        chapter: "第2章. 運用上の課題と問題点",
+        topic: "ソリューション比較：手動Excel vs ezREMS",
+        origPage: 20,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="arrow-left-right" class=""></i> Comparison Analysis
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">手作業Excel管理 vs ezREMSプラットフォーム</h2>
+              <p class="text-slate-400 text-xs mt-0.5">不動産資産の規模が拡大するほど、Excelはリスクの温床となり、システム導入は生き残りの必須条件となります。</p>
+            </div>
+
+            <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
+              <table class="w-full text-xs text-left">
+                <thead class="bg-slate-950 text-slate-300 border-b border-slate-800 uppercase">
+                  <tr>
+                    <th class="py-3 px-4 w-1/4">比較項目</th>
+                    <th class="py-3 px-4 w-3/8 text-rose-400 bg-rose-950/30 font-bold">
+                      <i data-lucide="file-spreadsheet" class="mr-1 text-rose-400"></i> 従来の手作業Excel方式
+                    </th>
+                    <th class="py-3 px-4 w-3/8 text-cyan-400 bg-blue-950/50 font-bold">
+                      <i data-lucide="cloud" class="mr-1 text-cyan-400"></i> ezREMS クラウドプラットフォーム
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="database" class="text-slate-400"></i> データ整合性
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 数式エラー、上書き保存ミス、ファイル紛失リスクが常態化
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> クラウドDBリアルタイム保存＆バージョン・変更履歴の完全保存
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="receipt" class="text-slate-400"></i> 請求＆入金消込
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 毎月の通帳明細とExcelの手作業突き合わせ、請求書の個別印刷
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 仮想口座・ファームバンキング自動照合、ネイバー電子文書自動送信
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="file-text" class="text-slate-400"></i> 税務＆計算書
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 国税サイトにアクセスして手作業発行 (入力ミス・発行漏れの発生)
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 電子税務計算書の一括自動発行＆国税庁申告用データ自動生成
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="lock" class="text-slate-400"></i> セキュリティ＆権限管理
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 個人PC保存による情報漏洩リスク、同時作業時の更新競合
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> ユーザー別権限管理、金融機関レベルの暗号化＆セキュリティ保護
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-4 font-semibold text-white flex items-center gap-2">
+                      <i data-lucide="message-square" class="text-slate-400"></i> 入居者コミュニケーション
+                    </td>
+                    <td class="py-2.5 px-4 text-slate-400">
+                      <i data-lucide="x-circle" class="text-rose-500 mr-1"></i> 電話・SMS・紙の請求書に依存 (通知の法的証明が困難)
+                    </td>
+                    <td class="py-2.5 px-4 text-emerald-400 font-semibold bg-blue-950/20">
+                      <i data-lucide="check-circle-2" class="text-emerald-400 mr-1"></i> 入居者専用モバイルアプリ、法的効力のある電子文書、カード決済対応
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="quote" class="text-blue-400"></i>
+                「Excelは単なる文書ツールに過ぎず、巨額の資産を運営するERPにはなり得ません」
+              </span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">
+                <i data-lucide="arrow-down" class="mr-1"></i> 業務工数を70%以上削減
+              </span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-09",
+        chapter: "第3章. ezREMSソリューション",
+        topic: "ezREMS ソリューション概要と認証取得",
+        origPage: 21,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="award" class=""></i> ezREMS Overview
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">スマート不動産管理SaaS「ezREMS」</h2>
+              <p class="text-slate-400 text-xs mt-0.5">オフィス、住宅、商業施設、複合施設など、あらゆる不動産をクラウド基盤で統合運用します。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <!-- Cert 1 -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 space-y-3 group hover:border-blue-500/60 transition">
+                <div class="icon-badge icon-badge-blue w-12 h-12 text-xl">
+                  <i data-lucide="badge-check" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">GS 1等級 国家公認認証</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  国家ソフトウェア品質認証の最高ランクである <span class="text-cyan-400 font-bold">GS(Good Software) 1等級</span>を取得し、最高レベルの安定性と信頼性を政府公認機関より実証済みです。
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="check-circle-2" class="text-emerald-400"></i> 調達庁登録および公共機関導入適合規格
+                </div>
+              </div>
+
+              <!-- Cert 2 -->
+              <div class="p-5 rounded-2xl glass-card border border-cyan-800/40 space-y-3 group hover:border-cyan-500/60 transition">
+                <div class="icon-badge icon-badge-cyan w-12 h-12 text-xl">
+                  <i data-lucide="stamp" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">不動産管理基本特許</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  不動産賃料の入金および精算管理システムに関する <span class="text-cyan-400 font-bold">独自特許技術</span>を基盤に、複雑な精算プロセスを誤差なくサポートします。
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="shield-check" class="text-cyan-400"></i> 独自アルゴリズム＆フィンテックの融合
+                </div>
+              </div>
+
+              <!-- Cert 3 -->
+              <div class="p-5 rounded-2xl glass-card border border-purple-800/40 space-y-3 group hover:border-purple-500/60 transition">
+                <div class="icon-badge icon-badge-purple w-12 h-12 text-xl">
+                  <i data-lucide="cloud-upload" class=""></i>
+                </div>
+                <h3 class="font-bold text-white text-base">100% クラウドSaaS</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  個別ソフトのインストール不要で、Webブラウザとスマホからいつでもアクセス可能な <span class="text-purple-300 font-bold">ピュアクラウドSaaS</span> 環境をご提供いたします。
+                </p>
+                <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-800 flex items-center gap-1.5">
+                  <i data-lucide="rotate-cw" class="text-purple-400"></i> 無停止自動アップデート＆リアルタイムバックアップ
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="globe" class="text-blue-400"></i>
+                B2B企業向けPMSサービス： <a href="https://pms.ezrems.com" target="_blank" class="text-blue-400 underline">pms.ezrems.com</a>
+              </span>
+              <span class="text-slate-300 font-medium">2014年の初認証以来、10年以上にわたり継続的アップグレード運用</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-10",
+        chapter: "第3章. ezREMSソリューション",
+        topic: "プラットフォーム連携構成図とシステムアーキテクチャ",
+        origPage: 23,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="network-wired" class=""></i> Architecture
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ezREMS プラットフォーム連携構成図</h2>
+                <p class="text-slate-400 text-xs mt-0.5">クラウドサーバーを中心に金融(PG/銀行)、税務、通信(通知/SMS)、入居者アプリが有機的連携。</p>
+              </div>
+              <button onclick="openOriginalModal(23)" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition">
+                <i data-lucide="layout-grid" class=""></i> 原本図表を見る (P.23)
+              </button>
+            </div>
+
+            <div class="my-auto p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-[1fr,auto,1.15fr,auto,1fr] gap-2.5 items-center text-center">
+                <!-- 1. Left: Channels -->
+                <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-cyan w-10 h-10 mx-auto text-base">
+                      <i data-lucide="smartphone" class=""></i>
+                    </div>
+                    <div class="text-xs font-bold text-cyan-400 mt-1">ユーザー接点チャネル (Channel)</div>
+                    <div class="text-sm font-semibold text-white">管理者 / 入居者</div>
+                  </div>
+                  <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
+                    <li class="flex items-center gap-1.5"><i data-lucide="laptop" class="text-blue-400 text-[10px]"></i> 管理者WEB (PC / タブレット)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> 現場管理用モバイルWEB</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="smartphone" class="text-blue-400 text-[10px]"></i> 入居者向けアプリ (ezREMS Connect)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-blue-400 text-[10px]"></i> 入退室管理・駐車場ゲート端末</li>
+                  </ul>
+                </div>
+
+                <!-- Arrow Connector 1 (Between Channel and Core) -->
+                <div class="flex md:flex-col items-center justify-center py-2 md:py-0 text-cyan-400">
+                  <div class="p-2 sm:p-2.5 rounded-full bg-slate-900 border border-cyan-500/50 shadow-lg shadow-cyan-500/30 flex items-center justify-center space-x-1.5 animate-pulse">
+                    <i data-lucide="arrow-left" class="text-xs sm:text-sm text-cyan-300"></i>
+                    <i data-lucide="arrow-right" class="text-xs sm:text-sm text-cyan-300"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-cyan-300 ml-2 md:ml-0 md:mt-1.5 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/50 whitespace-nowrap">
+                    リアルタイムWeb/アプリ連携
+                  </span>
+                </div>
+
+                <!-- 2. Center: ezREMS Core Engine -->
+                <div class="p-4 rounded-xl bg-blue-950/60 border border-blue-500/60 space-y-2 relative shadow-lg shadow-blue-900/40 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-blue w-10 h-10 mx-auto text-base">
+                      <i data-lucide="server" class=""></i>
+                    </div>
+                    <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-600 text-white text-[11px] font-bold mt-1">CORE ENGINE</div>
+                    <div class="text-base font-extrabold text-white">ezREMS クラウドプラットフォーム</div>
+                  </div>
+                  <div class="text-xs text-blue-200 space-y-1 text-left pt-2 border-t border-blue-800/50">
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 賃貸借契約＆区画ライフサイクル管理</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> Stacking Plan 階層別図面</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 自動消込＆仮想口座リアルタイム照合</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 電子税務計算書 / 消費税申告</div>
+                    <div class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> VOC・クレーム対応＆修繕保全履歴</div>
+                  </div>
+                </div>
+
+                <!-- Arrow Connector 2 (Between Core and Interface) -->
+                <div class="flex md:flex-col items-center justify-center py-2 md:py-0 text-indigo-400">
+                  <div class="p-2 sm:p-2.5 rounded-full bg-slate-900 border border-indigo-500/50 shadow-lg shadow-indigo-500/30 flex items-center justify-center space-x-1.5 animate-pulse">
+                    <i data-lucide="arrow-left" class="text-xs sm:text-sm text-indigo-300"></i>
+                    <i data-lucide="arrow-right" class="text-xs sm:text-sm text-indigo-300"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-indigo-300 ml-2 md:ml-0 md:mt-1.5 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/50 whitespace-nowrap">
+                    Open API＆レガシー連携インターフェース
+                  </span>
+                </div>
+
+                <!-- 3. Right: External Interfaces -->
+                <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="icon-badge icon-badge-purple w-10 h-10 mx-auto text-base">
+                      <i data-lucide="zap" class=""></i>
+                    </div>
+                    <div class="text-xs font-bold text-indigo-400 mt-1">外部インターフェース (Interface)</div>
+                    <div class="text-sm font-semibold text-white">金融・税務・ERP統合連携</div>
+                  </div>
+                  <ul class="text-xs text-slate-400 space-y-1 text-left pt-2 border-t border-slate-800/60">
+                    <li class="flex items-center gap-1.5"><i data-lucide="building-2" class="text-indigo-400 text-[10px]"></i> ファームバンキング / 仮想口座 (都市銀行)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="credit-card" class="text-indigo-400 text-[10px]"></i> クレジットカード決済PG (D+1精算)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="file-text" class="text-indigo-400 text-[10px]"></i> 電子税務計算書 (国税庁連携)</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="message-square" class="text-indigo-400 text-[10px]"></i> 電子交付文書 / カカオ通知トーク</li>
+                    <li class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-indigo-400 text-[10px]"></i> 企業会計ERP (SAP FI連携)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex justify-between">
+              <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="text-emerald-400"></i> 高信頼エンタープライズクラウド基盤 (AWS / Naver Cloud)</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="text-blue-400"></i> 24/7 無停止モニタリング＆自動バックアップ対応</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-11",
+        chapter: "第3章. ezREMSソリューション",
+        topic: "主要機能：B2B専門PMS (区画・契約・入金・税務)",
+        origPage: 25,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="sliders" class=""></i> PMS Core Features
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">エンタープライズB2B不動産管理(PMS)コア機能</h2>
+              <p class="text-slate-400 text-xs mt-0.5">現場実務者の声を忠実に反映し、複雑な賃貸管理実務をクリック数回で完結できるよう設計されています。</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <!-- Feature 1 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="layers" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-bold text-sm">01. 空間管理＆スタッキングプラン</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ビルのフロア別区画現況を直感的な <span class="text-cyan-300 font-semibold">Stacking Plan</span>で可視化し、空室および契約満了を一目で監視します。
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="circle-dollar-sign" class=""></i>
+                </div>
+                <div class="text-blue-400 font-bold text-sm">02. 自動消込＆滞納催促管理</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  仮想口座への入金と同時にリアルタイム自動消込が実行され、滞納発生時は督促状・催告書の印刷出力およびメール・SMSが自動配信されます。
+                </p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-emerald-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-10 h-10 text-base">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-emerald-400 font-bold text-sm">03. 電子税務計算書連携</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  賃料・管理費の請求データに基づき、電子税務計算書をワンクリック一括発行。保証金のみなし賃料も自動計算します。
+                </p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <div class="text-purple-400 font-bold text-sm">04. 消費税申告データ自動生成</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  国税庁提出用の不動産賃貸供給価額明細書および消費税申告用データを即座に生成し、税務代行コストを大幅に削減します。
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex items-center justify-between">
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-cyan-400"></i> 標準賃貸借契約書の出力、統合・分離請求書、VOCクレーム管理を標準搭載</span>
+              <a href="https://pms.ezrems.com" target="_blank" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+                PMSデモ画面を見る <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-12",
+        chapter: "第3章. ezREMSソリューション",
+        topic: "入居者向けアプリ：ezREMS Connect (生活利便性サービス)",
+        origPage: 26,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="smartphone" class=""></i> Tenant Mobile App
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">入居者専用モバイルアプリ「ezREMS Connect」</h2>
+              <p class="text-slate-400 text-xs mt-0.5">入居者には最高水準の居住利便性を、運営会社には付加収益創出とクレーム自動化の機会を提供します。</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-9 h-9 text-sm">
+                  <i data-lucide="bell" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">01. 居住利便性サービス</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">ルームクリーニング、洗濯配送、フィットネス予約、駐車登録などの付加サービスをEC感覚で利用可能。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-9 h-9 text-sm">
+                  <i data-lucide="file-text" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">02. 契約ステータス管理</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">契約期間、敷金、賃料条件などをアプリでいつでも確認でき、簡単な更新申請も可能。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-9 h-9 text-sm">
+                  <i data-lucide="vote" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">03. 電子投票システム</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">管理規約の改定や役員選出など、対面総会なしで法的効力を持つモバイル電子投票を実施。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-emerald-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-9 h-9 text-sm">
+                  <i data-lucide="receipt" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">04. モバイル電子請求書</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">毎月請求される賃料・管理費の明細を確認し、支払証明書を即座に発行可能。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-blue-800/40 bg-blue-950/30 space-y-1.5 group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-9 h-9 text-sm">
+                  <i data-lucide="credit-card" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">05. 家賃クレジットカード決済</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">無利子分割、カードポイント獲得、ビリングキー自動定期決済により未納ゼロ化を実現。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-1.5 group hover:border-rose-500/50 transition">
+                <div class="icon-badge icon-badge-rose w-9 h-9 text-sm">
+                  <i data-lucide="message-square" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">06. VOC・クレーム管理</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">写真や動画を添付して不具合修繕を申請し、進捗状況をリアルタイム通知で確認。</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="coins" class="text-amber-400"></i> 運営企業のメリット：生活利便性サービス提携手数料による新たな付加収益の創出。</span>
+              <span class="text-cyan-400 font-bold flex items-center gap-1"><i data-lucide="trending-up" class=""></i> 入居者満足度UP＆管理コストDOWN</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-13",
+        chapter: "第3章. ezREMSソリューション",
+        topic: "電子契約・文書＆家賃カード決済(PG)の比較",
+        origPage: 30,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="credit-card" class=""></i> Fintech Innovation
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">家賃クレジットカード決済＆電子文書イノベーション</h2>
+              <p class="text-slate-400 text-xs mt-0.5">違法な現金化リスクを遮断し、業界最短のD+1日入金精算を誇るezREMS専用決済システムです。</p>
+            </div>
+
+            <div class="my-auto overflow-hidden rounded-2xl border border-slate-800 text-xs shadow-xl">
+              <table class="w-full text-left">
+                <thead class="bg-slate-950 text-slate-300 border-b border-slate-800">
+                  <tr>
+                    <th class="py-2.5 px-3">比較項目</th>
+                    <th class="py-2.5 px-3 text-slate-400">一般クレジットカード会社</th>
+                    <th class="py-2.5 px-3 text-slate-400">他社家賃代行業者</th>
+                    <th class="py-2.5 px-3 text-cyan-400 bg-blue-950/50 font-bold">
+                      <i data-lucide="star" class="text-amber-400 mr-1"></i> ezREMS Connectアプリ
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/60 text-slate-300">
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="pen-tool" class="text-slate-400 text-[11px]"></i> オーナー同意の要否
+                    </td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold"><i data-lucide="check" class="text-emerald-400"></i> 同意が必須</td>
+                    <td class="py-2 px-3 text-rose-400"><i data-lucide="x" class="text-rose-400"></i> 不要</td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
+                      <i data-lucide="check-check" class="text-emerald-400"></i> オーナー負担なし
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="zap" class="text-slate-400 text-[11px]"></i> 精算期日
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">D+3日</td>
+                    <td class="py-2 px-3 text-slate-400">D+3〜D+5日 (遅延精算)</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="zap" class="text-cyan-400 mr-1"></i> D+1日 (翌日スピード精算)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="shield-check" class="text-slate-400 text-[11px]"></i> 現金化不正リスク
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">なし</td>
+                    <td class="py-2 px-3 text-rose-400 font-bold"><i data-lucide="alert-triangle" class="text-rose-400"></i> 不正利用・架空決済のリスクあり</td>
+                    <td class="py-2 px-3 text-emerald-400 font-bold bg-blue-950/30">
+                      <i data-lucide="shield-check" class="text-emerald-400 mr-1"></i> 実契約・請求書データによる根源的遮断
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="rotate-cw" class="text-slate-400 text-[11px]"></i> 決済方式
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">毎月の手動認証</td>
+                    <td class="py-2 px-3 text-slate-400">毎月の手動認証</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="repeat" class="text-cyan-400 mr-1"></i> ビリングキー自動決済 (利用実績認定)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium text-white flex items-center gap-1.5">
+                      <i data-lucide="calculator" class="text-slate-400 text-[11px]"></i> 税額控除サポート
+                    </td>
+                    <td class="py-2 px-3 text-slate-400">非対応</td>
+                    <td class="py-2 px-3 text-slate-400">非対応</td>
+                    <td class="py-2 px-3 text-cyan-400 font-bold bg-blue-950/30">
+                      <i data-lucide="file-check" class="text-cyan-400 mr-1"></i> 年末調整用控除証明書の自動発行
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-3 rounded-xl bg-emerald-950/20 text-xs text-emerald-300 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="mail-check" class="text-emerald-400"></i>
+                公認電子文書連携により紙の郵便コストを80%削減し、受領事実の完全な法的証明力を担保。
+              </span>
+              <span class="font-bold text-white bg-emerald-800/60 px-2 py-0.5 rounded">D+1日翌日精算保証</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-14",
+        chapter: "第4章. 実績と管理規模",
+        topic: "データが証明するezREMSの金融・取引規模",
+        origPage: 32,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="bar-chart-2" class=""></i> Proven Scale
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">数字が証明するezREMSの信頼と圧倒的規模</h2>
+              <p class="text-slate-400 text-xs mt-0.5">大型複合モールから公共住宅、一等地オフィスまで毎月数百億ウォンの取引を安全処理。</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-auto">
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="building-2" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">累積管理ユニット数</div>
+                <div class="text-3xl sm:text-4xl font-black text-cyan-400 mt-1">55,000+</div>
+                <div class="text-[11px] text-slate-500 mt-1">管理区画・施設スペース</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="trending-up" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">月間 取引処理額</div>
+                <div class="text-3xl sm:text-4xl font-black text-blue-400 mt-1">650億ウォン超</div>
+                <div class="text-[11px] text-slate-500 mt-1">毎月リアルタイム収納</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-indigo-800/40 text-center group hover:border-indigo-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="map-pin" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">管理面積の規模</div>
+                <div class="text-3xl sm:text-4xl font-black text-indigo-400 mt-1">6,113㎢以上</div>
+                <div class="text-[11px] text-slate-500 mt-1">済州島の約3.3倍に相当</div>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-purple-800/40 text-center group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-emerald w-12 h-12 mx-auto mb-2 text-xl">
+                  <i data-lucide="lock" class=""></i>
+                </div>
+                <div class="text-xs text-slate-400">管理敷金・保証金規模</div>
+                <div class="text-3xl sm:text-4xl font-black text-emerald-400 mt-1">3,320億+</div>
+                <div class="text-[11px] text-slate-500 mt-1">安全預託・精算管理</div>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/50 space-y-1.5 text-xs">
+              <div class="flex justify-between items-center text-slate-300">
+                <span class="font-semibold text-white flex items-center gap-2">
+                  <i data-lucide="building-2" class="text-cyan-400"></i> 仮想口座入金自動消込実績
+                </span>
+                <span class="text-cyan-400 font-bold bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">月間 120億ウォン+ 以上</span>
+              </div>
+              <p class="text-[11px] text-slate-500">
+                ※ KTグループ(2,100+)、ロッテ物産、テクノマート等の一部大型商業施設を除外した基準データです。
+              </p>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-15",
+        chapter: "第4章. 顧客導入事例",
+        topic: "導入事例 1：K REIT社 (全国10棟のビルを統合管理)",
+        origPage: 35,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="briefcase" class=""></i> Case Study 01
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Kリート: 全国10棟の主要プライムオフィス統合資産管理</h2>
+              <p class="text-slate-400 text-xs mt-0.5">全国に分散する大型オフィスビル資産を本社でリアルタイム統合監視し、売上漏れを根絶。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+              <!-- Left: Challenges & Solution -->
+              <div class="space-y-3">
+                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
+                  <div class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
+                    <i data-lucide="x-circle" class=""></i> 導入前の課題とボトルネック
+                  </div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1">
+                    <li>• ビルごとの管理主体が異なり、本社データ集計に5日以上要していた</li>
+                    <li>• 満了管理の不備により空室期間が長期化していた</li>
+                    <li>• 税務申告漏れに伴う加算税リスクが常態化</li>
+                  </ul>
+                </div>
+                <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-800/40">
+                  <div class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
+                    <i data-lucide="check-circle-2" class=""></i> ezREMS導入後の成果
+                  </div>
+                  <ul class="text-xs text-slate-300 mt-2 space-y-1">
+                    <li>• 単一統合ダッシュボードで10棟の賃貸現況をワンクリック集計</li>
+                    <li>• 契約ガントチャートに基づく事前再契約プロセスの稼働</li>
+                    <li>• 電子税務計算書の自動発行により売上申告漏れゼロ件を達成</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Right: Delivered Value -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <i data-lucide="pie-chart" class="text-cyan-400"></i> 主要機能および画面
+                  </h3>
+                  <div class="space-y-2.5 mt-3 text-xs">
+                    <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
+                      <i data-lucide="table" class="text-cyan-400 text-sm mt-0.5"></i>
+                      <div>
+                        <span class="text-cyan-400 font-semibold">不動産別賃貸契約・請求明細表</span>
+                        <p class="text-slate-400 mt-0.5">ビル別利回りの比較分析と投資家向け報告書(MR)のワンクリック出力</p>
+                      </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5">
+                      <i data-lucide="star" class="text-amber-400 text-sm mt-0.5"></i>
+                      <div>
+                        <span class="text-amber-300 font-semibold">優良テナント抽出リスト</span>
+                        <p class="text-slate-400 mt-0.5">優良入居者への優待付与と長期再契約の促進</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-emerald-400 font-bold flex items-center gap-1.5">
+                  <i data-lucide="zap" class="text-emerald-400"></i> 月次決算報告書の作成期間を5日→2時間に短縮
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-400 flex items-center gap-2">
+              <i data-lucide="building" class="text-slate-500"></i>
+              <span>適用分野：大型プライムオフィス、不動産投資信託(REITs)、専門資産運用会社(AMC)</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-16",
+        chapter: "第4章. 顧客導入事例",
+        topic: "導入事例 2：アレイウェイ・ショッピングモール (POS連動売上管理)",
+        origPage: 37,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="shopping-bag" class=""></i> Case Study 02
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">光教・仁川 アレイウェイ複合ショッピングモール統合運営</h2>
+                <p class="text-slate-400 text-xs mt-0.5">複合モールのPOS売上データをリアルタイム収集し、歩合賃料を自動計算・請求。</p>
+              </div>
+              <button onclick="openOriginalModal(37)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                <i data-lucide="file-text" class=""></i> 原本PDF資料を見る (P.37)
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="calculator" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-blue-400">Step 01</div>
+                <h4 class="font-bold text-white text-sm">POS売上データの収集</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  数百の出店テナントのPOS決済売上をAPIおよびファイルで自動収集・整合性検証。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="calculator" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-cyan-400">Step 02</div>
+                <h4 class="font-bold text-white text-sm">歩合賃料の自動請求</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  定額賃料、売上連動手数料率、最低保証(MG)など複雑な算式に基づき賃料を自動計算。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="map" class=""></i>
+                </div>
+                <div class="text-xs font-bold text-indigo-400">Step 03</div>
+                <h4 class="font-bold text-white text-sm">店舗図面・売上の可視化</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  フロア平面図上にゾーン別坪単価売上と動線貢献度を可視化し、MD改編を支援。
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 flex items-center justify-between text-xs">
+              <div class="space-y-1">
+                <span class="font-bold text-white text-sm flex items-center gap-1.5">
+                  <i data-lucide="shopping-bag" class="text-cyan-400"></i> 複合リテール商業施設特化型PMS機能を完備
+                </span>
+                <p class="text-slate-400">光教アレイウェイ、仁川アレイウェイ、江辺テクノマート等、国内ランドマーク商業施設の導入実績。</p>
+              </div>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-3 py-1.5 rounded-lg border border-cyan-800/40">売上締め処理エラー 0%</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-17",
+        chapter: "第4章. 顧客導入事例",
+        topic: "導入事例 3：チェイルプンギョンチェ 1,045世帯 (未納率 25% → 6%)",
+        origPage: 39,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="trending-down" class=""></i> Dramatic Result
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">大規模団地: 滞納率が25%から6%へ劇的減少</h2>
+                <p class="text-slate-400 text-xs mt-0.5">1,045世帯の大規模団地に公認電子通知とクレカ決済を導入し、延滞率を画期的に改善。</p>
+              </div>
+              <button onclick="openOriginalModal(39)" class="self-start sm:self-auto whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-semibold border border-emerald-800/40 transition shadow-sm hover:border-emerald-500/50">
+                <i data-lucide="file-text" class=""></i> 原本PDF資料を見る (P.39)
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Left: Graph Comparison -->
+              <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="font-bold text-white text-sm flex items-center gap-2">
+                    <i data-lucide="bar-chart-3" class="text-blue-400"></i> 導入前後の滞納率推移の比較
+                  </h3>
+                  <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">19%p 大幅改善</span>
+                </div>
+
+                <div class="space-y-4 py-2">
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="x-circle" class="text-rose-400"></i> 導入前 (2025年1月)</span>
+                      <span class="text-rose-400 font-bold text-sm">滞納率 25%</span>
+                    </div>
+                    <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-rose-500 rounded-full" style="width: 25%;"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="text-slate-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="text-emerald-400"></i> ezREMS導入後 (2025年8月)</span>
+                      <span class="text-emerald-400 font-bold text-sm">滞納率 6%</span>
+                    </div>
+                    <div class="h-5 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-emerald-500 rounded-full transition-all duration-1000" style="width: 6%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-[11px] text-slate-400">
+                  ※ 1,045世帯の実証データ：公認電子文書の閲覧率89%突破およびカード無利子決済の利用急増。
+                </p>
+              </div>
+
+              <!-- Right: Key Success Factors -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-900/40 space-y-3">
+                <h3 class="font-bold text-white text-base flex items-center gap-2">
+                  <i data-lucide="key" class="text-amber-400"></i> 3つの主要成功要因
+                </h3>
+                <div class="space-y-2 text-xs">
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="mail" class="text-rose-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-rose-300 font-bold">1. 紙の請求書からの完全脱却</span>
+                      <p class="text-slate-400 mt-0.5">郵便受け放置による支払期日失念問題を完全解消</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="shield-check" class="text-emerald-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-emerald-300 font-bold">2. 公認電子文書の法的主体送達</span>
+                      <p class="text-slate-400 mt-0.5">スマホ認証による確実な本人受領確認と即時決済の誘導</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+                    <i data-lucide="credit-card" class="text-cyan-400 text-sm mt-0.5"></i>
+                    <div>
+                      <span class="text-cyan-300 font-bold">3. カード簡単決済＆分割対応</span>
+                      <p class="text-slate-400 mt-0.5">一時的な資金不足の入居者も分割決済で滞納を防止</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-emerald-950/25 text-xs text-emerald-200 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="phone-off" class="text-emerald-400"></i> 管理事務所の満足度：督促電話業務が80%減少し、住民トラブルゼロを達成。</span>
+              <span class="text-white font-bold bg-emerald-800/60 px-2 py-0.5 rounded">月額1,400万ウォン以上の早期追加回収を達成</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-18",
+        chapter: "第4章. 顧客導入事例",
+        topic: "導入事例 4：複雑な水道光熱費の自動課金・按分運用管理",
+        origPage: 46,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="zap" class="text-amber-400"></i> Case Study 04
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">複雑構造の水光熱費(水道・光熱費)賦課活用事例</h2>
+                <p class="text-slate-400 text-xs mt-0.5">複雑な光熱費按分計算から税金計算書発行まで自動化、ヒューマンエラーを根絶。</p>
+              </div>
+              <button onclick="openCustomImageModal('images/case_utility.png', '복잡한 구조 수광비 부과 프로세스 원본 도표')" class="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50 whitespace-nowrap flex-shrink-0">
+                <i data-lucide="image" class=""></i> 原本図表を見る (P.46)
+              </button>
+            </div>
+
+            <!-- Main Content Container (Right Diagram removed as requested, full width structured layout) -->
+            <div class="my-auto space-y-3.5">
+              <!-- Top Highlight Value Box -->
+              <div class="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/40 via-blue-950/40 to-slate-900 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-xs">
+                  <i data-lucide="check-circle-2" class="text-amber-400"></i>
+                  <span>複雑な光熱費の按分計算から税金計算書発行まで全工程を自動化。</span>
+                </div>
+                <div class="flex items-center gap-2 text-cyan-300 font-bold text-xs">
+                  <i data-lucide="shield-check" class="text-cyan-400"></i>
+                  <span>計算ミスや集計漏れなど、致命的な人為的ミス(Human Error)を根底から排除</span>
+                </div>
+              </div>
+
+              <!-- 3-Step Pipeline Box (Full Width 3 Columns) -->
+              <div class="p-4 sm:p-5 rounded-2xl glass-card border border-slate-800 space-y-3.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="text-cyan-400"></i> ezREMS 水道光熱費課金 3段階自動化プロセス</span>
+                  <span class="text-[11px] text-slate-400">遠隔スマートメーター検針から会計伝票連携まで</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Step 01</span>
+                      <i data-lucide="database" class="text-blue-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">基礎データ・遠隔検針の収集</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      メーター検針値の自動連動、共用管理費、修繕費・消耗品費などの基礎データをリアルタイムに統合収集します。
+                    </p>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Step 02</span>
+                      <i data-lucide="calculator" class="text-cyan-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">1・2次精密基準による按分</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      使用量・面積別の基本按分、ゾーン別設備数、フロア別特別合意比率を複合適用し、テナントごとの賦課金額を誤差なく算出します。
+                    </p>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Step 03</span>
+                      <i data-lucide="file-check-2" class="text-emerald-400"></i>
+                    </div>
+                    <div class="font-bold text-white text-sm">請求・収納・会計伝票の自動化</div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                      通知トーク/電子メール電子請求 ➔ 仮想口座自動消込 ➔ 仕訳伝票生成＆国税庁電子税務計算書の一括発行を完結します。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Feature Highlights Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-xs">
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-amber-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="calculator" class="text-sm"></i> 複雑な計算式の完全処理
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">定額・手数料・実使用配分および累進税率の自動計算</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-emerald-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="file-text" class="text-sm"></i> 税務計算書の自動連動
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">国税システム連携による一括電子発行＆現金領収書対応</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-cyan-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="refresh-cw" class="text-sm"></i> 会計仕訳伝票の自動化
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">入金・遅延損害金・消費税の伝票がERPへリアルタイムに自動連動</p>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-left space-y-1">
+                  <div class="text-purple-400 font-bold text-xs flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="text-sm"></i> 入居者紛争ゼロを達成
+                  </div>
+                  <p class="text-[11px] text-slate-400 leading-tight">詳細な計算根拠と検針データを透明性高く提供</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="building-2" class="text-cyan-400"></i> ショッピングモール、大型オフィス、知能型産業センター等、数百テナントの光熱費精密管理基準。
+              </span>
+              <span class="text-cyan-400 font-bold bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-800/50">月次精算時間を90%短縮</span>
+            </div>
+          </div>
+        `
+      },
+
+      {
+        id: "slide-19",
+        chapter: "第4章. エンタープライズ連携",
+        topic: "エンタープライズ連携：MGRV コリビングAPI ＆ SAP FI連携",
+        origPage: 41,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="git-fork" class=""></i> Enterprise API
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">企業型システム連携: コリビングOpen API & SAP ERP接続</h2>
+                <p class="text-slate-400 text-xs mt-0.5">顧客企業の独自モバイルアプリと大企業の基幹会計システム(SAP)を完全統合。</p>
+              </div>
+              <div class="self-start sm:self-auto flex items-center gap-2 flex-shrink-0">
+                <button onclick="openOriginalModal(40)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition shadow-sm hover:border-cyan-500/50">
+                  <i data-lucide="file-text" class=""></i> オープンAPI資料 (P.40)
+                </button>
+                <button onclick="openOriginalModal(41)" class="whitespace-nowrap flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-400 text-xs font-semibold border border-indigo-800/40 transition shadow-sm hover:border-indigo-500/50">
+                  <i data-lucide="file-text" class=""></i> SAP連携資料 (P.41)
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-auto">
+              <!-- Case 1: MGRV Open API -->
+              <div class="p-5 rounded-2xl glass-card border border-blue-800/40 space-y-3 group hover:border-blue-500/50 transition">
+                <div class="flex justify-between items-center">
+                  <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                    <i data-lucide="code" class=""></i>
+                  </div>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 font-medium">B2Cアプリ連携</span>
+                </div>
+                <h3 class="font-bold text-white text-base">MGRV(マングローブ) コリビングOpen API</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ezREMS PMSで一元管理される <span class="text-cyan-400 font-bold">空間・契約・請求データ</span>をREST APIとして顧客企業専用アプリにリアルタイム連携し、国内初の「リアルタイム空室照会・オンライン契約」を実現しました。
+                </p>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
+                  <i data-lucide="newspaper" class="text-cyan-400"></i> Chosun Biz報道：「コリビング運営管理デジタルトランスフォーメーション業務協約」
+                </div>
+              </div>
+
+              <!-- Case 2: SAP FI ERP Integration -->
+              <div class="p-5 rounded-2xl glass-card border border-indigo-800/40 space-y-3 group hover:border-indigo-500/50 transition">
+                <div class="flex justify-between items-center">
+                  <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                    <i data-lucide="database" class=""></i>
+                  </div>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-950 text-indigo-400 font-medium">Enterprise ERP</span>
+                </div>
+                <h3 class="font-bold text-white text-base">大手企業向け SAP FI会計モジュール連携</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  ezREMS上で発生した <span class="text-indigo-400 font-bold">敷金・売上・入金・遅延金・支出の各仕訳データ</span>をファイアウォール経由で顧客企業のSAP FIモジュールへ自動転送し、二重入力なしで決算を完結します。
+                </p>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2">
+                  <i data-lucide="shield-check" class="text-emerald-400"></i> ファイアウォール対応セキュリティエージェント (WAS ↔ RFC/API) の完全連携
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/50 text-xs text-slate-300 flex justify-between items-center">
+              <span class="flex items-center gap-1.5"><i data-lucide="check" class="text-cyan-400"></i> 既存レガシーERPをリプレイスすることなく、アダプタ経由で簡単接続</span>
+              <span class="text-cyan-400 font-bold">スクラッチ開発(SI)に比べ、80%以上のコストと工期を削減</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-20",
+        chapter: "第6章. ビジネスモデルの拡大",
+        topic: "ビジネスモデル拡大：不動産を超えて収益型【すべての】有・無形資産運用ERPへ",
+        origPage: 41,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <i data-lucide="layers" class=""></i> 第6章. ビジネスモデルの拡大 Expansion
+                  </span>
+                  <!-- 회전형/말풍선 그린 뱃지: 不動産だけ？ -->
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 font-extrabold text-[11px] border border-emerald-500/50 shadow-sm animate-pulse flex items-center gap-1">
+                    <span>不動産だけ？</span>
+                    <i data-lucide="arrow-right" class="text-[10px]"></i>
+                    <span class="text-white font-black">NO! すべての収益型資産</span>
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 flex items-center flex-wrap gap-2">
+                  <span>収益型</span>
+                  <span class="text-emerald-400 border-2 border-emerald-400 px-2 py-0.5 rounded-xl shadow-lg shadow-emerald-500/30 bg-emerald-950/80 font-black tracking-wide">【すべての】</span>
+                  <span>資産、これからは運営が核心です。</span>
+                </h2>
+                <p class="text-slate-400 text-xs mt-0.5">不動産を超え、動産・設備・IT基盤・無形ライセンスまで — 単一コアエンジンで統合運営する次世代ERP。</p>
+              </div>
+
+              <!-- 우측 다국어 지원 뱃지 (KO, EN, JA, ZH) -->
+              <div class="self-start sm:self-auto flex items-center gap-2 flex-shrink-0">
+                <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center gap-2 text-xs">
+                  <div class="flex items-center gap-1 text-slate-300 font-bold">
+                    <i data-lucide="languages" class="text-cyan-400"></i>
+                    <span>4言語対応</span>
+                  </div>
+                  <div class="flex items-center gap-1 text-[11px]">
+                    <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 font-bold border border-blue-800/40">KO</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">EN</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">JA</span>
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-semibold">ZH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10대 유무형 자산 그리드 카드 (5x2) -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 my-auto">
+              <!-- 1. 住宅 / シェアハウス -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-emerald-800/40 hover:border-emerald-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-emerald-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="home"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/40">住宅・居住</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-emerald-300 transition">住宅 / シェアハウス</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">学生寮・シニアレジデンス・若年層向け賃貸</p>
+                </div>
+              </div>
+
+              <!-- 2. リテール / ショッピングモール -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-amber-800/40 hover:border-amber-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-amber-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-amber-950/80 border border-amber-500/30 text-amber-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="store"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">商業・リテール</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-amber-300 transition">リテール / ショッピングモール</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">POS売上連携・歩合手数料の自動精算</p>
+                </div>
+              </div>
+
+              <!-- 3. 오피스 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-blue-800/40 hover:border-blue-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-blue-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-blue-950/80 border border-blue-500/30 text-blue-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="building-2"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">オフィス施設</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-blue-300 transition">オフィス / 一般ビル</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">プライムオフィス・一般ビル資産管理</p>
+                </div>
+              </div>
+
+              <!-- 4. 창고 / 물류 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-orange-800/40 hover:border-orange-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-orange-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-orange-950/80 border border-orange-500/30 text-orange-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="warehouse"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-800/40">物流・倉庫</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-orange-300 transition">倉庫 / 物流センター</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">常温・冷凍冷蔵フルフィルメント拠点・設備</p>
+                </div>
+              </div>
+
+              <!-- 5. IDC データセンター -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-cyan-800/40 hover:border-cyan-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-cyan-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="server"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">ITインフラ</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-cyan-300 transition">IDC データセンター</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">サーバーラック単位の賃貸・電力インフラ管理</p>
+                </div>
+              </div>
+
+              <!-- 6. 納骨堂 / 霊園 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-purple-800/40 hover:border-purple-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-purple-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/30 text-purple-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="landmark"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">追悼・霊園</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-purple-300 transition">納骨堂 / 霊園</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">追悼公園・納骨堂の長期契約および入金管理</p>
+                </div>
+              </div>
+
+              <!-- 7. 렌터카 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-sky-800/40 hover:border-sky-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-sky-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-sky-950/80 border border-sky-500/30 text-sky-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="car"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800/40">モビリティ</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-sky-300 transition">レンタカー / オートリース</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">車両レンタル・定期リース料＆整備履歴の統合管理</p>
+                </div>
+              </div>
+
+              <!-- 8. 의류 대여 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-rose-800/40 hover:border-rose-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-rose-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-rose-950/80 border border-rose-500/30 text-rose-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="shirt"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800/40">サブスク・レンタル</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-rose-300 transition">衣料品 / 備品サブスク</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">ファッション衣類・高額什器の定期サブスクリプション管理</p>
+                </div>
+              </div>
+
+              <!-- 9. 무형 자산 -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-indigo-800/40 hover:border-indigo-400/80 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-indigo-950/30">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-indigo-950/80 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="file-text"></i>
+                  </div>
+                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40">無形資産</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm group-hover:text-indigo-300 transition">無形ライセンス / SW</h4>
+                  <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">保守契約・ソフトウェアライセンス管理ERP</p>
+                </div>
+              </div>
+
+              <!-- 10. 새로운 비즈니스 발굴 -->
+              <div class="p-3.5 rounded-2xl bg-gradient-to-br from-amber-950/60 to-slate-950 border-2 border-amber-400/70 hover:border-amber-300 transition-all duration-300 group flex flex-col justify-between shadow-xl shadow-amber-900/30 relative overflow-hidden">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 flex items-center justify-center text-base group-hover:scale-110 transition">
+                    <i data-lucide="lightbulb"></i>
+                  </div>
+                  <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow-md animate-pulse">NEW 発掘</span>
+                </div>
+                <div>
+                  <h4 class="font-extrabold text-amber-300 text-sm group-hover:text-white transition">新規ビジネス発掘</h4>
+                  <p class="text-[11px] text-slate-300 mt-0.5 leading-snug">あらゆる新規ビジネスモデルに即座に対応</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 브랜딩 & 코어 엔진 메시지 -->
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold border border-emerald-800/50">Core Platform</span>
+                <span class="text-slate-300 font-semibold">スマート資産管理ERPプラットフォーム — <strong class="text-white text-sm">ezREMS™</strong></span>
+              </div>
+              <div class="text-[11px] text-slate-400 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="text-emerald-400"></i>
+                <span>契約 ➔ 請求 ➔ 自動消込 ➔ 会計仕訳 ➔ 税務申告を単一コアで即時受容。</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-21",
+        chapter: "第5章. 安全管理と未来構想",
+        topic: "ファミリーサービス：重大災害安全衛生「EASY SAFE」",
+        origPage: 51,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="hard-hat" class=""></i> Safety Platform
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">重大災害処罰法対応「EASY SAFE」</h2>
+              <p class="text-slate-400 text-xs mt-0.5">不動産資産管理とともに、建物の安全衛生法定義務を完全に履行する連携プラットフォーム。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="gavel" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">01. 法的義務の自動化</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  中小型ビル、集合住宅管理事務所、外注工事現場で必ず実施すべき法定安全衛生点検を漏れなくガイドします。
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="clipboard-check" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">02. モバイル現場点検</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  作業前安全ミーティング(TBM)と日常巡回点検表をスマホで電子署名・作成し、クラウドへ永久保存します。
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl glass-card border border-amber-900/40 space-y-3 group hover:border-amber-500/60 transition">
+                <div class="icon-badge icon-badge-amber w-11 h-11 text-lg">
+                  <i data-lucide="link" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-base">03. ezREMS ワンクリック連動</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  建物の区画管理や修繕・営繕工事の日程がEASY SAFEと連動し、経営責任者の法的免責証明を万全に整えます。
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-amber-950/20 text-xs text-amber-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-amber-400"></i>
+                「Simple, Smart and Solve — 必須機能に絞り込み、現場実務者が直感的に使える安全管理プラットフォーム」
+              </span>
+              <span class="font-bold text-white bg-amber-800/60 px-2 py-0.5 rounded">ezREMS 導入企業様限定特別パッケージ</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-22",
+        chapter: "第5章. 技術ロードマップ",
+        topic: "次世代ロードマップ：AI基盤の資産管理と国土交通部連携",
+        origPage: 55,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="sparkles" class=""></i> Future Roadmap
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ezREMS 次世代ビジョン & AIロードマップ</h2>
+              <p class="text-slate-400 text-xs mt-0.5">単なる記録型ERPを超え、AIが資産価値を守り収益を最大化する自律運営段階へ進化。</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-rose-500/50 transition">
+                <div class="icon-badge icon-badge-rose w-10 h-10 text-base">
+                  <i data-lucide="shield-alert" class=""></i>
+                </div>
+                <div class="text-rose-400 font-bold text-sm">AI契約審査＆不正検知</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  入居者の信用調査および契約書内の不当条項、詐欺の兆候を事前に検知し、賃貸人の法的・財務リスクを最小化します。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="brain" class=""></i>
+                </div>
+                <div class="text-cyan-400 font-bold text-sm">AI予測回収 (99.6%)</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  過去の支払いパターンを学習して滞納の可能性を事前に予測し、入居者に最適化された文面とチャネルで案内を送信します。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="headphones" class=""></i>
+                </div>
+                <div class="text-blue-400 font-bold text-sm">24時間対応 AI問い合わせボット</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  振込先、領収書、遅延金などの頻出問い合わせに24時間即時回答し、支払計画の調整までワンストップで対応します。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-2 group hover:border-purple-500/50 transition">
+                <div class="icon-badge icon-badge-purple w-10 h-10 text-base">
+                  <i data-lucide="cpu" class=""></i>
+                </div>
+                <div class="text-purple-400 font-bold text-sm">設備故障の事前予知保全</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  IoTセンサーの稼働データを分析して突発的な機器故障を防ぎ、予防保全を実施することで資産の耐用年数を延伸します。
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-blue-950/30 text-xs text-blue-200 flex justify-between items-center">
+              <span class="flex items-center gap-2">
+                <i data-lucide="landmark" class="text-cyan-300"></i>
+                2026年 国土交通部 不動産電子契約システム公式連携オープン予定(認可完了)。
+              </span>
+              <span class="text-cyan-300 font-bold">業界標準の不動産統合プラットフォームへ飛躍</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-23",
+        chapter: "会社概要と提案の結び",
+        topic: "会社概要と提案の結び / Q&A",
+        origPage: 43,
+        render: () => `
+          <div class="h-full flex flex-col justify-between text-center py-2">
+            <div class="slide-header border-b border-slate-800 pb-3">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
+                <i data-lucide="handshake" class=""></i> Company & Partnership
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">プロップテックの明日を切り拓くパートナー 株式会社ZEONS</h2>
+              <p class="text-slate-400 text-xs mt-0.5">20年以上の蓄積された経験と技術力で、貴社の資産価値最大化を共に実現します。</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-4 my-auto">
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-amber-500/50 transition">
+                <div class="icon-badge icon-badge-amber w-10 h-10 text-base">
+                  <i data-lucide="history" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">20年超の歴史と信頼</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Tmark、iBMS、そしてezREMSに至るまで、ビルおよび複合モールの運営システムをリードしてきた韓国屈指のプロップテック企業。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-cyan-500/50 transition">
+                <div class="icon-badge icon-badge-cyan w-10 h-10 text-base">
+                  <i data-lucide="graduation-cap" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">KPM公認 専門家グループ</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  単なる受託開発会社を超え、公認不動産資産管理士(KPM)を多数育成し、実務プロセスを完璧に把握する専門集団。
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl glass-card border border-slate-800 text-left space-y-2 group hover:border-blue-500/50 transition">
+                <div class="icon-badge icon-badge-blue w-10 h-10 text-base">
+                  <i data-lucide="handshake" class=""></i>
+                </div>
+                <h4 class="font-bold text-white text-sm">個別最適化コンサルティング＆支援</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  貴社の資産規模や運用要件に合わせ、初期データ移行、個別カスタマイズ、従業員研修、専任技術サポートをご提供。
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-2.5">
+              <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center justify-center gap-2">
+                <i data-lucide="smile" class="text-cyan-400"></i> ご清聴いただき心より感謝申し上げます
+              </h3>
+              <p class="text-slate-400 text-xs">ezREMSとともに、貴社の不動産資産運用のDX革新を今すぐ始めましょう。</p>
+              <div class="flex items-center justify-center space-x-3 pt-1">
+                <button onclick="openContactModal()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/40 transition flex items-center gap-1.5">
+                  <i data-lucide="send" class=""></i>
+                  <span>導入相談＆無料デモのお申し込み</span>
+                </button>
+                <a href="https://www.ezrems.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition flex items-center gap-1.5">
+                  <i data-lucide="globe" class=""></i>
+                  <span>公式サイト (www.ezrems.com)</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="text-[11px] text-slate-400 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 font-mono">
+              <span class="flex items-center gap-1 font-sans"><i data-lucide="map-pin" class="text-slate-500"></i> ソウル特別市江南区宣陵路93キル40, 2階</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-slate-300 font-semibold">TEL : 070-8811-8881</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-slate-300">FAX : 070-4850-8848</span>
+              <span class="text-slate-600">|</span>
+              <span class="text-cyan-400 font-semibold">EMAIL : support@zeons.co.kr</span>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    // State Variables
+    let currentSlideIdx = 0;
+    let currentViewMode = 'pt';
+    let currentOrigPage = 1;
+
+    function changeLanguage(langTarget) {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.set('slide', currentSlideIdx);
+      if (currentViewMode === 'scroll') {
+        searchParams.set('mode', 'scroll');
+      } else {
+        searchParams.delete('mode');
+      }
+      location.href = langTarget + '?' + searchParams.toString();
+    }
+
+    // Initialize App
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramSlide = urlParams.get('slide');
+      const paramMode = urlParams.get('mode');
+      
+      let initSlide = 0;
+      if (paramSlide !== null && !isNaN(parseInt(paramSlide))) {
+        initSlide = parseInt(paramSlide);
+      }
+      
+      renderSlide(initSlide);
+      setupKeyboard();
+      buildTocModal();
+      buildGalleryModal();
+      buildScrollDocument();
+      
+      if (paramMode === 'scroll') {
+        switchMode('scroll');
+      }
+      
+      if (window.lucide) { lucide.createIcons(); }
+    });
+
+    // Render Slide in PT Mode
+    function renderSlide(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= slidesData.length) idx = slidesData.length - 1;
+      currentSlideIdx = idx;
+
+      const slide = slidesData[idx];
+      const container = document.getElementById('current-slide-content');
+      const stage = document.getElementById('slide-stage');
+
+      // Trigger animation
+      stage.classList.remove('slide-fade');
+      void stage.offsetWidth;
+      stage.classList.add('slide-fade');
+
+            container.innerHTML = slide.render();
+      if (window.lucide) { lucide.createIcons(); }
+
+      // Update Controls
+      document.getElementById('slide-chapter-tag').innerHTML = `<i data-lucide="bookmark" class="text-[10px] mr-1"></i>${slide.chapter}`;
+      document.getElementById('slide-topic').innerText = slide.topic;
+      document.getElementById('slide-curr-num').innerText = String(idx + 1).padStart(2, '0');
+      document.getElementById('slide-total-num').innerText = String(slidesData.length).padStart(2, '0');
+
+      const progress = ((idx + 1) / slidesData.length) * 100;
+      document.getElementById('slide-progress').style.width = `${progress}%`;
+
+      currentOrigPage = slide.origPage || 1;
+    }
+
+    function nextSlide() {
+      if (currentSlideIdx < slidesData.length - 1) {
+        renderSlide(currentSlideIdx + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIdx > 0) {
+        renderSlide(currentSlideIdx - 1);
+      }
+    }
+
+    function goToSlide(idx) {
+      if (currentViewMode === 'scroll') {
+        switchMode('pt');
+      }
+      renderSlide(idx);
+      closeTocModal();
+    }
+
+    function switchMode(mode) {
+      currentViewMode = mode;
+      const ptContainer = document.getElementById('pt-container');
+      const scrollContainer = document.getElementById('scroll-container');
+      const btnPt = document.getElementById('btn-mode-pt');
+      const btnScroll = document.getElementById('btn-mode-scroll');
+
+      if (mode === 'pt') {
+        ptContainer.classList.remove('hidden');
+        scrollContainer.classList.add('hidden');
+        btnPt.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow";
+        btnScroll.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all";
+        renderSlide(currentSlideIdx);
+      } else {
+        ptContainer.classList.add('hidden');
+        scrollContainer.classList.remove('hidden');
+        btnScroll.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-blue-600 text-white shadow";
+        btnPt.className = "flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 transition-all";
+        const target = document.getElementById(`doc-section-${currentSlideIdx}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+
+    function buildScrollDocument() {
+      const container = document.getElementById('scroll-content');
+      let html = '';
+      slidesData.forEach((s, idx) => {
+        html += `
+          <section id="doc-section-${idx}" class="p-6 sm:p-10 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-4">
+            <div class="doc-section-header flex items-center justify-between pb-1.5">
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded bg-blue-950 text-blue-400 font-bold text-xs">${String(idx + 1).padStart(2, '0')}</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase">${s.chapter}</span>
+              </div>
+              <button onclick="goToSlide(${idx})" class="text-xs text-blue-400 hover:underline flex items-center space-x-1">
+                <span>スライドPTモードで表示</span>
+                <i data-lucide="arrow-right" class="text-[10px]"></i>
+              </button>
+            </div>
+            <div class="min-h-[380px] flex flex-col justify-center">
+              ${s.render()}
+            </div>
+          </section>
+        `;
+      });
+            container.innerHTML = html;
+      if (window.lucide) { lucide.createIcons(); }
+    }
+
+    function setupKeyboard() {
+      window.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && currentViewMode === 'pt')) {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            nextSlide();
+          }
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            prevSlide();
+          }
+        } else if (e.key === 'Home') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            renderSlide(0);
+          }
+        } else if (e.key === 'End') {
+          if (currentViewMode === 'pt') {
+            e.preventDefault();
+            renderSlide(slidesData.length - 1);
+          }
+        } else if (e.key === 'f' || e.key === 'F') {
+          e.preventDefault();
+          toggleFullscreen();
+        } else if (e.key === 'm' || e.key === 'M') {
+          e.preventDefault();
+          toggleTocModal();
+        } else if (e.key === 'Escape') {
+          closeAllModals();
+        }
+      });
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function toggleTocModal() {
+      document.getElementById('modal-toc').classList.toggle('hidden');
+    }
+    function closeTocModal() {
+      document.getElementById('modal-toc').classList.add('hidden');
+    }
+    function buildTocModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      const list = document.getElementById('toc-list');
+      let html = '';
+      slidesData.forEach((s, idx) => {
+        html += `
+          <div onclick="goToSlide(${idx})" class="p-2.5 rounded-xl hover:bg-slate-800 transition cursor-pointer flex items-center justify-between group">
+            <div class="flex items-center space-x-3">
+              <span class="font-mono text-xs font-bold text-blue-500 group-hover:text-cyan-400">${String(idx + 1).padStart(2, '0')}</span>
+              <div>
+                <span class="text-xs text-slate-400 group-hover:text-slate-300 block">${s.chapter}</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300">${s.topic}</span>
+              </div>
+            </div>
+            <span class="text-[11px] text-slate-500 font-mono">P.${s.origPage}</span>
+          </div>
+        `;
+      });
+      list.innerHTML = html;
+    }
+
+    function viewCurrentOriginalSlide() {
+      openOriginalModal(currentOrigPage);
+    }
+    function openOriginalModal(pageNum) {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      currentOrigPage = pageNum || 1;
+      const modal = document.getElementById('modal-original');
+      const img = document.getElementById('orig-slide-img');
+      const title = document.getElementById('orig-modal-title');
+      const indicator = document.getElementById('orig-page-indicator');
+
+      img.src = `images/slides/slide_${String(currentOrigPage).padStart(2, '0')}.png`;
+      title.innerText = `提案書原本スライド P.${currentOrigPage}`;
+      indicator.innerText = `P.${String(currentOrigPage).padStart(2, '0')} / 56`;
+      modal.classList.remove('hidden');
+    }
+
+    function openCustomImageModal(imgSrc, titleText) {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      const modal = document.getElementById('modal-original');
+      const img = document.getElementById('orig-slide-img');
+      const title = document.getElementById('orig-modal-title');
+      const indicator = document.getElementById('orig-page-indicator');
+
+      img.src = imgSrc;
+      title.innerText = titleText || '顧客導入実証図表';
+      indicator.innerText = '顧客導入実証事例';
+      modal.classList.remove('hidden');
+    }
+
+    function closeOriginalModal() {
+      document.getElementById('modal-original').classList.add('hidden');
+    }
+    function nextOrigSlide() {
+      if (currentOrigPage < 56) {
+        openOriginalModal(currentOrigPage + 1);
+      }
+    }
+    function prevOrigSlide() {
+      if (currentOrigPage > 1) {
+        openOriginalModal(currentOrigPage - 1);
+      }
+    }
+
+    function openGalleryModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      document.getElementById('modal-gallery').classList.remove('hidden');
+    }
+    function closeGalleryModal() {
+      document.getElementById('modal-gallery').classList.add('hidden');
+    }
+    function buildGalleryModal() {
+      const grid = document.getElementById('gallery-grid');
+      let html = '';
+      for (let i = 1; i <= 56; i++) {
+        const numStr = String(i).padStart(2, '0');
+        html += `
+          <div onclick="openOriginalModal(${i}); closeGalleryModal();" class="group relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800 hover:border-cyan-500 cursor-pointer transition shadow hover:shadow-cyan-500/20">
+            <img src="images/slides/slide_${numStr}.png" alt="Slide ${i}" class="w-full h-auto object-cover group-hover:scale-105 transition duration-200">
+            <div class="absolute bottom-0 inset-x-0 bg-slate-950/80 backdrop-blur-xs p-1 text-center text-[11px] font-mono text-slate-300">
+              Slide ${numStr}
+            </div>
+          </div>
+        `;
+      }
+      grid.innerHTML = html;
+    }
+
+    function openContactModal() {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 10);
+      document.getElementById('modal-contact').classList.remove('hidden');
+    }
+    function closeContactModal() {
+      document.getElementById('modal-contact').classList.add('hidden');
+    }
+
+    function closeAllModals() {
+      closeTocModal();
+      closeOriginalModal();
+      closeGalleryModal();
+      closeContactModal();
+    }
+  </script>
+</body>
+</html>
