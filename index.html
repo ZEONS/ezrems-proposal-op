@@ -80,10 +80,21 @@
       stroke-width: 2.4;
     }
   
-    /* 스크롤 웹 문서 모드 전용: 슬라이드 헤더의 디바이더(구분선)를 숨겨 하단 박스 상단선과의 겹침/간섭 제거 */
+    /* Scroll Doc Mode: Hide slide header divider to prevent box border collision */
     #scroll-content .slide-header {
       border-bottom: none !important;
       padding-bottom: 0.375rem !important; /* pb-1.5 */
+    }
+    /* Scroll Doc Mode: Full height display for client chips without cutoff or bottom gap */
+    #scroll-content .client-chips-container {
+      max-height: none !important;
+      overflow-y: visible !important;
+    }
+    #scroll-content .enterprise-clients-card {
+      height: auto !important;
+    }
+    #scroll-content .min-h-\[380px\] {
+      min-height: auto !important;
     }
   </style>
   <script>
@@ -1856,7 +1867,7 @@
               </div>
 
               <!-- 우측: 50+ 엔터프라이즈 고객사 및 리츠 (7열) -->
-              <div class="lg:col-span-7 flex flex-col justify-start p-4 rounded-2xl glass-card border border-slate-800 bg-slate-950/60 space-y-2.5">
+              <div class="enterprise-clients-card lg:col-span-7 flex flex-col justify-start p-4 rounded-2xl glass-card border border-slate-800 bg-slate-950/60 space-y-2.5">
                 <div class="flex items-center justify-between border-b border-slate-800/80 pb-2 flex-shrink-0">
                   <div class="flex items-center gap-2">
                     <div class="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xs">
@@ -1871,7 +1882,7 @@
                 </div>
 
                 <!-- 고객사 칩 그리드 (랜딩페이지 50+ 고객사 100% 반영) -->
-                <div class="flex flex-wrap gap-1.5 text-xs content-start overflow-y-auto pr-1 flex-1 max-h-[285px]">
+                <div class="client-chips-container flex flex-wrap gap-1.5 text-xs content-start overflow-y-auto pr-1 flex-1 max-h-[340px]">
                   <!-- 그룹/대기업/유통 -->
                   <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">KT에스테이트</span>
                   <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">신세계프라퍼티</span>
