@@ -143,6 +143,17 @@
 - **상호작용 효과**: Hover 시 Border 컬러 활성화, Box Shadow 확장, 아이콘 Scale(1.1) 확대
 - **하단 브랜딩 바**: Core Platform 코어 단일 엔진 안내 띠바 배치
 
+### 4.5 50+ 고객사 칩 & 랜드마크 포트폴리오 컴포넌트 (Chapter 5 Customers & Landmarks)
+- **좌우 분할 레이아웃**: 좌측 5열 (4대 자산군 랜드마크) + 우측 7열 (50+ 엔터프라이즈 고객사 칩)
+- **자산군 컬러 코딩**:
+  - 리테일 (Retail): Amber Gold (`border-amber-500/30`, `text-amber-300`)
+  - 프라임 오피스 (Prime Office): Cyber Blue (`border-blue-500/30`, `text-blue-300`)
+  - 임대주택 / 코리빙 (Residential): Emerald Green (`border-emerald-500/30`, `text-emerald-300`)
+  - 시니어 레지던스 (Senior Living): Violet Purple (`border-purple-500/30`, `text-purple-300`)
+- **고객사 칩 그리드**:
+  - `bg-slate-900/80` 배경 위에 은은한 테두리, Hover 시 `border-blue-500/50` 및 텍스트 하이라이트
+  - 스크롤 가능 영역(`max-h-[260px] overflow-y-auto`)으로 50+ 고객사 로고/명칭 완벽 수용
+
 ---
 
 ## 📱 5. 반응형 브레이크포인트 (Responsive Design)

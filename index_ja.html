@@ -585,7 +585,7 @@
                   <div>
                     <div class="text-xs font-bold text-emerald-400 uppercase">Part 04</div>
                     <h3 class="font-bold text-slate-100 group-hover:text-emerald-300 text-base">検証された導入事例と実証データ</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Kリート10棟ビル、複合商業施設、延滞率急減、光熱費自動按分</p>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">50社以上の代表顧客ポートフォリオ、Kリート10棟、アレイウェイ、第一風景彩、水道光熱費の自動賦課</p>
                   </div>
                 </div>
               </div>
@@ -596,7 +596,7 @@
                 <i data-lucide="shield-check" class="text-amber-400"></i>
                 ZEONS 20年のプロップテック実績 · 10大有形無形資産拡張ERP · 重大災害安全衛生(EASY SAFE)
               </span>
-              <button onclick="goToSlide(19)" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
+              <button onclick="goToSlide(22)" class="text-cyan-400 font-semibold hover:underline flex items-center gap-1">
                 会社概要＆ロードマップを見る <i data-lucide="arrow-right" class="text-[10px]"></i>
               </button>
             </div>
@@ -1752,14 +1752,209 @@
       },
       {
         id: "slide-15",
-        chapter: "第4章. 顧客導入事例",
+        chapter: "第5章. 顧客企業と代表ランドマーク",
+        topic: "エンタープライズ顧客＆運営ランドマークポートフォリオ",
+        origPage: 34,
+        render: () => `
+          <div class="h-full flex flex-col justify-between">
+            <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <i data-lucide="building-2" class=""></i> 第5章. 顧客企業と代表ランドマーク
+                  </span>
+                  <span class="px-2 py-0.5 rounded-full bg-blue-950 text-blue-300 font-bold text-[10px] border border-blue-500/40">
+                    50社以上の代表企業が信頼
+                  </span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                  韓国の代表的企業50社以上および金融不動産投資信託（REITs）に選ばれるプラットフォーム
+                </h2>
+                <p class="text-slate-400 text-xs mt-0.5">韓国を代表する超大型商業施設やプレミアム複合資産がezREMSクラウドで運用されています。</p>
+              </div>
+              <div class="hidden lg:flex items-center gap-2 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700/60 text-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="text-slate-300 font-medium">管理資産稼働率 <strong class="text-emerald-400">99.9%</strong> リアルタイム稼働中</span>
+              </div>
+            </div>
+
+            <!-- 메인 컨텐츠 그리드 (좌측: 4대 랜드마크 포트폴리오 / 우측: 50+ 고객사 로고 칩) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 my-auto">
+              <!-- 좌측: 랜드마크 포트폴리오 (5열) -->
+              <div class="lg:col-span-5 flex flex-col justify-between p-4 rounded-2xl glass-card border border-blue-800/40 bg-slate-950/60 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center text-xs">
+                      <i data-lucide="sparkles"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm">運用中の代表的ランドマーク</h4>
+                      <p class="text-[10px] text-slate-400">超大型複合モール・プライムオフィス・コリビング・シニア</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/50">4大資産群</span>
+                </div>
+
+                <div class="space-y-2 text-xs">
+                  <!-- 리테일 -->
+                  <div class="p-2.5 rounded-xl bg-amber-950/20 border border-amber-900/30">
+                    <div class="flex items-center justify-between text-[11px] font-bold text-amber-300 mb-1.5">
+                      <span class="flex items-center gap-1.5"><i data-lucide="shopping-bag" class="text-amber-400 w-3.5 h-3.5"></i> リテール＆商業施設</span>
+                      <span class="text-[10px] font-normal text-amber-400/80">売上・POSリアルタイム連携</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">スターフィールド（全支店）</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">タイムズスクエア</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">パミアスモール</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">アンニョン仁寺洞</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">アレイウェイ光教</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">レイクコモ</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">ラクモン</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-amber-500/30 font-medium text-[11px]">電子ランド</span>
+                    </div>
+                  </div>
+
+                  <!-- 오피스 -->
+                  <div class="p-2.5 rounded-xl bg-blue-950/20 border border-blue-900/30">
+                    <div class="flex items-center justify-between text-[11px] font-bold text-blue-300 mb-1.5">
+                      <span class="flex items-center gap-1.5"><i data-lucide="building" class="text-blue-400 w-3.5 h-3.5"></i> プライムオフィス</span>
+                      <span class="text-[10px] font-normal text-blue-400/80">ERP/SAP財務会計連携</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">ロッテワールドタワー</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">パルナスタワー・モール</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">パークワン (Parc1)</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">ワングローブ (One Grove)</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">朝鮮ホテル</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">ソウル大学病院</span>
+                      <span class="px-2 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-blue-500/30 font-medium text-[11px]">D.CAMP & FRONT1</span>
+                    </div>
+                  </div>
+
+                  <!-- 주거 & シニアレジデンス (2열 그리드) -->
+                  <div class="grid grid-cols-2 gap-2">
+                    <div class="p-2 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+                      <div class="text-[11px] font-bold text-emerald-300 mb-1 flex items-center gap-1">
+                        <i data-lucide="home" class="text-emerald-400 w-3 h-3"></i> 賃貸住宅 / コリビング
+                      </div>
+                      <div class="flex flex-wrap gap-1">
+                        <span class="px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-emerald-500/30 text-[10px]">リマークビル (4拠点)</span>
+                        <span class="px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-emerald-500/30 text-[10px]">マングローブ (5拠点)</span>
+                      </div>
+                    </div>
+                    <div class="p-2 rounded-xl bg-purple-950/20 border border-purple-900/30">
+                      <div class="text-[11px] font-bold text-purple-300 mb-1 flex items-center gap-1">
+                        <i data-lucide="heart" class="text-purple-400 w-3 h-3"></i> シニアレジデンス
+                      </div>
+                      <div class="flex flex-wrap gap-1">
+                        <span class="px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-purple-500/30 text-[10px]">麻谷 VLル・ウェスト</span>
+                        <span class="px-1.5 py-0.5 rounded bg-slate-900/90 text-slate-200 border border-purple-500/30 text-[10px]">白雲湖・森の中の朝</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 우측: 50+ 엔터프라이즈 고객사 및 리츠 (7열) -->
+              <div class="lg:col-span-7 flex flex-col justify-between p-4 rounded-2xl glass-card border border-slate-800 bg-slate-950/60 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xs">
+                      <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white text-sm">エンタープライズパートナーおよび金融顧客</h4>
+                      <p class="text-[10px] text-slate-400">大手財閥グループ・グローバルPM社・金融REITs・公共機関</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50">50+ Enterprise Clients</span>
+                </div>
+
+                <!-- 고객사 칩 그리드 (랜딩페이지 50+ 고객사 100% 반영) -->
+                <div class="flex flex-wrap gap-1.5 text-xs content-start max-h-[260px] overflow-y-auto pr-1">
+                  <!-- 그룹/대기업/유통 -->
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">KTエステート</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">新世界プロパティ</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">GSリテール</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">ロッテ物産</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">ロッテ建設</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">ロッテホテル</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">サムスン物産</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">ウミ建設</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">現代プロパティ</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">東遠建設産業</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">ハンファコネクト</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">京紡 (Kyungbang)</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold hover:border-blue-500/50 transition">パルナスホテル</span>
+                  
+                  <!-- 글로벌 PM/금융/리츠 -->
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">CBRE</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">ジェンスターメイト</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">ケイトップリート</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">REMAX Korea</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">グローバルPMC</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">S&Iコーポレーション</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">KRサービス</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">SMPMC</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">サムグI&C</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">韓国資産買入</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">SYSホールディングス</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold hover:border-cyan-400 transition">ハニーガイドPMC</span>
+
+                  <!-- 코리빙/디벨로퍼/스타트업 -->
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">MGRV（マングローブ）</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">KTリビング</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">シンヨンSLP</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">スパークプラス</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">ネオバリュープロパティ</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">MDM+</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">D.CAMP（FRONT1）</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">韓国エンジェル投資協会</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">KTネクストコネクトPFV</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">ライクホーム</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">DKホームズ</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">RBDK</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold hover:border-emerald-400 transition">三仙開発</span>
+
+                  <!-- 공공/지자체 도시공사 -->
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold hover:border-amber-400 transition">安養都市公社</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold hover:border-amber-400 transition">安山都市公社</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold hover:border-amber-400 transition">光明都市公社</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold hover:border-amber-400 transition">河南都市公社</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold hover:border-amber-400 transition">NIPA (情報通信産業振興院)</span>
+                  
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950 text-blue-300 border border-blue-500/50 font-bold text-xs flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3 h-3"></i> 50社以上のエンタープライズが導入中
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 핵심 인증 및 검증 바 -->
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-bold border border-blue-800/50">Enterprise Proven</span>
+                <span class="text-slate-300 font-semibold">実証済みのエンタープライズ標準 — <strong class="text-white">CSAP SaaSセキュリティ認証取得</strong></span>
+              </div>
+              <div class="text-[11px] text-slate-400 flex items-center gap-3">
+                <span class="flex items-center gap-1"><i data-lucide="check" class="text-cyan-400"></i> 月650億ウォン超の収納決済</span>
+                <span class="flex items-center gap-1"><i data-lucide="check" class="text-cyan-400"></i> 6,113㎢超の管理面積</span>
+                <span class="flex items-center gap-1"><i data-lucide="check" class="text-cyan-400"></i> 10棟ビル統合ERP</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "slide-16",
+        chapter: "第6章. 顧客導入実証事例",
         topic: "導入事例 1：K REIT社 (全国10棟のビルを統合管理)",
         origPage: 35,
         render: () => `
           <div class="h-full flex flex-col justify-between">
             <div class="slide-header border-b border-slate-800 pb-3">
               <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
-                <i data-lucide="briefcase" class=""></i> Case Study 01
+                <i data-lucide="briefcase" class=""></i> 第6章. 顧客事例 01
               </span>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">Kリート: 全国10棟の主要プライムオフィス統合資産管理</h2>
               <p class="text-slate-400 text-xs mt-0.5">全国に分散する大型オフィスビル資産を本社でリアルタイム統合監視し、売上漏れを根絶。</p>
@@ -1827,8 +2022,8 @@
         `
       },
       {
-        id: "slide-16",
-        chapter: "第4章. 顧客導入事例",
+        id: "slide-17",
+        chapter: "第6章. 顧客導入実証事例",
         topic: "導入事例 2：アレイウェイ・ショッピングモール (POS連動売上管理)",
         origPage: 37,
         render: () => `
@@ -1894,8 +2089,8 @@
         `
       },
       {
-        id: "slide-17",
-        chapter: "第4章. 顧客導入事例",
+        id: "slide-18",
+        chapter: "第6章. 顧客導入実証事例",
         topic: "導入事例 3：チェイルプンギョンチェ 1,045世帯 (未納率 25% → 6%)",
         origPage: 39,
         render: () => `
@@ -1989,8 +2184,8 @@
         `
       },
       {
-        id: "slide-18",
-        chapter: "第4章. 顧客導入事例",
+        id: "slide-19",
+        chapter: "第6章. 顧客導入実証事例",
         topic: "導入事例 4：複雑な水道光熱費の自動課金・按分運用管理",
         origPage: 46,
         render: () => `
@@ -2109,8 +2304,8 @@
       },
 
       {
-        id: "slide-19",
-        chapter: "第4章. エンタープライズ連携",
+        id: "slide-20",
+        chapter: "第7章. エンタープライズ連携",
         topic: "エンタープライズ連携：MGRV コリビングAPI ＆ SAP FI連携",
         origPage: 41,
         render: () => `
@@ -2118,7 +2313,7 @@
             <div class="slide-header flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div>
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <i data-lucide="git-fork" class=""></i> Enterprise API
+                  <i data-lucide="git-fork" class=""></i> 第7章. エンタープライズシステム連携
                 </span>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">企業型システム連携: コリビングOpen API & SAP ERP接続</h2>
                 <p class="text-slate-400 text-xs mt-0.5">顧客企業の独自モバイルアプリと大企業の基幹会計システム(SAP)を完全統合。</p>
@@ -2177,8 +2372,8 @@
         `
       },
       {
-        id: "slide-20",
-        chapter: "第6章. ビジネスモデルの拡大",
+        id: "slide-21",
+        chapter: "第8章. ビジネスモデルの拡大",
         topic: "ビジネスモデル拡大：不動産を超えて収益型【すべての】有・無形資産運用ERPへ",
         origPage: 41,
         render: () => `
@@ -2187,7 +2382,7 @@
               <div>
                 <div class="flex items-center gap-2">
                   <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <i data-lucide="layers" class=""></i> 第6章. ビジネスモデルの拡大 Expansion
+                    <i data-lucide="layers" class=""></i> 第8章. あらゆる収益資産への拡大
                   </span>
                   <!-- 회전형/말풍선 그린 뱃지: 不動産だけ？ -->
                   <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 font-extrabold text-[11px] border border-emerald-500/50 shadow-sm animate-pulse flex items-center gap-1">
@@ -2363,15 +2558,15 @@
         `
       },
       {
-        id: "slide-21",
-        chapter: "第5章. 安全管理と未来構想",
+        id: "slide-22",
+        chapter: "第9章. 安全管理と未来構想",
         topic: "ファミリーサービス：重大災害安全衛生「EASY SAFE」",
         origPage: 51,
         render: () => `
           <div class="h-full flex flex-col justify-between">
             <div class="slide-header border-b border-slate-800 pb-3">
               <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                <i data-lucide="hard-hat" class=""></i> Safety Platform
+                <i data-lucide="hard-hat" class=""></i> 第9章. 重大災害安全保健プラットフォーム
               </span>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">重大災害処罰法対応「EASY SAFE」</h2>
               <p class="text-slate-400 text-xs mt-0.5">不動産資産管理とともに、建物の安全衛生法定義務を完全に履行する連携プラットフォーム。</p>
@@ -2420,15 +2615,15 @@
         `
       },
       {
-        id: "slide-22",
-        chapter: "第5章. 技術ロードマップ",
+        id: "slide-23",
+        chapter: "第10章. 技術ロードマップ",
         topic: "次世代ロードマップ：AI基盤の資産管理と国土交通部連携",
         origPage: 55,
         render: () => `
           <div class="h-full flex flex-col justify-between">
             <div class="slide-header border-b border-slate-800 pb-3">
               <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
-                <i data-lucide="sparkles" class=""></i> Future Roadmap
+                <i data-lucide="sparkles" class=""></i> 第10章. 次世代ビジョンとAIロードマップ
               </span>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-0.5">ezREMS 次世代ビジョン & AIロードマップ</h2>
               <p class="text-slate-400 text-xs mt-0.5">単なる記録型ERPを超え、AIが資産価値を守り収益を最大化する自律運営段階へ進化。</p>
@@ -2487,7 +2682,7 @@
         `
       },
       {
-        id: "slide-23",
+        id: "slide-24",
         chapter: "会社概要と提案の結び",
         topic: "会社概要と提案の結び / Q&A",
         origPage: 43,

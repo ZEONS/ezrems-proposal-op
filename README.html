@@ -60,11 +60,11 @@
     }
 
     body {
-      font-family: 'Paperlogy', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Paperlogy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #818cf8 100%);
+      background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #34d399 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -72,32 +72,22 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-600 selection:text-white">
 
-  <!-- Header & GNB -->
-  <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <a href="index.html" class="flex items-center space-x-3 group">
-          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/30 group-hover:scale-105 transition">
-            EZ
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-extrabold text-white text-base tracking-tight">ezREMS™</span>
-              <span class="px-1.5 py-0.5 rounded bg-blue-950 text-blue-400 font-bold text-[10px] border border-blue-800/40">README</span>
-            </div>
-            <p class="text-[11px] text-slate-400">스마트 자산관리 ERP 인터랙티브 플랫폼 가이드</p>
-          </div>
+        <a href="index.html" class="flex items-center space-x-2">
+          <img src="images/logo.png" alt="ezREMS Logo" class="h-7 w-auto">
+          <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-800/50">Proposal Spec</span>
         </a>
       </div>
-
-      <!-- Quick Nav Links -->
-      <div class="flex items-center space-x-2">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition flex items-center gap-1.5">
-          <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
-          <span>제안서 열기 (KO)</span>
+      <div class="flex items-center space-x-3 text-xs">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 font-semibold text-white transition flex items-center gap-1.5 shadow-md">
+          <i data-lucide="play" class="w-3.5 h-3.5"></i>
+          <span>제안서 열기</span>
         </a>
-        <a href="design_guide.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-semibold border border-cyan-800/40 transition flex items-center gap-1.5">
-          <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+        <a href="design_guide.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/60 transition flex items-center gap-1.5">
+          <i data-lucide="palette" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span>디자인 가이드</span>
         </a>
       </div>
@@ -105,18 +95,18 @@
   </header>
 
   <!-- Main Content Container -->
-  <main class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-12">
 
     <!-- Hero Banner -->
-    <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-blue-950/40 border border-slate-800 relative overflow-hidden shadow-2xl">
-      <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="relative z-10 max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/70 border border-blue-800/50 text-cyan-300 text-xs font-bold">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span>스마트 자산관리 플랫폼 | 핀테크 X 프롭테크</span>
+    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/80 to-blue-950/40 border border-slate-800 relative overflow-hidden shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 space-y-4 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 text-blue-400 text-xs font-bold border border-blue-800/60">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>스마트 자산관리 ERP 이지램스 (ezREMS)™</span>
         </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-          수익형 부동산,<br>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+          수익형 부동산 · 모든 유무형 자산,<br>
           <span class="gradient-text">이제는 운영이 핵심이다.</span>
         </h1>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
@@ -127,7 +117,10 @@
             🌐 6개 국어 (KO, EN, JA, ZH, VI, TH) & 콤보박스 UI
           </span>
           <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
-            🖥️ 슬라이드 PT & 스크롤 문서 듀얼 모드
+            🏛️ 50+ 대표 고객사 & 대한민국 랜드마크 포트폴리오
+          </span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
+            🖥️ 슬라이드 PT & 스크롤 문서 듀얼 모드 (24 Slides)
           </span>
           <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/60 font-semibold">
             🏢 10대 유·무형 자산 확장 ERP
@@ -146,7 +139,7 @@
         <h2 class="text-xl sm:text-2xl font-black text-white">1. 완벽한 6개 국어 다국어 에디션 & 컴팩트 콤보박스 UI (Multilingual Editions)</h2>
       </div>
       <p class="text-sm text-slate-400">
-        전체 23개 슬라이드의 본문, 도표, 10대 유·무형 자산 카드, 모달 팝업, 콤보박스 컨트롤 바까지 각 언어권 전문 용어로 완벽히 현지화되어 제공됩니다. 상단 헤더의 드롭다운 콤보박스를 통해 화면 이탈 없이 즉시 전환됩니다.
+        전체 24개 슬라이드의 본문, 도표, 50+ 고객사 칩, 랜드마크 포트폴리오, 10대 유·무형 자산 카드, 모달 팝업, 콤보박스 컨트롤 바까지 각 언어권 전문 용어로 완벽히 현지화되어 제공됩니다. 상단 헤더의 드롭다운 콤보박스를 통해 화면 이탈 없이 즉시 전환됩니다.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -242,51 +235,254 @@
       </div>
     </section>
 
-    <!-- Section 2: Dual View Mode & Architecture -->
+    <!-- Section 2: Chapter 5 Customers & Landmarks -->
     <section class="space-y-4">
       <div class="flex items-center space-x-2">
-        <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
-        <h2 class="text-xl sm:text-2xl font-black text-white">2. 듀얼 뷰 모드 및 핵심 아키텍처</h2>
+        <i data-lucide="building-2" class="w-5 h-5 text-blue-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">2. CHAPTER 5. 50+ 대표 고객사 & 대한민국 랜드마크 포트폴리오</h2>
       </div>
+      <p class="text-sm text-slate-400">
+        이지램스는 대한민국을 대표하는 초대형 상업시설과 프리미엄 복합자산의 공식 운영 ERP로 검증되었습니다.
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- PT Mode Card -->
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <div class="flex items-center gap-2 text-blue-400 font-bold text-sm">
-            <i data-lucide="monitor" class="w-4 h-4"></i>
-            <span>슬라이드 PT 모드 (Presentation Mode)</span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- 4 Major Asset Landmarks -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-blue-800/40 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <span class="font-bold text-white text-sm flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="text-blue-400 w-4 h-4"></i> 4대 자산군 운영 랜드마크
+            </span>
+            <span class="text-[10px] font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded">Mega Complex</span>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            16:9 비율의 캔버스 뷰포트 내에서 슬라이드 페이드 전환 효과와 함께 발표를 진행할 수 있습니다. 키보드 화살표, 스페이스바, 전체화면(F), 목차(M), 갤러리(G) 등 다양한 단축키와 실시간 진행률 게이지를 지원합니다.
-          </p>
-          <div class="flex items-center gap-2 text-[11px] text-slate-400">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-            <span>슬라이드 상단 디바이더 구분선 보존으로 장표 명확화</span>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-amber-950/20 border border-amber-900/30">
+              <div class="font-bold text-amber-300 mb-1">리테일 & 쇼핑몰</div>
+              <div class="text-[11px] text-slate-300">스타필드 (전 지점), 타임스퀘어, 파미어스몰, 안녕인사동, 앨리웨이 광교, 레이크꼬모, 라끄몽, 전자랜드</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-blue-950/20 border border-blue-900/30">
+              <div class="font-bold text-blue-300 mb-1">프라임 오피스</div>
+              <div class="text-[11px] text-slate-300">롯데월드타워 (123F), 파르나스타워·몰, 파크원 (Parc1), 마곡 원그로브, 조선호텔, 서울대병원, 디캠프·FRONT1</div>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="p-2.5 rounded-xl bg-emerald-950/20 border border-emerald-900/30">
+                <div class="font-bold text-emerald-300 mb-1">임대주택 / 코리빙</div>
+                <div class="text-[10px] text-slate-300">리마크빌 (4개점), 맹그로브 (5개점)</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-purple-950/20 border border-purple-900/30">
+                <div class="font-bold text-purple-300 mb-1">시니어 레지던스</div>
+                <div class="text-[10px] text-slate-300">마곡 VL르웨스트, 백운호수 숲속의아침</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Scroll Mode Card -->
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-          <div class="flex items-center gap-2 text-cyan-400 font-bold text-sm">
-            <i data-lucide="file-text" class="w-4 h-4"></i>
-            <span>스크롤 웹 문서 모드 (Scroll Document Mode)</span>
+        <!-- 50+ Clients -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 flex flex-col justify-between">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+            <span class="font-bold text-white text-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="text-emerald-400 w-4 h-4"></i> 50+ 엔터프라이즈 고객사
+            </span>
+            <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded">Enterprise Standard</span>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            23개 슬라이드를 단일 반응형 웹 문서 형태로 연속 스크롤하며 검토할 수 있습니다. 각 섹션이 독립된 박스 형태로 배치되어 인쇄 및 보고서 정독에 최적화되어 있습니다.
-          </p>
-          <div class="flex items-center gap-2 text-[11px] text-slate-400">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-            <span>스크롤 모드 전용 CSS 격리로 불필요한 구분선 중복 제거</span>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">KT에스테이트</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">신세계프라퍼티</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">GS리테일</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">롯데물산</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">롯데건설</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">롯데호텔</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">삼성물산</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700/60 font-semibold">우미건설</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold">CBRE</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold">젠스타메이트</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold">케이탑리츠</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-cyan-300 border border-cyan-800/40 font-semibold">REMAX Korea</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold">MGRV</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold">KT리빙</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-emerald-300 border border-emerald-800/40 font-semibold">스파크플러스</span>
+            <span class="px-2 py-1 rounded bg-slate-800 text-amber-300 border border-amber-800/40 font-semibold">안양·안산·광명·하남도시공사</span>
+            <span class="px-2 py-1 rounded bg-blue-950 text-blue-300 border border-blue-500/50 font-bold">+ 50개 이상 엔터프라이즈</span>
+          </div>
+          <div class="pt-2 border-t border-slate-800/60 text-[11px] text-slate-400 flex items-center justify-between">
+            <span>CSAP SaaS 클라우드 보안인증 완료</span>
+            <span class="text-cyan-400 font-bold">월 650억+ 수납 거래</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: 10 Assets Universe -->
+    <!-- Section 3: 24 Slides Table -->
+    <section class="space-y-4">
+      <div class="flex items-center space-x-2">
+        <i data-lucide="list-ordered" class="w-5 h-5 text-cyan-400"></i>
+        <h2 class="text-xl sm:text-2xl font-black text-white">3. 24개 슬라이드 전체 챕터 구성표 (24 Slides Structure)</h2>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 text-xs">
+        <table class="w-full text-left bg-slate-900/60">
+          <thead class="bg-slate-950 text-slate-400 border-b border-slate-800 font-bold">
+            <tr>
+              <th class="py-3 px-4 w-16 text-center">번호</th>
+              <th class="py-3 px-4 w-28">슬라이드 ID</th>
+              <th class="py-3 px-4 w-48">챕터 (Chapter)</th>
+              <th class="py-3 px-4">주제 및 핵심 내용 (Topic)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-slate-300">
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-blue-400">01</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-01</td>
+              <td class="py-2.5 px-4 font-semibold text-slate-300">Intro</td>
+              <td class="py-2.5 px-4">표지: 수익형 부동산 이제는 운영이 핵심이다</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-blue-400">02</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-02</td>
+              <td class="py-2.5 px-4 font-semibold text-slate-300">Agenda</td>
+              <td class="py-2.5 px-4">제안 발표 목차 (Part 01 ~ Part 04 및 바로가기 링크)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-blue-400">03</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-03</td>
+              <td class="py-2.5 px-4 font-semibold text-blue-400">Chapter 1. Market</td>
+              <td class="py-2.5 px-4">글로벌 시장 분석: 부동산 자산 관리 시스템(PMS) 시장 규모·트렌드</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-blue-400">04</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-04</td>
+              <td class="py-2.5 px-4 font-semibold text-blue-400">Chapter 1. Market</td>
+              <td class="py-2.5 px-4">부동산 시장 변화: 월세화 급증 & 임대인 업무 폭증</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-blue-400">05</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-05</td>
+              <td class="py-2.5 px-4 font-semibold text-blue-400">Chapter 1. Market</td>
+              <td class="py-2.5 px-4">부동산 시장 변화: 신주거 트렌드 & AI 자산관리</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-amber-400">06</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-06</td>
+              <td class="py-2.5 px-4 font-semibold text-amber-400">Chapter 2. Problem</td>
+              <td class="py-2.5 px-4">건물 생애주기 비용: 80%는 운영에서 발생한다</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-amber-400">07</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-07</td>
+              <td class="py-2.5 px-4 font-semibold text-amber-400">Chapter 2. Problem</td>
+              <td class="py-2.5 px-4">부동산 자산운영 프로세스 (LM · PM · FM · AM)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-amber-400">08</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-08</td>
+              <td class="py-2.5 px-4 font-semibold text-amber-400">Chapter 2. Problem</td>
+              <td class="py-2.5 px-4">솔루션 비교: 수기 엑셀(Excel) vs 이지램스(ezREMS)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">09</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-09</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 3. Solution</td>
+              <td class="py-2.5 px-4">이지램스(ezREMS) 솔루션 개요 & 클라우드 CSAP 인증</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">10</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-10</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 3. Solution</td>
+              <td class="py-2.5 px-4">플랫폼 연계 구성도 & 시스템 아키텍처</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">11</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-11</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 3. Solution</td>
+              <td class="py-2.5 px-4">핵심 기능: B2B 전문 PMS (호실·계약·수납·세무)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">12</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-12</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 3. Solution</td>
+              <td class="py-2.5 px-4">임차인 앱: 이지램스 커넥트 (주거편의 임베디드 커머스)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">13</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-13</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 3. Solution</td>
+              <td class="py-2.5 px-4">전자문서 & 월세 카드결제(PG) 서비스 비교</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">14</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-14</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 4. Track Record</td>
+              <td class="py-2.5 px-4">데이터로 증명하는 금융·거래 규모 (월 650억+ 수납)</td>
+            </tr>
+            <tr class="bg-blue-950/20">
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-300">15</td>
+              <td class="py-2.5 px-4 font-mono text-cyan-300">slide-15</td>
+              <td class="py-2.5 px-4 font-bold text-cyan-300">Chapter 5. Customers 🌟</td>
+              <td class="py-2.5 px-4 font-semibold text-white">엔터프라이즈 고객사(50+) & 대한민국 랜드마크 포트폴리오</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">16</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-16</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 6. Case Study</td>
+              <td class="py-2.5 px-4">고객사 사례 1: K 리츠사 (전국 10개 빌딩 통합관리)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">17</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-17</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 6. Case Study</td>
+              <td class="py-2.5 px-4">고객사 사례 2: 앨리웨이 쇼핑몰 (POS 연동 매출관리)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">18</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-18</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 6. Case Study</td>
+              <td class="py-2.5 px-4">고객사 사례 3: 제일풍경채 1,045세대 (미납률 25% → 6%)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">19</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-19</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 6. Case Study</td>
+              <td class="py-2.5 px-4">고객사 사례 4: 복잡한 구조 수광비(수도·광열비) 부과 및 운영 관리</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-indigo-400">20</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-20</td>
+              <td class="py-2.5 px-4 font-semibold text-indigo-400">Chapter 7. Integration</td>
+              <td class="py-2.5 px-4">엔터프라이즈 연동: MGRV 코리빙 OpenAPI & SAP FI 회계 연동</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-emerald-400">21</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-21</td>
+              <td class="py-2.5 px-4 font-semibold text-emerald-400">Chapter 8. Business Model</td>
+              <td class="py-2.5 px-4">비즈니스 모델 확대: 부동산을 넘어 수익형 [모든] 유무형 자산 운영 ERP</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-amber-400">22</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-22</td>
+              <td class="py-2.5 px-4 font-semibold text-amber-400">Chapter 9. Safety & Future</td>
+              <td class="py-2.5 px-4">패밀리 서비스: 중대재해 안전보건 '이지세이프(EASY SAFE)'</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-cyan-400">23</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-23</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-400">Chapter 10. Roadmap</td>
+              <td class="py-2.5 px-4">차세대 로드맵: AI 기반 자산관리 & 국토교통부 전자계약 연동</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 text-center font-mono font-bold text-purple-400">24</td>
+              <td class="py-2.5 px-4 font-mono text-slate-400">slide-24</td>
+              <td class="py-2.5 px-4 font-semibold text-purple-400">Company & Closing</td>
+              <td class="py-2.5 px-4">회사 소개(20년 프롭테크 노하우) & 제안 마무리 / Q&A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: 10 Assets Universe -->
     <section class="space-y-4">
       <div class="flex items-center space-x-2">
         <i data-lucide="boxes" class="w-5 h-5 text-amber-400"></i>
-        <h2 class="text-xl sm:text-2xl font-black text-white">3. CHAPTER 6. 비즈니스 모델 확대 (10대 유·무형 자산)</h2>
+        <h2 class="text-xl sm:text-2xl font-black text-white">4. CHAPTER 8. 비즈니스 모델 확대 (10대 유·무형 자산)</h2>
       </div>
       <p class="text-sm text-slate-400">
         이지램스는 전통적인 부동산(아파트, 오피스)에 머물지 않고, 단일 코어로 모든 유·무형 수익 자산을 즉시 수용합니다.
@@ -336,11 +532,11 @@
       </div>
     </section>
 
-    <!-- Section 4: Keyboard Shortcuts -->
+    <!-- Section 5: Keyboard Shortcuts -->
     <section class="space-y-4">
       <div class="flex items-center space-x-2">
         <i data-lucide="keyboard" class="w-5 h-5 text-indigo-400"></i>
-        <h2 class="text-xl sm:text-2xl font-black text-white">4. 키보드 단축키 안내</h2>
+        <h2 class="text-xl sm:text-2xl font-black text-white">5. 키보드 단축키 안내</h2>
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-slate-800 text-xs">
@@ -393,7 +589,7 @@
       </div>
     </section>
 
-    <!-- Section 5: Company & Support -->
+    <!-- Section 6: Company & Support -->
     <section class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="space-y-1 text-center sm:text-left">
         <div class="flex items-center gap-2 justify-center sm:justify-start">
