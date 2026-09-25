@@ -357,7 +357,7 @@
       color: #0f172a !important;            /* Slate-900 딥 블랙 텍스트 */
     }
 
-    /* 1. 상단 내비게이션 바 */
+    /* 1. 상단 내비게이션 바 (GNB) */
     [data-theme="light"] header {
       background-color: rgba(255, 255, 255, 0.98) !important;
       border-bottom: 1px solid #cbd5e1 !important;
@@ -372,6 +372,18 @@
       background-color: #f1f5f9 !important;
       border-color: #cbd5e1 !important;
     }
+    /* GNB 뷰모드 비활성 버튼 가독성 */
+    [data-theme="light"] header #btn-mode-pt:not(.bg-blue-600),
+    [data-theme="light"] header #btn-mode-scroll:not(.bg-blue-600) {
+      color: #334155 !important;
+      font-weight: 600 !important;
+    }
+    [data-theme="light"] header #btn-mode-pt:not(.bg-blue-600):hover,
+    [data-theme="light"] header #btn-mode-scroll:not(.bg-blue-600):hover {
+      color: #0f172a !important;
+      background-color: #e2e8f0 !important;
+    }
+    /* 언어 선택 콤보박스 */
     [data-theme="light"] #lang-selector-group {
       background-color: #ffffff !important;
       border-color: #cbd5e1 !important;
@@ -384,6 +396,7 @@
       background-color: #ffffff !important;
       color: #0f172a !important;
     }
+    /* 화면 모드 세그먼트 버튼 */
     [data-theme="light"] #theme-selector-group {
       background-color: #f1f5f9 !important;
       border-color: #cbd5e1 !important;
@@ -400,18 +413,8 @@
       color: #0284c7 !important;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
-    [data-theme="light"] header button.bg-slate-800 {
-      background-color: #f8fafc !important;
-      border-color: #cbd5e1 !important;
-      color: #0f172a !important;
-      font-weight: 600 !important;
-    }
-    [data-theme="light"] header button.bg-slate-800:hover {
-      background-color: #e2e8f0 !important;
-      color: #000000 !important;
-    }
 
-    /* 2. 슬라이드 PT 캔버스 (#slide-stage) */
+    /* 2. 슬라이드 PT 캔버스 (#slide-stage) 및 하단 컨트롤 바 */
     [data-theme="light"] #slide-stage {
       background: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
@@ -426,7 +429,7 @@
     }
     [data-theme="light"] #slide-stage .slide-header p,
     [data-theme="light"] #current-slide-content .slide-header p {
-      color: #1e293b !important; /* Slate-800 진한 다크 컬러 */
+      color: #1e293b !important;
       font-weight: 600 !important;
     }
     [data-theme="light"] #slide-stage .h-12.bg-slate-950\/80 {
@@ -442,9 +445,17 @@
       background-color: #e2e8f0 !important;
       color: #0f172a !important;
       font-weight: 700 !important;
+      border: 1px solid #cbd5e1 !important;
     }
     [data-theme="light"] #slide-stage .h-12 button.bg-slate-800:hover {
       background-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] #slide-stage #btn-orig-slide {
+      color: #1e293b !important;
+      font-weight: 600 !important;
+    }
+    [data-theme="light"] #slide-stage #btn-orig-slide:hover {
+      color: #0284c7 !important;
     }
     [data-theme="light"] #slide-stage .font-mono.text-slate-300 {
       color: #0f172a !important;
@@ -465,6 +476,10 @@
     }
     [data-theme="light"] #scroll-container .doc-section-header span.text-slate-400 {
       color: #334155 !important;
+      font-weight: 600 !important;
+    }
+    [data-theme="light"] #scroll-container button {
+      color: #1d4ed8 !important; /* Blue-700 선명한 로열 블루 */
       font-weight: 600 !important;
     }
 
@@ -489,12 +504,156 @@
     [data-theme="light"] .border-slate-800,
     [data-theme="light"] .border-slate-700,
     [data-theme="light"] .border-slate-800\/80,
-    [data-theme="light"] .border-slate-800\/60 {
+    [data-theme="light"] .border-slate-800\/60,
+    [data-theme="light"] .border-slate-800\/50,
+    [data-theme="light"] .border-slate-800\/40,
+    [data-theme="light"] .border-slate-700\/80,
+    [data-theme="light"] .border-slate-700\/60 {
       border-color: #cbd5e1 !important;
     }
 
-    /* 5. 텍스트 명도 및 타이포그래피 (연한 회색톤 원천 제거 -> 딥 챠콜/블랙 강제 적용) */
-    [data-theme="light"] .text-white,
+    /* 5. 버튼 (Button) 및 액션 링크 고대비 가독성 전면 보강 (핵심!) */
+    /* 5-1. 채도 높은 컬러 버튼(Blue, Gradient 등)은 흰색 텍스트 절대 유지 */
+    [data-theme="light"] .bg-blue-600,
+    [data-theme="light"] .bg-blue-600 *,
+    [data-theme="light"] .bg-blue-500,
+    [data-theme="light"] .bg-blue-500 *,
+    [data-theme="light"] .bg-indigo-600,
+    [data-theme="light"] .bg-indigo-600 *,
+    [data-theme="light"] .bg-purple-600,
+    [data-theme="light"] .bg-purple-600 *,
+    [data-theme="light"] button.bg-blue-600,
+    [data-theme="light"] button.bg-blue-600 *,
+    [data-theme="light"] a.bg-blue-600,
+    [data-theme="light"] a.bg-blue-600 *,
+    [data-theme="light"] button[class*="bg-gradient-"],
+    [data-theme="light"] button[class*="bg-gradient-"] *,
+    [data-theme="light"] a[class*="bg-gradient-"],
+    [data-theme="light"] a[class*="bg-gradient-"] * {
+      color: #ffffff !important;
+    }
+
+    /* 5-2. 슬라이드 본문 및 모달, 헤더의 모든 bg-slate-800 버튼 밝은 카드형 전환 */
+    [data-theme="light"] button.bg-slate-800,
+    [data-theme="light"] a.bg-slate-800,
+    [data-theme="light"] header button.bg-slate-800 {
+      background-color: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      font-weight: 600 !important;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+    }
+    [data-theme="light"] button.bg-slate-800:hover,
+    [data-theme="light"] a.bg-slate-800:hover,
+    [data-theme="light"] header button.bg-slate-800:hover {
+      background-color: #e2e8f0 !important;
+      border-color: #94a3b8 !important;
+      color: #000000 !important;
+    }
+    /* 버튼 내부 테마 컬러 글자 선명화 */
+    [data-theme="light"] button.bg-slate-800.text-cyan-400,
+    [data-theme="light"] button.bg-slate-800.text-cyan-400 span,
+    [data-theme="light"] button.bg-slate-800.text-cyan-400 i {
+      color: #0369a1 !important; /* Sky-700 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] button.bg-slate-800.text-emerald-400,
+    [data-theme="light"] button.bg-slate-800.text-emerald-400 span,
+    [data-theme="light"] button.bg-slate-800.text-emerald-400 i {
+      color: #047857 !important; /* Emerald-700 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] button.bg-slate-800.text-indigo-400,
+    [data-theme="light"] button.bg-slate-800.text-indigo-400 span,
+    [data-theme="light"] button.bg-slate-800.text-indigo-400 i {
+      color: #4338ca !important; /* Indigo-700 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] button.bg-slate-800.text-slate-300,
+    [data-theme="light"] button.bg-slate-800.text-slate-200 {
+      color: #0f172a !important;
+      font-weight: 600 !important;
+    }
+
+    /* 6. 다크 컬러 뱃지 및 배경류 (bg-*-950 전수 개편) */
+    /* Cyan 계열 */
+    [data-theme="light"] .bg-cyan-950,
+    [data-theme="light"] .bg-cyan-950\/60,
+    [data-theme="light"] .bg-cyan-950\/70,
+    [data-theme="light"] .bg-cyan-950\/80 {
+      background-color: #ecfeff !important;
+      border-color: #a5f3fc !important;
+    }
+    [data-theme="light"] .bg-cyan-950 button,
+    [data-theme="light"] button.bg-cyan-950\/60 {
+      background-color: #ecfeff !important;
+      border-color: #67e8f9 !important;
+    }
+    /* Blue 계열 */
+    [data-theme="light"] .bg-blue-950\/20,
+    [data-theme="light"] .bg-blue-950\/30,
+    [data-theme="light"] .bg-blue-950\/40,
+    [data-theme="light"] .bg-blue-950\/50,
+    [data-theme="light"] .bg-blue-950\/60,
+    [data-theme="light"] .bg-blue-950\/70,
+    [data-theme="light"] .bg-blue-950\/80,
+    [data-theme="light"] .bg-blue-950 {
+      background-color: #eff6ff !important;
+      border-color: #bfdbfe !important;
+    }
+    /* Emerald 계열 */
+    [data-theme="light"] .bg-emerald-950\/20,
+    [data-theme="light"] .bg-emerald-950\/25,
+    [data-theme="light"] .bg-emerald-950\/30,
+    [data-theme="light"] .bg-emerald-950\/80,
+    [data-theme="light"] .bg-emerald-950 {
+      background-color: #f0fdf4 !important;
+      border-color: #bbf7d0 !important;
+    }
+    /* Amber 계열 */
+    [data-theme="light"] .bg-amber-950\/20,
+    [data-theme="light"] .bg-amber-950\/30,
+    [data-theme="light"] .bg-amber-950\/80,
+    [data-theme="light"] .bg-amber-950 {
+      background-color: #fffbeb !important;
+      border-color: #fde68a !important;
+    }
+    /* Rose 계열 */
+    [data-theme="light"] .bg-rose-950\/20,
+    [data-theme="light"] .bg-rose-950\/30,
+    [data-theme="light"] .bg-rose-950\/80,
+    [data-theme="light"] .bg-rose-950 {
+      background-color: #fff1f2 !important;
+      border-color: #fecdd3 !important;
+    }
+    /* Indigo 계열 */
+    [data-theme="light"] .bg-indigo-950,
+    [data-theme="light"] .bg-indigo-950\/30,
+    [data-theme="light"] .bg-indigo-950\/80 {
+      background-color: #eef2ff !important;
+      border-color: #c7d2fe !important;
+    }
+    /* Purple 계열 */
+    [data-theme="light"] .bg-purple-950,
+    [data-theme="light"] .bg-purple-950\/20,
+    [data-theme="light"] .bg-purple-950\/80 {
+      background-color: #faf5ff !important;
+      border-color: #e9d5ff !important;
+    }
+    /* Orange 계열 */
+    [data-theme="light"] .bg-orange-950,
+    [data-theme="light"] .bg-orange-950\/80 {
+      background-color: #fff7ed !important;
+      border-color: #fed7aa !important;
+    }
+    /* Sky 계열 */
+    [data-theme="light"] .bg-sky-950,
+    [data-theme="light"] .bg-sky-950\/80 {
+      background-color: #f0f9ff !important;
+      border-color: #bae6fd !important;
+    }
+
+    /* 7. 텍스트 명도 및 타이포그래피 (일반 본문/제목은 딥 블랙 강제) */
     [data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 {
       color: #0f172a !important;
     }
@@ -502,16 +661,26 @@
     [data-theme="light"] .text-slate-200,
     [data-theme="light"] .text-slate-300,
     [data-theme="light"] .text-slate-400 {
-      color: #0f172a !important; /* 선명하고 짙은 Slate-900 */
+      color: #0f172a !important;
       font-weight: 500 !important;
     }
     [data-theme="light"] .text-slate-500 {
-      color: #334155 !important; /* Slate-700 */
+      color: #334155 !important;
       font-weight: 500 !important;
     }
+    /* 단, 컬러 버튼 내부가 아닌 일반 text-white는 딥 블랙으로 전환 */
+    [data-theme="light"] p.text-white,
+    [data-theme="light"] div.text-white:not([class*="bg-blue-"]):not([class*="bg-indigo-"]):not([class*="bg-gradient-"]),
+    [data-theme="light"] span.text-white:not([class*="bg-blue-"]):not([class*="bg-indigo-"]):not([class*="bg-gradient-"]),
+    [data-theme="light"] h1.text-white,
+    [data-theme="light"] h2.text-white,
+    [data-theme="light"] h3.text-white {
+      color: #0f172a !important;
+    }
+
     [data-theme="light"] #current-slide-content p,
     [data-theme="light"] #scroll-container p {
-      color: #0f172a !important; /* 본문 문장 모두 선명한 흑색 */
+      color: #0f172a !important;
       font-weight: 500 !important;
     }
     [data-theme="light"] #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > p,
@@ -529,7 +698,144 @@
       font-weight: 600 !important;
     }
 
-    /* 슬라이드 15번 고객사 칩 / 랜드마크 태그 가독성 */
+    /* 8. 다크모드용 밝은 네온 컬러 ➔ 화이트모드용 딥 세츄레이션 컬러로 보정 */
+    [data-theme="light"] .text-cyan-400,
+    [data-theme="light"] .text-cyan-300,
+    [data-theme="light"] .text-cyan-200 {
+      color: #0369a1 !important; /* Sky-700 딥 오션 블루 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-blue-400,
+    [data-theme="light"] .text-blue-300,
+    [data-theme="light"] .text-blue-200 {
+      color: #1d4ed8 !important; /* Blue-700 진한 로열 블루 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-emerald-400,
+    [data-theme="light"] .text-emerald-300,
+    [data-theme="light"] .text-emerald-200 {
+      color: #047857 !important; /* Emerald-700 딥 그린 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-amber-400,
+    [data-theme="light"] .text-amber-300,
+    [data-theme="light"] .text-amber-200 {
+      color: #b45309 !important; /* Amber-700 딥 브라운 골드 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-rose-400,
+    [data-theme="light"] .text-rose-300,
+    [data-theme="light"] .text-rose-200 {
+      color: #be123c !important; /* Rose-700 딥 루비 레드 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-purple-400,
+    [data-theme="light"] .text-purple-300 {
+      color: #6d28d9 !important; /* Purple-700 딥 바이올렛 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-indigo-400,
+    [data-theme="light"] .text-indigo-300,
+    [data-theme="light"] .text-indigo-200 {
+      color: #4338ca !important; /* Indigo-700 딥 인디고 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-orange-400,
+    [data-theme="light"] .text-orange-300 {
+      color: #c2410c !important; /* Orange-700 딥 오렌지 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-sky-400,
+    [data-theme="light"] .text-sky-300 {
+      color: #0369a1 !important; /* Sky-700 */
+      font-weight: 700 !important;
+    }
+
+    /* 9. 아이콘 뱃지 (.icon-badge-*) 및 그라데이션 텍스트 */
+    [data-theme="light"] .icon-badge-blue {
+      background: #dbeafe !important;
+      border-color: #93c5fd !important;
+      color: #1d4ed8 !important;
+    }
+    [data-theme="light"] .icon-badge-cyan {
+      background: #cffafe !important;
+      border-color: #67e8f9 !important;
+      color: #0369a1 !important;
+    }
+    [data-theme="light"] .icon-badge-emerald {
+      background: #d1fae5 !important;
+      border-color: #6ee7b7 !important;
+      color: #047857 !important;
+    }
+    [data-theme="light"] .icon-badge-amber {
+      background: #fef3c7 !important;
+      border-color: #fcd34d !important;
+      color: #b45309 !important;
+    }
+    [data-theme="light"] .icon-badge-rose {
+      background: #ffe4e6 !important;
+      border-color: #fda4af !important;
+      color: #be123c !important;
+    }
+    [data-theme="light"] .icon-badge-purple {
+      background: #f3e8ff !important;
+      border-color: #d8b4fe !important;
+      color: #6d28d9 !important;
+    }
+    [data-theme="light"] .gradient-text {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* 10. 단축키 키캡 (<kbd>) */
+    [data-theme="light"] kbd {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+      font-weight: 700 !important;
+    }
+
+    /* 11. 모달 팝업류 전체 (TOC, 갤러리, 문의, 원본 뷰어 등) */
+    [data-theme="light"] #modal-toc .bg-slate-900,
+    [data-theme="light"] #modal-gallery .bg-slate-900,
+    [data-theme="light"] #modal-contact .bg-slate-900,
+    [data-theme="light"] #modal-original .bg-slate-900,
+    [data-theme="light"] #modal-toc .bg-slate-950,
+    [data-theme="light"] #modal-gallery .bg-slate-950,
+    [data-theme="light"] #modal-contact .bg-slate-950,
+    [data-theme="light"] #modal-original .bg-slate-950,
+    [data-theme="light"] #custom-image-modal .bg-slate-900 {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2) !important;
+    }
+    [data-theme="light"] #modal-toc .border-b,
+    [data-theme="light"] #modal-gallery .border-b,
+    [data-theme="light"] #modal-contact .border-b,
+    [data-theme="light"] #modal-original .border-b,
+    [data-theme="light"] #custom-image-modal .border-b {
+      border-bottom-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #modal-toc button:hover,
+    [data-theme="light"] #modal-gallery button:hover,
+    [data-theme="light"] #modal-contact button:hover,
+    [data-theme="light"] #modal-original button:hover {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] #toc-list > div:hover,
+    [data-theme="light"] #toc-list > a:hover {
+      background-color: #f1f5f9 !important;
+    }
+    [data-theme="light"] #toc-list span.text-slate-400,
+    [data-theme="light"] #toc-list p.text-slate-400 {
+      color: #1e293b !important;
+      font-weight: 500 !important;
+    }
+
+    /* 12. 고객사 칩 / 랜드마크 태그 가독성 (슬라이드 15 등) */
     [data-theme="light"] .client-chips-container span,
     [data-theme="light"] .lg\:col-span-5 span.rounded {
       background-color: #f1f5f9 !important;
@@ -542,116 +848,7 @@
       color: #000000 !important;
     }
 
-    /* 6. 다크모드용 밝은 네온 컬러를 화이트모드용 딥 세츄레이션 컬러로 보정 */
-    [data-theme="light"] .text-cyan-400,
-    [data-theme="light"] .text-cyan-300 {
-      color: #0369a1 !important; /* Sky-700 딥 오션 블루 */
-      font-weight: 700 !important;
-    }
-    [data-theme="light"] .text-blue-400,
-    [data-theme="light"] .text-blue-300 {
-      color: #1d4ed8 !important; /* Blue-700 진한 로열 블루 */
-      font-weight: 700 !important;
-    }
-    [data-theme="light"] .text-emerald-400,
-    [data-theme="light"] .text-emerald-300 {
-      color: #047857 !important; /* Emerald-700 딥 그린 */
-      font-weight: 700 !important;
-    }
-    [data-theme="light"] .text-amber-400,
-    [data-theme="light"] .text-amber-300 {
-      color: #b45309 !important; /* Amber-700 딥 브라운 골드 */
-      font-weight: 700 !important;
-    }
-    [data-theme="light"] .text-rose-400,
-    [data-theme="light"] .text-rose-300 {
-      color: #be123c !important; /* Rose-700 딥 루비 레드 */
-      font-weight: 700 !important;
-    }
-    [data-theme="light"] .text-purple-400,
-    [data-theme="light"] .text-purple-300 {
-      color: #6d28d9 !important; /* Purple-700 딥 바이올렛 */
-      font-weight: 700 !important;
-    }
-
-    /* 7. 모달 팝업류 (TOC, 갤러리, 문의 등) */
-    [data-theme="light"] #modal-toc .bg-slate-900,
-    [data-theme="light"] #modal-gallery .bg-slate-900,
-    [data-theme="light"] #modal-contact .bg-slate-900,
-    [data-theme="light"] #modal-original-slide .bg-slate-900,
-    [data-theme="light"] #custom-image-modal .bg-slate-900 {
-      background-color: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #0f172a !important;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2) !important;
-    }
-    [data-theme="light"] #modal-toc .border-b,
-    [data-theme="light"] #modal-gallery .border-b,
-    [data-theme="light"] #modal-contact .border-b,
-    [data-theme="light"] #modal-original-slide .border-b,
-    [data-theme="light"] #custom-image-modal .border-b {
-      border-bottom-color: #e2e8f0 !important;
-    }
-    [data-theme="light"] #toc-list > div:hover,
-    [data-theme="light"] #toc-list > a:hover {
-      background-color: #f1f5f9 !important;
-    }
-    [data-theme="light"] #toc-list span.text-slate-400,
-    [data-theme="light"] #toc-list p.text-slate-400 {
-      color: #1e293b !important;
-      font-weight: 500 !important;
-    }
-
-    /* 8. 하단 안내 뱃지류 및 하이라이트 박스 */
-    [data-theme="light"] .bg-blue-950\/30,
-    [data-theme="light"] .bg-blue-950\/40,
-    [data-theme="light"] .bg-blue-950\/60,
-    [data-theme="light"] .bg-blue-950\/70,
-    [data-theme="light"] .bg-blue-950 {
-      background-color: #eff6ff !important;
-      border-color: #93c5fd !important;
-    }
-    [data-theme="light"] .text-blue-200,
-    [data-theme="light"] .text-blue-300 {
-      color: #1e40af !important;
-      font-weight: 600 !important;
-    }
-    [data-theme="light"] .bg-emerald-950\/20,
-    [data-theme="light"] .bg-emerald-950\/25,
-    [data-theme="light"] .bg-emerald-950\/30,
-    [data-theme="light"] .bg-emerald-950 {
-      background-color: #f0fdf4 !important;
-      border-color: #86efac !important;
-    }
-    [data-theme="light"] .text-emerald-200,
-    [data-theme="light"] .text-emerald-300 {
-      color: #166534 !important;
-      font-weight: 600 !important;
-    }
-    [data-theme="light"] .bg-amber-950\/20,
-    [data-theme="light"] .bg-amber-950\/30,
-    [data-theme="light"] .bg-amber-950 {
-      background-color: #fffbeb !important;
-      border-color: #fcd34d !important;
-    }
-    [data-theme="light"] .text-amber-200,
-    [data-theme="light"] .text-amber-300 {
-      color: #92400e !important;
-      font-weight: 600 !important;
-    }
-    [data-theme="light"] .bg-rose-950\/20,
-    [data-theme="light"] .bg-rose-950\/30,
-    [data-theme="light"] .bg-rose-950 {
-      background-color: #fff1f2 !important;
-      border-color: #fda4af !important;
-    }
-    [data-theme="light"] .text-rose-200,
-    [data-theme="light"] .text-rose-300 {
-      color: #9f1239 !important;
-      font-weight: 600 !important;
-    }
-
-    /* 9. 표 (Table) 라이트 모드 초고대비 스타일 */
+    /* 13. 표 (Table) 라이트 모드 초고대비 스타일 */
     [data-theme="light"] table thead {
       background-color: #e2e8f0 !important;
       color: #0f172a !important;
