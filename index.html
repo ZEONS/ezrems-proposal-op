@@ -130,11 +130,41 @@
     ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-    /* Slide Aspect Ratio Lock for PT Mode */
+    /* Slide Aspect Ratio Lock for PT Mode: 와이드 스크린 최적화 및 과도한 세로 높이 방지 */
     .slide-canvas {
       aspect-ratio: 16 / 9;
-      max-height: 88vh;
-      max-width: calc(88vh * 16 / 9);
+      max-height: min(80vh, 740px);
+      max-width: min(calc(min(80vh, 740px) * 16 / 9), 1320px);
+    }
+
+    /* 슬라이드 PT 모드: 상하 과다 여백 제거 및 컨텐츠 세로 채움 최적화 */
+    #current-slide-content {
+      padding: 1rem 1.75rem !important; /* 상하 패딩 슬림화 */
+    }
+    @media (min-width: 640px) {
+      #current-slide-content {
+        padding: 1.25rem 2.25rem !important;
+      }
+    }
+    #current-slide-content .my-auto {
+      margin-top: 0.65rem !important;
+      margin-bottom: 0.65rem !important;
+      flex: 1 1 0% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+    #current-slide-content .my-auto.grid {
+      display: grid !important;
+      align-content: stretch !important;
+    }
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      min-height: 180px;
     }
     
     .glass-card {
@@ -273,7 +303,7 @@
     <!-- Presentation Viewport (16:9 Canvas) -->
     <div id="slide-stage" class="slide-canvas w-full bg-slate-900/90 rounded-2xl border border-slate-800/90 shadow-2xl shadow-blue-950/40 relative overflow-hidden flex flex-col slide-fade">
       <!-- Slide Content injected by JS -->
-      <div id="current-slide-content" class="flex-1 overflow-y-auto p-6 sm:p-10 flex flex-col justify-between">
+      <div id="current-slide-content" class="flex-1 overflow-y-auto px-6 sm:px-10 py-3 sm:py-4 flex flex-col justify-between">
         <!-- Content rendered dynamically -->
       </div>
 
