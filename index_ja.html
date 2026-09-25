@@ -2,6 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('ezrems_theme') || 'system';
+      let effectiveTheme = savedTheme;
+      if (savedTheme === 'system') {
+        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', effectiveTheme);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ezREMS 提案プレゼンテーション | 株式会社ZEONS</title>
   <!-- Favicon Links -->
@@ -338,6 +348,243 @@
     .group:hover .icon-badge {
       transform: translateY(-2px) scale(1.05);
     }
+
+    /* ========================================================
+       화이트(라이트) 모드 전용 글로벌 디자인 테마 ([data-theme="light"])
+       ======================================================== */
+    [data-theme="light"] body {
+      background-color: #f1f5f9 !important; /* 밝고 차분한 Slate-100 배경 */
+      color: #0f172a !important;            /* Slate-900 텍스트 */
+    }
+
+    /* 1. 상단 내비게이션 바 */
+    [data-theme="light"] header {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-bottom-color: #e2e8f0 !important;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) !important;
+    }
+    [data-theme="light"] header .text-slate-300,
+    [data-theme="light"] header .text-slate-400 {
+      color: #475569 !important;
+    }
+    [data-theme="light"] header .bg-slate-800\/80 {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #lang-selector-group,
+    [data-theme="light"] #theme-selector-group {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] #lang-select-combo,
+    [data-theme="light"] #theme-select-combo {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] #lang-select-combo option,
+    [data-theme="light"] #theme-select-combo option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] header button.bg-slate-800 {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      color: #334155 !important;
+    }
+    [data-theme="light"] header button.bg-slate-800:hover {
+      background-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+
+    /* 2. 슬라이드 PT 캔버스 (#slide-stage) */
+    [data-theme="light"] #slide-stage {
+      background: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 14px 40px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+    }
+    [data-theme="light"] #slide-stage .slide-header {
+      border-bottom-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #slide-stage .slide-header h2 {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] #slide-stage .slide-header p {
+      color: #475569 !important;
+    }
+    [data-theme="light"] #slide-stage .h-12.bg-slate-950\/80 {
+      background-color: #f8fafc !important;
+      border-top-color: #e2e8f0 !important;
+      color: #64748b !important;
+    }
+    [data-theme="light"] #slide-stage #slide-topic {
+      color: #334155 !important;
+    }
+    [data-theme="light"] #slide-stage .h-12 button.bg-slate-800 {
+      background-color: #e2e8f0 !important;
+      color: #1e293b !important;
+    }
+    [data-theme="light"] #slide-stage .h-12 button.bg-slate-800:hover {
+      background-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] #slide-stage .font-mono.text-slate-300 {
+      color: #334155 !important;
+    }
+    [data-theme="light"] .slide-canvas .w-full.h-1.bg-slate-800 {
+      background-color: #e2e8f0 !important;
+    }
+
+    /* 3. 스크롤 웹 문서 모드 섹션 (#scroll-content) */
+    [data-theme="light"] #scroll-container section {
+      background: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06) !important;
+    }
+    [data-theme="light"] #scroll-container .doc-section-header {
+      border-bottom-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #scroll-container .doc-section-header span.text-slate-400 {
+      color: #64748b !important;
+    }
+
+    /* 4. 카드 및 컨테이너 박스 (glass-card & bg-slate-*) */
+    [data-theme="light"] .glass-card {
+      background: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+    }
+    [data-theme="light"] .bg-slate-950,
+    [data-theme="light"] .bg-slate-950\/70,
+    [data-theme="light"] .bg-slate-950\/80,
+    [data-theme="light"] .bg-slate-950\/60,
+    [data-theme="light"] .bg-slate-900,
+    [data-theme="light"] .bg-slate-900\/60,
+    [data-theme="light"] .bg-slate-900\/80,
+    [data-theme="light"] .bg-slate-900\/90,
+    [data-theme="light"] .bg-slate-900\/50 {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .border-slate-800,
+    [data-theme="light"] .border-slate-700,
+    [data-theme="light"] .border-slate-800\/80,
+    [data-theme="light"] .border-slate-800\/60 {
+      border-color: #e2e8f0 !important;
+    }
+
+    /* 5. 텍스트 명도 및 타이포그래피 */
+    [data-theme="light"] .text-white,
+    [data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .text-slate-100,
+    [data-theme="light"] .text-slate-200,
+    [data-theme="light"] .text-slate-300 {
+      color: #334155 !important;
+    }
+    [data-theme="light"] .text-slate-400 {
+      color: #64748b !important;
+    }
+    [data-theme="light"] .text-slate-500 {
+      color: #94a3b8 !important;
+    }
+    [data-theme="light"] #current-slide-content p,
+    [data-theme="light"] #scroll-container p {
+      color: #334155 !important;
+    }
+    [data-theme="light"] #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > p,
+    [data-theme="light"] #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > p,
+    [data-theme="light"] #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > p,
+    [data-theme="light"] #current-slide-content .grid-cols-1.md\:grid-cols-2 > div > p {
+      color: #334155 !important;
+    }
+    [data-theme="light"] #current-slide-content ul,
+    [data-theme="light"] #scroll-container ul {
+      color: #334155 !important;
+    }
+
+    /* 6. 모달 팝업류 (TOC, 갤러리, 문의 등) */
+    [data-theme="light"] #modal-toc .bg-slate-900,
+    [data-theme="light"] #modal-gallery .bg-slate-900,
+    [data-theme="light"] #modal-contact .bg-slate-900,
+    [data-theme="light"] #modal-original-slide .bg-slate-900,
+    [data-theme="light"] #custom-image-modal .bg-slate-900 {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+    }
+    [data-theme="light"] #modal-toc .border-b,
+    [data-theme="light"] #modal-gallery .border-b,
+    [data-theme="light"] #modal-contact .border-b,
+    [data-theme="light"] #modal-original-slide .border-b,
+    [data-theme="light"] #custom-image-modal .border-b {
+      border-bottom-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #toc-list > div:hover,
+    [data-theme="light"] #toc-list > a:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    /* 7. 하단 안내 뱃지류 및 하이라이트 박스 */
+    [data-theme="light"] .bg-blue-950\/30,
+    [data-theme="light"] .bg-blue-950\/40,
+    [data-theme="light"] .bg-blue-950\/60,
+    [data-theme="light"] .bg-blue-950\/70,
+    [data-theme="light"] .bg-blue-950 {
+      background-color: #eff6ff !important;
+      border-color: #bfdbfe !important;
+    }
+    [data-theme="light"] .text-blue-200,
+    [data-theme="light"] .text-blue-300 {
+      color: #1d4ed8 !important;
+    }
+    [data-theme="light"] .bg-emerald-950\/20,
+    [data-theme="light"] .bg-emerald-950\/25,
+    [data-theme="light"] .bg-emerald-950\/30,
+    [data-theme="light"] .bg-emerald-950 {
+      background-color: #f0fdf4 !important;
+      border-color: #bbf7d0 !important;
+    }
+    [data-theme="light"] .text-emerald-200,
+    [data-theme="light"] .text-emerald-300 {
+      color: #15803d !important;
+    }
+    [data-theme="light"] .bg-amber-950\/20,
+    [data-theme="light"] .bg-amber-950\/30,
+    [data-theme="light"] .bg-amber-950 {
+      background-color: #fffbeb !important;
+      border-color: #fde68a !important;
+    }
+    [data-theme="light"] .text-amber-200,
+    [data-theme="light"] .text-amber-300 {
+      color: #b45309 !important;
+    }
+    [data-theme="light"] .bg-rose-950\/20,
+    [data-theme="light"] .bg-rose-950\/30,
+    [data-theme="light"] .bg-rose-950 {
+      background-color: #fff1f2 !important;
+      border-color: #fecdd3 !important;
+    }
+    [data-theme="light"] .text-rose-200,
+    [data-theme="light"] .text-rose-300 {
+      color: #be123c !important;
+    }
+
+    /* 8. 표 (Table) 라이트 모드 스타일 */
+    [data-theme="light"] table thead {
+      background-color: #f1f5f9 !important;
+      color: #1e293b !important;
+      border-bottom-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] table tbody {
+      background-color: #ffffff !important;
+      color: #334155 !important;
+    }
+    [data-theme="light"] table tbody tr {
+      border-bottom-color: #f1f5f9 !important;
+    }
+    [data-theme="light"] table tbody tr:hover {
+      background-color: #f8fafc !important;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white flex flex-col">
@@ -382,6 +629,16 @@
             <option value="index_zh.html" class="bg-slate-900 text-white">🇨🇳 ZH (中文)</option>
             <option value="index_vi.html" class="bg-slate-900 text-white">🇻🇳 VI (Tiếng Việt)</option>
             <option value="index_th.html" class="bg-slate-900 text-white">🇹🇭 TH (ภาษาไทย)</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
+        </div>
+        <!-- Theme Selector Combobox (Dark, Light, System) -->
+        <div id="theme-selector-group" class="relative flex items-center bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1.5 shadow-inner hover:border-slate-600 transition mr-1">
+          <i id="theme-icon" data-lucide="moon" class="w-3.5 h-3.5 text-amber-400 mr-1.5 flex-shrink-0"></i>
+          <select id="theme-select-combo" onchange="changeTheme(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-4 appearance-none" title="画面モード変更">
+            <option value="dark" class="bg-slate-900 text-white" selected>🌙 ダークモード</option>
+            <option value="light" class="bg-slate-900 text-white">☀️ ライトモード</option>
+            <option value="system" class="bg-slate-900 text-white">💻 システム設定</option>
           </select>
           <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
         </div>
@@ -2912,6 +3169,55 @@
     let currentViewMode = 'pt';
     let currentOrigPage = 1;
 
+    // Theme Mode Management (Dark, Light, System)
+    function changeTheme(theme) {
+      applyTheme(theme, true);
+    }
+
+    function applyTheme(theme, save = true) {
+      let effectiveTheme = theme;
+      if (theme === 'system') {
+        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', effectiveTheme);
+      if (save) {
+        localStorage.setItem('ezrems_theme', theme);
+      }
+      updateThemeUI(theme, effectiveTheme);
+    }
+
+    function updateThemeUI(selectedTheme, effectiveTheme) {
+      const select = document.getElementById('theme-select-combo');
+      if (select) {
+        select.value = selectedTheme;
+      }
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        if (effectiveTheme === 'light') {
+          icon.setAttribute('data-lucide', 'sun');
+          icon.className = 'w-3.5 h-3.5 text-amber-500 mr-1.5 flex-shrink-0';
+        } else {
+          icon.setAttribute('data-lucide', 'moon');
+          icon.className = 'w-3.5 h-3.5 text-blue-400 mr-1.5 flex-shrink-0';
+        }
+        if (selectedTheme === 'system') {
+          icon.setAttribute('data-lucide', 'monitor');
+          icon.className = 'w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0';
+        }
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+    }
+
+    // System theme preference listener
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const savedTheme = localStorage.getItem('ezrems_theme') || 'system';
+      if (savedTheme === 'system') {
+        applyTheme('system', false);
+      }
+    });
+
     function changeLanguage(langTarget) {
       const searchParams = new URLSearchParams(window.location.search);
       searchParams.set('slide', currentSlideIdx);
@@ -2925,6 +3231,9 @@
 
     // Initialize App
     window.addEventListener('DOMContentLoaded', () => {
+      const currentSavedTheme = localStorage.getItem('ezrems_theme') || 'system';
+      applyTheme(currentSavedTheme, false);
+
       const urlParams = new URLSearchParams(window.location.search);
       const paramSlide = urlParams.get('slide');
       const paramMode = urlParams.get('mode');
