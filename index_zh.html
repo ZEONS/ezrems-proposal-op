@@ -372,20 +372,33 @@
       background-color: #f1f5f9 !important;
       border-color: #cbd5e1 !important;
     }
-    [data-theme="light"] #lang-selector-group,
-    [data-theme="light"] #theme-selector-group {
+    [data-theme="light"] #lang-selector-group {
       background-color: #ffffff !important;
-      border-color: #94a3b8 !important;
+      border-color: #cbd5e1 !important;
     }
-    [data-theme="light"] #lang-select-combo,
-    [data-theme="light"] #theme-select-combo {
+    [data-theme="light"] #lang-select-combo {
       color: #0f172a !important;
       font-weight: 700 !important;
     }
-    [data-theme="light"] #lang-select-combo option,
-    [data-theme="light"] #theme-select-combo option {
+    [data-theme="light"] #lang-select-combo option {
       background-color: #ffffff !important;
       color: #0f172a !important;
+    }
+    [data-theme="light"] #theme-selector-group {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] #theme-selector-group button {
+      color: #64748b !important;
+    }
+    [data-theme="light"] #theme-selector-group button:hover {
+      color: #0f172a !important;
+      background-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #theme-selector-group button.active-theme {
+      background-color: #ffffff !important;
+      color: #0284c7 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
     [data-theme="light"] header button.bg-slate-800 {
       background-color: #f8fafc !important;
@@ -697,43 +710,52 @@
 
       <!-- Right: Action Buttons -->
       <div class="flex items-center space-x-2">
-        <!-- Language Selector Combobox (6 Languages) -->
-        <div id="lang-selector-group" class="relative flex items-center bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1.5 shadow-inner hover:border-slate-600 transition mr-1">
-          <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0"></i>
-          <select id="lang-select-combo" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-4 appearance-none">
-            <option value="index.html" class="bg-slate-900 text-white">🇰🇷 KO (한국어)</option>
-            <option value="index_en.html" class="bg-slate-900 text-white">🇺🇸 EN (English)</option>
-            <option value="index_ja.html" class="bg-slate-900 text-white">🇯🇵 JA (日本語)</option>
-            <option value="index_zh.html" class="bg-slate-900 text-white" selected>🇨🇳 ZH (中文)</option>
-            <option value="index_vi.html" class="bg-slate-900 text-white">🇻🇳 VI (Tiếng Việt)</option>
-            <option value="index_th.html" class="bg-slate-900 text-white">🇹🇭 TH (ภาษาไทย)</option>
-          </select>
-          <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
-        </div>
-        <!-- Theme Selector Combobox (Dark, Light, System) -->
-        <div id="theme-selector-group" class="relative flex items-center bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1.5 shadow-inner hover:border-slate-600 transition mr-1">
-          <i id="theme-icon" data-lucide="moon" class="w-3.5 h-3.5 text-amber-400 mr-1.5 flex-shrink-0"></i>
-          <select id="theme-select-combo" onchange="changeTheme(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-4 appearance-none" title="更改画面模式">
-            <option value="dark" class="bg-slate-900 text-white" selected>🌙 深色模式</option>
-            <option value="light" class="bg-slate-900 text-white">☀️ 浅色模式</option>
-            <option value="system" class="bg-slate-900 text-white">💻 系统跟随</option>
-          </select>
-          <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400 pointer-events-none absolute right-2"></i>
-        </div>
         <button onclick="toggleTocModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 flex items-center space-x-1.5 transition" title="演示目录 (M)">
-          <i data-lucide="list" class="text-slate-400"></i>
+          <i data-lucide="list" class="w-3.5 h-3.5 text-slate-400"></i>
           <span class="hidden md:inline">演示目录</span>
         </button>
         <button onclick="openGalleryModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs font-medium border border-cyan-900/40 flex items-center space-x-1.5 transition" title="原版幻灯片">
-          <i data-lucide="images" class="text-cyan-400"></i>
+          <i data-lucide="images" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span class="hidden md:inline">原版幻灯片</span>
         </button>
-        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="全屏模式 (F)">
-          <i id="fs-icon" data-lucide="maximize" class="w-4 h-4 text-slate-300"></i>
-        </button>
         <button onclick="openContactModal()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md transition flex items-center space-x-1.5">
-          <i data-lucide="send" class="text-xs"></i>
+          <i data-lucide="send" class="w-3 h-3 text-white"></i>
           <span>咨询合作</span>
+        </button>
+
+        <!-- Divider -->
+        <div class="h-4 w-px bg-slate-700/80 mx-0.5 hidden sm:block"></div>
+
+        <!-- Language Selector Combobox (6 Languages) - Positioned Right -->
+        <div id="lang-selector-group" class="relative flex items-center bg-slate-800/80 border border-slate-700/80 rounded-lg px-2 py-1 shadow-inner hover:border-slate-600 transition" title="语言选择 (Language)">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 mr-1 flex-shrink-0"></i>
+          <select id="lang-select-combo" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer pr-3.5 appearance-none">
+            <option value="index.html" class="bg-slate-900 text-white">KO</option>
+            <option value="index_en.html" class="bg-slate-900 text-white">EN</option>
+            <option value="index_ja.html" class="bg-slate-900 text-white">JA</option>
+            <option value="index_zh.html" class="bg-slate-900 text-white" selected>ZH</option>
+            <option value="index_vi.html" class="bg-slate-900 text-white">VI</option>
+            <option value="index_th.html" class="bg-slate-900 text-white">TH</option>
+          </select>
+          <i data-lucide="chevron-down" class="w-2.5 h-2.5 text-slate-400 pointer-events-none absolute right-1.5"></i>
+        </div>
+
+        <!-- Theme Mode Selector (Minimal Lucide.dev Icon Segment) - Positioned Right -->
+        <div id="theme-selector-group" class="flex items-center bg-slate-800/80 border border-slate-700/80 rounded-lg p-0.5 shadow-inner">
+          <button type="button" id="theme-btn-light" onclick="changeTheme('light')" class="p-1.5 rounded-md text-slate-400 hover:text-white transition flex items-center justify-center" title="浅色模式">
+            <i data-lucide="sun" class="w-3.5 h-3.5"></i>
+          </button>
+          <button type="button" id="theme-btn-dark" onclick="changeTheme('dark')" class="p-1.5 rounded-md text-slate-400 hover:text-white transition flex items-center justify-center" title="深色模式">
+            <i data-lucide="moon" class="w-3.5 h-3.5"></i>
+          </button>
+          <button type="button" id="theme-btn-system" onclick="changeTheme('system')" class="p-1.5 rounded-md text-slate-400 hover:text-white transition flex items-center justify-center" title="系统跟随">
+            <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Fullscreen Button -->
+        <button onclick="toggleFullscreen()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition" title="全屏模式 (F)">
+          <i id="fs-icon" data-lucide="maximize" class="w-3.5 h-3.5 text-slate-300"></i>
         </button>
       </div>
     </div>
@@ -3265,26 +3287,29 @@
     }
 
     function updateThemeUI(selectedTheme, effectiveTheme) {
-      const select = document.getElementById('theme-select-combo');
-      if (select) {
-        select.value = selectedTheme;
+      const btnLight = document.getElementById('theme-btn-light');
+      const btnDark = document.getElementById('theme-btn-dark');
+      const btnSystem = document.getElementById('theme-btn-system');
+
+      [btnLight, btnDark, btnSystem].forEach(btn => {
+        if (!btn) return;
+        btn.classList.remove('bg-slate-700', 'text-amber-400', 'text-blue-400', 'text-cyan-400', 'active-theme', 'shadow-xs');
+        btn.classList.add('text-slate-400');
+      });
+
+      if (selectedTheme === 'light' && btnLight) {
+        btnLight.classList.remove('text-slate-400');
+        btnLight.classList.add('bg-slate-700', 'text-amber-400', 'active-theme', 'shadow-xs');
+      } else if (selectedTheme === 'dark' && btnDark) {
+        btnDark.classList.remove('text-slate-400');
+        btnDark.classList.add('bg-slate-700', 'text-blue-400', 'active-theme', 'shadow-xs');
+      } else if (selectedTheme === 'system' && btnSystem) {
+        btnSystem.classList.remove('text-slate-400');
+        btnSystem.classList.add('bg-slate-700', 'text-cyan-400', 'active-theme', 'shadow-xs');
       }
-      const icon = document.getElementById('theme-icon');
-      if (icon) {
-        if (effectiveTheme === 'light') {
-          icon.setAttribute('data-lucide', 'sun');
-          icon.className = 'w-3.5 h-3.5 text-amber-500 mr-1.5 flex-shrink-0';
-        } else {
-          icon.setAttribute('data-lucide', 'moon');
-          icon.className = 'w-3.5 h-3.5 text-blue-400 mr-1.5 flex-shrink-0';
-        }
-        if (selectedTheme === 'system') {
-          icon.setAttribute('data-lucide', 'monitor');
-          icon.className = 'w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0';
-        }
-        if (window.lucide) {
-          lucide.createIcons();
-        }
+
+      if (window.lucide) {
+        lucide.createIcons();
       }
     }
 
