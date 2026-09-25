@@ -158,13 +158,57 @@
       display: grid !important;
       align-content: stretch !important;
     }
+    /* 슬라이드 PT 모드: 카드 내부를 스크롤 웹 문서 모드처럼 상단 정렬(flex-start) 및 수평 일관성 유지 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div,
     #current-slide-content .grid-cols-1.md\:grid-cols-3 > div,
-    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div {
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div,
+    #current-slide-content .grid-cols-1.md\:grid-cols-2 > div {
       display: flex !important;
       flex-direction: column !important;
-      justify-content: space-between !important;
-      min-height: 180px;
+      justify-content: flex-start !important;
+      height: 100% !important;
+    }
+
+    /* 카드 내 타이틀/헤더 영역의 여백과 수평 기준선 정렬 */
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .font-bold,
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h3,
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h4,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > .font-bold,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > h3,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > h4,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .font-bold,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > h3,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > h4 {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.35rem !important;
+      line-height: 1.35 !important;
+    }
+
+    /* 4열 및 3열 카드 타이틀의 최소 높이를 맞춰 서브타이틀(본문) 시작 위치를 가로 일직선으로 완벽 일치 */
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .text-sm.font-bold,
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h4.text-sm,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > .text-sm.font-bold,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > h4.text-sm,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .text-sm.font-bold,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > h4.text-sm {
+      min-height: 1.45rem;
+    }
+
+    /* 카드 본문 서브타이틀 폰트 크기 및 행간 정돈 (스크롤 웹 문서 모드와 동일한 자연스러운 가독성) */
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > p,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > p,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > p {
+      font-size: 0.8125rem !important;
+      line-height: 1.55 !important;
+      color: #cbd5e1 !important;
+      margin-top: 0.15rem !important;
+    }
+
+    /* 카드 하단 메타/출처 영역(border-t)이 있을 경우 하단 밀착 */
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .border-t,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > .border-t,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .border-t {
+      margin-top: auto !important;
     }
     
     .glass-card {
