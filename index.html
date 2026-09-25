@@ -350,35 +350,37 @@
     }
 
     /* ========================================================
-       화이트(라이트) 모드 전용 글로벌 디자인 테마 ([data-theme="light"])
+       화이트(라이트) 모드 전용 글로벌 디자인 테마 ([data-theme="light"]) - 초고대비 선명도(High Contrast)
        ======================================================== */
     [data-theme="light"] body {
-      background-color: #f1f5f9 !important; /* 밝고 차분한 Slate-100 배경 */
-      color: #0f172a !important;            /* Slate-900 텍스트 */
+      background-color: #f1f5f9 !important; /* 부드러운 Slate-100 배경 */
+      color: #0f172a !important;            /* Slate-900 딥 블랙 텍스트 */
     }
 
     /* 1. 상단 내비게이션 바 */
     [data-theme="light"] header {
-      background-color: rgba(255, 255, 255, 0.95) !important;
-      border-bottom-color: #e2e8f0 !important;
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) !important;
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06) !important;
     }
     [data-theme="light"] header .text-slate-300,
     [data-theme="light"] header .text-slate-400 {
-      color: #475569 !important;
+      color: #1e293b !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] header .bg-slate-800\/80 {
       background-color: #f1f5f9 !important;
-      border-color: #e2e8f0 !important;
+      border-color: #cbd5e1 !important;
     }
     [data-theme="light"] #lang-selector-group,
     [data-theme="light"] #theme-selector-group {
       background-color: #ffffff !important;
-      border-color: #cbd5e1 !important;
+      border-color: #94a3b8 !important;
     }
     [data-theme="light"] #lang-select-combo,
     [data-theme="light"] #theme-select-combo {
       color: #0f172a !important;
+      font-weight: 700 !important;
     }
     [data-theme="light"] #lang-select-combo option,
     [data-theme="light"] #theme-select-combo option {
@@ -386,70 +388,78 @@
       color: #0f172a !important;
     }
     [data-theme="light"] header button.bg-slate-800 {
-      background-color: #f1f5f9 !important;
-      border-color: #e2e8f0 !important;
-      color: #334155 !important;
+      background-color: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] header button.bg-slate-800:hover {
       background-color: #e2e8f0 !important;
-      color: #0f172a !important;
+      color: #000000 !important;
     }
 
     /* 2. 슬라이드 PT 캔버스 (#slide-stage) */
     [data-theme="light"] #slide-stage {
       background: #ffffff !important;
-      border-color: #e2e8f0 !important;
-      box-shadow: 0 14px 40px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 14px 40px -8px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.06) !important;
     }
     [data-theme="light"] #slide-stage .slide-header {
       border-bottom-color: #e2e8f0 !important;
     }
     [data-theme="light"] #slide-stage .slide-header h2 {
       color: #0f172a !important;
+      font-weight: 800 !important;
     }
-    [data-theme="light"] #slide-stage .slide-header p {
-      color: #475569 !important;
+    [data-theme="light"] #slide-stage .slide-header p,
+    [data-theme="light"] #current-slide-content .slide-header p {
+      color: #1e293b !important; /* Slate-800 진한 다크 컬러 */
+      font-weight: 600 !important;
     }
     [data-theme="light"] #slide-stage .h-12.bg-slate-950\/80 {
       background-color: #f8fafc !important;
-      border-top-color: #e2e8f0 !important;
-      color: #64748b !important;
+      border-top-color: #cbd5e1 !important;
+      color: #1e293b !important;
     }
     [data-theme="light"] #slide-stage #slide-topic {
-      color: #334155 !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
     }
     [data-theme="light"] #slide-stage .h-12 button.bg-slate-800 {
       background-color: #e2e8f0 !important;
-      color: #1e293b !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
     }
     [data-theme="light"] #slide-stage .h-12 button.bg-slate-800:hover {
       background-color: #cbd5e1 !important;
     }
     [data-theme="light"] #slide-stage .font-mono.text-slate-300 {
-      color: #334155 !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
     }
     [data-theme="light"] .slide-canvas .w-full.h-1.bg-slate-800 {
-      background-color: #e2e8f0 !important;
+      background-color: #cbd5e1 !important;
     }
 
     /* 3. 스크롤 웹 문서 모드 섹션 (#scroll-content) */
     [data-theme="light"] #scroll-container section {
       background: #ffffff !important;
-      border-color: #e2e8f0 !important;
-      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06) !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
     }
     [data-theme="light"] #scroll-container .doc-section-header {
       border-bottom-color: #e2e8f0 !important;
     }
     [data-theme="light"] #scroll-container .doc-section-header span.text-slate-400 {
-      color: #64748b !important;
+      color: #334155 !important;
+      font-weight: 600 !important;
     }
 
     /* 4. 카드 및 컨테이너 박스 (glass-card & bg-slate-*) */
     [data-theme="light"] .glass-card {
-      background: #f8fafc !important;
-      border-color: #e2e8f0 !important;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+      background: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
     }
     [data-theme="light"] .bg-slate-950,
     [data-theme="light"] .bg-slate-950\/70,
@@ -461,56 +471,106 @@
     [data-theme="light"] .bg-slate-900\/90,
     [data-theme="light"] .bg-slate-900\/50 {
       background-color: #f8fafc !important;
-      border-color: #e2e8f0 !important;
+      border-color: #cbd5e1 !important;
     }
     [data-theme="light"] .border-slate-800,
     [data-theme="light"] .border-slate-700,
     [data-theme="light"] .border-slate-800\/80,
     [data-theme="light"] .border-slate-800\/60 {
-      border-color: #e2e8f0 !important;
+      border-color: #cbd5e1 !important;
     }
 
-    /* 5. 텍스트 명도 및 타이포그래피 */
+    /* 5. 텍스트 명도 및 타이포그래피 (연한 회색톤 원천 제거 -> 딥 챠콜/블랙 강제 적용) */
     [data-theme="light"] .text-white,
     [data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 {
       color: #0f172a !important;
     }
     [data-theme="light"] .text-slate-100,
     [data-theme="light"] .text-slate-200,
-    [data-theme="light"] .text-slate-300 {
-      color: #334155 !important;
-    }
+    [data-theme="light"] .text-slate-300,
     [data-theme="light"] .text-slate-400 {
-      color: #64748b !important;
+      color: #0f172a !important; /* 선명하고 짙은 Slate-900 */
+      font-weight: 500 !important;
     }
     [data-theme="light"] .text-slate-500 {
-      color: #94a3b8 !important;
+      color: #334155 !important; /* Slate-700 */
+      font-weight: 500 !important;
     }
     [data-theme="light"] #current-slide-content p,
     [data-theme="light"] #scroll-container p {
-      color: #334155 !important;
+      color: #0f172a !important; /* 본문 문장 모두 선명한 흑색 */
+      font-weight: 500 !important;
     }
     [data-theme="light"] #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > p,
     [data-theme="light"] #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > p,
     [data-theme="light"] #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > p,
     [data-theme="light"] #current-slide-content .grid-cols-1.md\:grid-cols-2 > div > p {
-      color: #334155 !important;
+      color: #0f172a !important;
+      font-weight: 500 !important;
     }
     [data-theme="light"] #current-slide-content ul,
-    [data-theme="light"] #scroll-container ul {
-      color: #334155 !important;
+    [data-theme="light"] #scroll-container ul,
+    [data-theme="light"] #current-slide-content ul li,
+    [data-theme="light"] #scroll-container ul li {
+      color: #0f172a !important;
+      font-weight: 600 !important;
     }
 
-    /* 6. 모달 팝업류 (TOC, 갤러리, 문의 등) */
+    /* 슬라이드 15번 고객사 칩 / 랜드마크 태그 가독성 */
+    [data-theme="light"] .client-chips-container span,
+    [data-theme="light"] .lg\:col-span-5 span.rounded {
+      background-color: #f1f5f9 !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .client-chips-container span:hover {
+      background-color: #e2e8f0 !important;
+      color: #000000 !important;
+    }
+
+    /* 6. 다크모드용 밝은 네온 컬러를 화이트모드용 딥 세츄레이션 컬러로 보정 */
+    [data-theme="light"] .text-cyan-400,
+    [data-theme="light"] .text-cyan-300 {
+      color: #0369a1 !important; /* Sky-700 딥 오션 블루 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-blue-400,
+    [data-theme="light"] .text-blue-300 {
+      color: #1d4ed8 !important; /* Blue-700 진한 로열 블루 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-emerald-400,
+    [data-theme="light"] .text-emerald-300 {
+      color: #047857 !important; /* Emerald-700 딥 그린 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-amber-400,
+    [data-theme="light"] .text-amber-300 {
+      color: #b45309 !important; /* Amber-700 딥 브라운 골드 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-rose-400,
+    [data-theme="light"] .text-rose-300 {
+      color: #be123c !important; /* Rose-700 딥 루비 레드 */
+      font-weight: 700 !important;
+    }
+    [data-theme="light"] .text-purple-400,
+    [data-theme="light"] .text-purple-300 {
+      color: #6d28d9 !important; /* Purple-700 딥 바이올렛 */
+      font-weight: 700 !important;
+    }
+
+    /* 7. 모달 팝업류 (TOC, 갤러리, 문의 등) */
     [data-theme="light"] #modal-toc .bg-slate-900,
     [data-theme="light"] #modal-gallery .bg-slate-900,
     [data-theme="light"] #modal-contact .bg-slate-900,
     [data-theme="light"] #modal-original-slide .bg-slate-900,
     [data-theme="light"] #custom-image-modal .bg-slate-900 {
       background-color: #ffffff !important;
-      border-color: #e2e8f0 !important;
+      border: 1px solid #cbd5e1 !important;
       color: #0f172a !important;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2) !important;
     }
     [data-theme="light"] #modal-toc .border-b,
     [data-theme="light"] #modal-gallery .border-b,
@@ -523,67 +583,85 @@
     [data-theme="light"] #toc-list > a:hover {
       background-color: #f1f5f9 !important;
     }
+    [data-theme="light"] #toc-list span.text-slate-400,
+    [data-theme="light"] #toc-list p.text-slate-400 {
+      color: #1e293b !important;
+      font-weight: 500 !important;
+    }
 
-    /* 7. 하단 안내 뱃지류 및 하이라이트 박스 */
+    /* 8. 하단 안내 뱃지류 및 하이라이트 박스 */
     [data-theme="light"] .bg-blue-950\/30,
     [data-theme="light"] .bg-blue-950\/40,
     [data-theme="light"] .bg-blue-950\/60,
     [data-theme="light"] .bg-blue-950\/70,
     [data-theme="light"] .bg-blue-950 {
       background-color: #eff6ff !important;
-      border-color: #bfdbfe !important;
+      border-color: #93c5fd !important;
     }
     [data-theme="light"] .text-blue-200,
     [data-theme="light"] .text-blue-300 {
-      color: #1d4ed8 !important;
+      color: #1e40af !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] .bg-emerald-950\/20,
     [data-theme="light"] .bg-emerald-950\/25,
     [data-theme="light"] .bg-emerald-950\/30,
     [data-theme="light"] .bg-emerald-950 {
       background-color: #f0fdf4 !important;
-      border-color: #bbf7d0 !important;
+      border-color: #86efac !important;
     }
     [data-theme="light"] .text-emerald-200,
     [data-theme="light"] .text-emerald-300 {
-      color: #15803d !important;
+      color: #166534 !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] .bg-amber-950\/20,
     [data-theme="light"] .bg-amber-950\/30,
     [data-theme="light"] .bg-amber-950 {
       background-color: #fffbeb !important;
-      border-color: #fde68a !important;
+      border-color: #fcd34d !important;
     }
     [data-theme="light"] .text-amber-200,
     [data-theme="light"] .text-amber-300 {
-      color: #b45309 !important;
+      color: #92400e !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] .bg-rose-950\/20,
     [data-theme="light"] .bg-rose-950\/30,
     [data-theme="light"] .bg-rose-950 {
       background-color: #fff1f2 !important;
-      border-color: #fecdd3 !important;
+      border-color: #fda4af !important;
     }
     [data-theme="light"] .text-rose-200,
     [data-theme="light"] .text-rose-300 {
-      color: #be123c !important;
+      color: #9f1239 !important;
+      font-weight: 600 !important;
     }
 
-    /* 8. 표 (Table) 라이트 모드 스타일 */
+    /* 9. 표 (Table) 라이트 모드 초고대비 스타일 */
     [data-theme="light"] table thead {
-      background-color: #f1f5f9 !important;
-      color: #1e293b !important;
+      background-color: #e2e8f0 !important;
+      color: #0f172a !important;
       border-bottom-color: #cbd5e1 !important;
+      font-weight: 700 !important;
     }
     [data-theme="light"] table tbody {
       background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] table tbody td {
+      color: #0f172a !important;
+      font-weight: 500 !important;
+    }
+    [data-theme="light"] table tbody td.text-slate-400 {
       color: #334155 !important;
+      font-weight: 600 !important;
     }
     [data-theme="light"] table tbody tr {
-      border-bottom-color: #f1f5f9 !important;
+      border-bottom-color: #e2e8f0 !important;
     }
     [data-theme="light"] table tbody tr:hover {
-      background-color: #f8fafc !important;
+      background-color: #f1f5f9 !important;
     }
   </style>
 </head>
