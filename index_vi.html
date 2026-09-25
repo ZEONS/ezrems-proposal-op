@@ -137,18 +137,36 @@
       max-width: min(calc(min(80vh, 740px) * 16 / 9), 1320px);
     }
 
-    /* 슬라이드 PT 모드: 상하 과다 여백 제거 및 컨텐츠 세로 채움 최적화 */
+    /* ========================================================
+       슬라이드 PT 모드 가독성 4대 개선 시스템 (Enhanced Readability)
+       ======================================================== */
+
+    /* 1 & 4. 캔버스 폰트 렌더링 및 단어 줄바꿈(keep-all) 최적화 */
     #current-slide-content {
-      padding: 1rem 1.75rem !important; /* 상하 패딩 슬림화 */
+      padding: 1rem 1.75rem !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      word-break: keep-all; /* 단어 끊김 방지 */
     }
     @media (min-width: 640px) {
       #current-slide-content {
         padding: 1.25rem 2.25rem !important;
       }
     }
+
+    /* 슬라이드 상단 서브헤더 명도 상향 (가독성 개선) */
+    #current-slide-content .slide-header p {
+      color: #cbd5e1 !important; /* text-slate-300 (명도 상향) */
+      font-size: 0.8125rem !important;
+      line-height: 1.5 !important;
+      word-break: keep-all;
+    }
+
+    /* 3. 카드 영역 세로 밸런스: 무리한 세로 팽창 방지 및 중앙 안정 배치 */
     #current-slide-content .my-auto {
-      margin-top: 0.65rem !important;
-      margin-bottom: 0.65rem !important;
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
       flex: 1 1 0% !important;
       display: flex !important;
       flex-direction: column !important;
@@ -156,9 +174,10 @@
     }
     #current-slide-content .my-auto.grid {
       display: grid !important;
-      align-content: stretch !important;
+      align-content: center !important; /* stretch 대신 center로 컴팩트하고 균형잡힌 배치 */
     }
-    /* 슬라이드 PT 모드: 카드 내부를 스크롤 웹 문서 모드처럼 상단 정렬(flex-start) 및 수평 일관성 유지 */
+
+    /* 2 & 3. 카드 내부 상단 정렬 및 카드 박스 밸런스 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div,
     #current-slide-content .grid-cols-1.md\:grid-cols-3 > div,
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div,
@@ -167,9 +186,12 @@
       flex-direction: column !important;
       justify-content: flex-start !important;
       height: 100% !important;
+      min-height: 165px;
+      padding: 1.15rem 1.15rem !important;
+      transition: all 0.25s ease-in-out;
     }
 
-    /* 카드 내 타이틀/헤더 영역의 여백과 수평 기준선 정렬 */
+    /* 2. 카드 타이틀(Anchor) 시인성 및 계층 강화 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .font-bold,
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h3,
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h4,
@@ -179,12 +201,15 @@
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .font-bold,
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > h3,
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > h4 {
-      margin-top: 0.5rem !important;
+      margin-top: 0.55rem !important;
       margin-bottom: 0.35rem !important;
+      font-size: 0.9375rem !important; /* 15px로 시인성 향상 */
+      font-weight: 700 !important;
       line-height: 1.35 !important;
+      letter-spacing: -0.015em;
     }
 
-    /* 4열 및 3열 카드 타이틀의 최소 높이를 맞춰 서브타이틀(본문) 시작 위치를 가로 일직선으로 완벽 일치 */
+    /* 4열 및 3열 카드 타이틀의 수평 기준선 통일 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .text-sm.font-bold,
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > h4.text-sm,
     #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > .text-sm.font-bold,
@@ -194,21 +219,39 @@
       min-height: 1.45rem;
     }
 
-    /* 카드 본문 서브타이틀 폰트 크기 및 행간 정돈 (스크롤 웹 문서 모드와 동일한 자연스러운 가독성) */
+    /* 1 & 4. 본문 서브타이틀 텍스트 명도(Contrast) 및 행간(Leading) 대폭 개선 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > p,
     #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > p,
-    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > p {
-      font-size: 0.8125rem !important;
-      line-height: 1.55 !important;
-      color: #cbd5e1 !important;
-      margin-top: 0.15rem !important;
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > p,
+    #current-slide-content .grid-cols-1.md\:grid-cols-2 > div > p {
+      font-size: 0.84rem !important; /* 13.5px */
+      line-height: 1.6 !important; /* 스크롤 모드처럼 시원한 행간 */
+      color: #e2e8f0 !important; /* text-slate-200 (선명하고 맑은 고명도 그레이) */
+      margin-top: 0.2rem !important;
+      word-break: keep-all;
     }
 
-    /* 카드 하단 메타/출처 영역(border-t)이 있을 경우 하단 밀착 */
+    /* 리스트 형태의 본문 텍스트 명도 및 간격 개선 */
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > ul,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > ul,
+    #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > ul {
+      color: #e2e8f0 !important;
+      font-size: 0.8125rem !important;
+      line-height: 1.55 !important;
+      word-break: keep-all;
+    }
+    #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > ul > li,
+    #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > ul > li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* 카드 하단 메타/출처 영역(border-t) 하단 밀착 및 명도 정돈 */
     #current-slide-content .grid-cols-2.md\:grid-cols-4 > div > .border-t,
     #current-slide-content .grid-cols-1.md\:grid-cols-3 > div > .border-t,
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .border-t {
       margin-top: auto !important;
+      padding-top: 0.5rem !important;
+      color: #94a3b8 !important;
     }
 
     /* 슬라이드 14 (Độ tin cậy và Quy mô của ezREMS được Chứng minh bằng Con số) 전용: 카드 영역 및 내부 세로 중앙 정렬 */
