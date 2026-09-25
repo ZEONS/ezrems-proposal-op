@@ -210,6 +210,26 @@
     #current-slide-content .grid-cols-2.md\:grid-cols-3 > div > .border-t {
       margin-top: auto !important;
     }
+
+    /* 슬라이드 14 (Độ tin cậy và Quy mô của ezREMS được Chứng minh bằng Con số) 전용: 카드 영역 및 내부 세로 중앙 정렬 */
+    #current-slide-content .stat-cards-container {
+      align-content: center !important;
+    }
+    #current-slide-content .stat-cards-container > div {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important; /* 카드 내부 세로 중앙 정렬 */
+      align-items: center !important;     /* 카드 내부 가로 중앙 정렬 */
+      text-align: center !important;
+      min-height: 190px !important;
+      height: 100% !important;
+      padding: 1.5rem 1rem !important;
+    }
+    #current-slide-content .stat-cards-container > div > div.font-black {
+      margin-top: 0.35rem !important;
+      margin-bottom: 0.25rem !important;
+      line-height: 1.15 !important;
+    }
     
     .glass-card {
       background: rgba(30, 41, 59, 0.7);
@@ -1783,7 +1803,7 @@
               <p class="text-slate-400 text-xs mt-0.5">Từ các trung tâm mua sắm phức hợp lớn đến nhà ở công cộng và văn phòng hạng A, hàng chục tỷ won giao dịch tài chính được xử lý an toàn mỗi tháng.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-auto">
+            <div class="stat-cards-container grid grid-cols-2 md:grid-cols-4 gap-4 my-auto">
               <div class="p-5 rounded-2xl glass-card border border-blue-800/40 text-center group hover:border-cyan-500/50 transition">
                 <div class="icon-badge icon-badge-cyan w-12 h-12 mx-auto mb-2 text-xl">
                   <i data-lucide="building-2" class=""></i>
